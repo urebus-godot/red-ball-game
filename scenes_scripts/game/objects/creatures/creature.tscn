@@ -20,6 +20,8 @@ sprite_frames = SubResource("SpriteFrames_ybpkm")
 animation = &"normal"
 
 [node name="FloorRayCast" type="RayCast2D" parent="." index="2" unique_id=678968687]
+top_level = true
 
-[node name="MoveComponent" parent="." index="3" unique_id=94171231 node_paths=PackedStringArray("creature") instance=ExtResource("3_ybpkm")]
+[node name="MoveComponent" parent="." index="3" unique_id=94171231 node_paths=PackedStringArray("creature", "floor_raycast") instance=ExtResource("3_ybpkm")]
 creature = NodePath("..")
+floor_raycast = NodePath("../FloorRayCast")
