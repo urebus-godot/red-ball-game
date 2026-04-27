@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://p4bq4td5ewu0"]
+
+[ext_resource type="Script" uid="uid://mytivjvf7vwe" path="res://globals/transition/transition_screen.gd" id="1_of1yr"]
+
+[node name="TransitionScreen" type="CanvasLayer" unique_id=1807198936]
+script = ExtResource("1_of1yr")

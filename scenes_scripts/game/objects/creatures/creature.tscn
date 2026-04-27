@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://clq8s8kobcgab"]
+
+[ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/physics_object.tscn" id="1_8wc1f"]
+[ext_resource type="Script" uid="uid://b2r2508bgg8iu" path="res://scenes_scripts/game/objects/creatures/creature.gd" id="2_mx7sf"]
+[ext_resource type="PackedScene" uid="uid://div3il4uqi" path="res://scenes_scripts/game/objects/creatures/move_component.tscn" id="3_ybpkm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybpkm"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[node name="Creature" unique_id=840999448 instance=ExtResource("1_8wc1f")]
+script = ExtResource("2_mx7sf")
+
+[node name="CreatureAnimatedSprite" type="AnimatedSprite2D" parent="." index="0" unique_id=1684996495]
+sprite_frames = SubResource("SpriteFrames_ybpkm")
+animation = &"normal"
+
+[node name="FloorRayCast" type="RayCast2D" parent="." index="2" unique_id=678968687]
+
+[node name="MoveComponent" parent="." index="3" unique_id=94171231 node_paths=PackedStringArray("creature") instance=ExtResource("3_ybpkm")]
+creature = NodePath("..")

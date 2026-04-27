@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dwlerkwucmqsi"]
+
+[ext_resource type="PackedScene" uid="uid://bb6koovj7b8o" path="res://scenes_scripts/game/levels/base_level.tscn" id="1_yhru0"]
+[ext_resource type="Script" uid="uid://e1ut1qa7wdlu" path="res://scenes_scripts/game/camera.gd" id="2_5afly"]
+
+[node name="Level1" unique_id=165616865 instance=ExtResource("1_yhru0")]
+
+[node name="Camera2D" parent="." index="2" unique_id=2041122516 node_paths=PackedStringArray("player")]
+script = ExtResource("2_5afly")
+player = NodePath("../Player")

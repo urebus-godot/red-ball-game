@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://b7trlnapjrql5"]
+
+[ext_resource type="Script" uid="uid://c20jxk4enhjfj" path="res://scenes_scripts/ui/root/main_menu.gd" id="1_fxpc4"]
+[ext_resource type="Theme" uid="uid://bvkkwchtkybqj" path="res://resources/themes/main_button.tres" id="2_dw7a5"]
+[ext_resource type="Theme" uid="uid://cvprk2si4e2v2" path="res://resources/themes/square_button.tres" id="3_3djqw"]
+
+[node name="MainMenu" type="Control" unique_id=1451304987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fxpc4")
+
+[node name="Background" type="TextureRect" parent="." unique_id=328389399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartMenu" type="Control" parent="." unique_id=1230897194]
+layout_mode = 1
+anchor_left = 0.016666668
+anchor_top = 0.02962963
+anchor_right = 0.98333335
+anchor_bottom = 0.97037035
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu" unique_id=6733496]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -156.0
+offset_right = 328.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="PlayButton" type="Button" parent="StartMenu/VBoxContainer" unique_id=340133367]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_dw7a5")
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="StartMenu/VBoxContainer" unique_id=1438836794]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_dw7a5")
+text = "Quit"
+
+[node name="LevelsMenu" type="Control" parent="." unique_id=394315189]
+layout_mode = 1
+anchor_left = 0.016666668
+anchor_top = 0.02962963
+anchor_right = 0.98333335
+anchor_bottom = 0.97037035
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelButtonContainer" type="GridContainer" parent="LevelsMenu" unique_id=1959037084]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -608.0
+offset_top = -308.0
+offset_right = 608.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 5
+
+[node name="Level1" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1428211339]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level2" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1151175355]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level3" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=290735717]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level4" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=456242135]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level5" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1486324076]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level6" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1626621824]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level7" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1170598723]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level8" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1559628037]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level9" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=549635708]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level10" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1824237821]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="ToStartMenuButton" type="Button" parent="LevelsMenu" unique_id=785895600]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("3_3djqw")
+
+[connection signal="pressed" from="StartMenu/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="StartMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="LevelsMenu/ToStartMenuButton" to="." method="_on_to_start_menu_button_pressed"]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bb6koovj7b8o"]
+
+[ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/creatures/player/player.tscn" id="1_bs2e5"]
+[ext_resource type="Script" uid="uid://dikts21pbdp6o" path="res://scenes_scripts/game/levels/level_manager.gd" id="1_iym18"]
+[ext_resource type="Script" uid="uid://der33q8fh2dcj" path="res://scenes_scripts/game/objects/solids/terrain.gd" id="2_3a8xo"]
+
+[sub_resource type="Curve2D" id="Curve2D_bs2e5"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -96, 400, 0, 0, 0, 0, 152, 624, 0, 0, 0, 0, 416, 560, 0, 0, 0, 0, 744, 480, 0, 0, 0, 0, 920, 488, 0, 0, 0, 0, 1184, 520, 0, 0, 0, 0, 1792, 496, 0, 0, 0, 0, 2232, 504, 0, 0, 0, 0, 2816, 504, 0, 0, 0, 0, 3656, 408, 0, 0, 0, 0, 4088, 384, 0, 0, 0, 0, 4552, 480, 0, 0, 0, 0, 5432, 520, 0, 0, 0, 0, 5824, 464, 0, 0, 0, 0, 6216, 552, 0, 0, 0, 0, 6432, 720, 0, 0, 0, 0, 6408, 1184, 0, 0, 0, 0, 6208, 1736, 0, 0, 0, 0, 5488, 2072, 0, 0, 0, 0, 3520, 2248, 0, 0, 0, 0, 968, 2184, 0, 0, 0, 0, -416, 2064, 0, 0, 0, 0, -1016, 1752, 0, 0, 0, 0, -968, 1168, 0, 0, 0, 0, -840, 632, 0, 0, 0, 0, -1232, 304, 0, 0, 0, 0, -1360, 136, 0, 0, 0, 0, -1152, 16, 0, 0, 0, 0, -1056, 0, 0, 0, 0, 0, -904, 24, 0, 0, 0, 0, -752, 96, 0, 0, 0, 0, -640, 184, 0, 0, 0, 0, -456, 280, 0, 0, 0, 0, -296, 344, 0, 0, 0, 0, -96, 400)
+}
+point_count = 35
+
+[node name="BaseLevel" type="Node2D" unique_id=165616865]
+script = ExtResource("1_iym18")
+
+[node name="Player" parent="." unique_id=840999448 instance=ExtResource("1_bs2e5")]
+
+[node name="Terrain" type="StaticBody2D" parent="." unique_id=1914653385]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("2_3a8xo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain" unique_id=1084039158]
+
+[node name="Line2D" type="Line2D" parent="Terrain" unique_id=1122023633]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain" unique_id=1714209246]
+
+[node name="Path2D" type="Path2D" parent="Terrain" unique_id=1423485865]
+curve = SubResource("Curve2D_bs2e5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2041122516]

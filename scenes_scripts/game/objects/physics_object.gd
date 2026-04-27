@@ -1,0 +1,1 @@
+class_name PhysicsObject extends RigidBody2D
