@@ -19,8 +19,5 @@ target_position = Vector2(0, 54)
 collision_mask = 14
 hit_from_inside = true
 
-[node name="MoveComponent" parent="." index="3" unique_id=94171231]
-jump_force = 600.0
-
 [node name="ControlComponent" parent="." index="4" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
 move_component = NodePath("../MoveComponent")

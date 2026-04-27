@@ -10,11 +10,11 @@ func move_input() -> void:
 	elif direction < 0:
 		move_component.move_left()
 
-func jump_input() -> void:
+func jump_input(delta: float) -> void:
 	if Input.is_action_pressed("jump"):
-		move_component.jump()
+		move_component.jump(delta)
 
 
 func _physics_process(delta: float) -> void:
 	move_input()
-	jump_input()
+	jump_input(delta)
