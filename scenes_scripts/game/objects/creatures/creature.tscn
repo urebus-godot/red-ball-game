@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/physics_object.tscn" id="1_8wc1f"]
 [ext_resource type="Script" uid="uid://b2r2508bgg8iu" path="res://scenes_scripts/game/objects/creatures/creature.gd" id="2_mx7sf"]
 [ext_resource type="PackedScene" uid="uid://div3il4uqi" path="res://scenes_scripts/game/objects/creatures/move_component.tscn" id="3_ybpkm"]
+[ext_resource type="Script" uid="uid://d16e4wi8or6yw" path="res://scenes_scripts/game/objects/creatures/sprites_component.gd" id="4_lkcup"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ybpkm"]
 
@@ -13,6 +14,11 @@ script = ExtResource("2_mx7sf")
 [node name="RayCast2D" type="RayCast2D" parent="." index="1" unique_id=863819144]
 collision_mask = 14
 
-[node name="MoveComponent" parent="." index="2" unique_id=94171231 node_paths=PackedStringArray("creature", "floor_raycast") instance=ExtResource("3_ybpkm")]
+[node name="MoveComponent" parent="." index="3" unique_id=94171231 node_paths=PackedStringArray("creature", "floor_raycast") instance=ExtResource("3_ybpkm")]
 creature = NodePath("..")
 floor_raycast = NodePath("../RayCast2D")
+
+[node name="SpritesComponent" type="Node" parent="." index="4" unique_id=298676427 node_paths=PackedStringArray("creature", "body_animated_sprite")]
+script = ExtResource("4_lkcup")
+creature = NodePath("..")
+body_animated_sprite = NodePath("../AnimatedSprite2D")

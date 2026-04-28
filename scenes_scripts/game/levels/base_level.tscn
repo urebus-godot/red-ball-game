@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/creatures/player/player.tscn" id="1_bs2e5"]
 [ext_resource type="Script" uid="uid://dikts21pbdp6o" path="res://scenes_scripts/game/levels/level_manager.gd" id="1_iym18"]
 [ext_resource type="Script" uid="uid://der33q8fh2dcj" path="res://scenes_scripts/game/objects/solids/terrain.gd" id="2_3a8xo"]
+[ext_resource type="Texture2D" uid="uid://pnysrxmjjph8" path="res://resources/textures/game/solids/earth.png" id="4_fnqf3"]
+[ext_resource type="Texture2D" uid="uid://dj0e604x313nm" path="res://resources/textures/game/solids/ground.png" id="5_jt1by"]
 
 [sub_resource type="Curve2D" id="Curve2D_iym18"]
 bake_interval = 512.0
@@ -18,8 +20,11 @@ collision_mask = 13
 script = ExtResource("2_3a8xo")
 
 [node name="Polygon2D" type="Polygon2D" parent="Terrain" unique_id=1084039158]
+texture_repeat = 2
+texture = ExtResource("4_fnqf3")
 
 [node name="Line2D" type="Line2D" parent="Terrain" unique_id=1122023633]
+texture = ExtResource("5_jt1by")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain" unique_id=1714209246]
 
