@@ -1,23 +1,36 @@
 class_name MoveComponent extends Node
 
+#signal enter_floor
+
 const HOLD_JUMP_TIME: float = 0.16
 
 @export var torque: float = 30000.0
-@export var jump_impulse: float = 240.0
-@export var jump_hold_force: float = 1600
+@export var jump_impulse: float = 400.0
+@export var jump_hold_force: float = 2000
 
 @export var creature: Creature
 @export var floor_raycast: RayCast2D
 
 var time_to_jump: float = HOLD_JUMP_TIME
 var jump_enabled: bool = true
+var emitted_enter_floor_signal: bool = false
 
 
 func is_on_floor() -> bool:
 	return floor_raycast.is_colliding()
 
+
 func disable_jump() -> void:
 	jump_enabled = false
+
+
+#func emit_enter_floor_signal() -> void:
+	#if is_on_floor() and not emitted_enter_floor_signal:
+		#enter_floor.emit()
+		#emitted_enter_floor_signal = true
+		#print("Emitted enter_floor s!")
+	#elif not is_on_floor():
+		#emitted_enter_floor_signal = false
 
 
 func move_right() -> void:
@@ -39,6 +52,7 @@ func jump(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	#emit_enter_floor_signal()
 	floor_raycast.position = creature.position
 	if is_on_floor():
 		time_to_jump = HOLD_JUMP_TIME
