@@ -2,22 +2,36 @@
 
 [ext_resource type="PackedScene" uid="uid://clq8s8kobcgab" path="res://scenes_scripts/game/objects/creatures/creature.tscn" id="1_rv035"]
 [ext_resource type="Script" uid="uid://tcpqkg1nn6p5" path="res://scenes_scripts/game/objects/creatures/player/player.gd" id="2_22jnx"]
+[ext_resource type="Texture2D" uid="uid://ia74qyu0klo8" path="res://resources/textures/game/creatures/player/red_ball.png" id="3_ewilg"]
 [ext_resource type="PackedScene" uid="uid://iky0jh5jilni" path="res://scenes_scripts/game/objects/creatures/player/control_component.tscn" id="3_hka56"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_hka56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ewilg")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_hka56"]
-radius = 52.0
+radius = 54.0
 
 [node name="Player" unique_id=840999448 instance=ExtResource("1_rv035")]
 collision_mask = 14
 script = ExtResource("2_22jnx")
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=1303941600]
-shape = SubResource("CircleShape2D_hka56")
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=942526972]
+sprite_frames = SubResource("SpriteFrames_hka56")
 
-[node name="FloorRayCast" parent="." index="2" unique_id=678968687]
-target_position = Vector2(0, 54)
-collision_mask = 14
-hit_from_inside = true
+[node name="RayCast2D" parent="." index="1" unique_id=863819144]
+top_level = true
+target_position = Vector2(0, 55)
 
-[node name="ControlComponent" parent="." index="4" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
+[node name="ControlComponent" parent="." index="3" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
 move_component = NodePath("../MoveComponent")
+
+[node name="CollisionShape2D" parent="." index="4" unique_id=1303941600]
+shape = SubResource("CircleShape2D_hka56")

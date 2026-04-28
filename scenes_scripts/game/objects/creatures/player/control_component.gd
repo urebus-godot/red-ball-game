@@ -13,6 +13,8 @@ func move_input() -> void:
 func jump_input(delta: float) -> void:
 	if Input.is_action_pressed("jump"):
 		move_component.jump(delta)
+	elif Input.is_action_just_released("jump"):
+		move_component.disable_jump()
 
 
 func _physics_process(delta: float) -> void:
