@@ -82,9 +82,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -375.0
-offset_top = -348.0
+offset_top = -388.0
 offset_right = 377.0
-offset_bottom = 348.0
+offset_bottom = 388.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_y8snl")
@@ -113,4 +113,25 @@ offset_bottom = 8.0
 grow_horizontal = 0
 theme = SubResource("Theme_mjgam")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=721341544]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012784091
+anchor_top = 0.13051145
+anchor_right = 0.98721594
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Control/VBoxContainer" unique_id=1279339596]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SFXVolumeSlider" type="HSlider" parent="Control/VBoxContainer" unique_id=597341475]
+layout_mode = 2
+size_flags_vertical = 3
+
 [connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="value_changed" from="Control/VBoxContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]

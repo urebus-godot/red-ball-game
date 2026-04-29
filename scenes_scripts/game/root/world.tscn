@@ -35,6 +35,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1004856744]
 
 [node name="DebugPanel" parent="CanvasLayer" unique_id=1567030277 node_paths=PackedStringArray("nodes_for_texts") instance=ExtResource("2_2djus")]
+visible = false
 nodes_for_texts = [NodePath("../../Player")]
 properties_for_texts = Array[String](["linear_velocity"])
 
@@ -50,5 +51,8 @@ curve = SubResource("Curve2D_efhvm")
 
 [node name="LevelDoor" parent="." unique_id=2011945355 instance=ExtResource("4_7og53")]
 position = Vector2(1088, 320)
+level = 1
+
+[connection signal="player_entered" from="LevelDoor" to="Player" method="_on_interactive_object_player_entered"]
 
 [editable path="Terrain"]

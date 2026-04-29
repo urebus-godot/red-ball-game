@@ -3,13 +3,14 @@ class_name ControlComponent extends Node
 @export var move_component: MoveComponent
 
 var is_jump_input: bool = false
+var move_direction: float = 0.0
 
 
 func move_input() -> void:
-	var direction = Input.get_axis("left", "right")
-	if direction > 0:
+	move_direction = Input.get_axis("left", "right")
+	if move_direction > 0:
 		move_component.move_right()
-	elif direction < 0:
+	elif move_direction < 0:
 		move_component.move_left()
 
 func jump_input(delta: float) -> void:
