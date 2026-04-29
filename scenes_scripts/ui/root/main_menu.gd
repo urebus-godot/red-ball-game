@@ -3,6 +3,8 @@ extends Control
 @onready var start_menu: Control = $StartMenu
 @onready var levels_menu: Control = $LevelsMenu
 @onready var level_button_container: GridContainer = $LevelsMenu/LevelButtonContainer
+@onready var options_menu: OptionsMenu = $OptionsMenu
+@onready var tinting: ColorRect = $Tinting
 
 var is_ui_free: bool = true
 
@@ -66,3 +68,15 @@ func _on_to_start_menu_button_pressed() -> void:
 		is_ui_free = false
 		await show_start_menu()
 		is_ui_free = true
+
+
+func _on_options_button_pressed() -> void:
+	if is_ui_free:
+		is_ui_free = false
+		tinting.show_tinting()
+		options_menu.show_menu()
+
+
+func _on_options_menu_closed() -> void:
+	tinting.hide_tinting()
+	is_ui_free = true

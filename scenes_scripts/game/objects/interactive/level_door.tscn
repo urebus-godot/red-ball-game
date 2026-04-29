@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://diy12vbxi3eab"]
 
-[ext_resource type="Script" uid="uid://b5ps603jp2pd3" path="res://scenes_scripts/game/objects/areas/level_door.gd" id="1_0ay6s"]
+[ext_resource type="Script" uid="uid://b5ps603jp2pd3" path="res://scenes_scripts/game/objects/interactive/level_door.gd" id="1_0ay6s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ay6s"]
 animations = [{

@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_62qgw")
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=840999448 instance=ExtResource("1_bs2e5")]
 

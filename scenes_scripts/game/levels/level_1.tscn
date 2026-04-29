@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwlerkwucmqsi"]
 
 [ext_resource type="PackedScene" uid="uid://bb6koovj7b8o" path="res://scenes_scripts/game/levels/base_level.tscn" id="1_yhru0"]
-[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/physics_solids/crate.tscn" id="3_xya2l"]
+[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/solid/physics/crate.tscn" id="3_xya2l"]
 
 [sub_resource type="Curve2D" id="Curve2D_5afly"]
 bake_interval = 512.0

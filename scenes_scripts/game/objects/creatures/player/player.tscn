@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://41b35ssy4bxk" path="res://resources/textures/game/creatures/player/red_ball_face.png" id="4_fd7rk"]
 [ext_resource type="PackedScene" uid="uid://cn48baku04cx" path="res://scenes_scripts/game/objects/creatures/player/camera.tscn" id="6_30j7b"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30j7b"]
+rough = true
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_30j7b"]
 animations = [{
 "frames": [{
@@ -23,6 +26,7 @@ radius = 54.0
 
 [node name="Player" unique_id=840999448 instance=ExtResource("1_rv035")]
 collision_mask = 14
+physics_material_override = SubResource("PhysicsMaterial_30j7b")
 script = ExtResource("2_22jnx")
 
 [node name="Sprite" parent="." index="0" unique_id=188382244]

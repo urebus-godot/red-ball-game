@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://de4m7ia64dubp"]
+
+[ext_resource type="Script" uid="uid://dxbjg7tng3tjj" path="res://scenes_scripts/ui/menus/options_menu.gd" id="1_y8snl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdiy1"]
+bg_color = Color(0.26601917, 0.24926722, 0.27024823, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.20037332, 0.1768, 0.26, 1)
+corner_radius_top_left = 42
+corner_radius_top_right = 42
+corner_radius_bottom_right = 42
+corner_radius_bottom_left = 42
+
+[sub_resource type="Theme" id="Theme_y8snl"]
+Panel/styles/panel = SubResource("StyleBoxFlat_tdiy1")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8snl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy6fi"]
+bg_color = Color(1, 0.45833337, 0.35000002, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.56, 0.022400012, 0.022400012, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 0.53, 0.53, 1)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn0fj"]
+bg_color = Color(0.9, 0.29999998, 0.17999998, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.46, 0.013799987, 0.013799987, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5k5w"]
+bg_color = Color(0.8, 0.22666669, 0.11199999, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.36, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
+
+[sub_resource type="Theme" id="Theme_mjgam"]
+Button/colors/font_color = Color(0.92099476, 0.9209946, 0.9209946, 1)
+Button/colors/font_hover_color = Color(0.98, 0.98, 0.98, 1)
+Button/colors/font_outline_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+Button/colors/font_pressed_color = Color(0.82, 0.82, 0.82, 1)
+Button/constants/outline_size = 16
+Button/font_sizes/font_size = 64
+Button/styles/focus = SubResource("StyleBoxEmpty_y8snl")
+Button/styles/hover = SubResource("StyleBoxFlat_hy6fi")
+Button/styles/normal = SubResource("StyleBoxFlat_wn0fj")
+Button/styles/pressed = SubResource("StyleBoxFlat_d5k5w")
+
+[node name="OptionsMenu" type="Panel" unique_id=510311911]
+custom_minimum_size = Vector2(500, 512)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -348.0
+offset_right = 377.0
+offset_bottom = 348.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_y8snl")
+script = ExtResource("1_y8snl")
+
+[node name="Control" type="Control" parent="." unique_id=1609059338]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseButton" type="Button" parent="Control" unique_id=1758946778]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme = SubResource("Theme_mjgam")
+
+[connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]

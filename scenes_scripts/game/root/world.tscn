@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://b0qkoscdvwdap"]
 
+[ext_resource type="Script" uid="uid://dvpmjf302ti6w" path="res://scenes_scripts/game/root/world.gd" id="1_gv6xx"]
 [ext_resource type="PackedScene" uid="uid://da3avsamnkxp2" path="res://scenes_scripts/ui/hud/debug_panel.tscn" id="2_2djus"]
 [ext_resource type="Texture2D" uid="uid://bb8ckqchl87uo" path="res://resources/textures/game/background/sky.png" id="2_74n1f"]
 [ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="3_efhvm"]
 [ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/creatures/player/player.tscn" id="3_pkcbc"]
-[ext_resource type="PackedScene" uid="uid://diy12vbxi3eab" path="res://scenes_scripts/game/objects/areas/level_door.tscn" id="4_7og53"]
+[ext_resource type="PackedScene" uid="uid://diy12vbxi3eab" path="res://scenes_scripts/game/objects/interactive/level_door.tscn" id="4_7og53"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2djus"]
 
 [sub_resource type="Curve2D" id="Curve2D_efhvm"]
 bake_interval = 512.0
@@ -14,6 +17,7 @@ _data = {
 point_count = 5
 
 [node name="World" type="Node2D" unique_id=165616865]
+script = ExtResource("1_gv6xx")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=807347235]
 layer = -1
@@ -37,6 +41,7 @@ properties_for_texts = Array[String](["linear_velocity"])
 [node name="Player" parent="." unique_id=840999448 instance=ExtResource("3_pkcbc")]
 
 [node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("3_efhvm")]
+physics_material_override = SubResource("PhysicsMaterial_2djus")
 
 [node name="Path2D" parent="Terrain" index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_efhvm")
