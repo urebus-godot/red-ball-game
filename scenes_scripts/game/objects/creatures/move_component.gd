@@ -2,9 +2,10 @@ class_name MoveComponent extends Node
 
 #signal enter_floor
 
-const HOLD_JUMP_TIME: float = 0.16
+const HOLD_JUMP_TIME: float = 0.15
 
-@export var torque: float = 30000.0
+@export var torque: float = 40000.0
+@export var angular_velocity: float = 11.0
 @export var jump_impulse: float = 400.0
 @export var jump_hold_force: float = 2000
 
@@ -34,10 +35,12 @@ func disable_jump() -> void:
 
 
 func move_right() -> void:
-	creature.apply_torque(torque)
+	if creature.angular_velocity < angular_velocity:
+		creature.apply_torque(torque)
 
 func move_left() -> void:
-	creature.apply_torque(-torque)
+	if abs(creature.angular_velocity) < angular_velocity:
+		creature.apply_torque(-torque)
 
 
 func jump(delta: float) -> void:

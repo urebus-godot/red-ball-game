@@ -41,4 +41,5 @@ shape = SubResource("CircleShape2D_hka56")
 [node name="ControlComponent" parent="." index="4" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
 move_component = NodePath("../MoveComponent")
 
-[node name="Camera" parent="." index="7" unique_id=1760591003 instance=ExtResource("6_30j7b")]
+[node name="Camera" parent="." index="7" unique_id=1760591003 node_paths=PackedStringArray("player") instance=ExtResource("6_30j7b")]
+player = NodePath("..")

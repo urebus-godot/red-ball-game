@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://diy12vbxi3eab"]
+
+[ext_resource type="Script" uid="uid://b5ps603jp2pd3" path="res://scenes_scripts/game/objects/areas/level_door.gd" id="1_0ay6s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ay6s"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efhvm"]
+size = Vector2(128, 160)
+
+[node name="LevelDoor" type="Area2D" unique_id=2011945355]
+collision_layer = 0
+script = ExtResource("1_0ay6s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1338046011]
+sprite_frames = SubResource("SpriteFrames_0ay6s")
+animation = &"open"
+autoplay = "closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1077028436]
+shape = SubResource("RectangleShape2D_efhvm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

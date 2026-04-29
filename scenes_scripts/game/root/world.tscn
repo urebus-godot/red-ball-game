@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b0qkoscdvwdap"]
 
+[ext_resource type="PackedScene" uid="uid://da3avsamnkxp2" path="res://scenes_scripts/ui/hud/debug_panel.tscn" id="2_2djus"]
 [ext_resource type="Texture2D" uid="uid://bb8ckqchl87uo" path="res://resources/textures/game/background/sky.png" id="2_74n1f"]
 [ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="3_efhvm"]
 [ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/creatures/player/player.tscn" id="3_pkcbc"]
+[ext_resource type="PackedScene" uid="uid://diy12vbxi3eab" path="res://scenes_scripts/game/objects/areas/level_door.tscn" id="4_7og53"]
 
 [sub_resource type="Curve2D" id="Curve2D_efhvm"]
 bake_interval = 512.0
@@ -15,6 +17,7 @@ point_count = 5
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=807347235]
 layer = -1
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="BackgroundLayer" unique_id=1883355903]
 anchors_preset = 15
@@ -25,6 +28,12 @@ grow_vertical = 2
 texture = ExtResource("2_74n1f")
 metadata/_edit_use_anchors_ = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1004856744]
+
+[node name="DebugPanel" parent="CanvasLayer" unique_id=1567030277 node_paths=PackedStringArray("nodes_for_texts") instance=ExtResource("2_2djus")]
+nodes_for_texts = [NodePath("../../Player")]
+properties_for_texts = Array[String](["linear_velocity"])
+
 [node name="Player" parent="." unique_id=840999448 instance=ExtResource("3_pkcbc")]
 
 [node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("3_efhvm")]
@@ -33,5 +42,8 @@ metadata/_edit_use_anchors_ = true
 curve = SubResource("Curve2D_efhvm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2041122516]
+
+[node name="LevelDoor" parent="." unique_id=2011945355 instance=ExtResource("4_7og53")]
+position = Vector2(1088, 320)
 
 [editable path="Terrain"]

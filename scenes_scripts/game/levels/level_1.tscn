@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dwlerkwucmqsi"]
 
 [ext_resource type="PackedScene" uid="uid://bb6koovj7b8o" path="res://scenes_scripts/game/levels/base_level.tscn" id="1_yhru0"]
-[ext_resource type="Script" uid="uid://e1ut1qa7wdlu" path="res://scenes_scripts/game/camera.gd" id="2_5afly"]
 [ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/physics_solids/crate.tscn" id="3_xya2l"]
 
 [sub_resource type="Curve2D" id="Curve2D_5afly"]
@@ -19,11 +18,7 @@ physics_material_override = null
 [node name="Path2D" parent="Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_5afly")
 
-[node name="Camera2D" parent="." index="3" unique_id=2041122516 node_paths=PackedStringArray("player")]
-script = ExtResource("2_5afly")
-player = NodePath("../Player")
-
-[node name="Crate" parent="." index="5" unique_id=263904471 instance=ExtResource("3_xya2l")]
+[node name="Crate" parent="." index="4" unique_id=263904471 instance=ExtResource("3_xya2l")]
 position = Vector2(696, 312)
 
 [editable path="Terrain"]
