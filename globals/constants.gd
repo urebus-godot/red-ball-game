@@ -1,6 +1,7 @@
 extends Node
 
 const MAIN_MENU_PATH: String = "res://scenes_scripts/ui/root/main_menu.tscn"
+const WORLD_PATH: String = "res://scenes_scripts/game/root/world.tscn"
 const LEVEL_PATH: String = "res://scenes_scripts/game/levels/level_%s.tscn"
 
 const TWEEN_DURATION: float = 0.3

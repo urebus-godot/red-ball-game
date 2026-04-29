@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b5c6vtq65bvn0"]
+
+[ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/physics_object.tscn" id="1_gtby6"]
+[ext_resource type="Texture2D" uid="uid://bxagg5avjekep" path="res://resources/textures/game/solids/crate.png" id="2_kdbte"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03go1"]
+size = Vector2(148, 160)
+
+[node name="Crate" unique_id=840999448 instance=ExtResource("1_gtby6")]
+collision_layer = 4
+mass = 2.5
+
+[node name="Sprite" parent="." index="0" unique_id=188382244]
+texture = ExtResource("2_kdbte")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1303941600]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_03go1")

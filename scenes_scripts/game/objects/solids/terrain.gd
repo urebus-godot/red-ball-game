@@ -16,8 +16,9 @@ func _ready() -> void:
 
 	var line_points = ground_line.get_points()
 	var new_points = []
+	var width = (ground_line.width / 2) - 4
 
 	for point in line_points:
-		new_points.append(point + Vector2(0, 32))
+		new_points.append(point + Vector2(0, width))
 
 	ground_line.set_points(new_points)

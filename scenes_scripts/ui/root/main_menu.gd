@@ -48,7 +48,8 @@ func _ready() -> void:
 func _on_play_button_pressed() -> void:
 	if is_ui_free:
 		is_ui_free = false
-		await show_levels_menu()
+		TransitionScreen.change_scene(Constants.WORLD_PATH)
+		#await show_levels_menu()
 		is_ui_free = true
 
 func _on_quit_button_pressed() -> void:

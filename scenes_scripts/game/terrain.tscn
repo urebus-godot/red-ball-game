@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cyvuaxuyyofnb"]
+
+[ext_resource type="Script" uid="uid://der33q8fh2dcj" path="res://scenes_scripts/game/objects/solids/terrain.gd" id="1_xispj"]
+[ext_resource type="Texture2D" uid="uid://pnysrxmjjph8" path="res://resources/textures/game/solids/earth.png" id="2_gthpe"]
+[ext_resource type="Texture2D" uid="uid://dj0e604x313nm" path="res://resources/textures/game/solids/ground.png" id="3_m5anj"]
+
+[sub_resource type="Curve2D" id="Curve2D_xispj"]
+bake_interval = 512.0
+
+[node name="Terrain" type="StaticBody2D" unique_id=912310611]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_xispj")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1559154401]
+texture_repeat = 2
+texture = ExtResource("2_gthpe")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=583848422]
+texture_repeat = 2
+width = 128.0
+texture = ExtResource("3_m5anj")
+texture_mode = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2059067128]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1234078617]
+curve = SubResource("Curve2D_xispj")

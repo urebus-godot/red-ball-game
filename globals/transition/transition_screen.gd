@@ -9,5 +9,5 @@ func end_trans() -> void:
 
 
 func change_scene(path: String) -> void:
-	start_trans()
+	#await start_trans()
 	get_tree().change_scene_to_file(path)
