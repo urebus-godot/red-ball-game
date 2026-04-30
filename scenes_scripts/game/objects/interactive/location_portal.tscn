@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://diy12vbxi3eab"]
 
-[ext_resource type="Script" uid="uid://b5ps603jp2pd3" path="res://scenes_scripts/game/objects/interactive/level_door.gd" id="1_0ay6s"]
+[ext_resource type="Script" uid="uid://b5ps603jp2pd3" path="res://scenes_scripts/game/objects/interactive/location_portal.gd" id="1_0ay6s"]
+[ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/portal.png" id="2_s76n2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ay6s"]
 animations = [{
@@ -9,7 +10,10 @@ animations = [{
 "name": &"close",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s76n2")
+}],
 "loop": true,
 "name": &"closed",
 "speed": 5.0
@@ -23,16 +27,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efhvm"]
 size = Vector2(128, 160)
 
-[node name="LevelDoor" type="Area2D" unique_id=2011945355]
+[node name="LocationPortal" type="Area2D" unique_id=2011945355]
 collision_layer = 0
 script = ExtResource("1_0ay6s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1338046011]
+position = Vector2(0, -128)
 sprite_frames = SubResource("SpriteFrames_0ay6s")
-animation = &"open"
+animation = &"closed"
 autoplay = "closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1077028436]
+position = Vector2(0, -112)
 shape = SubResource("RectangleShape2D_efhvm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

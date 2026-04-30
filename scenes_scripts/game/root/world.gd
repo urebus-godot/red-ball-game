@@ -1,11 +1,13 @@
 extends Node2D
 
-@onready var doors: Node2D = $Doors
+@onready var background_layer: CanvasLayer = $BackgroundLayer
+@onready var portals: Node2D = $Portals
 @onready var player: Player = $Player
 
 
 func _ready() -> void:
-	for door in doors.get_children():
-		if door is InteractiveObject:
-			door.player_entered.connect(player._on_interactive_object_player_entered)
-			door.player_exited.connect(player._on_interactive_object_player_exited)
+	background_layer.visible = true
+	for portal in portals.get_children():
+		if portal is InteractiveObject:
+			portal.player_entered.connect(player._on_interactive_object_player_entered)
+			portal.player_exited.connect(player._on_interactive_object_player_exited)
