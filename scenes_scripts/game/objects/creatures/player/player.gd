@@ -12,3 +12,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_interactive_object_player_entered(object: InteractiveObject) -> void:
 	object_to_interact = object
+
+func _on_interactive_object_player_exited(object: InteractiveObject) -> void:
+	if object_to_interact == object:
+		object_to_interact = null

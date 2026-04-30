@@ -6,7 +6,7 @@ const TWEEN_DURATION: float = 0.22
 func show_tinting() -> void:
 	visible = true
 	var tween = create_tween().tween_property(
-		self, "color:a", 0.4, TWEEN_DURATION
+		self, "color:a", 0.6, TWEEN_DURATION
 	)
 
 

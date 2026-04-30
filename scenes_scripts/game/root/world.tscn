@@ -47,10 +47,10 @@ physics_material_override = SubResource("PhysicsMaterial_2djus")
 [node name="Path2D" parent="Terrain" index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_efhvm")
 
-[node name="LevelDoor" parent="." unique_id=2011945355 instance=ExtResource("4_7og53")]
+[node name="Doors" type="Node2D" parent="." unique_id=482774189]
+
+[node name="LocationDoor" parent="Doors" unique_id=2011945355 instance=ExtResource("4_7og53")]
 position = Vector2(1088, 320)
 level = 1
-
-[connection signal="player_entered" from="LevelDoor" to="Player" method="_on_interactive_object_player_entered"]
 
 [editable path="Terrain"]

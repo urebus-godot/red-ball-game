@@ -3,8 +3,11 @@
 [ext_resource type="Theme" uid="uid://cxriancpnx75o" path="res://resources/themes/cyan_button.tres" id="1_sad0e"]
 [ext_resource type="Script" uid="uid://duh8ftb6laqj8" path="res://scenes_scripts/ui/hud/ui_layer.gd" id="1_tp5bd"]
 [ext_resource type="PackedScene" uid="uid://cj1lvehfme1dw" path="res://scenes_scripts/ui/tinting.tscn" id="2_e325d"]
+[ext_resource type="Theme" uid="uid://c6yrnifyunf8d" path="res://resources/themes/blue_square_button.tres" id="2_v78qn"]
+[ext_resource type="PackedScene" uid="uid://de4m7ia64dubp" path="res://scenes_scripts/ui/menus/options_menu.tscn" id="4_8qgv2"]
 
 [node name="UILayer" type="CanvasLayer" unique_id=51763774]
+process_mode = 3
 script = ExtResource("1_tp5bd")
 
 [node name="Control" type="Control" parent="." unique_id=1885894970]
@@ -18,7 +21,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="PauseButton" type="Button" parent="Control" unique_id=1838084363]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -26,11 +29,16 @@ anchor_right = 1.0
 offset_left = -96.0
 offset_bottom = 96.0
 grow_horizontal = 0
+theme = ExtResource("2_v78qn")
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Tinting" parent="." unique_id=1261466242 instance=ExtResource("2_e325d")]
+visible = false
 
 [node name="PauseMenu" type="Control" parent="." unique_id=726044164]
+visible = false
 custom_minimum_size = Vector2(666, 666)
 layout_mode = 3
 anchors_preset = 8
@@ -39,45 +47,48 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -333.0
-offset_top = -436.0
+offset_top = -404.0
 offset_right = 333.0
-offset_bottom = 436.0
+offset_bottom = 262.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Container" type="VBoxContainer" parent="PauseMenu" unique_id=1674905843]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -304.0
-offset_top = -276.0
+offset_top = -552.0
 offset_right = 304.0
-offset_bottom = 276.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_constants/separation = 20
 
 [node name="ResumeButton" type="Button" parent="PauseMenu/Container" unique_id=1759643015]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme = ExtResource("1_sad0e")
 
 [node name="OptionsButton" type="Button" parent="PauseMenu/Container" unique_id=155750206]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme = ExtResource("1_sad0e")
 
 [node name="RestartButton" type="Button" parent="PauseMenu/Container" unique_id=1853521077]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme = ExtResource("1_sad0e")
 
 [node name="QuitButton" type="Button" parent="PauseMenu/Container" unique_id=1282513740]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme = ExtResource("1_sad0e")
 
 [node name="Label" type="Label" parent="PauseMenu" unique_id=2020483254]
@@ -91,3 +102,13 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 64
 text = "The game is paused..."
+
+[node name="OptionsMenu" parent="." unique_id=510311911 instance=ExtResource("4_8qgv2")]
+visible = false
+
+[connection signal="pressed" from="Control/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Container/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Container/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Container/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Container/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="closed" from="OptionsMenu" to="." method="_on_options_menu_closed"]

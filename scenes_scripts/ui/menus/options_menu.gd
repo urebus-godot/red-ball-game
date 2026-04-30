@@ -65,6 +65,7 @@ func set_volume(bus_name: String, value: float, key: String) -> void:
 
 
 func _ready() -> void:
+	visible = true
 	position.y = START_POSITION_Y
 
 
