@@ -32,9 +32,9 @@ grow_vertical = 2
 texture = ExtResource("2_74n1f")
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1004856744]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1004856744]
 
-[node name="DebugPanel" parent="CanvasLayer" unique_id=1567030277 node_paths=PackedStringArray("nodes_for_texts") instance=ExtResource("2_2djus")]
+[node name="DebugPanel" parent="UILayer" unique_id=1567030277 node_paths=PackedStringArray("nodes_for_texts") instance=ExtResource("2_2djus")]
 visible = false
 nodes_for_texts = [NodePath("../../Player")]
 properties_for_texts = Array[String](["linear_velocity"])

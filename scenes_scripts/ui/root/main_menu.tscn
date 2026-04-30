@@ -5,65 +5,9 @@
 [ext_resource type="Theme" uid="uid://cvprk2si4e2v2" path="res://resources/themes/square_button.tres" id="3_3djqw"]
 [ext_resource type="Theme" uid="uid://cxriancpnx75o" path="res://resources/themes/cyan_button.tres" id="3_n363v"]
 [ext_resource type="Theme" uid="uid://k8oddh018ug7" path="res://resources/themes/red_button.tres" id="4_7u1tn"]
+[ext_resource type="Theme" uid="uid://c6yrnifyunf8d" path="res://resources/themes/blue_square_button.tres" id="5_r3nkn"]
 [ext_resource type="PackedScene" uid="uid://cj1lvehfme1dw" path="res://scenes_scripts/ui/tinting.tscn" id="6_aify2"]
 [ext_resource type="PackedScene" uid="uid://de4m7ia64dubp" path="res://scenes_scripts/ui/menus/options_menu.tscn" id="6_bvkmw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n363v"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aify2"]
-bg_color = Color(0.51, 0.82033336, 1, 1)
-border_width_left = 24
-border_width_top = 24
-border_width_right = 24
-border_width_bottom = 24
-border_color = Color(0.094600014, 0.12814008, 0.43, 1)
-border_blend = true
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-shadow_color = Color(0.64, 0.87999994, 1, 1)
-shadow_size = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3nkn"]
-bg_color = Color(0.33999997, 0.692, 1, 1)
-border_width_left = 24
-border_width_top = 24
-border_width_right = 24
-border_width_bottom = 24
-border_color = Color(0.08121997, 0.055800002, 0.31, 1)
-border_blend = true
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygyyt"]
-bg_color = Color(0.23200002, 0.4970667, 0.8, 1)
-border_width_left = 24
-border_width_top = 24
-border_width_right = 24
-border_width_bottom = 24
-border_color = Color(0.065799974, 0.041999992, 0.28, 1)
-border_blend = true
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
-
-[sub_resource type="Theme" id="Theme_tryju"]
-Button/colors/font_color = Color(0.92099476, 0.9209946, 0.9209946, 1)
-Button/colors/font_hover_color = Color(0.98, 0.98, 0.98, 1)
-Button/colors/font_outline_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
-Button/colors/font_pressed_color = Color(0.82, 0.82, 0.82, 1)
-Button/constants/outline_size = 16
-Button/font_sizes/font_size = 64
-Button/styles/focus = SubResource("StyleBoxEmpty_n363v")
-Button/styles/hover = SubResource("StyleBoxFlat_aify2")
-Button/styles/normal = SubResource("StyleBoxFlat_r3nkn")
-Button/styles/pressed = SubResource("StyleBoxFlat_ygyyt")
 
 [node name="MainMenu" type="Control" unique_id=1451304987]
 layout_mode = 3
@@ -85,10 +29,10 @@ texture = ExtResource("2_n363v")
 
 [node name="StartMenu" type="Control" parent="." unique_id=1230897194]
 layout_mode = 1
-anchor_left = 0.016666668
-anchor_top = 0.02962963
-anchor_right = 0.98333335
-anchor_bottom = 0.97037035
+anchor_left = 0.0125
+anchor_top = 0.022222223
+anchor_right = 0.9875
+anchor_bottom = 0.9777778
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -125,7 +69,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
-theme = SubResource("Theme_tryju")
+theme = ExtResource("5_r3nkn")
 
 [node name="LevelsMenu" type="Control" parent="." unique_id=394315189]
 visible = false
@@ -231,7 +175,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
-theme = SubResource("Theme_tryju")
+theme = ExtResource("5_r3nkn")
 
 [node name="Tinting" parent="." unique_id=1261466242 instance=ExtResource("6_aify2")]
 visible = false

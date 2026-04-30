@@ -1,3 +1,93 @@
 [gd_scene format=3 uid="uid://obqeiafka73e"]
 
+[ext_resource type="Theme" uid="uid://cxriancpnx75o" path="res://resources/themes/cyan_button.tres" id="1_sad0e"]
+[ext_resource type="Script" uid="uid://duh8ftb6laqj8" path="res://scenes_scripts/ui/hud/ui_layer.gd" id="1_tp5bd"]
+[ext_resource type="PackedScene" uid="uid://cj1lvehfme1dw" path="res://scenes_scripts/ui/tinting.tscn" id="2_e325d"]
+
 [node name="UILayer" type="CanvasLayer" unique_id=51763774]
+script = ExtResource("1_tp5bd")
+
+[node name="Control" type="Control" parent="." unique_id=1885894970]
+layout_mode = 3
+anchor_left = 0.0125
+anchor_top = 0.022222223
+anchor_right = 0.9875
+anchor_bottom = 0.9777778
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseButton" type="Button" parent="Control" unique_id=1838084363]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_bottom = 96.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Tinting" parent="." unique_id=1261466242 instance=ExtResource("2_e325d")]
+
+[node name="PauseMenu" type="Control" parent="." unique_id=726044164]
+custom_minimum_size = Vector2(666, 666)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = -436.0
+offset_right = 333.0
+offset_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="PauseMenu" unique_id=1674905843]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = -276.0
+offset_right = 304.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/Container" unique_id=1759643015]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_sad0e")
+
+[node name="OptionsButton" type="Button" parent="PauseMenu/Container" unique_id=155750206]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_sad0e")
+
+[node name="RestartButton" type="Button" parent="PauseMenu/Container" unique_id=1853521077]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_sad0e")
+
+[node name="QuitButton" type="Button" parent="PauseMenu/Container" unique_id=1282513740]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_sad0e")
+
+[node name="Label" type="Label" parent="PauseMenu" unique_id=2020483254]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "The game is paused..."

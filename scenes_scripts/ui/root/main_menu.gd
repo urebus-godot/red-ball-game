@@ -36,7 +36,6 @@ func show_start_menu() -> void:
 
 
 func _ready() -> void:
-	TransitionScreen.end_trans()
 	levels_menu.visible = true
 	levels_menu.position.x = 2000
 	DataManager.load_data()
