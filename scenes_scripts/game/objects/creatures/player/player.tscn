@@ -48,3 +48,4 @@ move_component = NodePath("../MoveComponent")
 
 [node name="Camera" parent="." index="7" unique_id=1760591003 node_paths=PackedStringArray("player") instance=ExtResource("6_30j7b")]
 player = NodePath("..")
+trans_enabled = false

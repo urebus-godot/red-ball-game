@@ -7,6 +7,7 @@ const TRANS_TYPE: Tween.TransitionType = Tween.TransitionType.TRANS_SINE
 const TWEEN_DURATION: float = 0.6
 
 @export var player: Player
+@export var trans_enabled: bool = true
 
 var direction: Direction = Direction.CENTER
 var player_move_direction: Direction = Direction.CENTER
@@ -24,15 +25,14 @@ func trans_offset(trans_direction: Direction) -> void:
 
 func check_for_trans() -> void:
 	while true:
-		await get_tree().create_timer(.02).timeout
-		#if player_move_direction == 0:
-			#trans_offset(Direction.CENTER)
+		await get_tree().create_timer(.01).timeout
+		if player_move_direction == 0:
+			trans_offset(Direction.CENTER)
 		if player_move_direction != sign(player.control_component.move_direction):
 			await get_tree().create_timer(0.3).timeout
 			player_move_direction = sign(player.linear_velocity.x)
 			trans_offset(player_move_direction)
-			print(player_move_direction)
-		
+			print("player_move_direction=", player_move_direction)
 
 
 func _process(delta: float) -> void:
@@ -40,4 +40,5 @@ func _process(delta: float) -> void:
 
 
 func _ready() -> void:
-	check_for_trans()
+	if trans_enabled:
+		check_for_trans()

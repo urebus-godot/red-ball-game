@@ -47,8 +47,6 @@ physics_material_override = SubResource("PhysicsMaterial_2djus")
 [node name="Path2D" parent="Terrain" index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_efhvm")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2041122516]
-
 [node name="LevelDoor" parent="." unique_id=2011945355 instance=ExtResource("4_7og53")]
 position = Vector2(1088, 320)
 level = 1
