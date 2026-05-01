@@ -7,6 +7,11 @@ var audio_settings: Dictionary[String, float] = {
 	"sfx_volume": 0.8,
 }
 
+var key_binding_settings: Dictionary[String, String] = {
+	"interact": "E",
+	"restart": "P"
+}
+
 
 func save_settings() -> void:
 	var config_file = ConfigFile.new()

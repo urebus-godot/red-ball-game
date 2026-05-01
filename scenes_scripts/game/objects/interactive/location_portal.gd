@@ -19,5 +19,5 @@ func _on_body_entered(body: Node2D) -> void:
 	super._on_body_entered(body)
 
 func _on_body_exited(body: Node2D) -> void:
-	super._on_body_entered(body)
+	super._on_body_exited(body)
 	animated_sprite.play("close")

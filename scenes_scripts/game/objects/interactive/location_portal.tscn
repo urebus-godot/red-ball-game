@@ -31,6 +31,7 @@ size = Vector2(128, 160)
 collision_layer = 0
 script = ExtResource("1_0ay6s")
 interaction_delay = 0.2
+showed_name = "location portal"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1338046011]
 position = Vector2(0, -128)

@@ -4,6 +4,7 @@ signal player_entered(object: InteractiveObject)
 signal player_exited(object: InteractiveObject)
 
 @export var interaction_delay: float = 0.0
+@export var showed_name: String = "interactive object"
 
 func interact() -> void: ## This function is being called when user presses interaction action
 	if interaction_delay > 0.0:

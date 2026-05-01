@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="3_efhvm"]
 [ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/creatures/player/player.tscn" id="3_pkcbc"]
 [ext_resource type="PackedScene" uid="uid://diy12vbxi3eab" path="res://scenes_scripts/game/objects/interactive/location_portal.tscn" id="4_7og53"]
+[ext_resource type="PackedScene" uid="uid://bols5fh2gof8t" path="res://scenes_scripts/ui/interact_label.tscn" id="4_hcrup"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2djus"]
 
@@ -39,6 +40,10 @@ visible = false
 nodes_for_texts = [NodePath("../../Player")]
 properties_for_texts = Array[String](["linear_velocity"])
 
+[node name="InteractLabel" parent="UILayer" unique_id=1502365372 instance=ExtResource("4_hcrup")]
+visible = false
+offset_top = -193.0
+
 [node name="Player" parent="." unique_id=840999448 instance=ExtResource("3_pkcbc")]
 
 [node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("3_efhvm")]
@@ -54,5 +59,6 @@ z_index = -1
 position = Vector2(1144, 400)
 level = 1
 interaction_delay = 0.4
+showed_name = "portal to level 1"
 
 [editable path="Terrain"]
