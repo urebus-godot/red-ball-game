@@ -32,7 +32,7 @@ func check_for_trans() -> void:
 			await get_tree().create_timer(0.3).timeout
 			player_move_direction = sign(player.linear_velocity.x)
 			trans_offset(player_move_direction)
-			print("player_move_direction=", player_move_direction)
+			#print("player_move_direction=", player_move_direction)
 
 
 func _process(delta: float) -> void:

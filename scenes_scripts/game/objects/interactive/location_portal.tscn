@@ -30,6 +30,7 @@ size = Vector2(128, 160)
 [node name="LocationPortal" type="Area2D" unique_id=2011945355]
 collision_layer = 0
 script = ExtResource("1_0ay6s")
+interaction_delay = 0.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1338046011]
 position = Vector2(0, -128)
@@ -40,6 +41,9 @@ autoplay = "closed"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1077028436]
 position = Vector2(0, -112)
 shape = SubResource("RectangleShape2D_efhvm")
+
+[node name="Center" type="Marker2D" parent="." unique_id=1011116954]
+position = Vector2(0, -112)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

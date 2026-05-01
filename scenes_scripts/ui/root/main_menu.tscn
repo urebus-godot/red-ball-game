@@ -5,9 +5,12 @@
 [ext_resource type="Theme" uid="uid://cvprk2si4e2v2" path="res://resources/themes/square_button.tres" id="3_3djqw"]
 [ext_resource type="Theme" uid="uid://cxriancpnx75o" path="res://resources/themes/cyan_button.tres" id="3_n363v"]
 [ext_resource type="Theme" uid="uid://k8oddh018ug7" path="res://resources/themes/red_button.tres" id="4_7u1tn"]
+[ext_resource type="Texture2D" uid="uid://b0sr2tgrnf5oe" path="res://resources/textures/ui/icons/play_icon.png" id="4_tryju"]
 [ext_resource type="Theme" uid="uid://c6yrnifyunf8d" path="res://resources/themes/blue_square_button.tres" id="5_r3nkn"]
 [ext_resource type="PackedScene" uid="uid://cj1lvehfme1dw" path="res://scenes_scripts/ui/tinting.tscn" id="6_aify2"]
 [ext_resource type="PackedScene" uid="uid://de4m7ia64dubp" path="res://scenes_scripts/ui/menus/options_menu.tscn" id="6_bvkmw"]
+[ext_resource type="Texture2D" uid="uid://bjrim8ia4jryv" path="res://resources/textures/ui/icons/arrow_back_icon.png" id="6_vfq3m"]
+[ext_resource type="Texture2D" uid="uid://c0b8j31ja6o8u" path="res://resources/textures/ui/icons/gear_icon.png" id="6_ygyyt"]
 
 [node name="MainMenu" type="Control" unique_id=1451304987]
 layout_mode = 3
@@ -58,6 +61,8 @@ size_flags_vertical = 3
 focus_mode = 0
 theme = ExtResource("3_n363v")
 text = "Play"
+icon = ExtResource("4_tryju")
+expand_icon = true
 
 [node name="QuitButton" type="Button" parent="StartMenu/VBoxContainer" unique_id=1438836794]
 layout_mode = 2
@@ -65,6 +70,8 @@ size_flags_vertical = 3
 focus_mode = 0
 theme = ExtResource("4_7u1tn")
 text = "Quit"
+icon = ExtResource("6_vfq3m")
+expand_icon = true
 
 [node name="OptionsButton" type="Button" parent="StartMenu" unique_id=1650623766]
 custom_minimum_size = Vector2(128, 128)
@@ -73,6 +80,8 @@ offset_right = 8.0
 offset_bottom = 8.0
 focus_mode = 0
 theme = ExtResource("5_r3nkn")
+icon = ExtResource("6_ygyyt")
+icon_alignment = 1
 
 [node name="LevelsMenu" type="Control" parent="." unique_id=394315189]
 visible = false

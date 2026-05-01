@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://duh8ftb6laqj8" path="res://scenes_scripts/ui/hud/ui_layer.gd" id="1_tp5bd"]
 [ext_resource type="PackedScene" uid="uid://cj1lvehfme1dw" path="res://scenes_scripts/ui/tinting.tscn" id="2_e325d"]
 [ext_resource type="Theme" uid="uid://c6yrnifyunf8d" path="res://resources/themes/blue_square_button.tres" id="2_v78qn"]
+[ext_resource type="Texture2D" uid="uid://dh7w325viheib" path="res://resources/textures/ui/icons/pause_icon.png" id="3_xgkvo"]
 [ext_resource type="PackedScene" uid="uid://de4m7ia64dubp" path="res://scenes_scripts/ui/menus/options_menu.tscn" id="4_8qgv2"]
 
 [node name="UILayer" type="CanvasLayer" unique_id=51763774]
@@ -30,6 +31,7 @@ offset_left = -96.0
 offset_bottom = 96.0
 grow_horizontal = 0
 theme = ExtResource("2_v78qn")
+icon = ExtResource("3_xgkvo")
 icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true

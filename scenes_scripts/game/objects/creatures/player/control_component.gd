@@ -25,7 +25,7 @@ func jump_input(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	move_input()
 	jump_input(delta)
-	print("move_direction=",move_direction)
+	#print("move_direction=",move_direction)
 
 
 func _on_move_component_enter_floor() -> void:

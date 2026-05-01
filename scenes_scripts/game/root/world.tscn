@@ -53,5 +53,6 @@ z_index = -1
 [node name="LocationPortal" parent="Portals" unique_id=2011945355 instance=ExtResource("4_7og53")]
 position = Vector2(1144, 400)
 level = 1
+interaction_delay = 0.4
 
 [editable path="Terrain"]
