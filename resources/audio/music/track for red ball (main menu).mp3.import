@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcu1dy5g00q42"
+path="res://.godot/imported/track for red ball (main menu).mp3-ae824bfd3dd6ad2979ff5e18ebb7d466.mp3str"
+
+[deps]
+
+source_file="res://resources/audio/music/track for red ball (main menu).mp3"
+dest_files=["res://.godot/imported/track for red ball (main menu).mp3-ae824bfd3dd6ad2979ff5e18ebb7d466.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

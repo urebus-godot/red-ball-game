@@ -83,6 +83,15 @@ theme = ExtResource("5_r3nkn")
 icon = ExtResource("6_ygyyt")
 icon_alignment = 1
 
+[node name="Label" type="Label" parent="StartMenu" unique_id=411116197]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+
 [node name="LevelsMenu" type="Control" parent="." unique_id=394315189]
 visible = false
 layout_mode = 1

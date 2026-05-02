@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://de4m7ia64dubp"]
 
 [ext_resource type="Script" uid="uid://dxbjg7tng3tjj" path="res://scenes_scripts/ui/menus/options_menu.gd" id="1_y8snl"]
+[ext_resource type="Texture2D" uid="uid://bjrim8ia4jryv" path="res://resources/textures/ui/icons/arrow_back_icon.png" id="2_hy6fi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdiy1"]
 bg_color = Color(0.26601917, 0.24926722, 0.27024823, 1)
@@ -113,6 +114,8 @@ offset_bottom = 8.0
 grow_horizontal = 0
 focus_mode = 0
 theme = SubResource("Theme_mjgam")
+icon = ExtResource("2_hy6fi")
+expand_icon = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=721341544]
 layout_mode = 1
