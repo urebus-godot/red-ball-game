@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://c6yrnifyunf8d"]
 
+[ext_resource type="FontFile" uid="uid://bd7pnyayqtx55" path="res://resources/fonts/Nevduplenysh-Regular.otf" id="1_m2026"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n363v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aify2"]
@@ -50,8 +52,10 @@ Button/colors/font_color = Color(0.92099476, 0.9209946, 0.9209946, 1)
 Button/colors/font_hover_color = Color(0.98, 0.98, 0.98, 1)
 Button/colors/font_outline_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
 Button/colors/font_pressed_color = Color(0.82, 0.82, 0.82, 1)
+Button/colors/icon_pressed_color = Color(0.9, 0.9, 0.9, 1)
 Button/constants/outline_size = 16
-Button/font_sizes/font_size = 64
+Button/font_sizes/font_size = 80
+Button/fonts/font = ExtResource("1_m2026")
 Button/styles/focus = SubResource("StyleBoxEmpty_n363v")
 Button/styles/hover = SubResource("StyleBoxFlat_aify2")
 Button/styles/normal = SubResource("StyleBoxFlat_r3nkn")

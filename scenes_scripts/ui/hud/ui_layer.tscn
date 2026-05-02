@@ -6,64 +6,12 @@
 [ext_resource type="Theme" uid="uid://c6yrnifyunf8d" path="res://resources/themes/blue_square_button.tres" id="2_v78qn"]
 [ext_resource type="Texture2D" uid="uid://dh7w325viheib" path="res://resources/textures/ui/icons/pause_icon.png" id="3_xgkvo"]
 [ext_resource type="PackedScene" uid="uid://de4m7ia64dubp" path="res://scenes_scripts/ui/menus/options_menu.tscn" id="4_8qgv2"]
+[ext_resource type="Texture2D" uid="uid://b0sr2tgrnf5oe" path="res://resources/textures/ui/icons/play_icon.png" id="6_8q4gr"]
 [ext_resource type="Texture2D" uid="uid://c0b8j31ja6o8u" path="res://resources/textures/ui/icons/gear_icon.png" id="6_srnps"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r17h5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hi3bd"]
-bg_color = Color(0, 0.97642726, 0.6341371, 1)
-border_width_left = 24
-border_width_top = 24
-border_width_right = 24
-border_width_bottom = 24
-border_color = Color(0.04320179, 0.23985076, 0.21024472, 1)
-border_blend = true
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-shadow_color = Color(0.76273453, 1, 0.8624055, 1)
-shadow_size = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r17h5"]
-bg_color = Color(3.5616756e-06, 0.8548132, 0.551552, 1)
-border_width_left = 24
-border_width_top = 24
-border_width_right = 24
-border_width_bottom = 24
-border_color = Color(0.04320179, 0.23985076, 0.21024472, 1)
-border_blend = true
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh3ls"]
-bg_color = Color(0, 0.75, 0.48750007, 1)
-border_width_left = 24
-border_width_top = 24
-border_width_right = 24
-border_width_bottom = 24
-border_color = Color(0.025200002, 0.14, 0.12469335, 1)
-border_blend = true
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
-
-[sub_resource type="Theme" id="Theme_xgkvo"]
-Button/colors/font_color = Color(0.92099476, 0.9209946, 0.9209946, 1)
-Button/colors/font_hover_color = Color(0.98, 0.98, 0.98, 1)
-Button/colors/font_outline_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
-Button/colors/font_pressed_color = Color(0.82, 0.82, 0.82, 1)
-Button/constants/outline_size = 16
-Button/font_sizes/font_size = 64
-Button/styles/focus = SubResource("StyleBoxEmpty_r17h5")
-Button/styles/hover = SubResource("StyleBoxFlat_hi3bd")
-Button/styles/normal = SubResource("StyleBoxFlat_r17h5")
-Button/styles/pressed = SubResource("StyleBoxFlat_wh3ls")
+[ext_resource type="Texture2D" uid="uid://bjrim8ia4jryv" path="res://resources/textures/ui/icons/arrow_back_icon.png" id="7_jgfe7"]
+[ext_resource type="FontFile" uid="uid://cwww4yawa4yb4" path="res://resources/fonts/citricacyrillic.ttf" id="7_mdk54"]
+[ext_resource type="Texture2D" uid="uid://cfjwv5sk0y4mr" path="res://resources/textures/ui/icons/restart_icon.png" id="8_lks73"]
+[ext_resource type="Theme" uid="uid://k8oddh018ug7" path="res://resources/themes/red_button.tres" id="8_udvf3"]
 
 [node name="UILayer" type="CanvasLayer" unique_id=51763774]
 process_mode = 3
@@ -98,7 +46,6 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="PauseMenu" type="Control" parent="." unique_id=726044164]
-visible = false
 custom_minimum_size = Vector2(666, 666)
 layout_mode = 3
 anchors_preset = 8
@@ -131,15 +78,16 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
-theme = SubResource("Theme_xgkvo")
+theme = ExtResource("1_sad0e")
 theme_override_font_sizes/font_size = 48
 text = "Resume"
+icon = ExtResource("6_8q4gr")
 
 [node name="OptionsButton" type="Button" parent="PauseMenu/Container" unique_id=155750206]
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
-theme = ExtResource("1_sad0e")
+theme = ExtResource("2_v78qn")
 theme_override_font_sizes/font_size = 48
 text = "Options"
 icon = ExtResource("6_srnps")
@@ -149,17 +97,20 @@ expand_icon = true
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
-theme = ExtResource("1_sad0e")
+theme = ExtResource("2_v78qn")
 theme_override_font_sizes/font_size = 48
 text = "Restart"
+icon = ExtResource("8_lks73")
+expand_icon = true
 
 [node name="QuitButton" type="Button" parent="PauseMenu/Container" unique_id=1282513740]
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
-theme = ExtResource("1_sad0e")
+theme = ExtResource("8_udvf3")
 theme_override_font_sizes/font_size = 48
 text = "Quit to main menu"
+icon = ExtResource("7_jgfe7")
 
 [node name="Label" type="Label" parent="PauseMenu" unique_id=2020483254]
 layout_mode = 1
@@ -170,6 +121,10 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.80327183, 0.9467562, 0.96436447, 1)
+theme_override_colors/font_outline_color = Color(0.041754134, 0.27078584, 0.4806599, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("7_mdk54")
 theme_override_font_sizes/font_size = 64
 text = "The game is paused..."
 

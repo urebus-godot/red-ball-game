@@ -132,11 +132,13 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
+value = 75.0
 
 [node name="SFXVolumeSlider" type="HSlider" parent="Control/VBoxContainer" unique_id=597341475]
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
+value = 75.0
 
 [connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="value_changed" from="Control/VBoxContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]

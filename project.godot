@@ -23,7 +23,7 @@ buses/channel_disable_time=1.0
 [autoload]
 
 TransitionScreen="*uid://p4bq4td5ewu0"
-AudioManager="*uid://cwxd60lw0ytrx"
+MusicPlayer="*uid://cwxd60lw0ytrx"
 Constants="*uid://cc2rhgr4p28ic"
 DataManager="*uid://dgomqobh7e3ie"
 SettingsDataManager="*uid://duucwcv73qwci"
