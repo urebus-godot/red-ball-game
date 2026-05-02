@@ -11,28 +11,23 @@ const MAX_DB: float = 0.0
 @onready var music_volume_slider: HSlider = $Control/VBoxContainer/MusicVolumeSlider
 @onready var sfx_volume_slider: HSlider = $Control/VBoxContainer/SFXVolumeSlider
 
-var is_ui_free: bool = false
-
 
 func show_menu() -> void:
-	is_ui_free = false
 	position.y = START_POSITION_Y
 	var tween = create_tween().set_trans(Constants.TRANS_TYPE)
 	var center = 540.0 - size.y / 2.0
 	tween.tween_property(
 		self, "position:y", center, TWEEN_DURATION
 	)
-	await tween.finished
-	is_ui_free = true
+	#await tween.finished
 
 
 func hide_menu() -> void:
-	is_ui_free = false
 	var tween = create_tween().set_trans(Constants.TRANS_TYPE)
 	tween.tween_property(
 		self, "position:y", END_POSITION_Y, TWEEN_DURATION
 	)
-	await tween.finished
+	#await tween.finished
 
 
 func sync_sliders() -> void:
@@ -65,14 +60,15 @@ func set_volume(bus_name: String, value: float, key: String) -> void:
 
 
 func _ready() -> void:
+	sync_sliders()
 	visible = true
 	position.y = START_POSITION_Y
 
 
 func _on_close_button_pressed() -> void:
-	if is_ui_free:
-		closed.emit()
-		await hide_menu()
+	SettingsDataManager.save_settings()
+	closed.emit()
+	hide_menu()
 
 
 func _on_music_volume_slider_value_changed(value: float) -> void:

@@ -3,8 +3,8 @@ extends Node
 const SETTINGS_DATA_PATH: String = "user://settings_data.cfg"
 
 var audio_settings: Dictionary[String, float] = {
-	"music_volume": 0.8,
-	"sfx_volume": 0.8,
+	"music_volume": 0.75,
+	"sfx_volume": 0.75,
 }
 
 var key_binding_settings: Dictionary[String, String] = {

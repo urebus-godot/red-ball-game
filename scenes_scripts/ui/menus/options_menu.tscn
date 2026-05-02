@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dxbjg7tng3tjj" path="res://scenes_scripts/ui/menus/options_menu.gd" id="1_y8snl"]
 [ext_resource type="Texture2D" uid="uid://bjrim8ia4jryv" path="res://resources/textures/ui/icons/arrow_back_icon.png" id="2_hy6fi"]
+[ext_resource type="Texture2D" uid="uid://c0b8j31ja6o8u" path="res://resources/textures/ui/icons/gear_icon.png" id="3_wn0fj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdiy1"]
-bg_color = Color(0.26601917, 0.24926722, 0.27024823, 1)
+bg_color = Color(0.23927224, 0.2248086, 0.2428881, 1)
 border_width_left = 16
 border_width_top = 16
 border_width_right = 16
 border_width_bottom = 16
-border_color = Color(0.20037332, 0.1768, 0.26, 1)
+border_color = Color(0.15416168, 0.1479, 0.17, 1)
 corner_radius_top_left = 42
 corner_radius_top_right = 42
 corner_radius_bottom_right = 42
@@ -75,6 +76,18 @@ Button/styles/hover = SubResource("StyleBoxFlat_hy6fi")
 Button/styles/normal = SubResource("StyleBoxFlat_wn0fj")
 Button/styles/pressed = SubResource("StyleBoxFlat_d5k5w")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjgam"]
+bg_color = Color(0.49360004, 0.43199998, 0.96, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnqoq"]
+bg_color = Color(0.63783336, 0.59000003, 1, 1)
+
+[sub_resource type="Theme" id="Theme_spabx"]
+HSlider/icons/grabber = ExtResource("3_wn0fj")
+HSlider/icons/grabber_highlight = ExtResource("3_wn0fj")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_mjgam")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_qnqoq")
+
 [node name="OptionsMenu" type="Panel" unique_id=510311911]
 custom_minimum_size = Vector2(500, 512)
 anchors_preset = 8
@@ -132,12 +145,14 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
+theme = SubResource("Theme_spabx")
 value = 75.0
 
 [node name="SFXVolumeSlider" type="HSlider" parent="Control/VBoxContainer" unique_id=597341475]
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
+theme = SubResource("Theme_spabx")
 value = 75.0
 
 [connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]

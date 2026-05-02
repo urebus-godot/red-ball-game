@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b0sr2tgrnf5oe" path="res://resources/textures/ui/icons/play_icon.png" id="6_8q4gr"]
 [ext_resource type="Texture2D" uid="uid://c0b8j31ja6o8u" path="res://resources/textures/ui/icons/gear_icon.png" id="6_srnps"]
 [ext_resource type="Texture2D" uid="uid://bjrim8ia4jryv" path="res://resources/textures/ui/icons/arrow_back_icon.png" id="7_jgfe7"]
-[ext_resource type="FontFile" uid="uid://cwww4yawa4yb4" path="res://resources/fonts/citricacyrillic.ttf" id="7_mdk54"]
 [ext_resource type="Texture2D" uid="uid://cfjwv5sk0y4mr" path="res://resources/textures/ui/icons/restart_icon.png" id="8_lks73"]
 [ext_resource type="Theme" uid="uid://k8oddh018ug7" path="res://resources/themes/red_button.tres" id="8_udvf3"]
+[ext_resource type="FontFile" uid="uid://bos0ml0pvipmw" path="res://resources/fonts/SSFBreakthrough-Extrabold.ttf" id="11_lks73"]
 
 [node name="UILayer" type="CanvasLayer" unique_id=51763774]
 process_mode = 3
@@ -46,6 +46,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="PauseMenu" type="Control" parent="." unique_id=726044164]
+visible = false
 custom_minimum_size = Vector2(666, 666)
 layout_mode = 3
 anchors_preset = 8
@@ -124,7 +125,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.80327183, 0.9467562, 0.96436447, 1)
 theme_override_colors/font_outline_color = Color(0.041754134, 0.27078584, 0.4806599, 1)
 theme_override_constants/outline_size = 16
-theme_override_fonts/font = ExtResource("7_mdk54")
+theme_override_fonts/font = ExtResource("11_lks73")
 theme_override_font_sizes/font_size = 64
 text = "The game is paused..."
 

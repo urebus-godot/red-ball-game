@@ -45,6 +45,7 @@ visible = false
 offset_top = -193.0
 
 [node name="Player" parent="." unique_id=840999448 instance=ExtResource("3_pkcbc")]
+position = Vector2(0, 288)
 
 [node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("3_efhvm")]
 physics_material_override = SubResource("PhysicsMaterial_2djus")
@@ -55,10 +56,16 @@ curve = SubResource("Curve2D_efhvm")
 [node name="Portals" type="Node2D" parent="." unique_id=482774189]
 z_index = -1
 
-[node name="LocationPortal" parent="Portals" unique_id=2011945355 instance=ExtResource("4_7og53")]
-position = Vector2(1144, 400)
-level = 1
+[node name="MainMenuPortal" parent="Portals" unique_id=2011945355 instance=ExtResource("4_7og53")]
+position = Vector2(0, 400)
+scene_path = "res://scenes_scripts/ui/root/main_menu.tscn"
 interaction_delay = 0.4
 showed_name = "portal to level 1"
+
+[node name="LevelPortal" parent="Portals" unique_id=865033601 instance=ExtResource("4_7og53")]
+position = Vector2(1144, 400)
+scene_path = "none"
+interaction_delay = 0.4
+showed_name = "portal to main menu"
 
 [editable path="Terrain"]

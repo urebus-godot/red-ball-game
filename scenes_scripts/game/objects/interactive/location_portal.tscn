@@ -30,6 +30,7 @@ size = Vector2(128, 160)
 [node name="LocationPortal" type="Area2D" unique_id=2011945355]
 collision_layer = 0
 script = ExtResource("1_0ay6s")
+scene_path = "res://scenes_scripts/game/root/world.tscn"
 interaction_delay = 0.2
 showed_name = "location portal"
 
