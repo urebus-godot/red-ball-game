@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://41b35ssy4bxk"
-path="res://.godot/imported/red_ball_face.png-9aec642083ce25693a320071aa2af4f4.ctex"
+uid="uid://wynqdg0tvusl"
+path="res://.godot/imported/water.png-826106cb7f5fa3e387c501e25865bc06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/game/creatures/player/red_ball_face.png"
-dest_files=["res://.godot/imported/red_ball_face.png-9aec642083ce25693a320071aa2af4f4.ctex"]
+source_file="res://resources/textures/game/world_environment/water.png"
+dest_files=["res://.godot/imported/water.png-826106cb7f5fa3e387c501e25865bc06.ctex"]
 
 [params]
 

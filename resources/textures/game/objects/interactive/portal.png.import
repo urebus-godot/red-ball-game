@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj0e604x313nm"
-path="res://.godot/imported/ground.png-f50c9b3ac466fb07199dfdbbbae01d6f.ctex"
+uid="uid://br0481lah1ok"
+path="res://.godot/imported/portal.png-953b1ef835e29460364d1e8c0b496ba5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/game/solids/ground.png"
-dest_files=["res://.godot/imported/ground.png-f50c9b3ac466fb07199dfdbbbae01d6f.ctex"]
+source_file="res://resources/textures/game/objects/interactive/portal.png"
+dest_files=["res://.godot/imported/portal.png-953b1ef835e29460364d1e8c0b496ba5.ctex"]
 
 [params]
 

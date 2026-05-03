@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://iky0jh5jilni"]
-
-[ext_resource type="Script" uid="uid://dvv2f64jqfn67" path="res://scenes_scripts/game/objects/creatures/player/control_component.gd" id="1_2vgtq"]
-
-[node name="ControlComponent" type="Node" unique_id=759258089]
-script = ExtResource("1_2vgtq")

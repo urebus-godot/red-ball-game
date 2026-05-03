@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cdla8kspop6ck"]
 
-[ext_resource type="PackedScene" uid="uid://clq8s8kobcgab" path="res://scenes_scripts/game/objects/creatures/creature.tscn" id="1_rv035"]
-[ext_resource type="Script" uid="uid://tcpqkg1nn6p5" path="res://scenes_scripts/game/objects/creatures/player/player.gd" id="2_22jnx"]
-[ext_resource type="Texture2D" uid="uid://ia74qyu0klo8" path="res://resources/textures/game/creatures/player/red_ball.png" id="3_ewilg"]
-[ext_resource type="PackedScene" uid="uid://iky0jh5jilni" path="res://scenes_scripts/game/objects/creatures/player/control_component.tscn" id="3_hka56"]
-[ext_resource type="Texture2D" uid="uid://41b35ssy4bxk" path="res://resources/textures/game/creatures/player/red_ball_face.png" id="4_fd7rk"]
-[ext_resource type="PackedScene" uid="uid://cn48baku04cx" path="res://scenes_scripts/game/objects/creatures/player/camera.tscn" id="6_30j7b"]
+[ext_resource type="PackedScene" uid="uid://clq8s8kobcgab" path="res://scenes_scripts/game/objects/physical/creatures/creature.tscn" id="1_rv035"]
+[ext_resource type="Script" uid="uid://tcpqkg1nn6p5" path="res://scenes_scripts/game/objects/physical/creatures/player/player.gd" id="2_22jnx"]
+[ext_resource type="Texture2D" uid="uid://ia74qyu0klo8" path="res://resources/textures/game/objects/creatures/player/red_ball.png" id="3_ewilg"]
+[ext_resource type="PackedScene" uid="uid://iky0jh5jilni" path="res://scenes_scripts/game/objects/physical/creatures/player/control_component.tscn" id="3_hka56"]
+[ext_resource type="Texture2D" uid="uid://41b35ssy4bxk" path="res://resources/textures/game/objects/creatures/player/red_ball_face.png" id="4_fd7rk"]
+[ext_resource type="PackedScene" uid="uid://cn48baku04cx" path="res://scenes_scripts/game/objects/physical/creatures/player/camera.tscn" id="6_30j7b"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30j7b"]
 rough = true

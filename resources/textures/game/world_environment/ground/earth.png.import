@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ia74qyu0klo8"
-path="res://.godot/imported/red_ball.png-0034b4d834ff194414764c525e08cd88.ctex"
+uid="uid://pnysrxmjjph8"
+path="res://.godot/imported/earth.png-883be59183c00afda06dd180a026fa82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/game/creatures/player/red_ball.png"
-dest_files=["res://.godot/imported/red_ball.png-0034b4d834ff194414764c525e08cd88.ctex"]
+source_file="res://resources/textures/game/world_environment/ground/earth.png"
+dest_files=["res://.godot/imported/earth.png-883be59183c00afda06dd180a026fa82.ctex"]
 
 [params]
 

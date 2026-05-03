@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5c6vtq65bvn0"]
 
-[ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/physics_object.tscn" id="1_gtby6"]
-[ext_resource type="Texture2D" uid="uid://bxagg5avjekep" path="res://resources/textures/game/solids/crate.png" id="2_kdbte"]
+[ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/physical/physics_object.tscn" id="1_gtby6"]
+[ext_resource type="Texture2D" uid="uid://bxagg5avjekep" path="res://resources/textures/game/objects/solids/crate.png" id="2_kdbte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03go1"]
 size = Vector2(148, 160)

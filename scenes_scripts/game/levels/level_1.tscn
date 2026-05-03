@@ -1,24 +1,46 @@
 [gd_scene format=3 uid="uid://dwlerkwucmqsi"]
 
 [ext_resource type="PackedScene" uid="uid://bb6koovj7b8o" path="res://scenes_scripts/game/levels/base_level.tscn" id="1_yhru0"]
-[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/solid/physics/crate.tscn" id="3_xya2l"]
+[ext_resource type="Shader" uid="uid://bxe7lylg6tj13" path="res://resources/scripts/shaders/water.gdshader" id="2_1k6lp"]
+[ext_resource type="Texture2D" uid="uid://wynqdg0tvusl" path="res://resources/textures/game/world_environment/water.png" id="3_1k6lp"]
+[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/physical/physics/crate.tscn" id="3_xya2l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mc8sp"]
+shader = ExtResource("2_1k6lp")
+shader_parameter/frequency = 6.0
+shader_parameter/speed = 5.0
+shader_parameter/amplitude = 0.001
+shader_parameter/blur = 0.005
 
 [sub_resource type="Curve2D" id="Curve2D_5afly"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1360, 560, 0, 0, 0, 0, 448, 744, 0, 0, 0, 0, 1704, 728, 0, 0, 0, 0, 2752, 648, 0, 0, 0, 0, 3704, 552, 0, 0, 0, 0, 4856, 528, 0, 0, 0, 0, 5792, 608, 0, 0, 0, 0, 7032, 712, 0, 0, 0, 0, 8000, 624, 0, 0, 0, 0, 8560, 576, 0, 0, 0, 0, 9608, 440, 0, 0, 0, 0, 10896, 480, 0, 0, 0, 0, 12048, 600, 0, 0, 0, 0, 12552, 664, 0, 0, 0, 0, 13720, 632, 0, 0, 0, 0, 14752, 608, 0, 0, 0, 0, 16272, 664, 0, 0, 0, 0, 16480, 664, 0, 0, 0, 0, 18560, 640, 0, 0, 0, 0, 20184, 640, 0, 0, 0, 0, 21320, 584, 0, 0, 0, 0, 22168, 616, 0, 0, 0, 0, 20872, 4232, 0, 0, 0, 0, -1392, 3552, 0, 0, 0, 0, -3736, 1944, 0, 0, 0, 0, -4664, 856, 0, 0, 0, 0, -4040, 152, 0, 0, 0, 0, -3872, 40, 0, 0, 0, 0, -3712, -264, 0, 0, 0, 0, -3592, -472, 0, 0, 0, 0, -3392, -600, 0, 0, 0, 0, -3232, -704, 0, 0, 0, 0, -3072, -648, 0, 0, 0, 0, -3008, -824, 0, 0, 0, 0, -2928, -992, 0, 0, 0, 0, -2792, -1120, 0, 0, 0, 0, -2672, -1320, 0, 0, 0, 0, -2400, -1424, 0, 0, 0, 0, -2304, -1352, 0, 0, 0, 0, -2184, -1192, 0, 0, 0, 0, -2096, -912, 0, 0, 0, 0, -2048, -688, 0, 0, 0, 0, -1984, -424, 0, 0, 0, 0, -1920, -160, 0, 0, 0, 0, -1768, 152, 0, 0, 0, 0, -1504, 472, 0, 0, 0, 0, -1360, 560)
+"points": PackedVector2Array(0, 0, 0, 0, -1360, 560, 0, 0, 0, 0, 448, 744, 0, 0, 0, 0, 1144, 736, 0, 0, 0, 0, 1072, 1232, 0, 0, 0, 0, 2432, 1256, 0, 0, 0, 0, 2480, 784, 0, 0, 0, 0, 5792, 608, 0, 0, 0, 0, 7032, 712, 0, 0, 0, 0, 8000, 624, 0, 0, 0, 0, 8560, 576, 0, 0, 0, 0, 9608, 440, 0, 0, 0, 0, 10896, 480, 0, 0, 0, 0, 12048, 600, 0, 0, 0, 0, 12552, 664, 0, 0, 0, 0, 13720, 632, 0, 0, 0, 0, 14752, 608, 0, 0, 0, 0, 16272, 664, 0, 0, 0, 0, 16480, 664, 0, 0, 0, 0, 18560, 640, 0, 0, 0, 0, 20184, 640, 0, 0, 0, 0, 21320, 584, 0, 0, 0, 0, 22168, 616, 0, 0, 0, 0, 20872, 4232, 0, 0, 0, 0, -1392, 3552, 0, 0, 0, 0, -3736, 1944, 0, 0, 0, 0, -4664, 856, 0, 0, 0, 0, -4040, 152, 0, 0, 0, 0, -3872, 40, 0, 0, 0, 0, -3712, -264, 0, 0, 0, 0, -3592, -472, 0, 0, 0, 0, -3392, -600, 0, 0, 0, 0, -3232, -704, 0, 0, 0, 0, -3072, -648, 0, 0, 0, 0, -3008, -824, 0, 0, 0, 0, -2928, -992, 0, 0, 0, 0, -2792, -1120, 0, 0, 0, 0, -2672, -1320, 0, 0, 0, 0, -2400, -1424, 0, 0, 0, 0, -2304, -1352, 0, 0, 0, 0, -2184, -1192, 0, 0, 0, 0, -2096, -912, 0, 0, 0, 0, -2048, -688, 0, 0, 0, 0, -1984, -424, 0, 0, 0, 0, -1920, -160, 0, 0, 0, 0, -1768, 152, 0, 0, 0, 0, -1504, 472, 0, 0, 0, 0, -1360, 560)
 }
 point_count = 47
 
 [node name="Level1" unique_id=165616865 instance=ExtResource("1_yhru0")]
 
+[node name="BackgroundLayer" parent="." index="0" unique_id=807347235]
+visible = false
+
 [node name="Player" parent="." index="1" unique_id=840999448]
+position = Vector2(456, 592)
 physics_material_override = null
+
+[node name="TextureRect" type="TextureRect" parent="." index="2" unique_id=2104527954]
+material = SubResource("ShaderMaterial_mc8sp")
+offset_left = 912.0
+offset_top = 792.0
+offset_right = 2792.0
+offset_bottom = 1304.0
+texture = ExtResource("3_1k6lp")
+stretch_mode = 1
 
 [node name="Path2D" parent="Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_5afly")
 
-[node name="Crate" parent="." index="4" unique_id=263904471 instance=ExtResource("3_xya2l")]
-position = Vector2(696, 312)
+[node name="Crate" parent="." index="5" unique_id=263904471 instance=ExtResource("3_xya2l")]
+position = Vector2(3264, 600)
 
 [editable path="Terrain"]

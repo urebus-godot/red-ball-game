@@ -1,5 +1,7 @@
 class_name Player extends Creature
 
+const SCALE_TWEEN_DURATION: float = 0.3
+
 @onready var interact_timer: Timer = $InteractTimer
 
 @export var control_component: ControlComponent
@@ -7,15 +9,16 @@ class_name Player extends Creature
 var can_interact: bool = true
 
 var object_to_interact: InteractiveObject = null
+var equipped_artifact = null
 
 
 func tween_scale(decrement: bool = false) -> void:
 	var scale_tween = create_tween().set_parallel().set_trans(Tween.TRANS_SINE)
 	if decrement:
-		scale_tween.tween_property(self, "scale", Vector2.ZERO, 0.3)
+		scale_tween.tween_property(self, "scale", Vector2.ZERO, SCALE_TWEEN_DURATION)
 	else:
 		scale = Vector2.ZERO
-		scale_tween.tween_property(self, "scale", Vector2.ONE, 0.3)
+		scale_tween.tween_property(self, "scale", Vector2.ONE, SCALE_TWEEN_DURATION)
 	await scale_tween.finished
 
 

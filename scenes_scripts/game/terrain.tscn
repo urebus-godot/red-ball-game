@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cyvuaxuyyofnb"]
 
 [ext_resource type="Script" uid="uid://der33q8fh2dcj" path="res://scenes_scripts/game/objects/solid/static/terrain.gd" id="1_xispj"]
-[ext_resource type="Texture2D" uid="uid://pnysrxmjjph8" path="res://resources/textures/game/solids/earth.png" id="2_gthpe"]
-[ext_resource type="Texture2D" uid="uid://dj0e604x313nm" path="res://resources/textures/game/solids/ground.png" id="3_m5anj"]
+[ext_resource type="Texture2D" uid="uid://pnysrxmjjph8" path="res://resources/textures/game/world_environment/ground/earth.png" id="2_gthpe"]
+[ext_resource type="Texture2D" uid="uid://dj0e604x313nm" path="res://resources/textures/game/world_environment/ground/grass.png" id="3_m5anj"]
 
 [sub_resource type="Curve2D" id="Curve2D_xispj"]
 bake_interval = 512.0

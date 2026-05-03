@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://diy12vbxi3eab"]
 
 [ext_resource type="Script" uid="uid://b5ps603jp2pd3" path="res://scenes_scripts/game/objects/interactive/location_portal.gd" id="1_0ay6s"]
-[ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/portal.png" id="2_s76n2"]
+[ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/objects/interactive/portal.png" id="2_s76n2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ay6s"]
 animations = [{

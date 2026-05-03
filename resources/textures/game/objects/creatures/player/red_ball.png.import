@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br0481lah1ok"
-path="res://.godot/imported/portal.png-9b16a784368b50ab901b3d5727bde1a5.ctex"
+uid="uid://ia74qyu0klo8"
+path="res://.godot/imported/red_ball.png-2f4548f955b3fcb5e8a5b1eb2c9e2272.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/game/portal.png"
-dest_files=["res://.godot/imported/portal.png-9b16a784368b50ab901b3d5727bde1a5.ctex"]
+source_file="res://resources/textures/game/objects/creatures/player/red_ball.png"
+dest_files=["res://.godot/imported/red_ball.png-2f4548f955b3fcb5e8a5b1eb2c9e2272.ctex"]
 
 [params]
 
