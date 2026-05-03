@@ -60,12 +60,23 @@ z_index = -1
 position = Vector2(0, 400)
 scene_path = "res://scenes_scripts/ui/root/main_menu.tscn"
 interaction_delay = 0.4
-showed_name = "portal to level 1"
+showed_name = "portal to the main menu"
 
 [node name="LevelPortal" parent="Portals" unique_id=865033601 instance=ExtResource("4_7og53")]
-position = Vector2(1144, 400)
+position = Vector2(768, 400)
 scene_path = "none"
 interaction_delay = 0.4
-showed_name = "portal to main menu"
+
+[node name="LevelPortal2" parent="Portals" unique_id=253732289 instance=ExtResource("4_7og53")]
+position = Vector2(1088, 400)
+level = 2
+scene_path = "none"
+interaction_delay = 0.4
+
+[node name="LevelPortal3" parent="Portals" unique_id=346638725 instance=ExtResource("4_7og53")]
+position = Vector2(1408, 400)
+level = 3
+scene_path = "none"
+interaction_delay = 0.4
 
 [editable path="Terrain"]

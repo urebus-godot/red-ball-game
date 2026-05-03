@@ -6,25 +6,35 @@ class_name LocationPortal extends InteractiveObject
 
 @export var level: int = 1
 @export_enum(
-	"none",
+	Constants.NO_PATH,
 	Constants.MAIN_MENU_PATH,
 	Constants.WORLD_PATH,
-) var scene_path: String = "none"
+) var scene_path: String = Constants.NO_PATH
+
+
+func can_interact() -> bool:
+	var available_levels = game_data.levels_completed + 1
+	return available_levels >= level
 
 
 func interact() -> void:
 	await super.interact()
-	var available_levels = game_data.levels_completed + 1
-	if available_levels >= level:
-		if scene_path == "none":
+	if can_interact():
+		if scene_path == Constants.NO_PATH:
 			TransitionScreen.change_scene(Constants.LEVEL_PATH % level)
 		else:
 			TransitionScreen.change_scene(scene_path)
 
 
+func _ready() -> void:
+	if scene_path == Constants.NO_PATH:
+		showed_name = "portal to the level %s" % level
+	showed_name = "the " + showed_name
+
+
 func _on_body_entered(body: Node2D) -> void:
-	animated_sprite.play("open")
 	super._on_body_entered(body)
+	animated_sprite.play("open")
 
 func _on_body_exited(body: Node2D) -> void:
 	super._on_body_exited(body)

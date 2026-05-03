@@ -51,7 +51,7 @@ player = NodePath("..")
 trans_enabled = false
 
 [node name="InteractTimer" type="Timer" parent="." index="8" unique_id=1944430153]
-wait_time = 0.4
+wait_time = 0.6
 one_shot = true
 
 [connection signal="timeout" from="InteractTimer" to="." method="_on_interact_timer_timeout"]
