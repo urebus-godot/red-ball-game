@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bjrim8ia4jryv" path="res://resources/textures/ui/icons/arrow_back_icon.png" id="7_jgfe7"]
 [ext_resource type="Texture2D" uid="uid://cfjwv5sk0y4mr" path="res://resources/textures/ui/icons/restart_icon.png" id="8_lks73"]
 [ext_resource type="Theme" uid="uid://k8oddh018ug7" path="res://resources/themes/red_button.tres" id="8_udvf3"]
-[ext_resource type="FontFile" uid="uid://bos0ml0pvipmw" path="res://resources/fonts/SSFBreakthrough-Extrabold.ttf" id="11_lks73"]
+[ext_resource type="FontFile" uid="uid://b6hssdofy1hrp" path="res://resources/fonts/SSFBreakthrough-Bold.ttf" id="11_lks73"]
 
 [node name="UILayer" type="CanvasLayer" unique_id=51763774]
 process_mode = 3
@@ -123,8 +123,12 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.80327183, 0.9467562, 0.96436447, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.09816672, 0.31, 1)
 theme_override_colors/font_outline_color = Color(0.041754134, 0.27078584, 0.4806599, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 16
 theme_override_fonts/font = ExtResource("11_lks73")
 theme_override_font_sizes/font_size = 64
 text = "The game is paused..."
