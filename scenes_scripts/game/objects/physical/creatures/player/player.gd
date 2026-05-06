@@ -3,13 +3,15 @@ class_name Player extends Creature
 const SCALE_TWEEN_DURATION: float = 0.3
 
 @onready var interact_timer: Timer = $InteractTimer
+@onready var camera: Camera2D = $Camera
 
 @export var control_component: ControlComponent
+@export var free_camera_mode_enabled: bool = false
 
 var can_interact: bool = true
 
 var object_to_interact: InteractiveObject = null
-var equipped_artifact = null
+var equipped_artifact: Artefact = null
 
 
 func tween_scale(decrement: bool = false) -> void:
@@ -47,6 +49,8 @@ func _input(event: InputEvent) -> void:
 		object_to_interact.interact()
 		match_action_for_interactive_object_class()
 		prints("Now you can't interact!", can_interact)
+	elif event.is_action_pressed("switch_camera_mode") and free_camera_mode_enabled:
+		camera.free_mode = not camera.free_mode
 
 
 func _on_interactive_object_player_entered(object: InteractiveObject) -> void:

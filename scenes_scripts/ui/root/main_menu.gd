@@ -39,7 +39,6 @@ func _ready() -> void:
 	levels_menu.visible = true
 	levels_menu.position.x = 2000
 	DataManager.load_data()
-	MusicPlayer.play_music("main menu")
 	var i = 1
 	for c in level_button_container.get_children():
 		if c is Button:

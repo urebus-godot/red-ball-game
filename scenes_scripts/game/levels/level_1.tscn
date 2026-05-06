@@ -1,46 +1,72 @@
 [gd_scene format=3 uid="uid://dwlerkwucmqsi"]
 
 [ext_resource type="PackedScene" uid="uid://bb6koovj7b8o" path="res://scenes_scripts/game/levels/base_level.tscn" id="1_yhru0"]
-[ext_resource type="Shader" uid="uid://bxe7lylg6tj13" path="res://resources/scripts/shaders/water.gdshader" id="2_1k6lp"]
-[ext_resource type="Texture2D" uid="uid://wynqdg0tvusl" path="res://resources/textures/game/world_environment/water.png" id="3_1k6lp"]
+[ext_resource type="PackedScene" uid="uid://hf4hp71cg2ya" path="res://scenes_scripts/game/objects/areas/water.tscn" id="3_1k6lp"]
 [ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/physical/physics/crate.tscn" id="3_xya2l"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mc8sp"]
-shader = ExtResource("2_1k6lp")
-shader_parameter/frequency = 6.0
-shader_parameter/speed = 5.0
-shader_parameter/amplitude = 0.001
-shader_parameter/blur = 0.005
+[ext_resource type="PackedScene" uid="uid://bvcpab838u2eo" path="res://scenes_scripts/game/objects/ui_elements/hint_label.tscn" id="5_aau4x"]
+[ext_resource type="PackedScene" uid="uid://bg48lxeeip6cc" path="res://scenes_scripts/game/objects/areas/activate_area.tscn" id="5_mc8sp"]
 
 [sub_resource type="Curve2D" id="Curve2D_5afly"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1360, 560, 0, 0, 0, 0, 448, 744, 0, 0, 0, 0, 1144, 736, 0, 0, 0, 0, 1072, 1232, 0, 0, 0, 0, 2432, 1256, 0, 0, 0, 0, 2480, 784, 0, 0, 0, 0, 5792, 608, 0, 0, 0, 0, 7032, 712, 0, 0, 0, 0, 8000, 624, 0, 0, 0, 0, 8560, 576, 0, 0, 0, 0, 9608, 440, 0, 0, 0, 0, 10896, 480, 0, 0, 0, 0, 12048, 600, 0, 0, 0, 0, 12552, 664, 0, 0, 0, 0, 13720, 632, 0, 0, 0, 0, 14752, 608, 0, 0, 0, 0, 16272, 664, 0, 0, 0, 0, 16480, 664, 0, 0, 0, 0, 18560, 640, 0, 0, 0, 0, 20184, 640, 0, 0, 0, 0, 21320, 584, 0, 0, 0, 0, 22168, 616, 0, 0, 0, 0, 20872, 4232, 0, 0, 0, 0, -1392, 3552, 0, 0, 0, 0, -3736, 1944, 0, 0, 0, 0, -4664, 856, 0, 0, 0, 0, -4040, 152, 0, 0, 0, 0, -3872, 40, 0, 0, 0, 0, -3712, -264, 0, 0, 0, 0, -3592, -472, 0, 0, 0, 0, -3392, -600, 0, 0, 0, 0, -3232, -704, 0, 0, 0, 0, -3072, -648, 0, 0, 0, 0, -3008, -824, 0, 0, 0, 0, -2928, -992, 0, 0, 0, 0, -2792, -1120, 0, 0, 0, 0, -2672, -1320, 0, 0, 0, 0, -2400, -1424, 0, 0, 0, 0, -2304, -1352, 0, 0, 0, 0, -2184, -1192, 0, 0, 0, 0, -2096, -912, 0, 0, 0, 0, -2048, -688, 0, 0, 0, 0, -1984, -424, 0, 0, 0, 0, -1920, -160, 0, 0, 0, 0, -1768, 152, 0, 0, 0, 0, -1504, 472, 0, 0, 0, 0, -1360, 560)
+"points": PackedVector2Array(0, 0, 0, 0, -1504, 64, 0, 0, 0, 0, 1184, 64, 0, 0, 0, 0, 1664, 0, 0, 0, 0, 0, 1920, 0, 0, 0, 0, 0, 2528, -64, 0, 0, 0, 0, 2944, -64, 0, 0, 0, 0, 3200, -128, 0, 0, 0, 0, 3840, -128, 0, 0, 0, 0, 4480, -64, 0, 0, 0, 0, 4864, -64, 0, 0, 0, 0, 5248, -128, 0, 0, 0, 0, 5632, -128, 0, 0, 0, 0, 6432, -224, 0, 0, 0, 0, 7040, -224, 0, 0, 0, 0, 7360, -96, 0, 0, 0, 0, 7520, 576, 0, 0, 0, 0, 9248, 576, 0, 0, 0, 0, 9312, -64, 0, 0, 0, 0, 9696, -160, 0, 0, 0, 0, 11232, -320, 0, 0, 0, 0, 12832, -320, 0, 0, 0, 0, 13184, -192, 0, 0, 0, 0, 13568, -192, 0, 0, 0, 0, 13952, -320, 0, 0, 0, 0, 14976, -384, 0, 0, 0, 0, 15008, 2496, 0, 0, 0, 0, 13312, 2720, 0, 0, 0, 0, -2752, 2624, 0, 0, 0, 0, -3168, 512, 0, 0, 0, 0, -4000, -736, 0, 0, 0, 0, -3712, -2336, 0, 0, 0, 0, -3328, -2816, 0, 0, 0, 0, -2880, -2688, 0, 0, 0, 0, -2432, -1312, 0, 0, 0, 0, -1824, -192, 0, 0, 0, 0, -1504, 64)
 }
-point_count = 47
+point_count = 36
 
 [node name="Level1" unique_id=165616865 instance=ExtResource("1_yhru0")]
 
-[node name="BackgroundLayer" parent="." index="0" unique_id=807347235]
-visible = false
+[node name="Terrain" parent="." index="3" unique_id=912310611]
+position = Vector2(0, 2432)
 
-[node name="Player" parent="." index="1" unique_id=840999448]
-position = Vector2(456, 592)
-physics_material_override = null
+[node name="Line2D" parent="Terrain" index="1" unique_id=583848422]
+sharp_limit = 4.0
 
-[node name="TextureRect" type="TextureRect" parent="." index="2" unique_id=2104527954]
-material = SubResource("ShaderMaterial_mc8sp")
-offset_left = 912.0
-offset_top = 792.0
-offset_right = 2792.0
-offset_bottom = 1304.0
-texture = ExtResource("3_1k6lp")
-stretch_mode = 1
-
-[node name="Path2D" parent="Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
+[node name="Path2D" parent="Terrain" index="3" unique_id=1234078617]
+position = Vector2(0, -64)
 curve = SubResource("Curve2D_5afly")
 
-[node name="Crate" parent="." index="5" unique_id=263904471 instance=ExtResource("3_xya2l")]
-position = Vector2(3264, 600)
+[node name="Crate" parent="." index="4" unique_id=263904471 instance=ExtResource("3_xya2l")]
+position = Vector2(-480, 2400)
+mass = 1.5
+
+[node name="Player" parent="Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
+position = Vector2(0, 2208)
+physics_material_override = null
+
+[node name="Water" parent="Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("3_1k6lp")]
+position = Vector2(7328, 2496)
+
+[node name="WaterTexture" parent="Environment/Waters/Water" index="0" unique_id=1796776943]
+offset_right = 2016.0
+
+[node name="FinishArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=1444216573]
+position = Vector2(12544, 1824)
+
+[node name="ActivateArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="1" unique_id=1594849188 node_paths=PackedStringArray("object_to_activate") instance=ExtResource("5_mc8sp")]
+position = Vector2(0, 1920)
+object_to_activate = NodePath("../../Labels/HintLabel")
+
+[node name="ActivateArea2" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="2" unique_id=75739415 node_paths=PackedStringArray("object_to_activate") instance=ExtResource("5_mc8sp")]
+position = Vector2(128, 2048)
+object_to_activate = NodePath("../../Labels/HintLabel2")
+
+[node name="HintLabel" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="0" unique_id=1476282060 instance=ExtResource("5_aau4x")]
+position = Vector2(-896, 2016)
+activation_delay = 0.5
+
+[node name="HintLabel" parent="Labels/HintLabel" index="0" unique_id=514289046]
+offset_bottom = 224.0
+text = "Move the ball using WASD keys"
+
+[node name="HintLabel2" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="1" unique_id=186889751 instance=ExtResource("5_aau4x")]
+position = Vector2(480, 2016)
+activation_delay = 0.5
+
+[node name="HintLabel" parent="Labels/HintLabel2" index="0" unique_id=514289046]
+offset_bottom = 224.0
+text = "Try to bring him to the end"
 
 [editable path="Terrain"]
+[editable path="Environment/Waters/Water"]
+[editable path="Labels/HintLabel"]
+[editable path="Labels/HintLabel2"]

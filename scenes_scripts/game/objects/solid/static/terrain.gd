@@ -16,13 +16,13 @@ func _ready() -> void:
 	ground_line.points = ground_points
 	collision_polygon.polygon = ground_points
 
-	var line_points = ground_line.get_points()
-	var new_points = []
-	var width = (ground_line.width / 2) - 4
-
-	for point in line_points:
-		if point.x < areas_without_grass and point.x > areas_without_grass:
-			pass
-		new_points.append(point + Vector2(0, width))
-
-	ground_line.set_points(new_points)
+	#var line_points = ground_line.get_points()
+	#var new_points = []
+	#var width = 0#(ground_line.width / 2) - 4
+#
+	#for point in line_points:
+		##if point.x < areas_without_grass and point.x > areas_without_grass:
+			#
+		#new_points.append(point + Vector2(0, width))
+#
+	#ground_line.set_points(new_points)

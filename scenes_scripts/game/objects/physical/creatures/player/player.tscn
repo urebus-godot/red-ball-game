@@ -29,6 +29,7 @@ collision_mask = 14
 physics_material_override = SubResource("PhysicsMaterial_30j7b")
 script = ExtResource("2_22jnx")
 control_component = NodePath("ControlComponent")
+free_camera_mode_enabled = true
 
 [node name="Sprite" parent="." index="0" unique_id=188382244]
 texture = ExtResource("3_ewilg")

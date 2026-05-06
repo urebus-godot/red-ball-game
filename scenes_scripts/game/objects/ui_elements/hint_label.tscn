@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bvcpab838u2eo"]
+
+[ext_resource type="Theme" uid="uid://dwuf2y00ydbwn" path="res://resources/themes/fonts/world_text.tres" id="1_ldm14"]
+[ext_resource type="Script" uid="uid://d10q0hegdr688" path="res://scenes_scripts/game/objects/ui_elements/hint_label.gd" id="2_2ed0c"]
+
+[node name="HintLabel" type="Node2D" unique_id=1476282060]
+script = ExtResource("2_2ed0c")
+
+[node name="HintLabel" type="RichTextLabel" parent="." unique_id=514289046]
+offset_right = 480.0
+offset_bottom = 256.0
+theme = ExtResource("1_ldm14")
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

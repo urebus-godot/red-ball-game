@@ -45,6 +45,10 @@ func hide_pause_menu() -> void:
 	is_ui_free = true
 
 
+func _ready() -> void:
+	pause_menu.visible = false
+
+
 func _input(event: InputEvent) -> void:
 	if is_ui_free:
 		if event.is_action_pressed("restart"):
@@ -78,3 +82,7 @@ func _on_pause_button_pressed() -> void:
 
 func _on_options_menu_closed() -> void:
 	is_ui_free = true
+
+
+func _on_level_finished() -> void:
+	tinting.show_tinting()

@@ -8,22 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://diy12vbxi3eab" path="res://scenes_scripts/game/objects/interactive/location_portal.tscn" id="4_7og53"]
 [ext_resource type="PackedScene" uid="uid://bols5fh2gof8t" path="res://scenes_scripts/ui/interact_label.tscn" id="4_hcrup"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2djus"]
-
 [sub_resource type="Curve2D" id="Curve2D_efhvm"]
 bake_interval = 512.0
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2800, 400, 0, 0, 0, 0, 4000, 400, 0, 0, 0, 0, 4000, 3000, 0, 0, 0, 0, -2800, 3000, 0, 0, 0, 0, -2800, 400)
 }
 point_count = 5
-
-[sub_resource type="Environment" id="Environment_hcrup"]
-background_energy_multiplier = 6.1
-tonemap_exposure = 2.1
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_74n1f"]
-
-[sub_resource type="Compositor" id="Compositor_pkcbc"]
 
 [node name="World" type="Node2D" unique_id=165616865]
 script = ExtResource("1_gv6xx")
@@ -56,7 +46,6 @@ offset_top = -193.0
 position = Vector2(0, 288)
 
 [node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("3_efhvm")]
-physics_material_override = SubResource("PhysicsMaterial_2djus")
 
 [node name="Path2D" parent="Terrain" index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_efhvm")
@@ -86,11 +75,6 @@ position = Vector2(1408, 400)
 level = 3
 scene_path = "none"
 interaction_delay = 0.4
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1981811474]
-environment = SubResource("Environment_hcrup")
-camera_attributes = SubResource("CameraAttributesPractical_74n1f")
-compositor = SubResource("Compositor_pkcbc")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1120800972]
 offset_right = 40.0

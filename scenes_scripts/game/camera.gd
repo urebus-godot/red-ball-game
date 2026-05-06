@@ -5,12 +5,15 @@ enum Direction {
 }
 const TRANS_TYPE: Tween.TransitionType = Tween.TransitionType.TRANS_SINE
 const TWEEN_DURATION: float = 0.6
+const FREE_MODE_VELOCITY: float = 14
 
 @export var player: Player
 @export var trans_enabled: bool = true
 
 var direction: Direction = Direction.CENTER
 var player_move_direction: Direction = Direction.CENTER
+
+var free_mode: bool = false
 
 
 func trans_offset(trans_direction: Direction) -> void:
@@ -36,7 +39,11 @@ func check_for_trans() -> void:
 
 
 func _process(delta: float) -> void:
-	position = player.position
+	if not free_mode:
+		position = player.position
+	else:
+		var move_direction = Input.get_vector("left", "right", "up", "down")
+		position += move_direction * FREE_MODE_VELOCITY
 
 
 func _ready() -> void:
