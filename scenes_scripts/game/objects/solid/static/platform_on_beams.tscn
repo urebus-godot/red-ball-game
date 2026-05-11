@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cuj44b2p5d6up"]
+
+[ext_resource type="Texture2D" uid="uid://cnxqfwimyhmvb" path="res://resources/textures/game/background/beams.png" id="1_qkcx4"]
+[ext_resource type="Texture2D" uid="uid://cqxyjokjj15qh" path="res://resources/textures/game/objects/solids/static/wooden_platform.png" id="2_qwhmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkcx4"]
+size = Vector2(280, 32)
+
+[node name="PlatformOnBeams" type="StaticBody2D" unique_id=1838207057]
+collision_layer = 2
+collision_mask = 13
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1189508430]
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 256.0
+texture = ExtResource("1_qkcx4")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=872582417]
+scale = Vector2(1.1, 1)
+texture = ExtResource("2_qwhmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=961101926]
+shape = SubResource("RectangleShape2D_qkcx4")

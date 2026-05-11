@@ -5,7 +5,7 @@ class_name MoveComponent extends Node
 const HOLD_JUMP_TIME: float = 0.14
 
 @export var torque: float = 40000.0
-@export var angular_velocity: float = 11.0
+@export var angular_velocity: float = 10.0
 @export var jump_impulse: float = 350.0
 @export var jump_hold_force: float = 2600
 
@@ -46,7 +46,7 @@ func move_left() -> void:
 
 
 func jump(delta: float) -> void:
-	if jump_enabled and movement_enabled:
+	if movement_enabled and jump_enabled:
 		if is_on_floor():
 			var impulse = Vector2.UP * jump_impulse
 			creature.apply_central_impulse(impulse)

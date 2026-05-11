@@ -6,10 +6,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mc8sp"]
 shader = ExtResource("1_lcjg8")
-shader_parameter/frequency = 6.0
-shader_parameter/speed = 5.0
-shader_parameter/amplitude = 0.001
-shader_parameter/blur = 0.005
+shader_parameter/frequency = 7.0
+shader_parameter/speed = 2.5
+shader_parameter/amplitude = 0.005
+shader_parameter/blur = 0.01
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joq74"]
 
@@ -18,7 +18,7 @@ script = ExtResource("1_joq74")
 
 [node name="WaterTexture" type="TextureRect" parent="." unique_id=1796776943]
 material = SubResource("ShaderMaterial_mc8sp")
-offset_right = 512.0
+offset_right = 1922.0
 offset_bottom = 512.0
 texture = ExtResource("2_joq74")
 expand_mode = 1

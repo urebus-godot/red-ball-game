@@ -6,6 +6,7 @@ const SCALE_TWEEN_DURATION: float = 0.3
 @onready var camera: Camera2D = $Camera
 
 @export var control_component: ControlComponent
+@export var move_component: MoveComponent
 @export var free_camera_mode_enabled: bool = false
 
 var can_interact: bool = true
@@ -36,6 +37,10 @@ func match_action_for_interactive_object_class() -> void:
 		tween_position(object_to_interact.global_position)
 
 
+func finish() -> void:
+	move_component.movement_enabled = false
+
+
 func _ready() -> void:
 	freeze = true
 	await tween_scale()
@@ -51,6 +56,7 @@ func _input(event: InputEvent) -> void:
 		prints("Now you can't interact!", can_interact)
 	elif event.is_action_pressed("switch_camera_mode") and free_camera_mode_enabled:
 		camera.free_mode = not camera.free_mode
+		move_component.movement_enabled = not move_component.movement_enabled
 
 
 func _on_interactive_object_player_entered(object: InteractiveObject) -> void:
@@ -64,3 +70,7 @@ func _on_interactive_object_player_exited(object: InteractiveObject) -> void:
 func _on_interact_timer_timeout() -> void:
 	can_interact = true
 	prints("Now you can again interact!", can_interact)
+
+
+func _on_level_finished() -> void:
+	finish()

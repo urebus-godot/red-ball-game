@@ -24,11 +24,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hka56"]
 radius = 54.0
 
-[node name="Player" unique_id=840999448 node_paths=PackedStringArray("control_component") instance=ExtResource("1_rv035")]
+[node name="Player" unique_id=840999448 node_paths=PackedStringArray("control_component", "move_component") instance=ExtResource("1_rv035")]
 collision_mask = 14
 physics_material_override = SubResource("PhysicsMaterial_30j7b")
 script = ExtResource("2_22jnx")
 control_component = NodePath("ControlComponent")
+move_component = NodePath("MoveComponent")
 free_camera_mode_enabled = true
 
 [node name="Sprite" parent="." index="0" unique_id=188382244]

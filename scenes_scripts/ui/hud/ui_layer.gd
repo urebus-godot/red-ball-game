@@ -1,8 +1,11 @@
 extends CanvasLayer
 
+const TWEEN_DURATION: float = 0.5
+
 @onready var tinting: ColorRect = $Tinting
 @onready var pause_menu: Control = $PauseMenu
 @onready var options_menu: OptionsMenu = $OptionsMenu
+@onready var finish_menu: Panel = $FinishMenu
 
 var level: int = 1
 
@@ -45,8 +48,23 @@ func hide_pause_menu() -> void:
 	is_ui_free = true
 
 
+func show_finish_menu() -> void:
+	var finish_info_label: Label = $FinishMenu/FinishInfoLabel
+	finish_info_label.text = "You completed level %s!" % level
+
+	finish_menu.position.y = -900
+	finish_menu.visible = true
+
+	var tween = finish_menu.create_tween().set_trans(Constants.UI_TRANS_TYPE)
+	var center_y = 144
+	tween.tween_property(
+		finish_menu, "position:y", center_y, TWEEN_DURATION
+	)
+
+
 func _ready() -> void:
 	pause_menu.visible = false
+	finish_menu.visible = false
 
 
 func _input(event: InputEvent) -> void:
@@ -55,6 +73,11 @@ func _input(event: InputEvent) -> void:
 			restart_level()
 		elif event.is_action_pressed("pause"):
 			check_for_pause()
+
+
+func _on_level_finished() -> void:
+	tinting.show_tinting()
+	show_finish_menu()
 
 
 func _on_resume_button_pressed() -> void:
@@ -79,10 +102,14 @@ func _on_pause_button_pressed() -> void:
 	if is_ui_free:
 		check_for_pause()
 
+func _on_main_menu_button_pressed() -> void:
+	if is_ui_free:
+		await TransitionScreen.change_scene(Constants.WORLD_PATH)
+
+func _on_next_level_button_pressed() -> void:
+	if is_ui_free:
+		await TransitionScreen.change_scene(Constants.LEVEL_PATH % level)
+
 
 func _on_options_menu_closed() -> void:
 	is_ui_free = true
-
-
-func _on_level_finished() -> void:
-	tinting.show_tinting()

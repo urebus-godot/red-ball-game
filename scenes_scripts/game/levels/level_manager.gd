@@ -12,6 +12,7 @@ signal level_finished
 func finish_level() -> void:
 	if game_data.levels_completed < level:
 		game_data.levels_completed += 1
+	level_finished.emit()
 
 
 func _ready() -> void:

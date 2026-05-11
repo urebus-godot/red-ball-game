@@ -42,8 +42,14 @@ func _process(delta: float) -> void:
 	if not free_mode:
 		position = player.position
 	else:
-		var move_direction = Input.get_vector("left", "right", "up", "down")
-		position += move_direction * FREE_MODE_VELOCITY
+		var move_direction = Input.get_vector(
+			"left", "right", "up", "down"
+			).normalized()
+		var speed_up = Input.is_action_pressed("speed_up")
+		position += (move_direction * FREE_MODE_VELOCITY * 3
+		) if speed_up else (
+			move_direction * FREE_MODE_VELOCITY
+			)
 
 
 func _ready() -> void:
