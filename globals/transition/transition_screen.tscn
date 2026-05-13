@@ -11,6 +11,7 @@ skew = Vector2(0.5, 0)
 process_mode = 3
 layer = 10
 script = ExtResource("1_of1yr")
+do_show_start_screen = false
 
 [node name="Panel" type="Panel" parent="." unique_id=246895193]
 anchors_preset = 15

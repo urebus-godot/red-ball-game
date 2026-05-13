@@ -13,6 +13,7 @@
 [ext_resource type="Theme" uid="uid://k8oddh018ug7" path="res://resources/themes/buttons/red_button.tres" id="8_udvf3"]
 [ext_resource type="FontFile" uid="uid://b6hssdofy1hrp" path="res://resources/fonts/SSFBreakthrough-Bold.ttf" id="11_lks73"]
 [ext_resource type="FontFile" uid="uid://j1wevx13vv24" path="res://resources/fonts/SSFBreakthrough-Heavy.ttf" id="13_7tan6"]
+[ext_resource type="FontFile" uid="uid://c2hrra5eptan4" path="res://resources/fonts/SSFBreakthrough-Black.ttf" id="14_ory12"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lks73"]
 bg_color = Color(0.8722, 0.8808033, 0.89, 1)
@@ -177,8 +178,12 @@ offset_right = 184.0
 offset_bottom = 96.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.5606212, 0.8521561, 0.9790291, 1)
+theme_override_colors/font_shadow_color = Color(0.3248218, 0.5024607, 0.80009305, 1)
 theme_override_colors/font_outline_color = Color(0.5146, 0.6249899, 0.83, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 16
 theme_override_fonts/font = ExtResource("13_7tan6")
 theme_override_font_sizes/font_size = 48
 text = "LEVEL COMPLETED!"
@@ -200,10 +205,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8231223, 0.9388391, 0.9936159, 1)
 theme_override_colors/font_outline_color = Color(0.10768203, 0.16667494, 0.28250694, 1)
+theme_override_constants/line_spacing = 12
 theme_override_constants/outline_size = 12
-theme_override_fonts/font = ExtResource("11_lks73")
-theme_override_font_sizes/font_size = 32
-text = "You completed the level!"
+theme_override_fonts/font = ExtResource("14_ory12")
+theme_override_font_sizes/font_size = 48
+text = "You completed the level!
+Score: 
+Time: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -233,6 +241,95 @@ size_flags_horizontal = 3
 theme = ExtResource("1_sad0e")
 text = "Next Level"
 
+[node name="LostMenu" type="Panel" parent="." unique_id=502085]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -396.0
+offset_right = 368.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7tan6")
+
+[node name="CompletedLabel" type="Label" parent="LostMenu" unique_id=94375237]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_top = 24.0
+offset_right = 184.0
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.9856419, 0.29282963, 0.48613727, 1)
+theme_override_colors/font_shadow_color = Color(0.4, 0, 0.006666565, 1)
+theme_override_colors/font_outline_color = Color(0.5294118, 0, 0.18039216, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 16
+theme_override_fonts/font = ExtResource("13_7tan6")
+theme_override_font_sizes/font_size = 48
+text = "LEVEL LOST!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinishInfoLabel" type="Label" parent="LostMenu" unique_id=1783760792]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -172.0
+offset_right = 272.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8231223, 0.9388391, 0.9936159, 1)
+theme_override_colors/font_outline_color = Color(0.10768203, 0.16667494, 0.28250694, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("14_ory12")
+theme_override_font_sizes/font_size = 48
+text = "The red ball has died, 
+and you lost..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LostMenu" unique_id=588574697]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -344.0
+offset_top = -152.0
+offset_right = 344.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MainMenuButton" type="Button" parent="LostMenu/HBoxContainer" unique_id=1146943558]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_v78qn")
+text = "Main Menu"
+
+[node name="RestartButton" type="Button" parent="LostMenu/HBoxContainer" unique_id=14294658]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_sad0e")
+text = "Restart"
+icon = ExtResource("8_lks73")
+expand_icon = true
+
 [connection signal="pressed" from="Control/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Container/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Container/OptionsButton" to="." method="_on_options_button_pressed"]
@@ -241,3 +338,5 @@ text = "Next Level"
 [connection signal="closed" from="OptionsMenu" to="." method="_on_options_menu_closed"]
 [connection signal="pressed" from="FinishMenu/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="FinishMenu/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="LostMenu/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="LostMenu/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

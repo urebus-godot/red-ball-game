@@ -10,6 +10,8 @@ const START_TWEEN_DURATION: float = 0.5
 @onready var start_screen: ColorRect = $StartScreen
 @onready var black_screen: ColorRect = $StartScreen/BlackScreen
 
+@export var do_show_start_screen: bool = true
+
 
 func start_trans() -> void:
 	panel.position.x = START_POSITION_X
@@ -22,6 +24,12 @@ func end_trans() -> void:
 	var tween = panel.create_tween()
 	tween.tween_property(panel, "position:x", END_TWEEN_POSITION_X, TWEEN_DURATION)
 	await tween.finished
+
+
+func show_panel() -> void:
+	start_screen.visible = false
+	panel.position.x = END_TWEEN_POSITION_X
+	panel.visible = true
 
 
 func show_start_screen() -> void:
@@ -38,9 +46,7 @@ func show_start_screen() -> void:
 
 	await hide_tween.finished
 
-	start_screen.visible = false
-	panel.position.x = END_TWEEN_POSITION_X
-	panel.visible = true
+	show_panel()
 
 
 func change_scene(path: String) -> void:
@@ -50,5 +56,9 @@ func change_scene(path: String) -> void:
 
 
 func _ready() -> void:
-	await get_tree().create_timer(0.5).timeout
-	show_start_screen()
+	if do_show_start_screen:
+		await get_tree().create_timer(0.5).timeout
+		show_start_screen()
+	else:
+		show_panel()
+		MusicPlayer.play_soundtrack(MusicPlayer.Soundtrack.MAIN_MENU, true)

@@ -13,6 +13,7 @@ const FREE_MODE_VELOCITY: float = 14
 var direction: Direction = Direction.CENTER
 var player_move_direction: Direction = Direction.CENTER
 
+var follow_player: bool = true
 var free_mode: bool = false
 
 
@@ -39,9 +40,9 @@ func check_for_trans() -> void:
 
 
 func _process(delta: float) -> void:
-	if not free_mode:
+	if not free_mode and follow_player:
 		position = player.position
-	else:
+	elif free_mode:
 		var move_direction = Input.get_vector(
 			"left", "right", "up", "down"
 			).normalized()
@@ -55,3 +56,7 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	if trans_enabled:
 		check_for_trans()
+
+
+func _on_player_died() -> void:
+	follow_player = false

@@ -45,15 +45,16 @@ target_position = Vector2(0, 55)
 [node name="CollisionShape2D" parent="." index="3" unique_id=1303941600]
 shape = SubResource("CircleShape2D_hka56")
 
-[node name="ControlComponent" parent="." index="4" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
-move_component = NodePath("../MoveComponent")
-
-[node name="Camera" parent="." index="7" unique_id=1760591003 node_paths=PackedStringArray("player") instance=ExtResource("6_30j7b")]
+[node name="Camera" parent="." index="4" unique_id=1760591003 node_paths=PackedStringArray("player") instance=ExtResource("6_30j7b")]
 player = NodePath("..")
 trans_enabled = false
 
-[node name="InteractTimer" type="Timer" parent="." index="8" unique_id=1944430153]
+[node name="InteractTimer" type="Timer" parent="." index="5" unique_id=1944430153]
 wait_time = 0.6
 one_shot = true
 
+[node name="ControlComponent" parent="." index="6" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
+move_component = NodePath("../MoveComponent")
+
 [connection signal="timeout" from="InteractTimer" to="." method="_on_interact_timer_timeout"]
+[connection signal="creature_died" from="LifeComponent" to="Camera" method="_on_player_died"]

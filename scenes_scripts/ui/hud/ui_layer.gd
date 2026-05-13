@@ -6,6 +6,7 @@ const TWEEN_DURATION: float = 0.5
 @onready var pause_menu: Control = $PauseMenu
 @onready var options_menu: OptionsMenu = $OptionsMenu
 @onready var finish_menu: Panel = $FinishMenu
+@onready var lost_menu: Panel = $LostMenu
 
 var level: int = 1
 
@@ -48,9 +49,9 @@ func hide_pause_menu() -> void:
 	is_ui_free = true
 
 
-func show_finish_menu() -> void:
+func show_finish_menu(score: int) -> void:
 	var finish_info_label: Label = $FinishMenu/FinishInfoLabel
-	finish_info_label.text = "You completed level %s!" % level
+	finish_info_label.text = "You completed level %s! \nScore: %s" % [level, score]
 
 	finish_menu.position.y = -900
 	finish_menu.visible = true
@@ -62,9 +63,21 @@ func show_finish_menu() -> void:
 	)
 
 
+func show_lost_menu() -> void:
+	lost_menu.position.y = -900
+	lost_menu.visible = true
+
+	var tween = lost_menu.create_tween().set_trans(Constants.UI_TRANS_TYPE)
+	var center_y = 144
+	tween.tween_property(
+		lost_menu, "position:y", center_y, TWEEN_DURATION
+	)
+
+
 func _ready() -> void:
 	pause_menu.visible = false
 	finish_menu.visible = false
+	lost_menu.visible = false
 
 
 func _input(event: InputEvent) -> void:
@@ -75,9 +88,15 @@ func _input(event: InputEvent) -> void:
 			check_for_pause()
 
 
-func _on_level_finished() -> void:
+func _on_level_finished(score: int) -> void:
 	tinting.show_tinting()
-	show_finish_menu()
+	show_finish_menu(score)
+
+
+func _on_player_died() -> void:
+	await get_tree().create_timer(1.5).timeout
+	tinting.show_tinting()
+	show_lost_menu()
 
 
 func _on_resume_button_pressed() -> void:

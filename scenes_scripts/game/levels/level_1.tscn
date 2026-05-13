@@ -3,16 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bb6koovj7b8o" path="res://scenes_scripts/game/levels/base_level.tscn" id="1_yhru0"]
 [ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="2_jabye"]
 [ext_resource type="PackedScene" uid="uid://hf4hp71cg2ya" path="res://scenes_scripts/game/objects/areas/water.tscn" id="3_1k6lp"]
-[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/physical/physics/crate.tscn" id="3_xya2l"]
 [ext_resource type="PackedScene" uid="uid://bvcpab838u2eo" path="res://scenes_scripts/game/objects/ui_elements/hint_label.tscn" id="5_aau4x"]
 [ext_resource type="PackedScene" uid="uid://bg48lxeeip6cc" path="res://scenes_scripts/game/objects/areas/activate_area.tscn" id="5_mc8sp"]
 
 [sub_resource type="Curve2D" id="Curve2D_5afly"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1504, 64, 0, 0, 0, 0, 1184, 64, 0, 0, 0, 0, 1664, 0, 0, 0, 0, 0, 1920, 0, 0, 0, 0, 0, 2528, -64, 0, 0, 0, 0, 2944, -64, 0, 0, 0, 0, 3200, -128, 0, 0, 0, 0, 3840, -128, 0, 0, 0, 0, 4480, -64, 0, 0, 0, 0, 4864, -64, 0, 0, 0, 0, 5248, -128, 0, 0, 0, 0, 5632, -128, 0, 0, 0, 0, 6432, -224, 0, 0, 0, 0, 6848, -224, 0, 0, 0, 0, 7264, -192, 0, 0, 0, 0, 7424, -128, 0, 0, 0, 0, 7456, -32, 0, 0, 0, 0, 7520, 576, 0, 0, 0, 0, 7680, 704, 0, 0, 0, 0, 8128, 768, 0, 0, 0, 0, 8800, 768, 0, 0, 0, 0, 9312, 672, 0, 0, 0, 0, 9568, 544, 0, 0, 0, 0, 9632, -64, 0, 0, 0, 0, 9696, -160, 0, 0, 0, 0, 10176, -288, 0, 0, 0, 0, 11296, -288, 0, 0, 0, 0, 12832, -320, 0, 0, 0, 0, 13184, -192, 0, 0, 0, 0, 13568, -192, 0, 0, 0, 0, 13952, -320, 0, 0, 0, 0, 14976, -384, 0, 0, 0, 0, 15008, 2496, 0, 0, 0, 0, 13312, 2720, 0, 0, 0, 0, -2752, 2624, 0, 0, 0, 0, -3168, 512, 0, 0, 0, 0, -4000, -736, 0, 0, 0, 0, -3712, -2336, 0, 0, 0, 0, -3328, -2816, 0, 0, 0, 0, -2880, -2688, 0, 0, 0, 0, -2432, -1312, 0, 0, 0, 0, -1824, -192, 0, 0, 0, 0, -1504, 64)
+"points": PackedVector2Array(0, 0, 0, 0, -1504, 64, 0, 0, 0, 0, 1184, 64, 0, 0, 0, 0, 1536, 0, 0, 0, 0, 0, 2016, -32, 0, 0, 0, 0, 2528, -64, 0, 0, 0, 0, 2912, -96, 0, 0, 0, 0, 3200, -128, 0, 0, 0, 0, 3840, -128, 0, 0, 0, 0, 4448, -96, 0, 0, 0, 0, 4864, -96, 0, 0, 0, 0, 5248, -128, 0, 0, 0, 0, 5792, -192, 0, 0, 0, 0, 6432, -224, 0, 0, 0, 0, 6848, -224, 0, 0, 0, 0, 7264, -192, 0, 0, 0, 0, 7424, -128, 0, 0, 0, 0, 7456, -32, 0, 0, 0, 0, 7520, 576, 0, 0, 0, 0, 7680, 704, 0, 0, 0, 0, 8128, 768, 0, 0, 0, 0, 8800, 768, 0, 0, 0, 0, 9312, 672, 0, 0, 0, 0, 9568, 544, 0, 0, 0, 0, 9632, -64, 0, 0, 0, 0, 9696, -160, 0, 0, 0, 0, 10176, -288, 0, 0, 0, 0, 11232, -352, 0, 0, 0, 0, 11648, -352, 0, 0, 0, 0, 12832, -320, 0, 0, 0, 0, 13184, -192, 0, 0, 0, 0, 13568, -192, 0, 0, 0, 0, 13952, -320, 0, 0, 0, 0, 14976, -384, 0, 0, 0, 0, 15008, 2496, 0, 0, 0, 0, 13312, 2720, 0, 0, 0, 0, -2752, 2624, 0, 0, 0, 0, -3168, 512, 0, 0, 0, 0, -4000, -736, 0, 0, 0, 0, -3712, -2336, 0, 0, 0, 0, -3328, -2816, 0, 0, 0, 0, -2880, -2688, 0, 0, 0, 0, -2432, -1312, 0, 0, 0, 0, -1824, -192, 0, 0, 0, 0, -1504, 64)
 }
-point_count = 43
+point_count = 44
 
 [node name="Level1" unique_id=165616865 instance=ExtResource("1_yhru0")]
 
@@ -34,12 +33,7 @@ position = Vector2(9088, 2176)
 [node name="TextureRect" parent="Background/PlatformOnBeams3" index="0" unique_id=1189508430]
 offset_bottom = 1000.0
 
-[node name="Crate" parent="PhysicsObjects" parent_id_path=PackedInt32Array(952607968) index="0" unique_id=263904471 instance=ExtResource("3_xya2l")]
-position = Vector2(-480, 2400)
-mass = 1.5
-
 [node name="Player" parent="Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
-position = Vector2(0, 2208)
 physics_material_override = null
 
 [node name="Water" parent="Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("3_1k6lp")]
@@ -51,7 +45,7 @@ offset_right = 2304.0
 offset_bottom = 768.0
 
 [node name="FinishArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=1444216573]
-position = Vector2(337, 2258)
+position = Vector2(14656, 1760)
 
 [node name="ActivateArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="1" unique_id=1594849188 node_paths=PackedStringArray("object_to_activate") instance=ExtResource("5_mc8sp")]
 position = Vector2(0, 1920)

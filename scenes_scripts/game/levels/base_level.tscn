@@ -87,4 +87,6 @@ shape = SubResource("RectangleShape2D_62qgw")
 
 [connection signal="level_finished" from="." to="UILayer" method="_on_level_finished"]
 [connection signal="level_finished" from="." to="Creatures/Player" method="_on_level_finished"]
+[connection signal="creature_died" from="Creatures/Player" to="." method="_on_player_died"]
+[connection signal="creature_died" from="Creatures/Player" to="UILayer" method="_on_player_died"]
 [connection signal="body_entered" from="Areas/FinishArea" to="." method="_on_finish_area_body_entered"]

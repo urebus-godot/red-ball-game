@@ -13,7 +13,9 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body is Creature:
+		await get_tree().create_timer(2.5).timeout
+		body.life_component.die()
 
 func _on_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	pass

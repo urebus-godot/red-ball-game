@@ -72,5 +72,5 @@ func _on_interact_timer_timeout() -> void:
 	prints("Now you can again interact!", can_interact)
 
 
-func _on_level_finished() -> void:
+func _on_level_finished(score: int) -> void:
 	finish()

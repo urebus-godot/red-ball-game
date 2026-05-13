@@ -59,10 +59,16 @@ scene_path = "res://scenes_scripts/ui/root/main_menu.tscn"
 interaction_delay = 0.4
 showed_name = "portal to the main menu"
 
+[node name="Label" parent="Portals/MainMenuPortal" index="1" unique_id=778072012]
+text = "Main Menu"
+
 [node name="LevelPortal" parent="Portals" unique_id=865033601 instance=ExtResource("4_7og53")]
 position = Vector2(768, 400)
 scene_path = "none"
 interaction_delay = 0.4
+
+[node name="Label" parent="Portals/LevelPortal" index="1" unique_id=778072012]
+text = "Level 1"
 
 [node name="LevelPortal2" parent="Portals" unique_id=253732289 instance=ExtResource("4_7og53")]
 position = Vector2(1088, 400)
@@ -70,14 +76,24 @@ level = 2
 scene_path = "none"
 interaction_delay = 0.4
 
+[node name="Label" parent="Portals/LevelPortal2" index="1" unique_id=778072012]
+text = "Level 2"
+
 [node name="LevelPortal3" parent="Portals" unique_id=346638725 instance=ExtResource("4_7og53")]
 position = Vector2(1408, 400)
 level = 3
 scene_path = "none"
 interaction_delay = 0.4
 
+[node name="Label" parent="Portals/LevelPortal3" index="1" unique_id=778072012]
+text = "Level 3"
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1120800972]
 offset_right = 40.0
 offset_bottom = 40.0
 
 [editable path="Terrain"]
+[editable path="Portals/MainMenuPortal"]
+[editable path="Portals/LevelPortal"]
+[editable path="Portals/LevelPortal2"]
+[editable path="Portals/LevelPortal3"]
