@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://iky0jh5jilni" path="res://scenes_scripts/game/objects/physical/creatures/player/control_component.tscn" id="3_hka56"]
 [ext_resource type="Texture2D" uid="uid://41b35ssy4bxk" path="res://resources/textures/game/objects/creatures/player/red_ball_face.png" id="4_fd7rk"]
 [ext_resource type="PackedScene" uid="uid://cn48baku04cx" path="res://scenes_scripts/game/objects/physical/creatures/player/camera.tscn" id="6_30j7b"]
+[ext_resource type="PackedScene" uid="uid://dt65y864o3ny2" path="res://scenes_scripts/game/objects/physical/creatures/player/arm.tscn" id="7_psm7a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30j7b"]
 rough = true
@@ -55,6 +56,10 @@ one_shot = true
 
 [node name="ControlComponent" parent="." index="6" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
 move_component = NodePath("../MoveComponent")
+
+[node name="Arm" parent="." index="10" unique_id=393563701 node_paths=PackedStringArray("player") instance=ExtResource("7_psm7a")]
+top_level = true
+player = NodePath("..")
 
 [connection signal="timeout" from="InteractTimer" to="." method="_on_interact_timer_timeout"]
 [connection signal="creature_died" from="LifeComponent" to="Camera" method="_on_player_died"]

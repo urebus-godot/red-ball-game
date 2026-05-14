@@ -11,6 +11,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62qgw"]
 size = Vector2(256, 256)
 
+[sub_resource type="Environment" id="Environment_62qgw"]
+background_mode = 3
+tonemap_mode = 1
+glow_enabled = true
+glow_intensity = 2.0
+glow_strength = 0.8
+glow_bloom = 0.25
+
 [node name="BaseLevel" type="Node2D" unique_id=165616865]
 script = ExtResource("1_iym18")
 
@@ -84,6 +92,9 @@ shape = SubResource("RectangleShape2D_62qgw")
 [node name="Labels" type="Node2D" parent="." unique_id=608123660]
 
 [node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("4_jt1by")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1547052815]
+environment = SubResource("Environment_62qgw")
 
 [connection signal="level_finished" from="." to="UILayer" method="_on_level_finished"]
 [connection signal="level_finished" from="." to="Creatures/Player" method="_on_level_finished"]

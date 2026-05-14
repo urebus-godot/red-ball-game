@@ -8,7 +8,7 @@ size = Vector2(148, 160)
 
 [node name="Crate" unique_id=840999448 instance=ExtResource("1_gtby6")]
 collision_layer = 4
-mass = 2.5
+mass = 3.0
 
 [node name="Sprite" parent="." index="0" unique_id=188382244]
 texture = ExtResource("2_kdbte")

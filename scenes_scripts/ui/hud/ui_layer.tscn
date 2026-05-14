@@ -177,9 +177,9 @@ offset_top = 24.0
 offset_right = 184.0
 offset_bottom = 96.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.5606212, 0.8521561, 0.9790291, 1)
-theme_override_colors/font_shadow_color = Color(0.3248218, 0.5024607, 0.80009305, 1)
-theme_override_colors/font_outline_color = Color(0.5146, 0.6249899, 0.83, 1)
+theme_override_colors/font_color = Color(0.6091461, 0.83761126, 0.9885289, 1)
+theme_override_colors/font_shadow_color = Color(0.1235, 0.36042514, 0.65, 1)
+theme_override_colors/font_outline_color = Color(0.41263446, 0.6116052, 0.9695023, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 16
@@ -197,10 +197,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -184.0
-offset_top = -36.0
-offset_right = 184.0
-offset_bottom = 36.0
+offset_left = -304.0
+offset_top = -132.0
+offset_right = 304.0
+offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8231223, 0.9388391, 0.9936159, 1)
@@ -233,15 +233,20 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_v78qn")
+theme_override_font_sizes/font_size = 64
 text = "Main Menu"
 
 [node name="NextLevelButton" type="Button" parent="FinishMenu/HBoxContainer" unique_id=726836314]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_sad0e")
+theme_override_font_sizes/font_size = 64
 text = "Next Level"
+icon = ExtResource("6_8q4gr")
+expand_icon = true
 
 [node name="LostMenu" type="Panel" parent="." unique_id=502085]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -298,7 +303,7 @@ theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("14_ory12")
 theme_override_font_sizes/font_size = 48
 text = "The red ball has died, 
-and you lost..."
+and you lose the level..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
