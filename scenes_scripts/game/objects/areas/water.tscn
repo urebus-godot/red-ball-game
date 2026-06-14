@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://hf4hp71cg2ya"]
+
+[ext_resource type="Script" uid="uid://b4fufbpq8v651" path="res://scenes_scripts/game/objects/areas/water.gd" id="1_joq74"]
+[ext_resource type="Shader" uid="uid://bxe7lylg6tj13" path="res://resources/scripts/shaders/water.gdshader" id="1_lcjg8"]
+[ext_resource type="Texture2D" uid="uid://wynqdg0tvusl" path="res://resources/textures/game/world_environment/water.png" id="2_joq74"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mc8sp"]
+shader = ExtResource("1_lcjg8")
+shader_parameter/frequency = 5.0
+shader_parameter/speed = 2.5
+shader_parameter/amplitude = 0.005
+shader_parameter/blur = 0.01
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joq74"]
+
+[node name="Water" type="Node2D" unique_id=1996029903]
+script = ExtResource("1_joq74")
+
+[node name="WaterTexture" type="TextureRect" parent="." unique_id=1796776943]
+material = SubResource("ShaderMaterial_mc8sp")
+offset_right = 1922.0
+offset_bottom = 512.0
+texture = ExtResource("2_joq74")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="WaterArea" type="Area2D" parent="." unique_id=455448813]
+collision_layer = 0
+collision_mask = 15
+gravity_space_override = 3
+gravity = 490.0
+linear_damp_space_override = 1
+linear_damp = 1.0
+angular_damp_space_override = 1
+
+[node name="CollisionShape" type="CollisionShape2D" parent="WaterArea" unique_id=1007052470]
+shape = SubResource("RectangleShape2D_joq74")
+
+[connection signal="body_entered" from="WaterArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="WaterArea" to="." method="_on_body_exited"]

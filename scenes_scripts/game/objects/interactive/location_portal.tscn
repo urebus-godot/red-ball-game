@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://diy12vbxi3eab"]
+
+[ext_resource type="Script" uid="uid://b5ps603jp2pd3" path="res://scenes_scripts/game/objects/interactive/location_portal.gd" id="1_0ay6s"]
+[ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/objects/interactive/portal.png" id="2_s76n2"]
+[ext_resource type="FontFile" uid="uid://xwqxcnwsy85c" path="res://resources/fonts/SSFBreakthrough-Demibold.ttf" id="3_s0tl4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ay6s"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s76n2")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efhvm"]
+size = Vector2(128, 160)
+
+[node name="LocationPortal" type="Area2D" unique_id=2011945355]
+collision_layer = 0
+script = ExtResource("1_0ay6s")
+scene_path = "res://scenes_scripts/game/root/world.tscn"
+interaction_delay = 0.2
+showed_name = "location portal"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1338046011]
+position = Vector2(0, -128)
+sprite_frames = SubResource("SpriteFrames_0ay6s")
+animation = &"closed"
+autoplay = "closed"
+
+[node name="Label" type="Label" parent="." unique_id=778072012]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -214.0
+offset_right = 106.0
+offset_bottom = -187.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.90886706, 0.438996, 5.7756904e-07, 1)
+theme_override_colors/font_outline_color = Color(0.39528522, 0.045214675, 0.033951767, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_s0tl4")
+theme_override_font_sizes/font_size = 24
+text = "Portal to somewhere"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1077028436]
+position = Vector2(0, -112)
+shape = SubResource("RectangleShape2D_efhvm")
+
+[node name="Center" type="Marker2D" parent="." unique_id=1011116954]
+visible = false
+position = Vector2(0, -112)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

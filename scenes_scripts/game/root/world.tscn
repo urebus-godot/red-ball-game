@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://b0qkoscdvwdap"]
+
+[ext_resource type="Script" uid="uid://dvpmjf302ti6w" path="res://scenes_scripts/game/root/world.gd" id="1_gv6xx"]
+[ext_resource type="PackedScene" uid="uid://da3avsamnkxp2" path="res://scenes_scripts/ui/hud/debug_panel.tscn" id="2_2djus"]
+[ext_resource type="Texture2D" uid="uid://bb8ckqchl87uo" path="res://resources/textures/game/background/sky.png" id="2_74n1f"]
+[ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="3_efhvm"]
+[ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/physical/creatures/player/player.tscn" id="3_pkcbc"]
+[ext_resource type="PackedScene" uid="uid://diy12vbxi3eab" path="res://scenes_scripts/game/objects/interactive/location_portal.tscn" id="4_7og53"]
+[ext_resource type="PackedScene" uid="uid://bols5fh2gof8t" path="res://scenes_scripts/ui/interact_label.tscn" id="4_hcrup"]
+
+[sub_resource type="Curve2D" id="Curve2D_efhvm"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2800, 400, 0, 0, 0, 0, 4000, 400, 0, 0, 0, 0, 4000, 3000, 0, 0, 0, 0, -2800, 3000, 0, 0, 0, 0, -2800, 400)
+}
+point_count = 5
+
+[node name="World" type="Node2D" unique_id=165616865]
+script = ExtResource("1_gv6xx")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=807347235]
+layer = -1
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer" unique_id=1883355903]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_74n1f")
+metadata/_edit_use_anchors_ = true
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1004856744]
+
+[node name="DebugPanel" parent="UILayer" unique_id=1567030277 node_paths=PackedStringArray("nodes_for_texts") instance=ExtResource("2_2djus")]
+visible = false
+nodes_for_texts = [NodePath("../../Player")]
+properties_for_texts = Array[String](["linear_velocity"])
+
+[node name="InteractLabel" parent="UILayer" unique_id=1502365372 instance=ExtResource("4_hcrup")]
+visible = false
+offset_top = -193.0
+
+[node name="Player" parent="." unique_id=840999448 instance=ExtResource("3_pkcbc")]
+position = Vector2(0, 288)
+
+[node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("3_efhvm")]
+
+[node name="Path2D" parent="Terrain" index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_efhvm")
+
+[node name="Portals" type="Node2D" parent="." unique_id=482774189]
+z_index = -1
+
+[node name="MainMenuPortal" parent="Portals" unique_id=2011945355 instance=ExtResource("4_7og53")]
+position = Vector2(0, 400)
+scene_path = "res://scenes_scripts/ui/root/main_menu.tscn"
+interaction_delay = 0.4
+showed_name = "portal to the main menu"
+
+[node name="Label" parent="Portals/MainMenuPortal" index="1" unique_id=778072012]
+text = "Main Menu"
+
+[node name="LevelPortal" parent="Portals" unique_id=865033601 instance=ExtResource("4_7og53")]
+position = Vector2(768, 400)
+scene_path = "none"
+interaction_delay = 0.4
+
+[node name="Label" parent="Portals/LevelPortal" index="1" unique_id=778072012]
+text = "Level 1"
+
+[node name="LevelPortal2" parent="Portals" unique_id=253732289 instance=ExtResource("4_7og53")]
+position = Vector2(1088, 400)
+level = 2
+scene_path = "none"
+interaction_delay = 0.4
+
+[node name="Label" parent="Portals/LevelPortal2" index="1" unique_id=778072012]
+text = "Level 2"
+
+[node name="LevelPortal3" parent="Portals" unique_id=346638725 instance=ExtResource("4_7og53")]
+position = Vector2(1408, 400)
+level = 3
+scene_path = "none"
+interaction_delay = 0.4
+
+[node name="Label" parent="Portals/LevelPortal3" index="1" unique_id=778072012]
+text = "Level 3"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1120800972]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[editable path="Terrain"]
+[editable path="Portals/MainMenuPortal"]
+[editable path="Portals/LevelPortal"]
+[editable path="Portals/LevelPortal2"]
+[editable path="Portals/LevelPortal3"]

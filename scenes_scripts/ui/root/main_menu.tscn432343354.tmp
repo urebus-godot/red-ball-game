@@ -1,0 +1,284 @@
+[gd_scene format=3 uid="uid://b7trlnapjrql5"]
+
+[ext_resource type="Script" uid="uid://c20jxk4enhjfj" path="res://scenes_scripts/ui/root/main_menu.gd" id="1_fxpc4"]
+[ext_resource type="Texture2D" uid="uid://bb8ckqchl87uo" path="res://resources/textures/game/background/sky.png" id="2_n363v"]
+[ext_resource type="Theme" uid="uid://cvprk2si4e2v2" path="res://resources/themes/square_button.tres" id="3_3djqw"]
+[ext_resource type="Theme" uid="uid://cxriancpnx75o" path="res://resources/themes/cyan_button.tres" id="3_n363v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3djqw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n363v"]
+bg_color = Color(1, 0.45833337, 0.35000002, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.56, 0.022400012, 0.022400012, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(1, 0.53, 0.53, 1)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u1tn"]
+bg_color = Color(0.9, 0.29999998, 0.17999998, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.46, 0.013799987, 0.013799987, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvkmw"]
+bg_color = Color(0.8, 0.22666669, 0.11199999, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.36, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
+
+[sub_resource type="Theme" id="Theme_aify2"]
+Button/colors/font_color = Color(0.92099476, 0.9209946, 0.9209946, 1)
+Button/colors/font_hover_color = Color(0.98, 0.98, 0.98, 1)
+Button/colors/font_outline_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+Button/colors/font_pressed_color = Color(0.82, 0.82, 0.82, 1)
+Button/constants/outline_size = 16
+Button/font_sizes/font_size = 64
+Button/styles/focus = SubResource("StyleBoxEmpty_3djqw")
+Button/styles/hover = SubResource("StyleBoxFlat_n363v")
+Button/styles/normal = SubResource("StyleBoxFlat_7u1tn")
+Button/styles/pressed = SubResource("StyleBoxFlat_bvkmw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n363v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aify2"]
+bg_color = Color(0.51, 0.82033336, 1, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.094600014, 0.12814008, 0.43, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0.64, 0.87999994, 1, 1)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3nkn"]
+bg_color = Color(0.33999997, 0.692, 1, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.08121997, 0.055800002, 0.31, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygyyt"]
+bg_color = Color(0.23200002, 0.4970667, 0.8, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.065799974, 0.041999992, 0.28, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0.95596343, 0.9559633, 0.95596343, 0.6)
+
+[sub_resource type="Theme" id="Theme_tryju"]
+Button/colors/font_color = Color(0.92099476, 0.9209946, 0.9209946, 1)
+Button/colors/font_hover_color = Color(0.98, 0.98, 0.98, 1)
+Button/colors/font_outline_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+Button/colors/font_pressed_color = Color(0.82, 0.82, 0.82, 1)
+Button/constants/outline_size = 16
+Button/font_sizes/font_size = 64
+Button/styles/focus = SubResource("StyleBoxEmpty_n363v")
+Button/styles/hover = SubResource("StyleBoxFlat_aify2")
+Button/styles/normal = SubResource("StyleBoxFlat_r3nkn")
+Button/styles/pressed = SubResource("StyleBoxFlat_ygyyt")
+
+[node name="MainMenu" type="Control" unique_id=1451304987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fxpc4")
+
+[node name="Background" type="TextureRect" parent="." unique_id=328389399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n363v")
+
+[node name="StartMenu" type="Control" parent="." unique_id=1230897194]
+layout_mode = 1
+anchor_left = 0.016666668
+anchor_top = 0.02962963
+anchor_right = 0.98333335
+anchor_bottom = 0.97037035
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu" unique_id=6733496]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -156.0
+offset_right = 328.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="PlayButton" type="Button" parent="StartMenu/VBoxContainer" unique_id=340133367]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_n363v")
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="StartMenu/VBoxContainer" unique_id=1438836794]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_aify2")
+text = "Quit"
+
+[node name="LevelsMenu" type="Control" parent="." unique_id=394315189]
+layout_mode = 1
+anchor_left = 0.016666668
+anchor_top = 0.02962963
+anchor_right = 0.98333335
+anchor_bottom = 0.97037035
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelButtonContainer" type="GridContainer" parent="LevelsMenu" unique_id=1959037084]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -608.0
+offset_top = -308.0
+offset_right = 608.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 5
+
+[node name="Level1" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1428211339]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level2" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1151175355]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level3" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=290735717]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level4" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=456242135]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level5" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1486324076]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level6" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1626621824]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level7" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1170598723]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level8" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1559628037]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level9" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=549635708]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="Level10" type="Button" parent="LevelsMenu/LevelButtonContainer" unique_id=1824237821]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_3djqw")
+text = "1"
+
+[node name="ToStartMenuButton" type="Button" parent="LevelsMenu" unique_id=785895600]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_tryju")
+
+[connection signal="pressed" from="StartMenu/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="StartMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="LevelsMenu/ToStartMenuButton" to="." method="_on_to_start_menu_button_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bg48lxeeip6cc"]
+
+[ext_resource type="Script" uid="uid://cwnbqpdo7rohn" path="res://scenes_scripts/game/objects/areas/activate_area.gd" id="1_x4ten"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x4ten"]
+normal = Vector2(-1, 0)
+
+[node name="ActivateArea" type="Area2D" unique_id=1594849188]
+script = ExtResource("1_x4ten")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=14317274]
+shape = SubResource("WorldBoundaryShape2D_x4ten")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

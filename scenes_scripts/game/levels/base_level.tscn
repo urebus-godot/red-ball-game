@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bb6koovj7b8o"]
+
+[ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/physical/creatures/player/player.tscn" id="1_bs2e5"]
+[ext_resource type="Script" uid="uid://dikts21pbdp6o" path="res://scenes_scripts/game/levels/level_manager.gd" id="1_iym18"]
+[ext_resource type="Texture2D" uid="uid://bb8ckqchl87uo" path="res://resources/textures/game/background/sky.png" id="2_62qgw"]
+[ext_resource type="Texture2D" uid="uid://ngla7jqhorey" path="res://resources/textures/game/background/hills.png" id="4_62qgw"]
+[ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="4_jt1by"]
+[ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/objects/interactive/portal.png" id="6_62qgw"]
+[ext_resource type="PackedScene" uid="uid://obqeiafka73e" path="res://scenes_scripts/ui/hud/ui_layer.tscn" id="6_pb7rb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62qgw"]
+size = Vector2(256, 256)
+
+[sub_resource type="Environment" id="Environment_62qgw"]
+background_mode = 3
+tonemap_mode = 1
+glow_enabled = true
+glow_intensity = 2.0
+glow_strength = 0.8
+glow_bloom = 0.25
+
+[node name="BaseLevel" type="Node2D" unique_id=165616865]
+script = ExtResource("1_iym18")
+
+[node name="UILayer" parent="." unique_id=51763774 instance=ExtResource("6_pb7rb")]
+
+[node name="StaticBackgroundLayer" type="CanvasLayer" parent="." unique_id=807347235]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="StaticBackgroundLayer" unique_id=1883355903]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_62qgw")
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=940601239]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="HillsParallax2" type="Parallax2D" parent="BackgroundLayer" unique_id=1503476749]
+scroll_scale = Vector2(0.5, 0.22)
+scroll_offset = Vector2(0, 192)
+
+[node name="HillsTexture" type="TextureRect" parent="BackgroundLayer/HillsParallax2" unique_id=1782040830]
+modulate = Color(0.94, 0.94, 0.94, 1)
+offset_left = -10176.0
+offset_top = 128.0
+offset_right = 54090.664
+offset_bottom = 1208.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_62qgw")
+stretch_mode = 1
+
+[node name="HillsParallax" type="Parallax2D" parent="BackgroundLayer" unique_id=1276359890]
+scroll_scale = Vector2(0.8, 0.4)
+scroll_offset = Vector2(-32, 480)
+
+[node name="HillsTexture" type="TextureRect" parent="BackgroundLayer/HillsParallax" unique_id=1968262151]
+offset_left = -11904.0
+offset_right = 28416.0
+offset_bottom = 1080.0
+texture = ExtResource("4_62qgw")
+stretch_mode = 1
+
+[node name="Portal" type="Sprite2D" parent="BackgroundLayer" unique_id=1617761781]
+position = Vector2(0, 2368)
+texture = ExtResource("6_62qgw")
+
+[node name="Background" type="Node2D" parent="." unique_id=40735884]
+
+[node name="PhysicsObjects" type="Node2D" parent="." unique_id=952607968]
+
+[node name="Creatures" type="Node2D" parent="." unique_id=1133915585]
+
+[node name="Player" parent="Creatures" unique_id=840999448 instance=ExtResource("1_bs2e5")]
+position = Vector2(0, 2368)
+
+[node name="Environment" type="Node2D" parent="." unique_id=1919074315]
+
+[node name="Waters" type="Node2D" parent="Environment" unique_id=2130201175]
+
+[node name="Areas" type="Node2D" parent="." unique_id=1723939335]
+
+[node name="FinishArea" type="Area2D" parent="Areas" unique_id=1444216573]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/FinishArea" unique_id=534036631]
+shape = SubResource("RectangleShape2D_62qgw")
+
+[node name="Labels" type="Node2D" parent="." unique_id=608123660]
+
+[node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("4_jt1by")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1547052815]
+environment = SubResource("Environment_62qgw")
+
+[connection signal="level_finished" from="." to="UILayer" method="_on_level_finished"]
+[connection signal="level_finished" from="." to="Creatures/Player" method="_on_level_finished"]
+[connection signal="creature_died" from="Creatures/Player" to="." method="_on_player_died"]
+[connection signal="creature_died" from="Creatures/Player" to="UILayer" method="_on_player_died"]
+[connection signal="body_entered" from="Areas/FinishArea" to="." method="_on_finish_area_body_entered"]

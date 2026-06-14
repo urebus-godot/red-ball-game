@@ -1,0 +1,23 @@
+[33mcommit b702498839b8897bfd74b85a5d3d4c63da193b63[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Serega <satalovserge@gmail.com>
+Date:   Tue Apr 28 10:57:48 2026 +0300
+
+    Trying to make the normal player jump system
+
+[33mcommit 2c7388ef7697181d00815ea6fd781045c3e6d19e[m
+Author: Serega <satalovserge@gmail.com>
+Date:   Mon Apr 27 18:41:59 2026 +0300
+
+    Started making jump system
+
+[33mcommit 04eca11c651817b5883d94beb2eb9e2cc3a280ad[m
+Author: Serega <satalovserge@gmail.com>
+Date:   Mon Apr 27 18:33:12 2026 +0300
+
+    Making game
+
+[33mcommit b1ccdf214e930442c1aeb5affbbf7d6fe057d182[m
+Author: Serega <satalovserge@gmail.com>
+Date:   Mon Apr 27 18:19:07 2026 +0300
+
+    Made first commit

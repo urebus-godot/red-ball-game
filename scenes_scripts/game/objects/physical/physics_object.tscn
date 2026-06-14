@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://fq8o1p1ihkkm"]
+
+[ext_resource type="Script" uid="uid://bavhmtq56j2xo" path="res://scenes_scripts/game/objects/physical/physics_object.gd" id="1_qmy71"]
+
+[node name="PhysicsObject" type="RigidBody2D" unique_id=840999448]
+collision_mask = 15
+script = ExtResource("1_qmy71")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=188382244]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1303941600]
