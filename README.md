@@ -1,2 +1,1 @@
-Path: 
-	C:/Users/user/godot_projects/games/ball
+A game about red ball
