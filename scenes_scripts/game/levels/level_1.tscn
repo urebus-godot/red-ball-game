@@ -16,6 +16,9 @@ point_count = 44
 
 [node name="Level1" unique_id=165616865 instance=ExtResource("1_yhru0")]
 
+[node name="Portal" parent="BackgroundLayer" parent_id_path=PackedInt32Array(940601239) index="2" unique_id=1617761781]
+position = Vector2(0, 2304)
+
 [node name="PlatformOnBeams" parent="Background" parent_id_path=PackedInt32Array(40735884) index="0" unique_id=1838207057 instance=ExtResource("2_jabye")]
 position = Vector2(7808, 2144)
 
@@ -47,6 +50,7 @@ position = Vector2(7360, 2464)
 offset_top = -224.0
 offset_right = 2304.0
 offset_bottom = 768.0
+metadata/_edit_use_anchors_ = true
 
 [node name="FinishArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=1444216573]
 position = Vector2(14656, 1760)
@@ -71,6 +75,7 @@ activation_delay = 0.5
 offset_bottom = 224.0
 bbcode_enabled = true
 text = "Move the ball using [b]A D[/b] keys"
+metadata/_edit_use_anchors_ = true
 
 [node name="HintLabel2" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="1" unique_id=1850616923 instance=ExtResource("5_aau4x")]
 position = Vector2(0, 1856)
@@ -80,6 +85,7 @@ activation_delay = 0.5
 offset_bottom = 224.0
 bbcode_enabled = true
 text = "Make him jump with [b]Space[/b] key"
+metadata/_edit_use_anchors_ = true
 
 [node name="HintLabel3" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="2" unique_id=186889751 instance=ExtResource("5_aau4x")]
 position = Vector2(640, 1920)
@@ -88,6 +94,7 @@ activation_delay = 0.5
 [node name="HintLabel" parent="Labels/HintLabel3" index="0" unique_id=514289046]
 offset_bottom = 224.0
 text = "Try to bring him to the end"
+metadata/_edit_use_anchors_ = true
 
 [node name="Terrain" parent="." index="9" unique_id=912310611]
 position = Vector2(0, 2432)

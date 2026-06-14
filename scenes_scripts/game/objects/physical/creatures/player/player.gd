@@ -4,6 +4,7 @@ const SCALE_TWEEN_DURATION: float = 0.3
 
 @onready var interact_timer: Timer = $InteractTimer
 @onready var camera: Camera2D = $Camera
+@onready var arm: Node2D = $Arm
 
 @export var control_component: ControlComponent
 @export var move_component: MoveComponent
@@ -45,6 +46,10 @@ func _ready() -> void:
 	freeze = true
 	await tween_scale()
 	freeze = false
+
+
+func _process(delta: float) -> void:
+	arm.scale = scale
 
 
 func _input(event: InputEvent) -> void:

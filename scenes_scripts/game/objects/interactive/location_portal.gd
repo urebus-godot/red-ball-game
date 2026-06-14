@@ -1,6 +1,8 @@
 class_name LocationPortal extends InteractiveObject
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var spiral_sprite: Sprite2D = $SpiralSprite
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
 @onready var center: Marker2D = $Center
 @onready var game_data: GameData = DataManager.game_data
 
@@ -32,10 +34,16 @@ func _ready() -> void:
 	showed_name = "the " + showed_name
 
 
+func _process(delta: float) -> void:
+	spiral_sprite.rotation_degrees += 0.2
+
+
 func _on_body_entered(body: Node2D) -> void:
 	super._on_body_entered(body)
+	animation_player.play("show_spiral")
 	animated_sprite.play("open")
 
 func _on_body_exited(body: Node2D) -> void:
 	super._on_body_exited(body)
+	animation_player.play("hide_spiral")
 	animated_sprite.play("close")

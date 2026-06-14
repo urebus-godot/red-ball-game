@@ -68,10 +68,6 @@ func _on_to_start_menu_button_pressed() -> void:
 		await show_start_menu()
 		is_ui_free = true
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 58f34a40d761c99d5b5ba4bebbe57a98dfcd14b1
 func _on_options_button_pressed() -> void:
 	if is_ui_free:
 		is_ui_free = false

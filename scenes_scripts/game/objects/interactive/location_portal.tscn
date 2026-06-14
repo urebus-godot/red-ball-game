@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b5ps603jp2pd3" path="res://scenes_scripts/game/objects/interactive/location_portal.gd" id="1_0ay6s"]
 [ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/objects/interactive/portal.png" id="2_s76n2"]
-[ext_resource type="FontFile" uid="uid://xwqxcnwsy85c" path="res://resources/fonts/SSFBreakthrough-Demibold.ttf" id="3_s0tl4"]
+[ext_resource type="Texture2D" uid="uid://c440nhsdpaybu" path="res://resources/textures/game/objects/interactive/portal_spiral.png" id="4_i5ryr"]
+[ext_resource type="FontFile" uid="uid://wqf78m3lf1ou" path="res://resources/fonts/kom-post.ttf" id="4_oxw6b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ay6s"]
 animations = [{
@@ -28,6 +29,96 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efhvm"]
 size = Vector2(128, 160)
 
+[sub_resource type="Animation" id="Animation_oxw6b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.97, 0.4947, 0.61352503, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vr861"]
+resource_name = "hide_spiral"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.9890731, 0.46462756, 0.66014504, 1), Color(0.99, 0.46530002, 0.6576901, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.05, 1.05), Vector2(0.95, 0.95)]
+}
+
+[sub_resource type="Animation" id="Animation_i5ryr"]
+resource_name = "appear"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.99, 0.46530002, 0.6576901, 0), Color(0.9882353, 0.4627451, 0.65882355, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.95, 0.95), Vector2(1.05, 1.05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxw6b"]
+_data = {
+&"RESET": SubResource("Animation_oxw6b"),
+&"hide_spiral": SubResource("Animation_vr861"),
+&"show_spiral": SubResource("Animation_i5ryr")
+}
+
 [node name="LocationPortal" type="Area2D" unique_id=2011945355]
 collision_layer = 0
 script = ExtResource("1_0ay6s")
@@ -35,7 +126,12 @@ scene_path = "res://scenes_scripts/game/root/world.tscn"
 interaction_delay = 0.2
 showed_name = "location portal"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1338046011]
+[node name="SpiralSprite" type="Sprite2D" parent="." unique_id=1680682179]
+modulate = Color(0.97, 0.4947, 0.61352503, 0)
+position = Vector2(0, -111)
+texture = ExtResource("4_i5ryr")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1338046011]
 position = Vector2(0, -128)
 sprite_frames = SubResource("SpriteFrames_0ay6s")
 animation = &"closed"
@@ -47,29 +143,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -106.0
-offset_top = -214.0
-offset_right = 106.0
-offset_bottom = -187.0
+offset_left = -108.0
+offset_top = -216.0
+offset_right = 108.0
+offset_bottom = -185.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.90886706, 0.438996, 5.7756904e-07, 1)
 theme_override_colors/font_outline_color = Color(0.39528522, 0.045214675, 0.033951767, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("3_s0tl4")
+theme_override_fonts/font = ExtResource("4_oxw6b")
 theme_override_font_sizes/font_size = 24
 text = "Portal to somewhere"
 horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1077028436]
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1077028436]
 position = Vector2(0, -112)
 shape = SubResource("RectangleShape2D_efhvm")
 
 [node name="Center" type="Marker2D" parent="." unique_id=1011116954]
 visible = false
 position = Vector2(0, -112)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1258635240]
+root_node = NodePath("../SpiralSprite")
+libraries/ = SubResource("AnimationLibrary_oxw6b")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

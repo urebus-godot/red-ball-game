@@ -50,16 +50,16 @@ shape = SubResource("CircleShape2D_hka56")
 player = NodePath("..")
 trans_enabled = false
 
-[node name="InteractTimer" type="Timer" parent="." index="5" unique_id=1944430153]
+[node name="Arm" parent="." index="5" unique_id=393563701 node_paths=PackedStringArray("player") instance=ExtResource("7_psm7a")]
+top_level = true
+player = NodePath("..")
+
+[node name="InteractTimer" type="Timer" parent="." index="6" unique_id=1944430153]
 wait_time = 0.6
 one_shot = true
 
-[node name="ControlComponent" parent="." index="6" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
+[node name="ControlComponent" parent="." index="7" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
 move_component = NodePath("../MoveComponent")
-
-[node name="Arm" parent="." index="10" unique_id=393563701 node_paths=PackedStringArray("player") instance=ExtResource("7_psm7a")]
-top_level = true
-player = NodePath("..")
 
 [connection signal="timeout" from="InteractTimer" to="." method="_on_interact_timer_timeout"]
 [connection signal="creature_died" from="LifeComponent" to="Camera" method="_on_player_died"]
