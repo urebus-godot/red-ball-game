@@ -50,9 +50,10 @@ shape = SubResource("CircleShape2D_hka56")
 player = NodePath("..")
 trans_enabled = false
 
-[node name="Arm" parent="." index="5" unique_id=393563701 node_paths=PackedStringArray("player") instance=ExtResource("7_psm7a")]
+[node name="Arm" parent="." index="5" unique_id=393563701 node_paths=PackedStringArray("player", "life_component") instance=ExtResource("7_psm7a")]
 top_level = true
 player = NodePath("..")
+life_component = NodePath("../LifeComponent")
 
 [node name="InteractTimer" type="Timer" parent="." index="6" unique_id=1944430153]
 wait_time = 0.6

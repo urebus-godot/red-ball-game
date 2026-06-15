@@ -10,6 +10,7 @@ script = ExtResource("2_2ed0c")
 offset_right = 480.0
 offset_bottom = 256.0
 theme = ExtResource("1_ldm14")
+bbcode_enabled = true
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1

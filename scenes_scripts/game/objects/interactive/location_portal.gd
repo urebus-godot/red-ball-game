@@ -1,5 +1,7 @@
 class_name LocationPortal extends InteractiveObject
 
+const SPIRAL_ROTATION_SPEED: float = 0.8
+
 @onready var spiral_sprite: Sprite2D = $SpiralSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
@@ -21,7 +23,7 @@ func can_interact() -> bool:
 
 func interact() -> void:
 	await super.interact()
-	if can_interact():
+	if can_interact():	
 		if scene_path == Constants.NO_PATH:
 			TransitionScreen.change_scene(Constants.LEVEL_PATH % level)
 		else:
@@ -35,15 +37,17 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	spiral_sprite.rotation_degrees += 0.2
+	spiral_sprite.rotation_degrees += SPIRAL_ROTATION_SPEED
 
 
 func _on_body_entered(body: Node2D) -> void:
-	super._on_body_entered(body)
-	animation_player.play("show_spiral")
-	animated_sprite.play("open")
+	if can_interact():
+		super._on_body_entered(body)
+		animation_player.play("show_spiral")
+		animated_sprite.play("open")
 
 func _on_body_exited(body: Node2D) -> void:
-	super._on_body_exited(body)
-	animation_player.play("hide_spiral")
-	animated_sprite.play("close")
+	if can_interact():
+		super._on_body_exited(body)
+		animation_player.play("hide_spiral")
+		animated_sprite.play("close")

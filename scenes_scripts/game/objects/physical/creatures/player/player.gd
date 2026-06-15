@@ -59,6 +59,7 @@ func _input(event: InputEvent) -> void:
 		object_to_interact.interact()
 		match_action_for_interactive_object_class()
 		prints("Now you can't interact!", can_interact)
+
 	elif event.is_action_pressed("switch_camera_mode") and free_camera_mode_enabled:
 		camera.free_mode = not camera.free_mode
 		move_component.movement_enabled = not move_component.movement_enabled

@@ -3,9 +3,10 @@ class_name MoveComponent extends Node
 #signal enter_floor
 
 const HOLD_JUMP_TIME: float = 0.14
+const FORCE_MULTIPLIER: float = 0.006
 
-@export var torque: float = 40000.0
-@export var angular_velocity: float = 10.0
+@export var torque: float = 45000.0
+@export var max_velocity: float = 800.0
 @export var jump_impulse: float = 350.0
 @export var jump_hold_force: float = 2600
 
@@ -37,13 +38,16 @@ func disable_jump() -> void:
 
 
 func move_right() -> void:
-	if movement_enabled and creature.angular_velocity < angular_velocity:
+	if movement_enabled and creature.linear_velocity.x < max_velocity:
 		creature.apply_torque(torque)
+		if not is_on_floor():
+			creature.apply_central_force(Vector2.RIGHT * torque * FORCE_MULTIPLIER)
 
 func move_left() -> void:
-	if movement_enabled and abs(creature.angular_velocity) < angular_velocity:
+	if movement_enabled and abs(creature.linear_velocity.x) < max_velocity:
 		creature.apply_torque(-torque)
-
+		if not is_on_floor():
+			creature.apply_central_force(Vector2.LEFT * torque * FORCE_MULTIPLIER)
 
 func jump(delta: float) -> void:
 	if movement_enabled and jump_enabled:

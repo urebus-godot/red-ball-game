@@ -1,4 +1,4 @@
-extends CanvasLayer
+class_name UILayer extends CanvasLayer
 
 const TWEEN_DURATION: float = 0.5
 
@@ -7,6 +7,7 @@ const TWEEN_DURATION: float = 0.5
 @onready var options_menu: OptionsMenu = $OptionsMenu
 @onready var finish_menu: Panel = $FinishMenu
 @onready var lost_menu: Panel = $LostMenu
+@onready var topazes_label: Label = $Bounds/UpperBound/TopazesLabel
 
 var level: int = 1
 
@@ -49,9 +50,10 @@ func hide_pause_menu() -> void:
 	is_ui_free = true
 
 
-func show_finish_menu(score: int) -> void:
+func show_finish_menu(score: int, time_s: float) -> void:
 	var finish_info_label: Label = $FinishMenu/FinishInfoLabel
-	finish_info_label.text = "You completed level %s! \nScore: %s" % [level, score]
+	var time = General.format_time(time_s)
+	finish_info_label.text = "You completed level %s! \nScore: %s\nTime: %s" % [level, score, time]
 
 	finish_menu.position.y = -900
 	finish_menu.visible = true
@@ -74,6 +76,10 @@ func show_lost_menu() -> void:
 	)
 
 
+func set_topaz_label_value(value: int) -> void:
+	topazes_label.text = str(value)
+
+
 func _ready() -> void:
 	pause_menu.visible = false
 	finish_menu.visible = false
@@ -88,9 +94,10 @@ func _input(event: InputEvent) -> void:
 			check_for_pause()
 
 
-func _on_level_finished(score: int) -> void:
+func _on_level_finished(score: int, time_s: float) -> void:
+	await get_tree().create_timer(0.5).timeout
 	tinting.show_tinting()
-	show_finish_menu(score)
+	show_finish_menu(score, time_s)
 
 
 func _on_player_died() -> void:

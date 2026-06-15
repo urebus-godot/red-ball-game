@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxbjg7tng3tjj" path="res://scenes_scripts/ui/menus/options_menu.gd" id="1_y8snl"]
 [ext_resource type="Texture2D" uid="uid://bjrim8ia4jryv" path="res://resources/textures/ui/icons/arrow_back_icon.png" id="2_hy6fi"]
-[ext_resource type="Texture2D" uid="uid://c0b8j31ja6o8u" path="res://resources/textures/ui/icons/gear_icon.png" id="3_wn0fj"]
+[ext_resource type="Texture2D" uid="uid://cjamsgdwsb53s" path="res://resources/textures/ui/clickables/knob.png" id="3_d5k5w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdiy1"]
 bg_color = Color(0.23927224, 0.2248086, 0.2428881, 1)
@@ -77,14 +77,15 @@ Button/styles/normal = SubResource("StyleBoxFlat_wn0fj")
 Button/styles/pressed = SubResource("StyleBoxFlat_d5k5w")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjgam"]
-bg_color = Color(0.49360004, 0.43199998, 0.96, 1)
+bg_color = Color(0.25, 0.6875001, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnqoq"]
-bg_color = Color(0.63783336, 0.59000003, 1, 1)
+bg_color = Color(0.44, 0.76666677, 1, 1)
 
 [sub_resource type="Theme" id="Theme_spabx"]
-HSlider/icons/grabber = ExtResource("3_wn0fj")
-HSlider/icons/grabber_highlight = ExtResource("3_wn0fj")
+HSlider/icons/grabber = ExtResource("3_d5k5w")
+HSlider/icons/grabber_disabled = ExtResource("3_d5k5w")
+HSlider/icons/grabber_highlight = ExtResource("3_d5k5w")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_mjgam")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_qnqoq")
 

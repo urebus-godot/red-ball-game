@@ -16,7 +16,6 @@ offset_right = 128.0
 offset_bottom = 256.0
 texture = ExtResource("1_qkcx4")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=872582417]
 scale = Vector2(1.1, 1)

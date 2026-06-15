@@ -4,6 +4,7 @@ const MAX_HIT_CHARGE: float = 2.25
 const HIT_FORCE: float = 900
 
 @export var player: Player
+@export var life_component: LifeComponent
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -21,20 +22,24 @@ func hit() -> void:
 
 	await animation_player.animation_finished
 
+	animation_player.play("RESET")
 	is_hitting = false
 	can_charge_hit = true
 	hit_charge = 0.0
 
 
 func set_position_and_rotation() -> void:
-	var mouse_pos = get_global_mouse_position()
-	var direction = position.direction_to(mouse_pos)
-	var offset = ((mouse_pos - position) / 15).clampf(-35, 35)
+	if life_component.alive:
+		var mouse_pos = get_global_mouse_position()
+		var direction = position.direction_to(mouse_pos)
+		var offset = ((mouse_pos - position) / 15).clampf(-35, 35)
 
-	position = player.position + offset
+		position = player.position + offset
 
-	if not is_hitting:
-		rotation = direction.angle()
+		if not is_hitting:
+			rotation = direction.angle()
+	else:
+		position = player.position
 
 
 func accumulate_hit_charge(delta: float) -> void:

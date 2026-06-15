@@ -7,6 +7,6 @@ func _on_body_entered(body: Node2D) -> void:
 	object_to_activate.activate()
 	queue_free()
 
-func _on_body_exited(body: Node2D) -> void:
-	object_to_activate.activate()
-	queue_free()
+#func _on_body_exited(body: Node2D) -> void:
+#	object_to_activate.activate()
+#	queue_free()

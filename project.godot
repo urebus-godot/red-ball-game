@@ -27,6 +27,7 @@ MusicPlayer="*uid://cwxd60lw0ytrx"
 Constants="*uid://cc2rhgr4p28ic"
 DataManager="*uid://dgomqobh7e3ie"
 SettingsDataManager="*uid://duucwcv73qwci"
+General="*uid://gmc0sgxyf61r"
 
 [debug]
 
@@ -116,6 +117,7 @@ hit={
 2d_physics/layer_2="static_solids"
 2d_physics/layer_3="physical_solids"
 2d_physics/layer_4="creatures"
+2d_physics/layer_5="interactive"
 
 [physics]
 

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://daoi38gxr1or8"]
+
+[ext_resource type="Texture2D" uid="uid://c440nhsdpaybu" path="res://resources/textures/game/objects/interactive/portal_spiral.png" id="1_dhusl"]
+[ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/objects/interactive/portal.png" id="2_ko2j7"]
+[ext_resource type="FontFile" uid="uid://wqf78m3lf1ou" path="res://resources/fonts/kom-post.ttf" id="3_rc4sr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nwmtv"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ko2j7")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62qgw"]
+size = Vector2(144, 184)
+
+[node name="FinishArea" type="Area2D" unique_id=737669738]
+
+[node name="SpiralSprite" type="Sprite2D" parent="." unique_id=903661844]
+modulate = Color(0.97, 0.4947, 0.61352503, 0)
+position = Vector2(0, 17)
+texture = ExtResource("1_dhusl")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=2105415937]
+sprite_frames = SubResource("SpriteFrames_nwmtv")
+animation = &"closed"
+autoplay = "closed"
+
+[node name="Label" type="Label" parent="." unique_id=1550801723]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -88.0
+offset_right = 108.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.90886706, 0.438996, 5.7756904e-07, 1)
+theme_override_colors/font_outline_color = Color(0.39528522, 0.045214675, 0.033951767, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_rc4sr")
+theme_override_font_sizes/font_size = 24
+text = "FINISH!"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=498318413]
+position = Vector2(0, 36)
+shape = SubResource("RectangleShape2D_62qgw")

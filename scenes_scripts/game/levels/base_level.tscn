@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="4_jt1by"]
 [ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/objects/interactive/portal.png" id="6_62qgw"]
 [ext_resource type="PackedScene" uid="uid://obqeiafka73e" path="res://scenes_scripts/ui/hud/ui_layer.tscn" id="6_pb7rb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_62qgw"]
-size = Vector2(256, 256)
+[ext_resource type="PackedScene" uid="uid://daoi38gxr1or8" path="res://scenes_scripts/game/objects/areas/finish_area.tscn" id="7_y6yin"]
 
 [sub_resource type="Environment" id="Environment_62qgw"]
 background_mode = 3
@@ -71,7 +69,13 @@ texture = ExtResource("6_62qgw")
 
 [node name="Background" type="Node2D" parent="." unique_id=40735884]
 
+[node name="FinishArea" parent="Background" unique_id=737669738 instance=ExtResource("7_y6yin")]
+
 [node name="PhysicsObjects" type="Node2D" parent="." unique_id=952607968]
+
+[node name="StaticSolids" type="Node2D" parent="." unique_id=649195086]
+
+[node name="Interactive" type="Node2D" parent="." unique_id=744542152]
 
 [node name="Creatures" type="Node2D" parent="." unique_id=1133915585]
 
@@ -84,20 +88,17 @@ position = Vector2(0, 2368)
 
 [node name="Areas" type="Node2D" parent="." unique_id=1723939335]
 
-[node name="FinishArea" type="Area2D" parent="Areas" unique_id=1444216573]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/FinishArea" unique_id=534036631]
-shape = SubResource("RectangleShape2D_62qgw")
-
 [node name="Labels" type="Node2D" parent="." unique_id=608123660]
 
 [node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("4_jt1by")]
+z_index = 2
+lower_ground = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1547052815]
 environment = SubResource("Environment_62qgw")
 
 [connection signal="level_finished" from="." to="UILayer" method="_on_level_finished"]
 [connection signal="level_finished" from="." to="Creatures/Player" method="_on_level_finished"]
+[connection signal="body_entered" from="Background/FinishArea" to="." method="_on_finish_area_body_entered"]
 [connection signal="creature_died" from="Creatures/Player" to="." method="_on_player_died"]
 [connection signal="creature_died" from="Creatures/Player" to="UILayer" method="_on_player_died"]
-[connection signal="body_entered" from="Areas/FinishArea" to="." method="_on_finish_area_body_entered"]

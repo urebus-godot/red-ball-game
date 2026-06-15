@@ -69,7 +69,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.9890731, 0.46462756, 0.66014504, 1), Color(0.99, 0.46530002, 0.6576901, 0)]
+"values": [Color(0.92941177, 0.36862746, 0.19607843, 1), Color(0.93, 0.36672997, 0.19529998, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -97,7 +97,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.99, 0.46530002, 0.6576901, 0), Color(0.9882353, 0.4627451, 0.65882355, 1)]
+"values": [Color(0.93, 0.36672997, 0.19529998, 0), Color(0.92941177, 0.36862746, 0.19607843, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false

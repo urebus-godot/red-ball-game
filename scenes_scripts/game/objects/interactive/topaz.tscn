@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://5nokwb5ymxnk"]
+
+[ext_resource type="Texture2D" uid="uid://c2o1cd4hw2bpm" path="res://resources/textures/game/objects/interactive/topaz.png" id="1_mk2fx"]
+[ext_resource type="Script" uid="uid://ct4u1i78p7wsn" path="res://scenes_scripts/game/objects/interactive/topaz.gd" id="1_te4av"]
+[ext_resource type="Script" uid="uid://dgpinc5tlpah5" path="res://scenes_scripts/game/objects/interactive/pickable_component.gd" id="2_5dpe7"]
+[ext_resource type="Texture2D" uid="uid://cm0p4yarc3hvx" path="res://resources/textures/game/particles/spark.png" id="3_inkpd"]
+
+[sub_resource type="Curve" id="Curve_te4av"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_te4av"]
+curve = SubResource("Curve_te4av")
+
+[sub_resource type="Gradient" id="Gradient_inkpd"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.14184397, 0.8014184, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.59607846, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_te4av"]
+gradient = SubResource("Gradient_inkpd")
+
+[sub_resource type="Curve" id="Curve_inkpd"]
+_data = [Vector2(0, 0.13333334), 0.0, 0.79143864, 0, 0, Vector2(0.4666667, 0.8000001), 0.0, 0.0, 0, 0, Vector2(0.53333336, 0.8000001), -0.083719224, -0.083719224, 0, 0, Vector2(1, 0.13333334), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_enabled = true
+metadata/_snap_count = 15
+
+[sub_resource type="CurveTexture" id="CurveTexture_o4pbq"]
+curve = SubResource("Curve_inkpd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_inkpd"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(40, 20, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -213.79999
+angle_max = 359.40002
+angle_curve = SubResource("CurveTexture_te4av")
+velocity_pivot = Vector3(1, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_max = 6.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_o4pbq")
+color_ramp = SubResource("GradientTexture1D_te4av")
+turbulence_noise_strength = 11.47
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inkpd"]
+size = Vector2(80, 46)
+
+[sub_resource type="Animation" id="Animation_te4av"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Offset:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_inkpd"]
+resource_name = "movement"
+length = 1.6
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Offset:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -15), Vector2(0, 15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_te4av"]
+_data = {
+&"RESET": SubResource("Animation_te4av"),
+&"movement": SubResource("Animation_inkpd")
+}
+
+[node name="Topaz" type="Node2D" unique_id=1019438090]
+script = ExtResource("1_te4av")
+
+[node name="Offset" type="Node2D" parent="." unique_id=250482680]
+
+[node name="Sprite2D" type="Sprite2D" parent="Offset" unique_id=1643377239]
+texture = ExtResource("1_mk2fx")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Offset" unique_id=1179865323]
+amount = 6
+texture = ExtResource("3_inkpd")
+lifetime = 1.8
+explosiveness = 0.05
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_inkpd")
+
+[node name="Area2D" type="Area2D" parent="Offset" unique_id=162993764]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offset/Area2D" unique_id=1936001824]
+shape = SubResource("RectangleShape2D_inkpd")
+
+[node name="PickableComponent" type="Node" parent="." unique_id=150165719 node_paths=PackedStringArray("target", "animation_player")]
+script = ExtResource("2_5dpe7")
+target = NodePath("../Offset")
+animation_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1185593503]
+libraries/ = SubResource("AnimationLibrary_te4av")
+autoplay = &"movement"
+speed_scale = 0.6
+
+[connection signal="body_entered" from="Offset/Area2D" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Offset/Area2D" to="PickableComponent" method="_on_area_body_entered"]

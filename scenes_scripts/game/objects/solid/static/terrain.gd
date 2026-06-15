@@ -6,9 +6,13 @@ extends StaticBody2D
 @onready var ground_line: Line2D = $Line2D
 
 @export var areas_without_grass: Array[Vector2] ## X of Vector is left bound; Y of Vector is right bound of area without grass 
+@export var lower_ground: bool = false
 
 
 func _ready() -> void:
+	if lower_ground:
+		position.y -= 64
+
 	var ground_curve: Curve2D = ground_bounds.curve
 	var ground_points: PackedVector2Array = ground_curve.get_baked_points()
 
@@ -18,11 +22,9 @@ func _ready() -> void:
 
 	#var line_points = ground_line.get_points()
 	#var new_points = []
-	#var width = 0#(ground_line.width / 2) - 4
-#
+	#var width = 64#(ground_line.width / 2) - 4
+##
 	#for point in line_points:
-		##if point.x < areas_without_grass and point.x > areas_without_grass:
-			#
 		#new_points.append(point + Vector2(0, width))
-#
+##
 	#ground_line.set_points(new_points)
