@@ -16,6 +16,20 @@ var object_to_interact: InteractiveObject = null
 var equipped_artifact: Artefact = null
 
 
+func equip_artefact(artefact_name: String) -> void:
+	if equipped_artifact:
+		var pickable_artefact_scene = load(
+			Constants.PICKABLE_ARTEFACT_PATH % equipped_artifact.artefact_name)
+		var pickable_artefact = pickable_artefact_scene.instantiate()
+		pickable_artefact.position = global_position
+		get_tree().add_child(pickable_artefact)
+
+	var artefact_scene = load(Constants.ARTEFACT_PATH % artefact_name)
+	var artefact: Artefact = artefact_scene.instantiate()
+	arm.add_child(artefact)
+	equipped_artifact = artefact
+
+
 func tween_scale(decrement: bool = false) -> void:
 	var scale_tween = create_tween().set_parallel().set_trans(Tween.TRANS_SINE)
 	if decrement:

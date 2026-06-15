@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://mb8oka35gbdi"]
+
+[ext_resource type="FontFile" uid="uid://c2hrra5eptan4" path="res://resources/fonts/SSFBreakthrough-Black.ttf" id="1_b6ukt"]
+
+[resource]
+Label/colors/font_color = Color(0.88888526, 0.60900074, 0, 1)
+Label/colors/font_outline_color = Color(0.44007993, 0.21943891, 0.020966573, 1)
+Label/constants/outline_size = 16
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_b6ukt")

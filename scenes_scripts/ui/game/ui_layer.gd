@@ -7,7 +7,9 @@ const TWEEN_DURATION: float = 0.5
 @onready var options_menu: OptionsMenu = $OptionsMenu
 @onready var finish_menu: Panel = $FinishMenu
 @onready var lost_menu: Panel = $LostMenu
+@onready var artefact_texture: TextureRect = $Bounds/LowerBound/Panel/ArtefactTexture
 @onready var topazes_label: Label = $Bounds/UpperBound/TopazesLabel
+@onready var artifact_label: Label = $Bounds/LowerBound/ArtifactLabel
 
 var level: int = 1
 

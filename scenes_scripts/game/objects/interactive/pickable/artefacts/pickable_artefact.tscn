@@ -1,13 +1,70 @@
 [gd_scene format=3 uid="uid://3hroom7g8eq4"]
 
-[ext_resource type="PackedScene" uid="uid://cylwigm8jst1i" path="res://scenes_scripts/game/objects/interactive/pickable/base_pickable.tscn" id="1_7tv6h"]
 [ext_resource type="Script" uid="uid://3lrwserijsas" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_artefact.gd" id="2_teboj"]
+[ext_resource type="Script" uid="uid://dgpinc5tlpah5" path="res://scenes_scripts/game/objects/interactive/pickable/pickable_component.gd" id="2_xqmdy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7tv6h"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_teboj"]
 radius = 32.0
 
-[node name="Artefact" unique_id=1019438090 instance=ExtResource("1_7tv6h")]
-script = ExtResource("2_teboj")
+[sub_resource type="Animation" id="Animation_te4av"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[node name="CollisionShape2D" parent="Offset/Area2D" parent_id_path=PackedInt32Array(162993764) index="0" unique_id=1936001824]
-shape = SubResource("CircleShape2D_7tv6h")
+[sub_resource type="Animation" id="Animation_inkpd"]
+resource_name = "movement"
+length = 1.6
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -15), Vector2(0, 15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_te4av"]
+_data = {
+&"RESET": SubResource("Animation_te4av"),
+&"movement": SubResource("Animation_inkpd")
+}
+
+[node name="Artefact" type="Node2D" unique_id=1019438090]
+
+[node name="Area" type="Area2D" parent="." unique_id=1458351955 node_paths=PackedStringArray("pickable_component")]
+script = ExtResource("2_teboj")
+pickable_component = NodePath("../PickableComponent")
+artefact_name = "MOBILITY"
+
+[node name="Sprite2D" type="Sprite2D" parent="Area" unique_id=1643377239]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=1936001824]
+shape = SubResource("CircleShape2D_teboj")
+
+[node name="PickableComponent" type="Node" parent="." unique_id=150165719 node_paths=PackedStringArray("target")]
+script = ExtResource("2_xqmdy")
+target = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1185593503]
+libraries/ = SubResource("AnimationLibrary_te4av")
+autoplay = &"movement"
+speed_scale = 0.6
+
+[connection signal="body_entered" from="Area" to="Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Area" to="Area" method="_on_body_exited"]

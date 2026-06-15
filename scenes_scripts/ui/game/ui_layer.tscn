@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://c6yrnifyunf8d" path="res://resources/themes/buttons/blue_square_button.tres" id="2_v78qn"]
 [ext_resource type="Texture2D" uid="uid://dh7w325viheib" path="res://resources/textures/ui/icons/pause_icon.png" id="3_xgkvo"]
 [ext_resource type="PackedScene" uid="uid://de4m7ia64dubp" path="res://scenes_scripts/ui/menus/options_menu.tscn" id="4_8qgv2"]
+[ext_resource type="Theme" uid="uid://mb8oka35gbdi" path="res://resources/themes/fonts/game_ui_text.tres" id="4_ugwj5"]
 [ext_resource type="Texture2D" uid="uid://c2o1cd4hw2bpm" path="res://resources/textures/game/objects/interactive/topaz.png" id="5_gd4k3"]
 [ext_resource type="Texture2D" uid="uid://b0sr2tgrnf5oe" path="res://resources/textures/ui/icons/play_icon.png" id="6_8q4gr"]
 [ext_resource type="Texture2D" uid="uid://c0b8j31ja6o8u" path="res://resources/textures/ui/icons/gear_icon.png" id="6_srnps"]
@@ -16,16 +17,22 @@
 [ext_resource type="FontFile" uid="uid://j1wevx13vv24" path="res://resources/fonts/SSFBreakthrough-Heavy.ttf" id="13_7tan6"]
 [ext_resource type="FontFile" uid="uid://c2hrra5eptan4" path="res://resources/fonts/SSFBreakthrough-Black.ttf" id="14_ory12"]
 
-[sub_resource type="Theme" id="Theme_ory12"]
-Label/colors/font_color = Color(0.88888526, 0.60900074, 0, 1)
-Label/colors/font_outline_color = Color(0.44007993, 0.21943891, 0.020966573, 1)
-Label/constants/outline_size = 16
-Label/font_sizes/font_size = 64
-Label/fonts/font = ExtResource("14_ory12")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_gd4k3"]
 atlas = ExtResource("5_gd4k3")
 region = Rect2(22, 39, 84, 50)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqi1d"]
+bg_color = Color(0.26, 0.26, 0.26, 0.7490196)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.11, 0.11, 0.11, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lks73"]
 bg_color = Color(0.8722, 0.8808033, 0.89, 1)
@@ -88,7 +95,7 @@ offset_top = -24.0
 offset_right = 888.0
 offset_bottom = 40.0
 grow_vertical = 2
-theme = SubResource("Theme_ory12")
+theme = ExtResource("4_ugwj5")
 text = "Topazes collected"
 
 [node name="TextureRect" type="TextureRect" parent="Bounds/UpperBound" unique_id=624979424]
@@ -102,6 +109,55 @@ offset_bottom = 25.0
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
 texture = SubResource("AtlasTexture_gd4k3")
+
+[node name="LowerBound" type="Control" parent="Bounds" unique_id=2006033911]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="Bounds/LowerBound" unique_id=681929708]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -176.0
+offset_right = -72.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eqi1d")
+
+[node name="ArtefactTexture" type="TextureRect" parent="Bounds/LowerBound/Panel" unique_id=1110724626]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_gd4k3")
+
+[node name="ArtifactLabel" type="Label" parent="Bounds/LowerBound" unique_id=480683700]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_ugwj5")
+text = "Equipped artifact"
+horizontal_alignment = 2
 
 [node name="Tinting" parent="." unique_id=1261466242 instance=ExtResource("2_e325d")]
 visible = false
@@ -377,15 +433,6 @@ theme = ExtResource("1_sad0e")
 text = "Restart"
 icon = ExtResource("8_lks73")
 expand_icon = true
-
-[node name="Label" type="Label" parent="." unique_id=1071467107]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
 
 [connection signal="pressed" from="Bounds/UpperBound/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Container/ResumeButton" to="." method="_on_resume_button_pressed"]

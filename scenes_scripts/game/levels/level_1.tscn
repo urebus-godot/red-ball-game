@@ -83,7 +83,7 @@ text_overrun_behavior = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Crate" parent="PhysicsObjects" parent_id_path=PackedInt32Array(952607968) index="0" unique_id=840999448 instance=ExtResource("3_aau4x")]
-position = Vector2(11712, 2080)
+position = Vector2(11640, 2080)
 
 [node name="PlatformOnBeams" parent="StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=1838207057 instance=ExtResource("2_jabye")]
 position = Vector2(16991.998, 1728)
@@ -104,16 +104,16 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(2888, 1752)
 
 [node name="Topaz2" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="1" unique_id=1839146959 instance=ExtResource("4_m5ksf")]
-position = Vector2(6824, 1840)
+position = Vector2(6800, 1824)
 
 [node name="Topaz3" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="2" unique_id=539892684 instance=ExtResource("4_m5ksf")]
-position = Vector2(6624, 1784)
+position = Vector2(6600, 1768)
 
 [node name="Topaz4" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="3" unique_id=691998505 instance=ExtResource("4_m5ksf")]
-position = Vector2(6416, 1832)
+position = Vector2(6392, 1816)
 
 [node name="Topaz17" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="4" unique_id=926452592 instance=ExtResource("4_m5ksf")]
-position = Vector2(6288, 1960)
+position = Vector2(6264, 1944)
 
 [node name="Topaz5" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="5" unique_id=191504444 instance=ExtResource("4_m5ksf")]
 position = Vector2(8696, 1920)
@@ -152,7 +152,7 @@ position = Vector2(18288, 1416)
 position = Vector2(18464, 1568)
 
 [node name="Artefact" parent="Interactive/Artefacts" parent_id_path=PackedInt32Array(1593477800) index="0" unique_id=1332179674 instance=ExtResource("9_sxrrc")]
-position = Vector2(20160, 2080)
+position = Vector2(320, 2368)
 
 [node name="Player" parent="Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
 physics_material_override = null
@@ -231,10 +231,10 @@ position = Vector2(11680, 1568)
 activation_delay = 0.5
 
 [node name="HintLabel" parent="Labels/HintLabel5" index="0" unique_id=514289046]
-offset_left = -56.0
-offset_top = -40.0
-offset_right = 776.0
-offset_bottom = 312.0
+offset_left = -96.0
+offset_top = -8.0
+offset_right = 736.0
+offset_bottom = 344.0
 text = "The ball have an outrageously mighty arm. Use it to push the obstacles. Charge hit force by holding [b]left mouse button[/b]"
 
 [node name="HintLabel6" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="5" unique_id=1620043907 instance=ExtResource("5_aau4x")]

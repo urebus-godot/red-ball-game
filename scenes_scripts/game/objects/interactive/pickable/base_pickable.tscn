@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cylwigm8jst1i"]
 
-[ext_resource type="Script" uid="uid://ct4u1i78p7wsn" path="res://scenes_scripts/game/objects/interactive/pickable/topaz/topaz.gd" id="1_nqlex"]
 [ext_resource type="Script" uid="uid://dgpinc5tlpah5" path="res://scenes_scripts/game/objects/interactive/pickable/pickable_component.gd" id="3_ur6js"]
 
 [sub_resource type="Animation" id="Animation_te4av"]
@@ -8,7 +7,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Offset:position")
+tracks/0/path = NodePath("Area:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +25,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Offset:position")
+tracks/0/path = NodePath("Area:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -43,7 +42,6 @@ _data = {
 }
 
 [node name="Pickable" type="Node2D" unique_id=1019438090]
-script = ExtResource("1_nqlex")
 
 [node name="Offset" type="Node2D" parent="." unique_id=250482680]
 
