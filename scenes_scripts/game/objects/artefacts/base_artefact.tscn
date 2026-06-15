@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://da782lup76038"]
 
 [ext_resource type="Script" uid="uid://btrfm650danw6" path="res://scenes_scripts/game/objects/artefacts/artefact.gd" id="1_dn1mp"]
+[ext_resource type="Script" uid="uid://dgpinc5tlpah5" path="res://scenes_scripts/game/objects/interactive/pickable/pickable_component.gd" id="2_lhk1w"]
 
 [node name="BaseArtefact" type="Node2D" unique_id=2019080803]
 script = ExtResource("1_dn1mp")
+
+[node name="PickableComponent" type="Node" parent="." unique_id=1273473423]
+script = ExtResource("2_lhk1w")
+metadata/_custom_type_script = "uid://dgpinc5tlpah5"

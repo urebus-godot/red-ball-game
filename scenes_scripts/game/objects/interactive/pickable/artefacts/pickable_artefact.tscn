@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://3hroom7g8eq4"]
+
+[ext_resource type="PackedScene" uid="uid://cylwigm8jst1i" path="res://scenes_scripts/game/objects/interactive/pickable/base_pickable.tscn" id="1_7tv6h"]
+[ext_resource type="Script" uid="uid://3lrwserijsas" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_artefact.gd" id="2_teboj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7tv6h"]
+radius = 32.0
+
+[node name="Artefact" unique_id=1019438090 instance=ExtResource("1_7tv6h")]
+script = ExtResource("2_teboj")
+
+[node name="CollisionShape2D" parent="Offset/Area2D" parent_id_path=PackedInt32Array(162993764) index="0" unique_id=1936001824]
+shape = SubResource("CircleShape2D_7tv6h")

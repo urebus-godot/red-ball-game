@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/physical/physics/crate.tscn" id="3_aau4x"]
 [ext_resource type="PackedScene" uid="uid://daoi38gxr1or8" path="res://scenes_scripts/game/objects/areas/finish_area.tscn" id="3_yh2jh"]
 [ext_resource type="Texture2D" uid="uid://c440nhsdpaybu" path="res://resources/textures/game/objects/interactive/portal_spiral.png" id="4_f43mu"]
-[ext_resource type="PackedScene" uid="uid://5nokwb5ymxnk" path="res://scenes_scripts/game/objects/interactive/topaz.tscn" id="4_m5ksf"]
+[ext_resource type="PackedScene" uid="uid://5nokwb5ymxnk" path="res://scenes_scripts/game/objects/interactive/pickable/topaz/topaz.tscn" id="4_m5ksf"]
 [ext_resource type="PackedScene" uid="uid://bvcpab838u2eo" path="res://scenes_scripts/game/objects/ui_elements/hint_label.tscn" id="5_aau4x"]
 [ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/objects/interactive/portal.png" id="5_gg7n2"]
 [ext_resource type="PackedScene" uid="uid://bg48lxeeip6cc" path="res://scenes_scripts/game/objects/areas/activate_area.tscn" id="5_mc8sp"]
 [ext_resource type="FontFile" uid="uid://wqf78m3lf1ou" path="res://resources/fonts/kom-post.ttf" id="6_m5ksf"]
+[ext_resource type="PackedScene" uid="uid://3hroom7g8eq4" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_artefact.tscn" id="9_sxrrc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ay6s"]
 animations = [{
@@ -36,18 +37,17 @@ animations = [{
 [sub_resource type="Curve2D" id="Curve2D_mc8sp"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 832, 64, 0, 0, 0, 0, 1328, 40, 0, 0, 0, 0, 1552, 0, 0, 0, 0, 0, 1792, -56, 0, 0, 0, 0, 1952, -120, 0, 0, 0, 0, 2104, -192, 0, 0, 0, 0, 2312, -272, 0, 0, 0, 0, 2424, -296, 0, 0, 0, 0, 2704, -336, 0, 0, 0, 0, 2912, -344, 0, 0, 0, 0, 3136, -296, 0, 0, 0, 0, 3216, -248, 0, 0, 0, 0, 3296, -208, 0, 0, 0, 0, 3440, -160, 0, 0, 0, 0, 3536, -152, 0, 0, 0, 0, 3704, -184, 0, 0, 0, 0, 3944, -264, 0, 0, 0, 0, 4056, -312, 0, 0, 0, 0, 4200, -336, 0, 0, 0, 0, 4472, -336, 0, 0, 0, 0, 4584, -320, 0, 0, 0, 0, 4760, -248, 0, 0, 0, 0, 4848, -184, 0, 0, 0, 0, 4976, -112, 0, 0, 0, 0, 5144, -56, 0, 0, 0, 0, 5240, -32, 0, 0, 0, 0, 5344, -8, 0, 0, 0, 0, 5504, 0, 0, 0, 0, 0, 5752, -16, 0, 0, 0, 0, 5912, -64, 0, 0, 0, 0, 6200, -112, 0, 0, 0, 0, 6360, -112, 0, 0, 0, 0, 6576, -72, 0, 0, 0, 0, 6720, -72, 0, 0, 0, 0, 6832, -96, 0, 0, 0, 0, 6856, -144, 0, 0, 0, 0, 6872, -216, 0, 0, 0, 0, 6896, -264, 0, 0, 0, 0, 6952, -280, 0, 0, 0, 0, 7016, -296, 0, 0, 0, 0, 7200, -312, 0, 0, 0, 0, 7376, -312, 0, 0, 0, 0, 7560, -304, 0, 0, 0, 0, 7720, -320, 0, 0, 0, 0, 7896, -336, 0, 0, 0, 0, 8040, -320, 0, 0, 0, 0, 8512, -336, 0, 0, 0, 0, 8680, -320, 0, 0, 0, 0, 8720, -248, 0, 0, 0, 0, 8728, -168, 0, 0, 0, 0, 8760, -112, 0, 0, 0, 0, 8904, -72, 0, 0, 0, 0, 9056, -56, 0, 0, 0, 0, 9144, -56, 0, 0, 0, 0, 9312, -80, 0, 0, 0, 0, 9344, -144, 0, 0, 0, 0, 9368, -256, 0, 0, 0, 0, 9384, -288, 0, 0, 0, 0, 9416, -304, 0, 0, 0, 0, 9560, -304, 0, 0, 0, 0, 9680, -296, 0, 0, 0, 0, 9840, -312, 0, 0, 0, 0, 9952, -296, 0, 0, 0, 0, 10264, -304, 0, 0, 0, 0, 10512, -288, 0, 0, 0, 0, 10896, -280, 0, 0, 0, 0, 11104, -224, 0, 0, 0, 0, 11576, -192, 0, 0, 0, 0, 12288, -184, 0, 0, 0, 0, 12568, -192, 0, 0, 0, 0, 12600, -224, 0, 0, 0, 0, 12632, -336, 0, 0, 0, 0, 12624, -424, 0, 0, 0, 0, 12656, -544, 0, 0, 0, 0, 12816, -584, 0, 0, 0, 0, 13088, -592, 0, 0, 0, 0, 13496, -568, 0, 0, 0, 0, 14112, -432, 0, 0, 0, 0, 14744, -352, 0, 0, 0, 0, 15496, -296, 0, 0, 0, 0, 16152, -344, 0, 0, 0, 0, 16496, -408, 0, 0, 0, 0, 16640, -392, 0, 0, 0, 0, 16792, -280, 0, 0, 0, 0, 17120, -232, 0, 0, 0, 0, 17392, -184, 0, 0, 0, 0, 17568, -176, 0, 0, 0, 0, 17968, -200, 0, 0, 0, 0, 18448, -184, 0, 0, 0, 0, 18752, -192, 0, 0, 0, 0, 18904, -224, 0, 0, 0, 0, 19296, -272, 0, 0, 0, 0, 19768, -232, 0, 0, 0, 0, 20448, -232, 0, 0, 0, 0, 20696, -272, 0, 0, 0, 0, 20832, -352, 0, 0, 0, 0, 20904, -488, 0, 0, 0, 0, 20952, -608, 0, 0, 0, 0, 21000, -792, 0, 0, 0, 0, 21168, -912, 0, 0, 0, 0, 21496, -936, 0, 0, 0, 0, 22120, -936, 0, 0, 0, 0, 23552, -1136, 0, 0, 0, 0, 23600, 1104, 0, 0, 0, 0, -1696, 1216, 0, 0, 0, 0, -2952, 952, 0, 0, 0, 0, -2856, -720, 0, 0, 0, 0, -2744, -1208, 0, 0, 0, 0, -2328, -1384, 0, 0, 0, 0, -1880, -1392, 0, 0, 0, 0, -1544, -1192, 0, 0, 0, 0, -1440, -928, 0, 0, 0, 0, -1424, -560, 0, 0, 0, 0, -1368, -280, 0, 0, 0, 0, -1312, -112, 0, 0, 0, 0, -1130.8901, -8.859283, 0, 0, 0, 0, -952, 24, 0, 0, 0, 0, -672, 48, 0, 0, 0, 0, -224, 64, 0, 0, 0, 0, 168, 64, 0, 0, 0, 0, 832, 64)
+"points": PackedVector2Array(0, 0, 0, 0, 832, 64, 0, 0, 0, 0, 1328, 40, 0, 0, 0, 0, 1552, 0, 0, 0, 0, 0, 1792, -56, 0, 0, 0, 0, 1952, -120, 0, 0, 0, 0, 2104, -192, 0, 0, 0, 0, 2312, -272, 0, 0, 0, 0, 2424, -296, 0, 0, 0, 0, 2704, -336, 0, 0, 0, 0, 2912, -344, 0, 0, 0, 0, 3136, -296, 0, 0, 0, 0, 3216, -248, 0, 0, 0, 0, 3296, -208, 0, 0, 0, 0, 3440, -160, 0, 0, 0, 0, 3536, -152, 0, 0, 0, 0, 3704, -184, 0, 0, 0, 0, 3944, -264, 0, 0, 0, 0, 4056, -312, 0, 0, 0, 0, 4200, -336, 0, 0, 0, 0, 4472, -336, 0, 0, 0, 0, 4584, -320, 0, 0, 0, 0, 4760, -248, 0, 0, 0, 0, 4848, -184, 0, 0, 0, 0, 4976, -112, 0, 0, 0, 0, 5144, -56, 0, 0, 0, 0, 5240, -32, 0, 0, 0, 0, 5344, -8, 0, 0, 0, 0, 5504, 0, 0, 0, 0, 0, 5752, -16, 0, 0, 0, 0, 5912, -64, 0, 0, 0, 0, 6200, -112, 0, 0, 0, 0, 6360, -112, 0, 0, 0, 0, 6576, -72, 0, 0, 0, 0, 6720, -72, 0, 0, 0, 0, 6832, -96, 0, 0, 0, 0, 6856, -144, 0, 0, 0, 0, 6872, -216, 0, 0, 0, 0, 6896, -264, 0, 0, 0, 0, 6952, -280, 0, 0, 0, 0, 7016, -296, 0, 0, 0, 0, 7200, -312, 0, 0, 0, 0, 7376, -312, 0, 0, 0, 0, 7560, -304, 0, 0, 0, 0, 7720, -320, 0, 0, 0, 0, 7896, -336, 0, 0, 0, 0, 8040, -320, 0, 0, 0, 0, 8384, -328, 0, 0, 0, 0, 8704, -312, 0, 0, 0, 0, 8736, -288, 0, 0, 0, 0, 8776, -144, 0, 0, 0, 0, 8904, -72, 0, 0, 0, 0, 9056, -56, 0, 0, 0, 0, 9144, -56, 0, 0, 0, 0, 9312, -80, 0, 0, 0, 0, 9344, -144, 0, 0, 0, 0, 9368, -256, 0, 0, 0, 0, 9384, -288, 0, 0, 0, 0, 9424, -304, 0, 0, 0, 0, 9560, -304, 0, 0, 0, 0, 9680, -296, 0, 0, 0, 0, 9840, -312, 0, 0, 0, 0, 9952, -296, 0, 0, 0, 0, 10264, -304, 0, 0, 0, 0, 10512, -288, 0, 0, 0, 0, 10896, -280, 0, 0, 0, 0, 11104, -224, 0, 0, 0, 0, 11576, -192, 0, 0, 0, 0, 12288, -184, 0, 0, 0, 0, 12568, -192, 0, 0, 0, 0, 12600, -224, 0, 0, 0, 0, 12632, -336, 0, 0, 0, 0, 12624, -424, 0, 0, 0, 0, 12656, -544, 0, 0, 0, 0, 12816, -584, 0, 0, 0, 0, 13088, -592, 0, 0, 0, 0, 13496, -568, 0, 0, 0, 0, 14112, -432, 0, 0, 0, 0, 14744, -352, 0, 0, 0, 0, 15496, -296, 0, 0, 0, 0, 16152, -344, 0, 0, 0, 0, 16496, -408, 0, 0, 0, 0, 16640, -392, 0, 0, 0, 0, 16792, -280, 0, 0, 0, 0, 17120, -232, 0, 0, 0, 0, 17392, -184, 0, 0, 0, 0, 17568, -176, 0, 0, 0, 0, 17968, -200, 0, 0, 0, 0, 18448, -184, 0, 0, 0, 0, 18752, -192, 0, 0, 0, 0, 18904, -224, 0, 0, 0, 0, 19296, -272, 0, 0, 0, 0, 19768, -232, 0, 0, 0, 0, 20448, -232, 0, 0, 0, 0, 20696, -272, 0, 0, 0, 0, 20840, -320, 0, 0, 0, 0, 20912, -440, 0, 0, 0, 0, 20952, -608, 0, 0, 0, 0, 20984, -792, 0, 0, 0, 0, 20936, -936, 0, 0, 0, 0, 20992, -992, 0, 0, 0, 0, 21072, -1024, 0, 0, 0, 0, 21192, -1024, 0, 0, 0, 0, 21432, -1040, 0, 0, 0, 0, 22064, -1040, 0, 0, 0, 0, 22472, -1112, 0, 0, 0, 0, 23552, -1136, 0, 0, 0, 0, 23600, 1104, 0, 0, 0, 0, -1696, 1216, 0, 0, 0, 0, -2952, 952, 0, 0, 0, 0, -2856, -720, 0, 0, 0, 0, -2744, -1208, 0, 0, 0, 0, -2328, -1384, 0, 0, 0, 0, -1880, -1392, 0, 0, 0, 0, -1544, -1192, 0, 0, 0, 0, -1440, -928, 0, 0, 0, 0, -1424, -560, 0, 0, 0, 0, -1368, -280, 0, 0, 0, 0, -1312, -112, 0, 0, 0, 0, -1130.8901, -8.859283, 0, 0, 0, 0, -952, 24, 0, 0, 0, 0, -672, 48, 0, 0, 0, 0, -224, 64, 0, 0, 0, 0, 168, 64, 0, 0, 0, 0, 832, 64)
 }
-point_count = 121
+point_count = 124
 
-[node name="Level1" unique_id=165616865 node_paths=PackedStringArray("topazes_location") instance=ExtResource("1_yhru0")]
-topazes_location = NodePath("Interactive")
+[node name="Level1" unique_id=165616865 instance=ExtResource("1_yhru0")]
 
 [node name="Portal" parent="BackgroundLayer" parent_id_path=PackedInt32Array(940601239) index="2" unique_id=1617761781]
 position = Vector2(0, 2304)
 
 [node name="Areas#FinishArea" parent="Background" parent_id_path=PackedInt32Array(40735884) index="0" unique_id=737669738 instance=ExtResource("3_yh2jh")]
-position = Vector2(21832, 1304)
+position = Vector2(21792, 1200)
 
 [node name="SpiralSprite2" type="Sprite2D" parent="Background/Areas#FinishArea" index="0" unique_id=437754106]
 modulate = Color(0.97, 0.4947, 0.61352503, 0)
@@ -100,56 +100,59 @@ position = Vector2(17544, 1568)
 offset_bottom = 704.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Topaz" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=1019438090 instance=ExtResource("4_m5ksf")]
+[node name="Topaz" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="0" unique_id=1019438090 instance=ExtResource("4_m5ksf")]
 position = Vector2(2888, 1752)
 
-[node name="Topaz2" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="1" unique_id=1839146959 instance=ExtResource("4_m5ksf")]
-position = Vector2(6736, 1864)
+[node name="Topaz2" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="1" unique_id=1839146959 instance=ExtResource("4_m5ksf")]
+position = Vector2(6824, 1840)
 
-[node name="Topaz3" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="2" unique_id=539892684 instance=ExtResource("4_m5ksf")]
-position = Vector2(6536, 1808)
+[node name="Topaz3" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="2" unique_id=539892684 instance=ExtResource("4_m5ksf")]
+position = Vector2(6624, 1784)
 
-[node name="Topaz4" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="3" unique_id=691998505 instance=ExtResource("4_m5ksf")]
-position = Vector2(6328, 1856)
+[node name="Topaz4" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="3" unique_id=691998505 instance=ExtResource("4_m5ksf")]
+position = Vector2(6416, 1832)
 
-[node name="Topaz17" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="4" unique_id=926452592 instance=ExtResource("4_m5ksf")]
-position = Vector2(6216, 1984)
+[node name="Topaz17" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="4" unique_id=926452592 instance=ExtResource("4_m5ksf")]
+position = Vector2(6288, 1960)
 
-[node name="Topaz5" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="5" unique_id=191504444 instance=ExtResource("4_m5ksf")]
+[node name="Topaz5" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="5" unique_id=191504444 instance=ExtResource("4_m5ksf")]
 position = Vector2(8696, 1920)
 
-[node name="Topaz6" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="6" unique_id=1708286568 instance=ExtResource("4_m5ksf")]
+[node name="Topaz6" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="6" unique_id=1708286568 instance=ExtResource("4_m5ksf")]
 position = Vector2(8880, 1848)
 
-[node name="Topaz7" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="7" unique_id=1700497914 instance=ExtResource("4_m5ksf")]
+[node name="Topaz7" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="7" unique_id=1700497914 instance=ExtResource("4_m5ksf")]
 position = Vector2(9080, 1824)
 
-[node name="Topaz8" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="8" unique_id=1207967759 instance=ExtResource("4_m5ksf")]
+[node name="Topaz8" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="8" unique_id=1207967759 instance=ExtResource("4_m5ksf")]
 position = Vector2(9240, 1856)
 
-[node name="Topaz9" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="9" unique_id=1772281010 instance=ExtResource("4_m5ksf")]
+[node name="Topaz9" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="9" unique_id=1772281010 instance=ExtResource("4_m5ksf")]
 position = Vector2(9400, 1920)
 
-[node name="Topaz10" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="10" unique_id=957674766 instance=ExtResource("4_m5ksf")]
+[node name="Topaz10" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="10" unique_id=957674766 instance=ExtResource("4_m5ksf")]
 position = Vector2(17104, 1552)
 
-[node name="Topaz11" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="11" unique_id=1315030407 instance=ExtResource("4_m5ksf")]
+[node name="Topaz11" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="11" unique_id=1315030407 instance=ExtResource("4_m5ksf")]
 position = Vector2(17216, 1392)
 
-[node name="Topaz12" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="12" unique_id=1594300277 instance=ExtResource("4_m5ksf")]
+[node name="Topaz12" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="12" unique_id=1594300277 instance=ExtResource("4_m5ksf")]
 position = Vector2(17392, 1416)
 
-[node name="Topaz13" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="13" unique_id=827574149 instance=ExtResource("4_m5ksf")]
+[node name="Topaz13" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="13" unique_id=827574149 instance=ExtResource("4_m5ksf")]
 position = Vector2(17784, 1432)
 
-[node name="Topaz14" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="14" unique_id=1865496017 instance=ExtResource("4_m5ksf")]
+[node name="Topaz14" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="14" unique_id=1865496017 instance=ExtResource("4_m5ksf")]
 position = Vector2(18048, 1360)
 
-[node name="Topaz15" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="15" unique_id=2030049744 instance=ExtResource("4_m5ksf")]
+[node name="Topaz15" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="15" unique_id=2030049744 instance=ExtResource("4_m5ksf")]
 position = Vector2(18288, 1416)
 
-[node name="Topaz16" parent="Interactive" parent_id_path=PackedInt32Array(744542152) index="16" unique_id=1370920132 instance=ExtResource("4_m5ksf")]
+[node name="Topaz16" parent="Interactive/Topazes" parent_id_path=PackedInt32Array(1005448833) index="16" unique_id=1370920132 instance=ExtResource("4_m5ksf")]
 position = Vector2(18464, 1568)
+
+[node name="Artefact" parent="Interactive/Artefacts" parent_id_path=PackedInt32Array(1593477800) index="0" unique_id=1332179674 instance=ExtResource("9_sxrrc")]
+position = Vector2(20160, 2080)
 
 [node name="Player" parent="Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
 physics_material_override = null
@@ -224,7 +227,7 @@ offset_bottom = 232.0
 text = "Collect [b]topazes[/b] along the way. They can be exchanged for various goodies"
 
 [node name="HintLabel5" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="4" unique_id=1053449230 instance=ExtResource("5_aau4x")]
-position = Vector2(11672, 1480)
+position = Vector2(11680, 1568)
 activation_delay = 0.5
 
 [node name="HintLabel" parent="Labels/HintLabel5" index="0" unique_id=514289046]
@@ -235,7 +238,7 @@ offset_bottom = 312.0
 text = "The ball have an outrageously mighty arm. Use it to push the obstacles. Charge hit force by holding [b]left mouse button[/b]"
 
 [node name="HintLabel6" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="5" unique_id=1620043907 instance=ExtResource("5_aau4x")]
-position = Vector2(19216, 1456)
+position = Vector2(19176, 1568)
 activation_delay = 0.5
 
 [node name="HintLabel" parent="Labels/HintLabel6" index="0" unique_id=514289046]
@@ -245,14 +248,12 @@ text = "The world is stuffed with many mysterious artefacts. One can be equipped
 metadata/_edit_use_anchors_ = true
 
 [node name="HintLabel7" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="6" unique_id=636601818 instance=ExtResource("5_aau4x")]
-position = Vector2(19216, 1456)
+position = Vector2(19992, 1568)
 activation_delay = 0.5
 
 [node name="HintLabel" parent="Labels/HintLabel7" index="0" unique_id=514289046]
-offset_left = 824.0
-offset_top = 8.0
-offset_right = 1624.0
-offset_bottom = 360.0
+offset_right = 800.0
+offset_bottom = 352.0
 text = "This one is called \"Emeraldium\". Pick it up with [b]E[/b] key to greatly increase mobility"
 metadata/_edit_use_anchors_ = true
 

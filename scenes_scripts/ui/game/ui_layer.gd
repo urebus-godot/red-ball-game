@@ -12,13 +12,15 @@ const TWEEN_DURATION: float = 0.5
 var level: int = 1
 
 var is_ui_free: bool = true
+var level_finished: bool = false
 
 
 func check_for_pause() -> void:
-	if not get_tree().paused:
-		pause_game()
-	else:
-		unpause_game()
+	if not level_finished:
+		if not get_tree().paused:
+			pause_game()
+		else:
+			unpause_game()
 
 
 func pause_game() -> void:
@@ -95,7 +97,11 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_level_finished(score: int, time_s: float) -> void:
+	is_ui_free = false
+	level_finished = true
+
 	await get_tree().create_timer(0.5).timeout
+
 	tinting.show_tinting()
 	show_finish_menu(score, time_s)
 

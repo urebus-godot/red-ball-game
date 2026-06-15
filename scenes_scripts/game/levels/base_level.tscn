@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ngla7jqhorey" path="res://resources/textures/game/background/hills.png" id="4_62qgw"]
 [ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="4_jt1by"]
 [ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/objects/interactive/portal.png" id="6_62qgw"]
-[ext_resource type="PackedScene" uid="uid://obqeiafka73e" path="res://scenes_scripts/ui/hud/ui_layer.tscn" id="6_pb7rb"]
+[ext_resource type="PackedScene" uid="uid://obqeiafka73e" path="res://scenes_scripts/ui/game/ui_layer.tscn" id="6_pb7rb"]
 [ext_resource type="PackedScene" uid="uid://daoi38gxr1or8" path="res://scenes_scripts/game/objects/areas/finish_area.tscn" id="7_y6yin"]
 
 [sub_resource type="Environment" id="Environment_62qgw"]
@@ -17,8 +17,9 @@ glow_intensity = 2.0
 glow_strength = 0.8
 glow_bloom = 0.25
 
-[node name="BaseLevel" type="Node2D" unique_id=165616865]
+[node name="BaseLevel" type="Node2D" unique_id=165616865 node_paths=PackedStringArray("topazes_location")]
 script = ExtResource("1_iym18")
+topazes_location = NodePath("Interactive/Topazes")
 
 [node name="UILayer" parent="." unique_id=51763774 instance=ExtResource("6_pb7rb")]
 
@@ -82,6 +83,12 @@ metadata/_edit_lock_ = true
 
 [node name="Interactive" type="Node2D" parent="." unique_id=744542152]
 
+[node name="Topazes" type="Node2D" parent="Interactive" unique_id=1005448833]
+
+[node name="Artefacts" type="Node2D" parent="Interactive" unique_id=1593477800]
+
+[node name="Other" type="Node2D" parent="Interactive" unique_id=266067702]
+
 [node name="Creatures" type="Node2D" parent="." unique_id=1133915585]
 
 [node name="Player" parent="Creatures" unique_id=840999448 instance=ExtResource("1_bs2e5")]
@@ -99,6 +106,9 @@ position = Vector2(0, 2368)
 z_index = 2
 lower_ground = true
 
+[node name="Path2D" parent="Terrain" index="3" unique_id=1234078617]
+curve = null
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1547052815]
 environment = SubResource("Environment_62qgw")
 
@@ -107,3 +117,5 @@ environment = SubResource("Environment_62qgw")
 [connection signal="body_entered" from="Background/FinishArea" to="." method="_on_finish_area_body_entered"]
 [connection signal="creature_died" from="Creatures/Player" to="." method="_on_player_died"]
 [connection signal="creature_died" from="Creatures/Player" to="UILayer" method="_on_player_died"]
+
+[editable path="Terrain"]

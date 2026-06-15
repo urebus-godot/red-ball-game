@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://da3avsamnkxp2"]
 
-[ext_resource type="Script" uid="uid://buhb0xdyqva0s" path="res://scenes_scripts/ui/hud/debug_panel.gd" id="1_dwn77"]
+[ext_resource type="Script" uid="uid://buhb0xdyqva0s" path="res://scenes_scripts/ui/game/debug_panel.gd" id="1_dwn77"]
 
 [node name="DebugPanel" type="Panel" unique_id=1567030277]
 custom_minimum_size = Vector2(1000, 800)

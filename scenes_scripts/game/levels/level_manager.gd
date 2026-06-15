@@ -32,6 +32,7 @@ func _ready() -> void:
 	background_layer.visible = true
 	
 	for t in topazes_location.get_children():
+		print(t.name)
 		t.topaz_collected.connect(_on_topaz_collected)
 
 	ui_layer.set_topaz_label_value(0)
