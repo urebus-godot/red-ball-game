@@ -38,7 +38,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	time_passed_s += delta
+	if not is_level_finished:
+		time_passed_s += delta
 
 
 func _on_finish_area_body_entered(body: Node2D) -> void:

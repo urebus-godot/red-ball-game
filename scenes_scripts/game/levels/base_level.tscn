@@ -41,6 +41,7 @@ follow_viewport_enabled = true
 [node name="HillsParallax2" type="Parallax2D" parent="BackgroundLayer" unique_id=1503476749]
 scroll_scale = Vector2(0.5, 0.22)
 scroll_offset = Vector2(0, 192)
+metadata/_edit_lock_ = true
 
 [node name="HillsTexture" type="TextureRect" parent="BackgroundLayer/HillsParallax2" unique_id=1782040830]
 modulate = Color(0.94, 0.94, 0.94, 1)
@@ -51,10 +52,12 @@ offset_bottom = 1208.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_62qgw")
 stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="HillsParallax" type="Parallax2D" parent="BackgroundLayer" unique_id=1276359890]
 scroll_scale = Vector2(0.8, 0.4)
 scroll_offset = Vector2(-32, 480)
+metadata/_edit_lock_ = true
 
 [node name="HillsTexture" type="TextureRect" parent="BackgroundLayer/HillsParallax" unique_id=1968262151]
 offset_left = -11904.0
@@ -62,10 +65,12 @@ offset_right = 28416.0
 offset_bottom = 1080.0
 texture = ExtResource("4_62qgw")
 stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Portal" type="Sprite2D" parent="BackgroundLayer" unique_id=1617761781]
 position = Vector2(0, 2368)
 texture = ExtResource("6_62qgw")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="Node2D" parent="." unique_id=40735884]
 
