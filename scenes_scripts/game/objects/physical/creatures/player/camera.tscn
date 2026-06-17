@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://e1ut1qa7wdlu" path="res://scenes_scripts/game/camera.gd" id="1_njd0x"]
 
-[node name="Camera" type="Camera2D" unique_id=1760591003 node_paths=PackedStringArray("player")]
+[node name="Camera" type="Camera2D" unique_id=1760591003]
 top_level = true
 script = ExtResource("1_njd0x")
-player = NodePath("")

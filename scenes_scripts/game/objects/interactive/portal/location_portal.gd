@@ -1,14 +1,12 @@
 class_name LocationPortal extends InteractiveObject
 
-const SPIRAL_ROTATION_SPEED: float = 0.8
-
 @onready var spiral_sprite: Sprite2D = $SpiralSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
 @onready var center: Marker2D = $Center
 @onready var game_data: GameData = DataManager.game_data
 
-@export var level: int = 1
+@export var level: int = 0
 @export_enum(
 	Constants.NO_PATH,
 	Constants.MAIN_MENU_PATH,
@@ -24,20 +22,20 @@ func can_interact() -> bool:
 func interact() -> void:
 	await super.interact()
 	if can_interact():	
-		if scene_path == Constants.NO_PATH:
-			TransitionScreen.change_scene(Constants.LEVEL_PATH % level)
+		if level > 0:
+			TransitionScreen.change_scene(General.select_level_path(level))
 		else:
 			TransitionScreen.change_scene(scene_path)
 
 
 func _ready() -> void:
-	if scene_path == Constants.NO_PATH:
-		showed_name = "portal to the level %s" % level
-	showed_name = "the " + showed_name
+	if level > 0:
+		showed_name = "Portal to Level %s" % level
+	showed_name = "The " + showed_name
 
 
 func _process(delta: float) -> void:
-	spiral_sprite.rotation_degrees += SPIRAL_ROTATION_SPEED
+	spiral_sprite.rotation_degrees += Constants.SPIRAL_ROTATION_SPEED
 
 
 func _on_body_entered(body: Node2D) -> void:

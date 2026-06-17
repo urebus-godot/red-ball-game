@@ -1,4 +1,4 @@
-class_name UILayer extends CanvasLayer
+extends GameUILayer
 
 const TWEEN_DURATION: float = 0.5
 
@@ -9,7 +9,7 @@ const TWEEN_DURATION: float = 0.5
 @onready var lost_menu: Panel = $LostMenu
 @onready var artefact_texture: TextureRect = $Bounds/LowerBound/Panel/ArtefactTexture
 @onready var topazes_label: Label = $Bounds/UpperBound/TopazesLabel
-@onready var artifact_label: Label = $Bounds/LowerBound/ArtifactLabel
+@onready var artefact_label: Label = $Bounds/LowerBound/ArtefactLabel
 
 var level: int = 1
 
@@ -37,7 +37,7 @@ func unpause_game() -> void:
 func restart_level() -> void:
 	is_ui_free = false
 	get_tree().paused = false
-	TransitionScreen.change_scene(Constants.LEVEL_PATH % level)
+	TransitionScreen.change_scene(General.select_level_path(level))
 
 
 func show_pause_menu() -> void:
@@ -105,6 +105,7 @@ func _on_level_finished(score: int, time_s: float) -> void:
 	await get_tree().create_timer(0.5).timeout
 
 	tinting.show_tinting()
+	interact_label.hide_label()
 	show_finish_menu(score, time_s)
 
 
@@ -137,13 +138,20 @@ func _on_pause_button_pressed() -> void:
 		check_for_pause()
 
 func _on_main_menu_button_pressed() -> void:
-	if is_ui_free:
-		await TransitionScreen.change_scene(Constants.WORLD_PATH)
+	await TransitionScreen.change_scene(Constants.WORLD_PATH)
 
 func _on_next_level_button_pressed() -> void:
-	if is_ui_free:
-		await TransitionScreen.change_scene(Constants.LEVEL_PATH % level)
+	await TransitionScreen.change_scene(General.select_level_path(level + 1))
 
 
 func _on_options_menu_closed() -> void:
 	is_ui_free = true
+
+
+func _on_artefact_equipped(object: PickableArtefact) -> void:
+	artefact_label.text = "Artefact equipped: " + object.showed_name
+	artefact_texture.texture = object.artifact_texture
+
+func _on_artefact_unequipped(object: Artefact) -> void:
+	artefact_label.text = "No artefact is equipped"
+	artefact_texture.texture = null

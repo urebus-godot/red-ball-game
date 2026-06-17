@@ -8,7 +8,7 @@ const TWEEN_DURATION: float = 0.6
 const FREE_MODE_VELOCITY: float = 14
 
 @export var player: Player
-@export var trans_enabled: bool = true
+@export var trans_enabled: bool = false
 
 var direction: Direction = Direction.CENTER
 var player_move_direction: Direction = Direction.CENTER

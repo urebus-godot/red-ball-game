@@ -28,7 +28,7 @@ func fade_out() -> void:
 
 	await alpha_tween.finished
 
-	queue_free()
+	target.queue_free()
 
 
 func _on_area_body_entered(body: Node2D) -> void:

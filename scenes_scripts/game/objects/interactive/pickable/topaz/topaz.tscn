@@ -102,7 +102,7 @@ texture = ExtResource("1_mk2fx")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Offset" unique_id=1179865323]
 amount = 6
 texture = ExtResource("3_inkpd")
-lifetime = 1.5999999999999999
+lifetime = 1.6
 explosiveness = 0.05
 randomness = 0.3
 process_material = SubResource("ParticleProcessMaterial_inkpd")
@@ -115,7 +115,7 @@ shape = SubResource("RectangleShape2D_inkpd")
 
 [node name="PickableComponent" type="Node" parent="." unique_id=150165719 node_paths=PackedStringArray("target")]
 script = ExtResource("2_5dpe7")
-target = NodePath("../Offset")
+target = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1185593503]
 libraries/ = SubResource("AnimationLibrary_te4av")

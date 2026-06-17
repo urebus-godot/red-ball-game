@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dy1xcjroh2x57"]
+
+[ext_resource type="Script" uid="uid://ct4bsusqiclle" path="res://scenes_scripts/ui/game/ui_layer/scripts/base_ui_layer.gd" id="1_8j2oi"]
+[ext_resource type="PackedScene" uid="uid://bols5fh2gof8t" path="res://scenes_scripts/ui/game/ui_layer/scenes/interact_label.tscn" id="2_rwkwa"]
+[ext_resource type="PackedScene" uid="uid://da3avsamnkxp2" path="res://scenes_scripts/ui/game/debug_panel.tscn" id="3_ql2rl"]
+
+[node name="BaseUiLayer" type="CanvasLayer" unique_id=761276224]
+script = ExtResource("1_8j2oi")
+
+[node name="InteractLabel" parent="." unique_id=1502365372 instance=ExtResource("2_rwkwa")]
+
+[node name="DebugPanel" parent="." unique_id=1567030277 instance=ExtResource("3_ql2rl")]
+visible = false

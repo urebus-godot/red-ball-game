@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://erwsx63yumj0"]
+
+[ext_resource type="PackedScene" uid="uid://bb6koovj7b8o" path="res://scenes_scripts/game/levels/base_level.tscn" id="1_rxuk4"]
+[ext_resource type="Script" uid="uid://xvncsq1xabxw" path="res://scenes_scripts/game/levels/managers/valley_level_manager.gd" id="2_adrpx"]
+[ext_resource type="Texture2D" uid="uid://bb8ckqchl87uo" path="res://resources/textures/game/background/sky.png" id="3_a24i5"]
+[ext_resource type="Texture2D" uid="uid://ngla7jqhorey" path="res://resources/textures/game/background/hills.png" id="4_7360k"]
+
+[sub_resource type="Environment" id="Environment_7360k"]
+ambient_light_source = 2
+ambient_light_color = Color(0.99278253, 0.5193304, 0.85744685, 1)
+glow_enabled = true
+glow_levels/1 = 4.14
+glow_levels/3 = 2.6
+glow_levels/4 = 1.67
+glow_normalized = true
+glow_intensity = 6.45
+glow_strength = 1.29
+glow_bloom = 1.0
+glow_blend_mode = 2
+glow_hdr_luminance_cap = 40.9
+glow_map_strength = 0.7
+fog_enabled = true
+fog_light_color = Color(0.8986593, 0.31163713, 0.4373233, 1)
+
+[node name="BaseValleyLevel" unique_id=165616865 instance=ExtResource("1_rxuk4")]
+script = ExtResource("2_adrpx")
+
+[node name="SkyTexture" type="TextureRect" parent="StaticBackgroundLayer" parent_id_path=PackedInt32Array(807347235) index="0" unique_id=731620842]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_a24i5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Parallax" type="Parallax2D" parent="BackgroundLayer" parent_id_path=PackedInt32Array(940601239) index="0" unique_id=1709093269]
+scroll_scale = Vector2(0.5, 0.22)
+scroll_offset = Vector2(0, 192)
+metadata/_edit_lock_ = true
+
+[node name="HillsTexture" type="TextureRect" parent="BackgroundLayer/Parallax" index="0" unique_id=385906288]
+modulate = Color(0.94, 0.94, 0.94, 1)
+offset_left = -10176.0
+offset_top = 128.0
+offset_right = 54090.664
+offset_bottom = 1208.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_7360k")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Parallax2" type="Parallax2D" parent="BackgroundLayer" parent_id_path=PackedInt32Array(940601239) index="1" unique_id=1459273004]
+scroll_scale = Vector2(0.8, 0.4)
+scroll_offset = Vector2(-32, 480)
+metadata/_edit_lock_ = true
+
+[node name="HillsTexture" type="TextureRect" parent="BackgroundLayer/Parallax2" index="0" unique_id=1893537822]
+offset_left = -11904.0
+offset_right = 28416.0
+offset_bottom = 1080.0
+texture = ExtResource("4_7360k")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Portal" parent="BackgroundLayer" parent_id_path=PackedInt32Array(940601239) index="2" unique_id=1617761781]
+position = Vector2(0, 2304)
+
+[node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
+position = Vector2(0, 2320)
+
+[node name="WorldEnvironment" parent="." index="9" unique_id=1547052815]
+environment = SubResource("Environment_7360k")
+
+[editable path="UILayer"]
+[editable path="GroundAndBoundaries/Terrain"]

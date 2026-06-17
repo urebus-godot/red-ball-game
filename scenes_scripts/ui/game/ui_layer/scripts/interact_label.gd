@@ -8,10 +8,12 @@ var interact_key = SettingsDataManager.key_binding_settings["interact"]
 var interact_text: String = "Press %s key to interact with %s"
 
 
-func show_label() -> void:
+func show_label(object_name: String) -> void:
 	visible = true
 	scale = Vector2.ZERO
 	position = START_POSITION
+
+	text = interact_text % [interact_key, object_name]
 
 	var a_tween = create_tween().set_parallel()
 	a_tween.tween_property(self, "modulate:a", 1.0, TWEEN_DURATION)
@@ -32,14 +34,3 @@ func hide_label() -> void:
 
 	var scale_tween = create_tween()
 	scale_tween.tween_property(self, "scale", Vector2.ZERO, TWEEN_DURATION)
-
-
-func _on_interactive_object_player_entered(object: InteractiveObject) -> void:
-	print("Player entered!")
-	text = interact_text % [interact_key, object.showed_name]
-	show_label()
-
-
-func _on_interactive_object_player_exited(object: InteractiveObject) -> void:
-	print("Player exited!")
-	hide_label()

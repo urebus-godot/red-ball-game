@@ -2,25 +2,17 @@ extends Panel
 
 @onready var container: VBoxContainer = $VBoxContainer
 
-@export var nodes_for_texts: Array[Node]
-@export var properties_for_texts: Array[String]
+@export var player: Player = null
+@export var texts_titles: Array[String]
 @export var enabled: bool = true
 
 @onready var labels: Array = container.get_children()
 
 
 func set_texts() -> void:
-	for i in range(len(labels)):
-		if not (len(nodes_for_texts) == len(properties_for_texts)):
-			printerr("Label or property or node isn't valid!")
-			return
-		var label: Label = labels[i]
-		var property = properties_for_texts[i]
-		var node: Node = nodes_for_texts[i]
-		var text = "%s: %s" % [property, node.get(property)]
-		label.set_text(text)
-		if i + 1 >= len(nodes_for_texts):
-			return
+	if not texts_titles or not player: return
+	if texts_titles[0] and labels[0]:
+		labels[0].text = texts_titles[0] + ": " + str(player.move_component.is_in_air())
 
 
 func _process(delta: float) -> void:

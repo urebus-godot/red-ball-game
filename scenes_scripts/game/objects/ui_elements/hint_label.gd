@@ -1,6 +1,6 @@
 extends ActivatedObject
 
-const TWEEN_DURATION: float = 0.5
+const TWEEN_DURATION: float = 0.3
 
 @onready var hint_label: RichTextLabel = $HintLabel
 

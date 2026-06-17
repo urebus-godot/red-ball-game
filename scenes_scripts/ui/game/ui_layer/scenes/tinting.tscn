@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cj1lvehfme1dw"]
 
-[ext_resource type="Script" uid="uid://bp8qf8fguyxe4" path="res://scenes_scripts/ui/tinting.gd" id="1_t23ch"]
+[ext_resource type="Script" uid="uid://bp8qf8fguyxe4" path="res://scenes_scripts/ui/game/ui_layer/scripts/tinting.gd" id="1_t23ch"]
 
 [node name="Tinting" type="ColorRect" unique_id=1261466242]
 anchors_preset = 15

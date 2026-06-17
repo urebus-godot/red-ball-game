@@ -7,7 +7,7 @@
 [ext_resource type="Theme" uid="uid://k8oddh018ug7" path="res://resources/themes/buttons/red_button.tres" id="4_7u1tn"]
 [ext_resource type="Texture2D" uid="uid://b0sr2tgrnf5oe" path="res://resources/textures/ui/icons/play_icon.png" id="4_tryju"]
 [ext_resource type="Theme" uid="uid://c6yrnifyunf8d" path="res://resources/themes/buttons/blue_square_button.tres" id="5_r3nkn"]
-[ext_resource type="PackedScene" uid="uid://cj1lvehfme1dw" path="res://scenes_scripts/ui/tinting.tscn" id="6_aify2"]
+[ext_resource type="PackedScene" uid="uid://cj1lvehfme1dw" path="res://scenes_scripts/ui/game/ui_layer/scenes/tinting.tscn" id="6_aify2"]
 [ext_resource type="PackedScene" uid="uid://de4m7ia64dubp" path="res://scenes_scripts/ui/menus/options_menu.tscn" id="6_bvkmw"]
 [ext_resource type="Texture2D" uid="uid://bjrim8ia4jryv" path="res://resources/textures/ui/icons/arrow_back_icon.png" id="6_vfq3m"]
 [ext_resource type="Texture2D" uid="uid://c0b8j31ja6o8u" path="res://resources/textures/ui/icons/gear_icon.png" id="6_ygyyt"]

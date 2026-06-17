@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bols5fh2gof8t"]
 
-[ext_resource type="Script" uid="uid://cdgif5xrxatpn" path="res://scenes_scripts/ui/interact_label.gd" id="1_hcsgg"]
+[ext_resource type="Script" uid="uid://cdgif5xrxatpn" path="res://scenes_scripts/ui/game/ui_layer/scripts/interact_label.gd" id="1_hcsgg"]
 [ext_resource type="FontFile" uid="uid://j1wevx13vv24" path="res://resources/fonts/SSFBreakthrough-Heavy.ttf" id="1_sgpsk"]
 
 [node name="InteractLabel" type="Label" unique_id=1502365372]

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://obqeiafka73e"]
 
 [ext_resource type="Theme" uid="uid://cxriancpnx75o" path="res://resources/themes/buttons/cyan_button.tres" id="1_sad0e"]
-[ext_resource type="Script" uid="uid://duh8ftb6laqj8" path="res://scenes_scripts/ui/game/ui_layer.gd" id="1_tp5bd"]
-[ext_resource type="PackedScene" uid="uid://cj1lvehfme1dw" path="res://scenes_scripts/ui/tinting.tscn" id="2_e325d"]
+[ext_resource type="Script" uid="uid://duh8ftb6laqj8" path="res://scenes_scripts/ui/game/ui_layer/scripts/ui_layer.gd" id="1_tp5bd"]
+[ext_resource type="PackedScene" uid="uid://cj1lvehfme1dw" path="res://scenes_scripts/ui/game/ui_layer/scenes/tinting.tscn" id="2_e325d"]
 [ext_resource type="Theme" uid="uid://c6yrnifyunf8d" path="res://resources/themes/buttons/blue_square_button.tres" id="2_v78qn"]
 [ext_resource type="Texture2D" uid="uid://dh7w325viheib" path="res://resources/textures/ui/icons/pause_icon.png" id="3_xgkvo"]
 [ext_resource type="PackedScene" uid="uid://de4m7ia64dubp" path="res://scenes_scripts/ui/menus/options_menu.tscn" id="4_8qgv2"]
@@ -16,6 +16,8 @@
 [ext_resource type="FontFile" uid="uid://b6hssdofy1hrp" path="res://resources/fonts/SSFBreakthrough-Bold.ttf" id="11_lks73"]
 [ext_resource type="FontFile" uid="uid://j1wevx13vv24" path="res://resources/fonts/SSFBreakthrough-Heavy.ttf" id="13_7tan6"]
 [ext_resource type="FontFile" uid="uid://c2hrra5eptan4" path="res://resources/fonts/SSFBreakthrough-Black.ttf" id="14_ory12"]
+[ext_resource type="PackedScene" uid="uid://bols5fh2gof8t" path="res://scenes_scripts/ui/game/ui_layer/scenes/interact_label.tscn" id="17_ugwj5"]
+[ext_resource type="PackedScene" uid="uid://da3avsamnkxp2" path="res://scenes_scripts/ui/game/debug_panel.tscn" id="18_mccgq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gd4k3"]
 atlas = ExtResource("5_gd4k3")
@@ -142,9 +144,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_gd4k3")
 
-[node name="ArtifactLabel" type="Label" parent="Bounds/LowerBound" unique_id=480683700]
+[node name="ArtefactLabel" type="Label" parent="Bounds/LowerBound" unique_id=480683700]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -156,8 +157,12 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("4_ugwj5")
-text = "Equipped artifact"
+text = "No artefact is equipped"
 horizontal_alignment = 2
+
+[node name="InteractLabel" parent="." unique_id=1502365372 instance=ExtResource("17_ugwj5")]
+visible = false
+offset_top = -193.0
 
 [node name="Tinting" parent="." unique_id=1261466242 instance=ExtResource("2_e325d")]
 visible = false
@@ -345,7 +350,6 @@ icon = ExtResource("6_8q4gr")
 expand_icon = true
 
 [node name="LostMenu" type="Panel" parent="." unique_id=502085]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -433,6 +437,9 @@ theme = ExtResource("1_sad0e")
 text = "Restart"
 icon = ExtResource("8_lks73")
 expand_icon = true
+
+[node name="DebugPanel" parent="." unique_id=1567030277 instance=ExtResource("18_mccgq")]
+visible = false
 
 [connection signal="pressed" from="Bounds/UpperBound/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Container/ResumeButton" to="." method="_on_resume_button_pressed"]

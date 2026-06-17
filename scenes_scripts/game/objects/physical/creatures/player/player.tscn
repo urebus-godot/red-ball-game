@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://ia74qyu0klo8" path="res://resources/textures/game/objects/creatures/player/red_ball.png" id="3_ewilg"]
 [ext_resource type="PackedScene" uid="uid://iky0jh5jilni" path="res://scenes_scripts/game/objects/physical/creatures/player/control_component.tscn" id="3_hka56"]
 [ext_resource type="Texture2D" uid="uid://41b35ssy4bxk" path="res://resources/textures/game/objects/creatures/player/red_ball_face.png" id="4_fd7rk"]
-[ext_resource type="PackedScene" uid="uid://cn48baku04cx" path="res://scenes_scripts/game/objects/physical/creatures/player/camera.tscn" id="6_30j7b"]
 [ext_resource type="PackedScene" uid="uid://dt65y864o3ny2" path="res://scenes_scripts/game/objects/physical/creatures/player/arm.tscn" id="7_psm7a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30j7b"]
@@ -28,6 +27,8 @@ radius = 54.0
 [node name="Player" unique_id=840999448 node_paths=PackedStringArray("control_component", "move_component") instance=ExtResource("1_rv035")]
 collision_mask = 14
 physics_material_override = SubResource("PhysicsMaterial_30j7b")
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("2_22jnx")
 control_component = NodePath("ControlComponent")
 move_component = NodePath("MoveComponent")
@@ -46,21 +47,16 @@ target_position = Vector2(0, 55)
 [node name="CollisionShape2D" parent="." index="3" unique_id=1303941600]
 shape = SubResource("CircleShape2D_hka56")
 
-[node name="Camera" parent="." index="4" unique_id=1760591003 node_paths=PackedStringArray("player") instance=ExtResource("6_30j7b")]
-player = NodePath("..")
-trans_enabled = false
-
-[node name="Arm" parent="." index="5" unique_id=393563701 node_paths=PackedStringArray("player", "life_component") instance=ExtResource("7_psm7a")]
+[node name="Arm" parent="." index="4" unique_id=393563701 node_paths=PackedStringArray("player", "life_component") instance=ExtResource("7_psm7a")]
 top_level = true
 player = NodePath("..")
 life_component = NodePath("../LifeComponent")
 
-[node name="InteractTimer" type="Timer" parent="." index="6" unique_id=1944430153]
+[node name="InteractTimer" type="Timer" parent="." index="5" unique_id=1944430153]
 wait_time = 0.6
 one_shot = true
 
-[node name="ControlComponent" parent="." index="7" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
+[node name="ControlComponent" parent="." index="6" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
 move_component = NodePath("../MoveComponent")
 
 [connection signal="timeout" from="InteractTimer" to="." method="_on_interact_timer_timeout"]
-[connection signal="creature_died" from="LifeComponent" to="Camera" method="_on_player_died"]

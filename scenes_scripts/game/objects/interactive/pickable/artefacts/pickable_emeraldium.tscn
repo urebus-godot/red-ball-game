@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://3hroom7g8eq4"]
 
+[ext_resource type="Script" uid="uid://ddt4s4t74mnh2" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_artefact_root.gd" id="1_b7dpg"]
+[ext_resource type="Texture2D" uid="uid://b4wweocgrcu0k" path="res://resources/textures/game/objects/artefacts/pickable_emeraldium.png" id="2_jtw0a"]
 [ext_resource type="Script" uid="uid://3lrwserijsas" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_artefact.gd" id="2_teboj"]
 [ext_resource type="Script" uid="uid://dgpinc5tlpah5" path="res://scenes_scripts/game/objects/interactive/pickable/pickable_component.gd" id="2_xqmdy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_teboj"]
-radius = 32.0
+radius = 33.0
 
 [sub_resource type="Animation" id="Animation_te4av"]
 length = 0.001
@@ -45,14 +47,20 @@ _data = {
 &"movement": SubResource("Animation_inkpd")
 }
 
-[node name="Artefact" type="Node2D" unique_id=1019438090]
+[node name="Emeraldium" type="Node2D" unique_id=1019438090]
+script = ExtResource("1_b7dpg")
 
-[node name="Area" type="Area2D" parent="." unique_id=1458351955 node_paths=PackedStringArray("pickable_component")]
+[node name="Area" type="Area2D" parent="." unique_id=1458351955 node_paths=PackedStringArray("root_node", "pickable_component")]
+collision_layer = 0
 script = ExtResource("2_teboj")
+root_node = NodePath("..")
 pickable_component = NodePath("../PickableComponent")
-artefact_name = "MOBILITY"
+artifact_texture = ExtResource("2_jtw0a")
+artefact_name = "emeraldium"
+showed_name = "Emeraldium"
 
 [node name="Sprite2D" type="Sprite2D" parent="Area" unique_id=1643377239]
+texture = ExtResource("2_jtw0a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=1936001824]
 shape = SubResource("CircleShape2D_teboj")

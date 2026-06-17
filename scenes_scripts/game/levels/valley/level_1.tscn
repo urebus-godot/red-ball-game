@@ -1,0 +1,244 @@
+[gd_scene format=3 uid="uid://fr6pwqqdivtk"]
+
+[ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_toi6c"]
+[ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="2_1msal"]
+[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/physical/physics/crate.tscn" id="2_22aib"]
+[ext_resource type="PackedScene" uid="uid://3hroom7g8eq4" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_emeraldium.tscn" id="2_ymq5g"]
+[ext_resource type="PackedScene" uid="uid://hf4hp71cg2ya" path="res://scenes_scripts/game/objects/areas/water.tscn" id="3_3rpgq"]
+[ext_resource type="PackedScene" uid="uid://bg48lxeeip6cc" path="res://scenes_scripts/game/objects/areas/activate_area.tscn" id="3_150px"]
+[ext_resource type="PackedScene" uid="uid://bvcpab838u2eo" path="res://scenes_scripts/game/objects/ui_elements/hint_label.tscn" id="5_3rpgq"]
+[ext_resource type="PackedScene" uid="uid://5nokwb5ymxnk" path="res://scenes_scripts/game/objects/interactive/pickable/topaz/topaz.tscn" id="5_os8xl"]
+
+[sub_resource type="Curve2D" id="Curve2D_toi6c"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 832, 64, 0, 0, 0, 0, 1328, 40, 0, 0, 0, 0, 1552, 0, 0, 0, 0, 0, 1792, -56, 0, 0, 0, 0, 1952, -120, 0, 0, 0, 0, 2104, -192, 0, 0, 0, 0, 2312, -272, 0, 0, 0, 0, 2424, -296, 0, 0, 0, 0, 2704, -336, 0, 0, 0, 0, 2912, -344, 0, 0, 0, 0, 3136, -296, 0, 0, 0, 0, 3216, -248, 0, 0, 0, 0, 3296, -208, 0, 0, 0, 0, 3440, -160, 0, 0, 0, 0, 3536, -152, 0, 0, 0, 0, 3704, -184, 0, 0, 0, 0, 3944, -264, 0, 0, 0, 0, 4056, -312, 0, 0, 0, 0, 4200, -336, 0, 0, 0, 0, 4472, -336, 0, 0, 0, 0, 4584, -320, 0, 0, 0, 0, 4760, -248, 0, 0, 0, 0, 4848, -184, 0, 0, 0, 0, 4976, -112, 0, 0, 0, 0, 5144, -56, 0, 0, 0, 0, 5240, -32, 0, 0, 0, 0, 5344, -8, 0, 0, 0, 0, 5504, 0, 0, 0, 0, 0, 5752, -16, 0, 0, 0, 0, 6072, -48, 0, 0, 0, 0, 6392, -72, 0, 0, 0, 0, 6720, -72, 0, 0, 0, 0, 6832, -96, 0, 0, 0, 0, 6856, -144, 0, 0, 0, 0, 6872, -216, 0, 0, 0, 0, 6896, -264, 0, 0, 0, 0, 6944, -288, 0, 0, 0, 0, 7016, -296, 0, 0, 0, 0, 7200, -312, 0, 0, 0, 0, 7376, -312, 0, 0, 0, 0, 7560, -304, 0, 0, 0, 0, 7720, -320, 0, 0, 0, 0, 7896, -336, 0, 0, 0, 0, 8040, -320, 0, 0, 0, 0, 8384, -328, 0, 0, 0, 0, 8704, -312, 0, 0, 0, 0, 8752, -288, 0, 0, 0, 0, 8776, -120, 0, 0, 0, 0, 8864, -40, 0, 0, 0, 0, 9032, -16, 0, 0, 0, 0, 9184, -16, 0, 0, 0, 0, 9312, -64, 0, 0, 0, 0, 9344, -144, 0, 0, 0, 0, 9360, -216, 0, 0, 0, 0, 9392, -288, 0, 0, 0, 0, 9448, -304, 0, 0, 0, 0, 9560, -304, 0, 0, 0, 0, 9680, -296, 0, 0, 0, 0, 9840, -312, 0, 0, 0, 0, 9952, -296, 0, 0, 0, 0, 10264, -304, 0, 0, 0, 0, 10512, -288, 0, 0, 0, 0, 10896, -280, 0, 0, 0, 0, 11104, -224, 0, 0, 0, 0, 11576, -192, 0, 0, 0, 0, 12288, -184, 0, 0, 0, 0, 12568, -192, 0, 0, 0, 0, 12600, -224, 0, 0, 0, 0, 12632, -336, 0, 0, 0, 0, 12624, -424, 0, 0, 0, 0, 12656, -544, 0, 0, 0, 0, 12816, -584, 0, 0, 0, 0, 13088, -592, 0, 0, 0, 0, 13496, -568, 0, 0, 0, 0, 14112, -432, 0, 0, 0, 0, 14744, -352, 0, 0, 0, 0, 15496, -296, 0, 0, 0, 0, 16152, -344, 0, 0, 0, 0, 16496, -408, 0, 0, 0, 0, 16640, -392, 0, 0, 0, 0, 16792, -280, 0, 0, 0, 0, 17120, -232, 0, 0, 0, 0, 17392, -184, 0, 0, 0, 0, 17568, -176, 0, 0, 0, 0, 17968, -200, 0, 0, 0, 0, 18448, -184, 0, 0, 0, 0, 18752, -192, 0, 0, 0, 0, 18904, -224, 0, 0, 0, 0, 19296, -272, 0, 0, 0, 0, 19768, -232, 0, 0, 0, 0, 20448, -232, 0, 0, 0, 0, 20696, -272, 0, 0, 0, 0, 20840, -320, 0, 0, 0, 0, 20912, -424, 0, 0, 0, 0, 20960, -544, 0, 0, 0, 0, 20984, -720, 0, 0, 0, 0, 20952, -936, 0, 0, 0, 0, 21040, -1016, 0, 0, 0, 0, 21232, -1064, 0, 0, 0, 0, 22080, -1064, 0, 0, 0, 0, 22464, -1104, 0, 0, 0, 0, 22864, -1280, 0, 0, 0, 0, 23096, -3640, 0, 0, 0, 0, 24000, -3648, 0, 0, 0, 0, 24128, -1160, 0, 0, 0, 0, 23392, 1088, 0, 0, 0, 0, -2488, 1128, 0, 0, 0, 0, -1768, -1960, 0, 0, 0, 0, -1464, -1928, 0, 0, 0, 0, -1296, -408, 0, 0, 0, 0, -1216, -32, 0, 0, 0, 0, -1136, 64, 0, 0, 0, 0, 832, 64)
+}
+point_count = 113
+
+[node name="Level1" unique_id=165616865 instance=ExtResource("1_toi6c")]
+
+[node name="DebugPanel" parent="UILayer" parent_id_path=PackedInt32Array(51763774) index="7" unique_id=1567030277]
+texts_titles = Array[String](["is in air"])
+
+[node name="Crate" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="0" unique_id=840999448 instance=ExtResource("2_22aib")]
+position = Vector2(11640, 2080)
+
+[node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=1838207057 instance=ExtResource("2_1msal")]
+position = Vector2(16991.998, 1728)
+rotation = 0.05235988
+
+[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams" index="0" unique_id=1189508430]
+offset_bottom = 413.86652
+metadata/_edit_use_anchors_ = true
+
+[node name="PlatformOnBeams2" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="1" unique_id=336357570 instance=ExtResource("2_1msal")]
+position = Vector2(17544, 1568)
+
+[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams2" index="0" unique_id=1189508430]
+offset_bottom = 704.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="2" unique_id=651345889 instance=ExtResource("2_1msal")]
+position = Vector2(18336, 1520)
+
+[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams3" index="0" unique_id=1189508430]
+offset_bottom = 704.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Emeraldium" parent="Objects/Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=1019438090 node_paths=PackedStringArray("artefacts_parent", "ui_layer") instance=ExtResource("2_ymq5g")]
+position = Vector2(20128, 2064)
+artefacts_parent = NodePath("..")
+ui_layer = NodePath("../../../UILayer")
+
+[node name="Topaz" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="0" unique_id=67941054 instance=ExtResource("5_os8xl")]
+position = Vector2(2888, 1752)
+
+[node name="Topaz2" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="1" unique_id=1292370280 instance=ExtResource("5_os8xl")]
+position = Vector2(6816, 1856)
+
+[node name="Topaz3" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="2" unique_id=517155972 instance=ExtResource("5_os8xl")]
+position = Vector2(6616, 1800)
+
+[node name="Topaz4" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="3" unique_id=82303939 instance=ExtResource("5_os8xl")]
+position = Vector2(6408, 1848)
+
+[node name="Topaz17" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="4" unique_id=987844695 instance=ExtResource("5_os8xl")]
+position = Vector2(6280, 1976)
+
+[node name="Topaz5" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="5" unique_id=1929693345 instance=ExtResource("5_os8xl")]
+position = Vector2(8696, 1920)
+
+[node name="Topaz6" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="6" unique_id=1302857221 instance=ExtResource("5_os8xl")]
+position = Vector2(8880, 1848)
+
+[node name="Topaz7" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="7" unique_id=1305532280 instance=ExtResource("5_os8xl")]
+position = Vector2(9064, 1824)
+
+[node name="Topaz8" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="8" unique_id=582843908 instance=ExtResource("5_os8xl")]
+position = Vector2(9240, 1856)
+
+[node name="Topaz9" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="9" unique_id=1391843797 instance=ExtResource("5_os8xl")]
+position = Vector2(9400, 1920)
+
+[node name="Topaz10" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="10" unique_id=595832278 instance=ExtResource("5_os8xl")]
+position = Vector2(17104, 1552)
+
+[node name="Topaz11" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="11" unique_id=222339875 instance=ExtResource("5_os8xl")]
+position = Vector2(17216, 1392)
+
+[node name="Topaz12" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="12" unique_id=1102049555 instance=ExtResource("5_os8xl")]
+position = Vector2(17392, 1416)
+
+[node name="Topaz13" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="13" unique_id=1427015326 instance=ExtResource("5_os8xl")]
+position = Vector2(17768, 1424)
+
+[node name="Topaz14" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="14" unique_id=1150684980 instance=ExtResource("5_os8xl")]
+position = Vector2(17968, 1336)
+
+[node name="Topaz15" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="15" unique_id=549613418 instance=ExtResource("5_os8xl")]
+position = Vector2(18176, 1400)
+
+[node name="Topaz16" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="16" unique_id=859932934 instance=ExtResource("5_os8xl")]
+position = Vector2(18584, 1384)
+
+[node name="Topaz18" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="17" unique_id=1879712657 instance=ExtResource("5_os8xl")]
+position = Vector2(18760, 1288)
+
+[node name="Topaz19" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="18" unique_id=2108041544 instance=ExtResource("5_os8xl")]
+position = Vector2(18984, 1248)
+
+[node name="Topaz20" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="19" unique_id=1123676270 instance=ExtResource("5_os8xl")]
+position = Vector2(19176, 1320)
+
+[node name="Topaz21" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="20" unique_id=1350353557 instance=ExtResource("5_os8xl")]
+position = Vector2(19288, 1448)
+
+[node name="Water" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("3_3rpgq")]
+position = Vector2(8552, 1984)
+
+[node name="WaterTexture" parent="Objects/Environment/Waters/Water" index="0" unique_id=1796776943]
+offset_top = -8.0
+offset_right = 1056.0
+offset_bottom = 408.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ActivateArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=1594849188 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("3_150px")]
+objects_to_activate = [NodePath("../../Labels/HintLabel")]
+
+[node name="ActivateArea2" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="1" unique_id=2018532390 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("3_150px")]
+position = Vector2(128, 0)
+objects_to_activate = [NodePath("../../Labels/HintLabel2")]
+
+[node name="ActivateArea3" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="2" unique_id=649406060 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("3_150px")]
+position = Vector2(448, 0)
+objects_to_activate = [NodePath("../../Labels/HintLabel3")]
+
+[node name="ActivateArea4" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="3" unique_id=989458704 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("3_150px")]
+position = Vector2(2360, 0)
+objects_to_activate = [NodePath("../../Labels/HintLabel4")]
+
+[node name="ActivateArea5" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="4" unique_id=943177085 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("3_150px")]
+position = Vector2(11640, 0)
+objects_to_activate = [NodePath("../../Labels/HintLabel5")]
+
+[node name="ActivateArea6" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="5" unique_id=1710759904 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("3_150px")]
+position = Vector2(19304, 0)
+objects_to_activate = [NodePath("../../Labels/HintLabel6"), NodePath("../../Labels/HintLabel7")]
+
+[node name="FinishPortal" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="6" unique_id=737669738]
+z_index = -1
+position = Vector2(21656, 1304)
+
+[node name="HintLabel" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="0" unique_id=1476282060 instance=ExtResource("5_3rpgq")]
+position = Vector2(-640, 1952)
+activation_delay = 0.5
+
+[node name="HintLabel" parent="Labels/HintLabel" index="0" unique_id=514289046]
+offset_bottom = 224.0
+text = "Move the ball using [b]A D[/b] keys"
+metadata/_edit_use_anchors_ = true
+
+[node name="HintLabel2" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="1" unique_id=191469636 instance=ExtResource("5_3rpgq")]
+position = Vector2(0, 1888)
+activation_delay = 0.5
+
+[node name="HintLabel" parent="Labels/HintLabel2" index="0" unique_id=514289046]
+offset_right = 560.0
+offset_bottom = 224.0
+text = "Make him jump by holding [b]Space[/b] key"
+metadata/_edit_use_anchors_ = true
+
+[node name="HintLabel3" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="2" unique_id=1410957751 instance=ExtResource("5_3rpgq")]
+position = Vector2(640, 1952)
+activation_delay = 0.5
+
+[node name="HintLabel" parent="Labels/HintLabel3" index="0" unique_id=514289046]
+offset_bottom = 224.0
+text = "Try to bring him to the end portal"
+metadata/_edit_use_anchors_ = true
+
+[node name="HintLabel4" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="3" unique_id=370846632 instance=ExtResource("5_3rpgq")]
+position = Vector2(2552, 1512)
+activation_delay = 0.5
+
+[node name="HintLabel" parent="Labels/HintLabel4" index="0" unique_id=514289046]
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 704.0
+offset_bottom = 232.0
+text = "Collect [b]topazes[/b] along the way. They can be exchanged for various goodies"
+
+[node name="HintLabel5" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="4" unique_id=585035107 instance=ExtResource("5_3rpgq")]
+position = Vector2(11680, 1568)
+activation_delay = 0.5
+
+[node name="HintLabel" parent="Labels/HintLabel5" index="0" unique_id=514289046]
+offset_left = -216.0
+offset_top = 16.0
+offset_right = 616.0
+offset_bottom = 368.0
+text = "The ball have an outrageously mighty arm. Use it to push the obstacles. Charge hit force by holding [b]left mouse button[/b]"
+
+[node name="HintLabel6" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="5" unique_id=1345771949 instance=ExtResource("5_3rpgq")]
+position = Vector2(19176, 1568)
+activation_delay = 0.5
+
+[node name="HintLabel" parent="Labels/HintLabel6" index="0" unique_id=514289046]
+offset_right = 800.0
+offset_bottom = 352.0
+text = "The world is stuffed with many mysterious artefacts. One can be equipped to give the ball special abilities"
+metadata/_edit_use_anchors_ = true
+
+[node name="HintLabel7" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="6" unique_id=1611643754 instance=ExtResource("5_3rpgq")]
+position = Vector2(19992, 1568)
+activation_delay = 0.5
+
+[node name="HintLabel" parent="Labels/HintLabel7" index="0" unique_id=514289046]
+offset_right = 800.0
+offset_bottom = 352.0
+text = "This one is called \"Emeraldium\". Pick it up with [b]E[/b]. Hold [b]Shift[/b] to use it"
+metadata/_edit_use_anchors_ = true
+
+[node name="Terrain" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="0" unique_id=912310611]
+position = Vector2(0, 2368)
+
+[node name="Path2D" parent="GroundAndBoundaries/Terrain" index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_toi6c")
+
+[node name="Camera" parent="." index="10" unique_id=1760591003]
+limit_right = 22500
+
+[editable path="UILayer"]
+[editable path="Objects/StaticSolids/PlatformOnBeams"]
+[editable path="Objects/StaticSolids/PlatformOnBeams2"]
+[editable path="Objects/StaticSolids/PlatformOnBeams3"]
+[editable path="Objects/Environment/Waters/Water"]
+[editable path="Labels/HintLabel"]
+[editable path="Labels/HintLabel2"]
+[editable path="Labels/HintLabel3"]
+[editable path="Labels/HintLabel4"]
+[editable path="Labels/HintLabel5"]
+[editable path="Labels/HintLabel6"]
+[editable path="Labels/HintLabel7"]
+[editable path="GroundAndBoundaries/Terrain"]
