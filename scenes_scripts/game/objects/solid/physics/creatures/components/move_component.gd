@@ -1,4 +1,4 @@
-class_name MoveComponent extends Node
+class_name RoundMoveComponent extends MoveComponent
 
 #signal enter_floor
 

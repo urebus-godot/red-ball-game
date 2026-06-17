@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://cdla8kspop6ck"]
 
-[ext_resource type="PackedScene" uid="uid://clq8s8kobcgab" path="res://scenes_scripts/game/objects/physical/creatures/creature.tscn" id="1_rv035"]
-[ext_resource type="Script" uid="uid://tcpqkg1nn6p5" path="res://scenes_scripts/game/objects/physical/creatures/player/player.gd" id="2_22jnx"]
+[ext_resource type="PackedScene" uid="uid://clq8s8kobcgab" path="res://scenes_scripts/game/objects/solid/physics/creatures/creature.tscn" id="1_rv035"]
+[ext_resource type="Script" uid="uid://tcpqkg1nn6p5" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/player.gd" id="2_22jnx"]
 [ext_resource type="Texture2D" uid="uid://ia74qyu0klo8" path="res://resources/textures/game/objects/creatures/player/red_ball.png" id="3_ewilg"]
-[ext_resource type="PackedScene" uid="uid://iky0jh5jilni" path="res://scenes_scripts/game/objects/physical/creatures/player/control_component.tscn" id="3_hka56"]
+[ext_resource type="PackedScene" uid="uid://iky0jh5jilni" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/control_component.tscn" id="3_hka56"]
 [ext_resource type="Texture2D" uid="uid://41b35ssy4bxk" path="res://resources/textures/game/objects/creatures/player/red_ball_face.png" id="4_fd7rk"]
-[ext_resource type="PackedScene" uid="uid://dt65y864o3ny2" path="res://scenes_scripts/game/objects/physical/creatures/player/arm.tscn" id="7_psm7a"]
+[ext_resource type="PackedScene" uid="uid://div3il4uqi" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/move_component.tscn" id="7_b4yna"]
+[ext_resource type="PackedScene" uid="uid://dt65y864o3ny2" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/arm.tscn" id="7_psm7a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30j7b"]
 rough = true
@@ -24,14 +25,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hka56"]
 radius = 54.0
 
-[node name="Player" unique_id=840999448 node_paths=PackedStringArray("control_component", "move_component") instance=ExtResource("1_rv035")]
-collision_mask = 14
+[node name="Player" unique_id=840999448 node_paths=PackedStringArray("control_component") instance=ExtResource("1_rv035")]
+collision_mask = 46
 physics_material_override = SubResource("PhysicsMaterial_30j7b")
-contact_monitor = true
-max_contacts_reported = 1
 script = ExtResource("2_22jnx")
 control_component = NodePath("ControlComponent")
-move_component = NodePath("MoveComponent")
 free_camera_mode_enabled = true
 
 [node name="Sprite" parent="." index="0" unique_id=188382244]
@@ -42,7 +40,7 @@ sprite_frames = SubResource("SpriteFrames_30j7b")
 
 [node name="RayCast2D" parent="." index="2" unique_id=863819144]
 top_level = true
-target_position = Vector2(0, 55)
+collision_mask = 46
 
 [node name="CollisionShape2D" parent="." index="3" unique_id=1303941600]
 shape = SubResource("CircleShape2D_hka56")
@@ -56,7 +54,11 @@ life_component = NodePath("../LifeComponent")
 wait_time = 0.6
 one_shot = true
 
-[node name="ControlComponent" parent="." index="6" unique_id=759258089 node_paths=PackedStringArray("move_component") instance=ExtResource("3_hka56")]
-move_component = NodePath("../MoveComponent")
+[node name="ControlComponent" parent="." index="6" unique_id=759258089 node_paths=PackedStringArray("player") instance=ExtResource("3_hka56")]
+player = NodePath("..")
+
+[node name="RoundMoveComponent" parent="." index="7" unique_id=94171231 instance=ExtResource("7_b4yna")]
+torque = 30000.0
+max_velocity = 550.0
 
 [connection signal="timeout" from="InteractTimer" to="." method="_on_interact_timer_timeout"]

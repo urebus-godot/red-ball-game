@@ -28,3 +28,9 @@ const DIAMONDIUM: String = "diamondium"
 
 ## ----- Game constants ------
 const SPIRAL_ROTATION_SPEED: float = 0.8
+const PLATFORMS_COLL_MASK_NUMBER: int = 6
+
+
+enum Direction {
+	LEFT = -1, CENTER = 0, RIGHT = 1
+}

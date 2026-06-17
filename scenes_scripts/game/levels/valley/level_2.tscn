@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://dhquf8m6w2bps"]
 
 [ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_wv7qj"]
+[ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="2_gkha5"]
 [ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="2_idcom"]
+[ext_resource type="PackedScene" uid="uid://hf4hp71cg2ya" path="res://scenes_scripts/game/objects/areas/water.tscn" id="3_7jbpv"]
+[ext_resource type="PackedScene" uid="uid://cmj7l35tymp0l" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/enemy.tscn" id="3_c3k3r"]
 
 [sub_resource type="Curve2D" id="Curve2D_wv7qj"]
 bake_interval = 512.0
@@ -13,9 +16,9 @@ point_count = 16
 [sub_resource type="Curve2D" id="Curve2D_idcom"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -128, 72, 0, 0, 0, 0, -72, 24, 0, 0, 0, 0, 56, -16, 0, 0, 0, 0, 176, -32, 0, 0, 0, 0, 464, -32, 0, 0, 0, 0, 560, -8, 0, 0, 0, 0, 728, 96, 0, 0, 0, 0, 944, 144, 0, 0, 0, 0, 1264, 160, 0, 0, 0, 0, 2304, 160, 0, 0, 0, 0, 7992, 880, 0, 0, 0, 0, -200, 880, 0, 0, 0, 0, -152, 120, 0, 0, 0, 0, -128, 72)
+"points": PackedVector2Array(0, 0, 0, 0, -128, 72, 0, 0, 0, 0, -72, 24, 0, 0, 0, 0, 56, -16, 0, 0, 0, 0, 176, -32, 0, 0, 0, 0, 464, -32, 0, 0, 0, 0, 560, -8, 0, 0, 0, 0, 728, 96, 0, 0, 0, 0, 944, 144, 0, 0, 0, 0, 1264, 160, 0, 0, 0, 0, 2304, 160, 0, 0, 0, 0, 2392, 120, 0, 0, 0, 0, 2496, 0, 0, 0, 0, 0, 2544, -264, 0, 0, 0, 0, 2584, -328, 0, 0, 0, 0, 2656, -360, 0, 0, 0, 0, 3120, -376, 0, 0, 0, 0, 3384, -376, 0, 0, 0, 0, 3584, -344, 0, 0, 0, 0, 3712, -240, 0, 0, 0, 0, 3760, -144, 0, 0, 0, 0, 3792, 0, 0, 0, 0, 0, 3832, 88, 0, 0, 0, 0, 3904, 136, 0, 0, 0, 0, 4120, 160, 0, 0, 0, 0, 4408, 160, 0, 0, 0, 0, 4560, 160, 0, 0, 0, 0, 4904, 184, 0, 0, 0, 0, 5216, 168, 0, 0, 0, 0, 5640, 168, 0, 0, 0, 0, 5784, 184, 0, 0, 0, 0, 6056, 160, 0, 0, 0, 0, 6320, 176, 0, 0, 0, 0, 6464, 104, 0, 0, 0, 0, 6640, -152, 0, 0, 0, 0, 6720, -536, 0, 0, 0, 0, 6832, -648, 0, 0, 0, 0, 7064, -696, 0, 0, 0, 0, 7272, -680, 0, 0, 0, 0, 7384, -624, 0, 0, 0, 0, 7512, -480, 0, 0, 0, 0, 7720, -336, 0, 0, 0, 0, 8008, -248, 0, 0, 0, 0, 8360, -232, 0, 0, 0, 0, 8472, -192, 0, 0, 0, 0, 8528, -112, 0, 0, 0, 0, 8552, 24, 0, 0, 0, 0, 8592, 88, 0, 0, 0, 0, 8656, 120, 0, 0, 0, 0, 10096, 120, 0, 0, 0, 0, 11568, 888, 0, 0, 0, 0, -200, 880, 0, 0, 0, 0, -152, 120, 0, 0, 0, 0, -128, 72)
 }
-point_count = 14
+point_count = 53
 
 [node name="Level2" unique_id=165616865 instance=ExtResource("1_wv7qj")]
 level = 2
@@ -23,21 +26,50 @@ level = 2
 [node name="DebugPanel" parent="UILayer" parent_id_path=PackedInt32Array(51763774) index="7" unique_id=1567030277]
 texts_titles = Array[String](["is in air"])
 
-[node name="PhysicsObjects" type="Node2D" parent="." index="4" unique_id=952607968]
+[node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=1838207057 instance=ExtResource("2_gkha5")]
+position = Vector2(5520, 2200)
 
-[node name="StaticSolids" type="Node2D" parent="." index="5" unique_id=649195086]
+[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams" index="0" unique_id=1189508430]
+offset_bottom = 424.0
 
-[node name="Interactive" type="Node2D" parent="." index="6" unique_id=744542152]
+[node name="PlatformOnBeams2" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="1" unique_id=505716152 instance=ExtResource("2_gkha5")]
+position = Vector2(7120, 1896)
 
-[node name="Pickables" type="Node2D" parent="." index="7" unique_id=1692198806]
+[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams2" index="0" unique_id=1189508430]
+offset_bottom = 600.0
 
-[node name="Topazes" type="Node2D" parent="Pickables" index="0" unique_id=1005448833]
+[node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="2" unique_id=796032174 instance=ExtResource("2_gkha5")]
+position = Vector2(7704, 1736)
 
-[node name="Creatures" type="Node2D" parent="." index="8" unique_id=1133915585]
+[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams3" index="0" unique_id=1189508430]
+offset_bottom = 816.0
 
-[node name="Environment" type="Node2D" parent="." index="9" unique_id=1919074315]
+[node name="PlatformOnBeams4" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="3" unique_id=1814014843 instance=ExtResource("2_gkha5")]
+position = Vector2(8408, 1776)
 
-[node name="Waters" type="Node2D" parent="Environment" index="0" unique_id=2130201175]
+[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams4" index="0" unique_id=1189508430]
+offset_bottom = 816.0
+
+[node name="PlatformOnBeams5" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="4" unique_id=1003614780 instance=ExtResource("2_gkha5")]
+position = Vector2(9208, 1712)
+
+[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams5" index="0" unique_id=1189508430]
+offset_bottom = 816.0
+
+[node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
+position = Vector2(10136, 1512)
+
+[node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=1016766608 instance=ExtResource("3_c3k3r")]
+position = Vector2(12368, 2376)
+
+[node name="Water" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("3_7jbpv")]
+position = Vector2(6752, 1968)
+
+[node name="WaterTexture" parent="Objects/Environment/Waters/Water" index="0" unique_id=1796776943]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 3024.0
+offset_bottom = 584.0
 
 [node name="FinishPortal" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=737669738]
 z_index = -1
@@ -52,10 +84,17 @@ position = Vector2(3088, 2320)
 [node name="Path2D" parent="GroundAndBoundaries/Terrain2" index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_idcom")
 
-[node name="Camera" parent="." index="16" unique_id=1760591003]
+[node name="Camera" parent="." index="10" unique_id=1760591003]
 limit_left = -1000
 limit_bottom = 3150
 
 [editable path="UILayer"]
+[editable path="Objects/StaticSolids/PlatformOnBeams"]
+[editable path="Objects/StaticSolids/PlatformOnBeams2"]
+[editable path="Objects/StaticSolids/PlatformOnBeams3"]
+[editable path="Objects/StaticSolids/PlatformOnBeams4"]
+[editable path="Objects/StaticSolids/PlatformOnBeams5"]
+[editable path="Objects/Creatures/Enemy"]
+[editable path="Objects/Environment/Waters/Water"]
 [editable path="GroundAndBoundaries/Terrain"]
 [editable path="GroundAndBoundaries/Terrain2"]

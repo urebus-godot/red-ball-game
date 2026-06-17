@@ -10,7 +10,7 @@ const SCALE_TWEEN_DURATION: float = 0.3
 
 @export var camera: Camera2D
 @export var control_component: ControlComponent
-@export var move_component: MoveComponent
+@export var move_component: RoundMoveComponent
 @export var free_camera_mode_enabled: bool = false
 
 var can_interact: bool = true

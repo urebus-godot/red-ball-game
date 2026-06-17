@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dt65y864o3ny2"]
 
-[ext_resource type="Script" uid="uid://d04v7io8celbc" path="res://scenes_scripts/game/objects/physical/creatures/player/arm.gd" id="1_v3gnt"]
+[ext_resource type="Script" uid="uid://d04v7io8celbc" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/arm.gd" id="1_v3gnt"]
 [ext_resource type="Texture2D" uid="uid://beh1jxgbxfg7q" path="res://resources/textures/game/objects/creatures/player/arm.png" id="3_dy8if"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dy8if"]

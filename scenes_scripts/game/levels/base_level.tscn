@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bb6koovj7b8o"]
 
-[ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/physical/creatures/player/player.tscn" id="1_bs2e5"]
+[ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/player.tscn" id="1_bs2e5"]
 [ext_resource type="Script" uid="uid://dikts21pbdp6o" path="res://scenes_scripts/game/levels/managers/level_manager.gd" id="1_iym18"]
 [ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="4_jt1by"]
 [ext_resource type="Texture2D" uid="uid://br0481lah1ok" path="res://resources/textures/game/objects/interactive/portal.png" id="6_62qgw"]
 [ext_resource type="PackedScene" uid="uid://obqeiafka73e" path="res://scenes_scripts/ui/game/ui_layer/scenes/ui_layer.tscn" id="6_pb7rb"]
 [ext_resource type="PackedScene" uid="uid://daoi38gxr1or8" path="res://scenes_scripts/game/objects/areas/finish_area.tscn" id="7_y6yin"]
-[ext_resource type="PackedScene" uid="uid://cn48baku04cx" path="res://scenes_scripts/game/objects/physical/creatures/player/camera.tscn" id="9_lcgxn"]
+[ext_resource type="PackedScene" uid="uid://cn48baku04cx" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/camera.tscn" id="9_lcgxn"]
 
 [sub_resource type="Curve2D" id="Curve2D_62qgw"]
 bake_interval = 512.0
@@ -75,6 +75,7 @@ curve = SubResource("Curve2D_62qgw")
 top_level = false
 limit_left = -960
 limit_top = 0
+limit_bottom = 3500
 player = NodePath("../Objects/Creatures/Player")
 
 [connection signal="level_finished" from="." to="UILayer" method="_on_level_finished"]

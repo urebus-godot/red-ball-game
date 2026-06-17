@@ -129,6 +129,7 @@ unequip_artefact={
 2d_physics/layer_3="physical_solids"
 2d_physics/layer_4="creatures"
 2d_physics/layer_5="interactive"
+2d_physics/layer_6="platforms"
 
 [physics]
 

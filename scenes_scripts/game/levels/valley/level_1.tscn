@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_toi6c"]
 [ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="2_1msal"]
-[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/physical/physics/crate.tscn" id="2_22aib"]
+[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/solid/physics/crate.tscn" id="2_22aib"]
 [ext_resource type="PackedScene" uid="uid://3hroom7g8eq4" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_emeraldium.tscn" id="2_ymq5g"]
 [ext_resource type="PackedScene" uid="uid://hf4hp71cg2ya" path="res://scenes_scripts/game/objects/areas/water.tscn" id="3_3rpgq"]
 [ext_resource type="PackedScene" uid="uid://bg48lxeeip6cc" path="res://scenes_scripts/game/objects/areas/activate_area.tscn" id="3_150px"]
@@ -30,21 +30,18 @@ rotation = 0.05235988
 
 [node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams" index="0" unique_id=1189508430]
 offset_bottom = 413.86652
-metadata/_edit_use_anchors_ = true
 
 [node name="PlatformOnBeams2" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="1" unique_id=336357570 instance=ExtResource("2_1msal")]
 position = Vector2(17544, 1568)
 
 [node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams2" index="0" unique_id=1189508430]
 offset_bottom = 704.0
-metadata/_edit_use_anchors_ = true
 
 [node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="2" unique_id=651345889 instance=ExtResource("2_1msal")]
 position = Vector2(18336, 1520)
 
 [node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams3" index="0" unique_id=1189508430]
 offset_bottom = 704.0
-metadata/_edit_use_anchors_ = true
 
 [node name="Emeraldium" parent="Objects/Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=1019438090 node_paths=PackedStringArray("artefacts_parent", "ui_layer") instance=ExtResource("2_ymq5g")]
 position = Vector2(20128, 2064)

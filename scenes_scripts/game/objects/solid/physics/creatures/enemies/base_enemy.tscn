@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bgi5ormyihelr"]
+
+[ext_resource type="PackedScene" uid="uid://clq8s8kobcgab" path="res://scenes_scripts/game/objects/solid/physics/creatures/creature.tscn" id="1_2xln0"]
+
+[node name="BaseEnemy" unique_id=840999448 instance=ExtResource("1_2xln0")]

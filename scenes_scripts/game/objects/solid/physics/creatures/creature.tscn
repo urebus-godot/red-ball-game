@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://clq8s8kobcgab"]
+
+[ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/solid/physics/physics_object.tscn" id="1_8wc1f"]
+[ext_resource type="Script" uid="uid://b2r2508bgg8iu" path="res://scenes_scripts/game/objects/solid/physics/creatures/creature.gd" id="2_mx7sf"]
+[ext_resource type="Script" uid="uid://d16e4wi8or6yw" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/sprites_component.gd" id="4_lkcup"]
+[ext_resource type="PackedScene" uid="uid://cvk2pwd2whfqg" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/life_component.tscn" id="5_yhvth"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ybpkm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhapb"]
+radius = 54.0
+
+[node name="Creature" unique_id=840999448 node_paths=PackedStringArray("life_component") instance=ExtResource("1_8wc1f")]
+physics_material_override = SubResource("PhysicsMaterial_ybpkm")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("2_mx7sf")
+life_component = NodePath("LifeComponent")
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="1" unique_id=863819144]
+target_position = Vector2(0, 56)
+collision_mask = 14
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1303941600]
+shape = SubResource("CircleShape2D_hhapb")
+
+[node name="SpritesComponent" type="Node" parent="." index="3" unique_id=298676427 node_paths=PackedStringArray("creature", "body_sprite")]
+script = ExtResource("4_lkcup")
+creature = NodePath("..")
+body_sprite = NodePath("../Sprite")
+
+[node name="LifeComponent" parent="." index="4" unique_id=1532767562 node_paths=PackedStringArray("creature") instance=ExtResource("5_yhvth")]
+creature = NodePath("..")
+
+[connection signal="creature_died" from="LifeComponent" to="." method="_on_creature_died"]

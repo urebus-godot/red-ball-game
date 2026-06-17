@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cvk2pwd2whfqg"]
-
-[ext_resource type="Script" uid="uid://bo5ro353i5dfm" path="res://scenes_scripts/game/objects/physical/creatures/life_component.gd" id="1_4x7mh"]
-
-[node name="LifeComponent" type="Node" unique_id=1532767562]
-script = ExtResource("1_4x7mh")

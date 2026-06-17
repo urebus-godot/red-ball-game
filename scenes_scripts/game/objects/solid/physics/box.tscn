@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2den35kyqftn"]
 
-[ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/physical/physics_object.tscn" id="1_kvcd3"]
+[ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/solid/physics/physics_object.tscn" id="1_kvcd3"]
 [ext_resource type="Texture2D" uid="uid://puqvck8qitpu" path="res://resources/textures/game/objects/solids/box.png" id="2_buklt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a8r7"]
