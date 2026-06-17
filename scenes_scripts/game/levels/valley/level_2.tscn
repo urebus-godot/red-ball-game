@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://dhquf8m6w2bps"]
 
 [ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_wv7qj"]
+[ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="2_idcom"]
+
+[sub_resource type="Curve2D" id="Curve2D_wv7qj"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1096, 2432, 0, 0, 0, 0, 704, 2432, 0, 0, 0, 0, 968, 2408, 0, 0, 0, 0, 1200, 2344, 0, 0, 0, 0, 1496, 2296, 0, 0, 0, 0, 1800, 2288, 0, 0, 0, 0, 2048, 2288, 0, 0, 0, 0, 2128, 2312, 0, 0, 0, 0, 2176, 2360, 0, 0, 0, 0, 2304, 3200, 0, 0, 0, 0, -1664, 3200, 0, 0, 0, 0, -1632, 1392, 0, 0, 0, 0, -1528, 1224, 0, 0, 0, 0, -1320, 1032, 0, 0, 0, 0, -1160, 2320, 0, 0, 0, 0, -1096, 2432)
+}
+point_count = 16
+
+[sub_resource type="Curve2D" id="Curve2D_idcom"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -128, 72, 0, 0, 0, 0, -72, 24, 0, 0, 0, 0, 56, -16, 0, 0, 0, 0, 176, -32, 0, 0, 0, 0, 464, -32, 0, 0, 0, 0, 560, -8, 0, 0, 0, 0, 728, 96, 0, 0, 0, 0, 944, 144, 0, 0, 0, 0, 1264, 160, 0, 0, 0, 0, 2304, 160, 0, 0, 0, 0, 7992, 880, 0, 0, 0, 0, -200, 880, 0, 0, 0, 0, -152, 120, 0, 0, 0, 0, -128, 72)
+}
+point_count = 14
 
 [node name="Level2" unique_id=165616865 instance=ExtResource("1_wv7qj")]
 level = 2
@@ -27,8 +42,20 @@ texts_titles = Array[String](["is in air"])
 [node name="FinishPortal" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=737669738]
 z_index = -1
 
+[node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_wv7qj")
+
+[node name="Terrain2" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="1" unique_id=912310611 instance=ExtResource("2_idcom")]
+z_index = 2
+position = Vector2(3088, 2320)
+
+[node name="Path2D" parent="GroundAndBoundaries/Terrain2" index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_idcom")
+
 [node name="Camera" parent="." index="16" unique_id=1760591003]
 limit_left = -1000
+limit_bottom = 3150
 
 [editable path="UILayer"]
 [editable path="GroundAndBoundaries/Terrain"]
+[editable path="GroundAndBoundaries/Terrain2"]
