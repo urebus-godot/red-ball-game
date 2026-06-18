@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vpaqoylv1iii"]
 
 [ext_resource type="PackedScene" uid="uid://da782lup76038" path="res://scenes_scripts/game/objects/artefacts/base_artefact.tscn" id="1_3s80b"]
-[ext_resource type="Script" uid="uid://cask0lxns4duu" path="res://scenes_scripts/game/objects/artefacts/emeraldium.gd" id="2_n2fxl"]
+[ext_resource type="Script" uid="uid://cask0lxns4duu" path="res://scenes_scripts/game/objects/artefacts/emeraldium/emeraldium.gd" id="2_n2fxl"]
 
 [node name="Emeraldium" unique_id=2019080803 instance=ExtResource("1_3s80b")]
 script = ExtResource("2_n2fxl")

@@ -1,6 +1,6 @@
 class_name Artefact extends Node2D
 
-@export var action_name: String = "use_artifact"
+@export var action_name: String = "use_artefact"
 
 @export_enum(
 	Constants.SAPPHIRIUM, 
@@ -9,20 +9,24 @@ class_name Artefact extends Node2D
 	Constants.DIAMONDIUM
 	) var artefact_name: String
 
+var activated: bool = false
+
 var player: Player = null
 var artefacts_parent: Node = null
 var ui_layer: GameUILayer = null
 
 
-func use_artifact() -> void:
+func use_artefact() -> void:
 	pass
 
 
-func activate_artifact() -> void:
-	pass
+func activate_artefact() -> void:
+	activated = true
+	prints("Activated artefact!", activated)
 
-func deactivate_artifact() -> void:
-	pass
+func deactivate_artefact() -> void:
+	activated = false
+	prints("Deactivated artefact!", not activated)
 
 
 func unequip_artefact() -> void:
@@ -33,10 +37,10 @@ func unequip_artefact() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(action_name):
-		activate_artifact()
+		activate_artefact()
 
 	elif event.is_action_released(action_name):
-		deactivate_artifact()
+		deactivate_artefact()
 
 	elif event.is_action_pressed("unequip_artefact"):
 		unequip_artefact()

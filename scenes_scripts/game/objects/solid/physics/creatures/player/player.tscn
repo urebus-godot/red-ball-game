@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ia74qyu0klo8" path="res://resources/textures/game/objects/creatures/player/red_ball.png" id="3_ewilg"]
 [ext_resource type="PackedScene" uid="uid://iky0jh5jilni" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/control_component.tscn" id="3_hka56"]
 [ext_resource type="Texture2D" uid="uid://41b35ssy4bxk" path="res://resources/textures/game/objects/creatures/player/red_ball_face.png" id="4_fd7rk"]
-[ext_resource type="PackedScene" uid="uid://div3il4uqi" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/move_component.tscn" id="7_b4yna"]
+[ext_resource type="PackedScene" uid="uid://div3il4uqi" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/round_move_component.tscn" id="7_b4yna"]
 [ext_resource type="PackedScene" uid="uid://dt65y864o3ny2" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/arm.tscn" id="7_psm7a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30j7b"]
@@ -25,11 +25,51 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hka56"]
 radius = 54.0
 
-[node name="Player" unique_id=840999448 node_paths=PackedStringArray("control_component") instance=ExtResource("1_rv035")]
-collision_mask = 46
+[sub_resource type="Animation" id="Animation_02yhw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b4yna"]
+resource_name = "invinciblity"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.3882353), Color(1, 1, 1, 1), Color(1, 1, 1, 0.3882353), Color(1, 1, 1, 1), Color(1, 1, 1, 0.3882353), Color(1, 1, 1, 1), Color(1, 1, 1, 0.3882353), Color(1, 1, 1, 1), Color(1, 1, 1, 0.3882353), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_02yhw"]
+_data = {
+&"RESET": SubResource("Animation_02yhw"),
+&"invincibility": SubResource("Animation_b4yna")
+}
+
+[node name="Player" unique_id=840999448 node_paths=PackedStringArray("control_component", "move_component") instance=ExtResource("1_rv035")]
+collision_layer = 1
+collision_mask = 62
 physics_material_override = SubResource("PhysicsMaterial_30j7b")
 script = ExtResource("2_22jnx")
 control_component = NodePath("ControlComponent")
+move_component = NodePath("RoundMoveComponent")
 free_camera_mode_enabled = true
 
 [node name="Sprite" parent="." index="0" unique_id=188382244]
@@ -38,15 +78,10 @@ texture = ExtResource("3_ewilg")
 [node name="FaceAnimatedSprite" type="AnimatedSprite2D" parent="." index="1" unique_id=1863344746]
 sprite_frames = SubResource("SpriteFrames_30j7b")
 
-[node name="RayCast2D" parent="." index="2" unique_id=863819144]
-top_level = true
-collision_mask = 46
-
 [node name="CollisionShape2D" parent="." index="3" unique_id=1303941600]
 shape = SubResource("CircleShape2D_hka56")
 
 [node name="Arm" parent="." index="4" unique_id=393563701 node_paths=PackedStringArray("player", "life_component") instance=ExtResource("7_psm7a")]
-top_level = true
 player = NodePath("..")
 life_component = NodePath("../LifeComponent")
 
@@ -54,11 +89,23 @@ life_component = NodePath("../LifeComponent")
 wait_time = 0.6
 one_shot = true
 
-[node name="ControlComponent" parent="." index="6" unique_id=759258089 node_paths=PackedStringArray("player") instance=ExtResource("3_hka56")]
+[node name="ControlComponent" parent="." index="6" unique_id=759258089 node_paths=PackedStringArray("move_component", "player") instance=ExtResource("3_hka56")]
+move_component = NodePath("../RoundMoveComponent")
 player = NodePath("..")
 
-[node name="RoundMoveComponent" parent="." index="7" unique_id=94171231 instance=ExtResource("7_b4yna")]
-torque = 30000.0
-max_velocity = 550.0
+[node name="RoundMoveComponent" parent="." index="7" unique_id=94171231 node_paths=PackedStringArray("creature", "floor_raycast") instance=ExtResource("7_b4yna")]
+torque = 45000.0
+max_velocity = 800.0
+jump_impulse = 350.0
+jump_hold_force = 2600.0
+creature = NodePath("..")
+floor_raycast = NodePath("../RayCast2D")
+
+[node name="LifeComponent" parent="." index="9" unique_id=1532767562 node_paths=PackedStringArray("animation_player")]
+animation_player = NodePath("../AnimationPlayer")
+lives = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="11" unique_id=1728710160]
+libraries/ = SubResource("AnimationLibrary_02yhw")
 
 [connection signal="timeout" from="InteractTimer" to="." method="_on_interact_timer_timeout"]

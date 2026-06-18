@@ -19,7 +19,7 @@ var collected: bool = false
 
 
 func spawn_equipped_artefact() -> Artefact:
-	var artefact_scene = load(Constants.ARTEFACT_PATH % artefact_name)
+	var artefact_scene = load(Constants.ARTEFACT_PATH % [artefact_name, artefact_name])
 	var artefact: Artefact = artefact_scene.instantiate()
 
 	if artefact_name == Constants.EMERALDIUM:
@@ -55,6 +55,7 @@ func interact() -> void:
 func _ready() -> void:
 	artefacts_parent = root_node.artefacts_parent
 	ui_layer = root_node.ui_layer
+	showed_name = artefact_name.capitalize()
 
 
 func _on_body_entered(body: Player) -> void:

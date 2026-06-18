@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bgi5ormyihelr" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/base_enemy.tscn" id="1_8g7r8"]
 [ext_resource type="Texture2D" uid="uid://qdxq2qikllnk" path="res://resources/textures/game/objects/creatures/enemies/enemy_ball.png" id="2_n3ig2"]
 [ext_resource type="Texture2D" uid="uid://b8nqr465lb6tm" path="res://resources/textures/game/objects/creatures/enemies/enemy_ball_face.png" id="3_kf05e"]
-[ext_resource type="Script" uid="uid://b16bfgyrpanxb" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/patrol_component.gd" id="4_kf05e"]
-[ext_resource type="PackedScene" uid="uid://div3il4uqi" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/move_component.tscn" id="4_yt0kc"]
+[ext_resource type="PackedScene" uid="uid://div3il4uqi" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/round_move_component.tscn" id="4_yt0kc"]
+[ext_resource type="PackedScene" uid="uid://b0nqlbik4blvl" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/patrol_component.tscn" id="5_yt0kc"]
+[ext_resource type="Script" uid="uid://i2xnsu4phyal" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/contact_hit_component.gd" id="6_fouky"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kf05e"]
 radius = 54.0
@@ -18,22 +19,25 @@ texture = ExtResource("2_n3ig2")
 [node name="FaceSprite" type="Sprite2D" parent="." index="1" unique_id=311014914]
 texture = ExtResource("3_kf05e")
 
+[node name="RayCast2D" parent="." index="2" unique_id=863819144]
+target_position = Vector2(0, 65)
+
 [node name="CollisionShape2D" parent="." index="3" unique_id=1303941600]
 shape = SubResource("CircleShape2D_kf05e")
 
-[node name="MoveComponent" parent="." index="4" unique_id=94171231 node_paths=PackedStringArray("creature", "floor_raycast") instance=ExtResource("4_yt0kc")]
+[node name="RoundMoveComponent" parent="." index="4" unique_id=1363103788 node_paths=PackedStringArray("creature", "floor_raycast") instance=ExtResource("4_yt0kc")]
 torque = 30000.0
 max_velocity = 550.0
+jump_impulse = 700.0
+jump_hold_force = 2600.0
 creature = NodePath("..")
 floor_raycast = NodePath("../RayCast2D")
 
-[node name="RoundMoveComponent" parent="." index="5" unique_id=1363103788 node_paths=PackedStringArray("creature", "floor_raycast") instance=ExtResource("4_yt0kc")]
-torque = 30000.0
-max_velocity = 550.0
+[node name="PatrolComponent" parent="." index="7" unique_id=1282453717 node_paths=PackedStringArray("move_component", "creature") instance=ExtResource("5_yt0kc")]
+move_component = NodePath("../RoundMoveComponent")
 creature = NodePath("..")
-floor_raycast = NodePath("../RayCast2D")
+jumping = true
 
-[node name="PatrolComponent" type="Node" parent="." index="8" unique_id=1971194562 node_paths=PackedStringArray("move_component", "target")]
-script = ExtResource("4_kf05e")
-move_component = NodePath("../MoveComponent")
-target = NodePath("..")
+[node name="ContactHitComponent" type="Node" parent="." index="8" unique_id=1690736663 node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_fouky")
+enemy = NodePath("..")

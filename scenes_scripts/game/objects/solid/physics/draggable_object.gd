@@ -1,0 +1,67 @@
+extends PhysicsObject
+
+@export var player: Player
+
+var is_dragging: bool = false
+var joint: PinJoint2D = null
+var mouse_body: StaticBody2D = null
+
+func _ready() -> void:
+	input_pickable = true
+
+func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		print("Mouse event!")
+		if event.pressed and not is_dragging:
+			print("Input event registered!")
+			var artefact = player.equipped_artefact
+			print("player has artefact ", artefact.artefact_name)
+			if artefact is Sapphirium and artefact.activated:
+				start_drag()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if not event.pressed and is_dragging:
+			print("Input registered!")
+			var artefact = player.equipped_artefact
+			if artefact is Sapphirium and artefact.activated:
+				end_drag()
+
+func _physics_process(_delta: float) -> void:
+	# Перемещаем не сам объект, а невидимую точку привязки
+	if is_dragging and mouse_body:
+		mouse_body.global_position = get_global_mouse_position()
+
+func start_drag() -> void:
+	print("Started drag!")
+	is_dragging = true
+	
+	# 1. Создаем невидимую статичную точку в месте курсора
+	mouse_body = StaticBody2D.new()
+	mouse_body.global_position = get_global_mouse_position()
+	get_parent().add_child(mouse_body)
+	
+	# 2. Создаем физическое соединение (пружину)
+	joint = PinJoint2D.new()
+	joint.global_position = get_global_mouse_position()
+	
+	# Настройки мягкости и упругости соединения
+	joint.softness = 0.5        # Чем выше, тем более «резиновое» натяжение
+	joint.bias = 0.9            # Скорость возврата к курсору (0.0 - 0.9)
+	joint.disable_collision = true
+	
+	get_parent().add_child(joint)
+	
+	# 3. Связываем точку курсора и наш RigidBody2D
+	joint.node_a = mouse_body.get_path()
+	joint.node_b = self.get_path()
+
+func end_drag() -> void:
+	print("Ended drag!")
+	is_dragging = false
+	
+	# Удаляем временные узлы, чтобы объект полетел по инерции
+	if joint:
+		joint.queue_free()
+	if mouse_body:
+		mouse_body.queue_free()

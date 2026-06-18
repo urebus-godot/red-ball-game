@@ -20,6 +20,7 @@ func spawn_pickable_artefact(
 	args_dict: Dictionary = {}
 	) -> Node2D:
 	print("ui_layer=",ui_layer)
+	print(Constants.PICKABLE_ARTEFACT_PATH % player.equipped_artefact.artefact_name)
 	var pickable_artefact_scene = load(
 		Constants.PICKABLE_ARTEFACT_PATH % player.equipped_artefact.artefact_name)
 	var pickable_artefact = pickable_artefact_scene.instantiate()

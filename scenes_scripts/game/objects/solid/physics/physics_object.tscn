@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bavhmtq56j2xo" path="res://scenes_scripts/game/objects/solid/physics/physics_object.gd" id="1_qmy71"]
 
 [node name="PhysicsObject" type="RigidBody2D" unique_id=840999448]
-collision_mask = 15
+collision_layer = 4
+collision_mask = 47
+input_pickable = true
 script = ExtResource("1_qmy71")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=188382244]

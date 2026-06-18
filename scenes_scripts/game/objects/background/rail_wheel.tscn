@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dii5rtal5suat"]
+
+[ext_resource type="Texture2D" uid="uid://h81yh8fxpvbr" path="res://resources/textures/game/background/rail_wheel.png" id="1_ah5aw"]
+[ext_resource type="Texture2D" uid="uid://c41y7ujeilcek" path="res://resources/textures/game/background/rail_wheel_axle.png" id="2_ktf5q"]
+
+[node name="RailWheel" type="Node2D" unique_id=739607962]
+
+[node name="WheelSprite" type="Sprite2D" parent="." unique_id=2040693000]
+texture = ExtResource("1_ah5aw")
+
+[node name="AxleSprite" type="Sprite2D" parent="." unique_id=1653411141]
+texture = ExtResource("2_ktf5q")

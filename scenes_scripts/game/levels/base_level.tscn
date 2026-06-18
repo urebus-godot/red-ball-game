@@ -35,6 +35,8 @@ texture = ExtResource("6_62qgw")
 
 [node name="StaticSolids" type="Node2D" parent="Objects" unique_id=649195086]
 
+[node name="Moving" type="Node2D" parent="Objects" unique_id=1049580301]
+
 [node name="Interactive" type="Node2D" parent="Objects" unique_id=744542152]
 
 [node name="Pickables" type="Node2D" parent="Objects" unique_id=1692198806]

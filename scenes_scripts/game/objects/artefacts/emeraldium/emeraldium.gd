@@ -1,4 +1,4 @@
-extends Artefact
+class_name Emeraldium extends Artefact
 
 const VELOCITY_MULTIPLIER: float = 1.8
 const JUMP_FORCE_MULTIPLIER: float = 1

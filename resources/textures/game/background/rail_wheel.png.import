@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://puqvck8qitpu"
-path="res://.godot/imported/box.png-92087b4b96bf843aa76fd3a2fa34de60.ctex"
+uid="uid://h81yh8fxpvbr"
+path="res://.godot/imported/rail_wheel.png-860cb25115a6fe920d26da1fb026a461.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/game/objects/solids/box.png"
-dest_files=["res://.godot/imported/box.png-92087b4b96bf843aa76fd3a2fa34de60.ctex"]
+source_file="res://resources/textures/game/background/rail_wheel.png"
+dest_files=["res://.godot/imported/rail_wheel.png-860cb25115a6fe920d26da1fb026a461.ctex"]
 
 [params]
 

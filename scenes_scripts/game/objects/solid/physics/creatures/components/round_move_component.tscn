@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://div3il4uqi"]
+
+[ext_resource type="Script" uid="uid://cyoauusqk00nc" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/round_move_component.gd" id="1_3oapp"]
+
+[node name="RoundMoveComponent" type="Node" unique_id=94171231]
+script = ExtResource("1_3oapp")
+torque = null
+max_velocity = null
+jump_impulse = null
+jump_hold_force = null

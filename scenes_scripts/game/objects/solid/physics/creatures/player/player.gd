@@ -23,7 +23,6 @@ var control_enabled: bool = true:
 			arm.rotating = false
 			enable_arm(false)
 
-
 var object_to_interact: InteractiveObject = null
 var equipped_artefact: Artefact = null
 
@@ -91,6 +90,7 @@ func _input(event: InputEvent) -> void:
 		pass
 
 	elif event.is_action_pressed("switch_camera_mode") and free_camera_mode_enabled:
+		camera.zoom = Vector2.ONE
 		camera.free_mode = not camera.free_mode
 		move_component.movement_enabled = not move_component.movement_enabled
 

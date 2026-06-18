@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://12ef50h0mjkj"]
+
+[ext_resource type="PackedScene" uid="uid://da782lup76038" path="res://scenes_scripts/game/objects/artefacts/base_artefact.tscn" id="1_2xqy0"]
+[ext_resource type="Script" uid="uid://64e3n3lnemeq" path="res://scenes_scripts/game/objects/artefacts/sapphirium/sapphirium.gd" id="2_p4lcm"]
+
+[node name="Sapphirium" unique_id=2019080803 instance=ExtResource("1_2xqy0")]
+script = ExtResource("2_p4lcm")
+artefact_name = "sapphirium"

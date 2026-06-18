@@ -32,8 +32,9 @@ func hit() -> void:
 	rotating = true
 
 
-func set_arm_transform() -> void:
+func set_properties_to_players() -> void:
 	scale = player.scale
+	modulate = player.modulate
 
 	if life_component.alive and rotating:
 		var mouse_pos = get_global_mouse_position()
@@ -50,16 +51,14 @@ func set_arm_transform() -> void:
 func accumulate_hit_charge(delta: float) -> void:
 	if not hits_enabled: return
 	if is_holding_hit and can_charge_hit:
-		print("Charging hit \n hit_charge=", hit_charge)
 		hit_charge += delta * 1.5
 		if hit_charge > MAX_HIT_CHARGE:
-			print("Hit is charge to maximum \n hit_charge=", hit_charge)
 			animation_player.play("charged")
 			can_charge_hit = false
 
 
 func _process(delta: float) -> void:
-	set_arm_transform()
+	set_properties_to_players()
 	accumulate_hit_charge(delta)
 
 
@@ -74,6 +73,8 @@ func _input(event: InputEvent) -> void:
 
 func _on_arm_area_body_entered(body: Node2D) -> void:
 	if body is PhysicsObject and is_hitting:
-		var force = Vector2.from_angle(rotation) * (HIT_FORCE + hit_charge * HIT_FORCE)
-		body.apply_central_impulse(force)
-		print("Applying %s N to the %s" % [force, body.name])
+		if body is Creature:
+			body.get_hit()
+		else:
+			var force = Vector2.from_angle(rotation) * (HIT_FORCE + hit_charge * HIT_FORCE)
+			body.apply_central_impulse(force)

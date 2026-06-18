@@ -9,7 +9,7 @@ const WORLD_PATH: String = "res://scenes_scripts/game/root/world.tscn"
 const VALLEY_LEVEL_PATH: String = "res://scenes_scripts/game/levels/valley/level_%s.tscn"
 
 ## ----- Object scenes path ------
-const ARTEFACT_PATH: String = "res://scenes_scripts/game/objects/artefacts/%s.tscn"
+const ARTEFACT_PATH: String = "res://scenes_scripts/game/objects/artefacts/%s/%s.tscn"
 const PICKABLE_ARTEFACT_PATH: String = "res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_%s.tscn"
 
 

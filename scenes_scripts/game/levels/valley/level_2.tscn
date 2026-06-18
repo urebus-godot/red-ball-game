@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://dhquf8m6w2bps"]
 
 [ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_wv7qj"]
+[ext_resource type="Texture2D" uid="uid://dbhgxqoixgrjm" path="res://resources/textures/game/background/rails.png" id="2_6k4lt"]
 [ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="2_gkha5"]
 [ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="2_idcom"]
 [ext_resource type="PackedScene" uid="uid://hf4hp71cg2ya" path="res://scenes_scripts/game/objects/areas/water.tscn" id="3_7jbpv"]
 [ext_resource type="PackedScene" uid="uid://cmj7l35tymp0l" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/enemy.tscn" id="3_c3k3r"]
+[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/solid/physics/crate.tscn" id="3_ju5ee"]
+[ext_resource type="PackedScene" uid="uid://d1ho4x2t2v73w" path="res://scenes_scripts/game/objects/solid/static/wooden_platform_2.tscn" id="3_of0k6"]
+[ext_resource type="Script" uid="uid://b2r2508bgg8iu" path="res://scenes_scripts/game/objects/solid/physics/creatures/creature.gd" id="4_bowtb"]
+[ext_resource type="PackedScene" uid="uid://d2den35kyqftn" path="res://scenes_scripts/game/objects/solid/physics/box.tscn" id="4_m3ka0"]
+[ext_resource type="PackedScene" uid="uid://dphtyw3r13q85" path="res://scenes_scripts/game/objects/solid/moving/rail_platform.tscn" id="5_1ytqh"]
+[ext_resource type="PackedScene" uid="uid://bg48lxeeip6cc" path="res://scenes_scripts/game/objects/areas/activate_area.tscn" id="6_sa3fx"]
+[ext_resource type="PackedScene" uid="uid://bvcpab838u2eo" path="res://scenes_scripts/game/objects/ui_elements/hint_label.tscn" id="7_ai87r"]
+[ext_resource type="PackedScene" uid="uid://it0wnaasisai" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_sapphirium.tscn" id="7_rt4jy"]
+[ext_resource type="PackedScene" uid="uid://c7qsfutbsxmxn" path="res://scenes_scripts/game/objects/areas/death_area.tscn" id="11_prvuc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prvuc"]
+size = Vector2(15496, 112)
 
 [sub_resource type="Curve2D" id="Curve2D_wv7qj"]
 bake_interval = 512.0
@@ -16,9 +29,16 @@ point_count = 16
 [sub_resource type="Curve2D" id="Curve2D_idcom"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -128, 72, 0, 0, 0, 0, -72, 24, 0, 0, 0, 0, 56, -16, 0, 0, 0, 0, 176, -32, 0, 0, 0, 0, 464, -32, 0, 0, 0, 0, 560, -8, 0, 0, 0, 0, 728, 96, 0, 0, 0, 0, 944, 144, 0, 0, 0, 0, 1264, 160, 0, 0, 0, 0, 2304, 160, 0, 0, 0, 0, 2392, 120, 0, 0, 0, 0, 2496, 0, 0, 0, 0, 0, 2544, -264, 0, 0, 0, 0, 2584, -328, 0, 0, 0, 0, 2656, -360, 0, 0, 0, 0, 3120, -376, 0, 0, 0, 0, 3384, -376, 0, 0, 0, 0, 3584, -344, 0, 0, 0, 0, 3712, -240, 0, 0, 0, 0, 3760, -144, 0, 0, 0, 0, 3792, 0, 0, 0, 0, 0, 3832, 88, 0, 0, 0, 0, 3904, 136, 0, 0, 0, 0, 4120, 160, 0, 0, 0, 0, 4408, 160, 0, 0, 0, 0, 4560, 160, 0, 0, 0, 0, 4904, 184, 0, 0, 0, 0, 5216, 168, 0, 0, 0, 0, 5640, 168, 0, 0, 0, 0, 5784, 184, 0, 0, 0, 0, 6056, 160, 0, 0, 0, 0, 6320, 176, 0, 0, 0, 0, 6464, 104, 0, 0, 0, 0, 6640, -152, 0, 0, 0, 0, 6720, -536, 0, 0, 0, 0, 6832, -648, 0, 0, 0, 0, 7064, -696, 0, 0, 0, 0, 7272, -680, 0, 0, 0, 0, 7384, -624, 0, 0, 0, 0, 7512, -480, 0, 0, 0, 0, 7720, -336, 0, 0, 0, 0, 8008, -248, 0, 0, 0, 0, 8360, -232, 0, 0, 0, 0, 8472, -192, 0, 0, 0, 0, 8528, -112, 0, 0, 0, 0, 8552, 24, 0, 0, 0, 0, 8592, 88, 0, 0, 0, 0, 8656, 120, 0, 0, 0, 0, 10096, 120, 0, 0, 0, 0, 11568, 888, 0, 0, 0, 0, -200, 880, 0, 0, 0, 0, -152, 120, 0, 0, 0, 0, -128, 72)
+"points": PackedVector2Array(0, 0, 0, 0, -128, 72, 0, 0, 0, 0, -72, 24, 0, 0, 0, 0, 56, -16, 0, 0, 0, 0, 176, -32, 0, 0, 0, 0, 464, -32, 0, 0, 0, 0, 560, -8, 0, 0, 0, 0, 728, 96, 0, 0, 0, 0, 944, 144, 0, 0, 0, 0, 1264, 160, 0, 0, 0, 0, 2304, 160, 0, 0, 0, 0, 2392, 120, 0, 0, 0, 0, 2496, 0, 0, 0, 0, 0, 2544, -264, 0, 0, 0, 0, 2584, -328, 0, 0, 0, 0, 2656, -360, 0, 0, 0, 0, 3120, -376, 0, 0, 0, 0, 3384, -376, 0, 0, 0, 0, 3584, -344, 0, 0, 0, 0, 3712, -240, 0, 0, 0, 0, 3760, -144, 0, 0, 0, 0, 3792, 0, 0, 0, 0, 0, 3832, 88, 0, 0, 0, 0, 3904, 136, 0, 0, 0, 0, 4120, 160, 0, 0, 0, 0, 4408, 160, 0, 0, 0, 0, 4560, 160, 0, 0, 0, 0, 4904, 184, 0, 0, 0, 0, 5216, 168, 0, 0, 0, 0, 5640, 168, 0, 0, 0, 0, 5784, 184, 0, 0, 0, 0, 6056, 160, 0, 0, 0, 0, 6320, 176, 0, 0, 0, 0, 6464, 104, 0, 0, 0, 0, 6640, -152, 0, 0, 0, 0, 6720, -536, 0, 0, 0, 0, 6832, -648, 0, 0, 0, 0, 7064, -696, 0, 0, 0, 0, 7272, -680, 0, 0, 0, 0, 7384, -624, 0, 0, 0, 0, 7512, -480, 0, 0, 0, 0, 7720, -336, 0, 0, 0, 0, 8008, -248, 0, 0, 0, 0, 8360, -248, 0, 0, 0, 0, 8456, -232, 0, 0, 0, 0, 8520, -184, 0, 0, 0, 0, 8552, 24, 0, 0, 0, 0, 8592, 88, 0, 0, 0, 0, 8656, 120, 0, 0, 0, 0, 10104, 120, 0, 0, 0, 0, 10168, 88, 0, 0, 0, 0, 10224, -8, 0, 0, 0, 0, 10280, -160, 0, 0, 0, 0, 10352, -224, 0, 0, 0, 0, 10464, -256, 0, 0, 0, 0, 10728, -256, 0, 0, 0, 0, 10840, -200, 0, 0, 0, 0, 10960, -32, 0, 0, 0, 0, 11072, 48, 0, 0, 0, 0, 11680, 48, 0, 0, 0, 0, 11808, 64, 0, 0, 0, 0, 11952, 120, 0, 0, 0, 0, 12016, 192, 0, 0, 0, 0, 12040, 880, 0, 0, 0, 0, -200, 880, 0, 0, 0, 0, -152, 120, 0, 0, 0, 0, -128, 72)
 }
-point_count = 53
+point_count = 66
+
+[sub_resource type="Curve2D" id="Curve2D_6k4lt"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 7048, 800, 0, 0, 0, 0, -112, 800, 0, 0, 0, 0, -56, 64, 0, 0, 0, 0, -24, -8, 0, 0, 0, 0, 48, -40, 0, 0, 0, 0, 440, -40, 0, 0, 0, 0, 680, -88, 0, 0, 0, 0, 1168, -248, 0, 0, 0, 0, 1688, -344, 0, 0, 0, 0, 2080, -368, 0, 0, 0, 0, 2264, -368, 0, 0, 0, 0, 2448, -352, 0, 0, 0, 0, 2736, -296, 0, 0, 0, 0, 3072, -96, 0, 0, 0, 0, 3424, 0, 0, 0, 0, 0, 4824, 0, 0, 0, 0, 0, 4864, -64, 0, 0, 0, 0, 4896, -200, 0, 0, 0, 0, 4872, -368, 0, 0, 0, 0, 4896, -408, 0, 0, 0, 0, 5000, -448, 0, 0, 0, 0, 5376, -448, 0, 0, 0, 0, 6968, -496, 0, 0, 0, 0, 7048, 800)
+}
+point_count = 24
 
 [node name="Level2" unique_id=165616865 instance=ExtResource("1_wv7qj")]
 level = 2
@@ -26,41 +46,83 @@ level = 2
 [node name="DebugPanel" parent="UILayer" parent_id_path=PackedInt32Array(51763774) index="7" unique_id=1567030277]
 texts_titles = Array[String](["is in air"])
 
-[node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=1838207057 instance=ExtResource("2_gkha5")]
-position = Vector2(5520, 2200)
+[node name="Rails" type="TextureRect" parent="Background" parent_id_path=PackedInt32Array(40735884) index="0" unique_id=1773366110]
+offset_left = 15096.0
+offset_top = 2512.0
+offset_right = 17608.0
+offset_bottom = 2576.0
+texture = ExtResource("2_6k4lt")
+stretch_mode = 1
 
-[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams" index="0" unique_id=1189508430]
-offset_bottom = 424.0
+[node name="Crate" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="0" unique_id=840999448 instance=ExtResource("3_ju5ee")]
+position = Vector2(21296.002, 1879.9999)
+rotation = 0.05235988
+input_pickable = false
+
+[node name="Box" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="1" unique_id=362267760 node_paths=PackedStringArray("player") instance=ExtResource("4_m3ka0")]
+position = Vector2(22672, 1848)
+player = NodePath("../../Creatures/Player")
+
+[node name="WoodenPlatform" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=764590784 instance=ExtResource("3_of0k6")]
+position = Vector2(5616, 2168)
 
 [node name="PlatformOnBeams2" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="1" unique_id=505716152 instance=ExtResource("2_gkha5")]
 position = Vector2(7120, 1896)
 
-[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams2" index="0" unique_id=1189508430]
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams2" index="0" unique_id=1189508430]
 offset_bottom = 600.0
 
 [node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="2" unique_id=796032174 instance=ExtResource("2_gkha5")]
 position = Vector2(7704, 1736)
 
-[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams3" index="0" unique_id=1189508430]
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams3" index="0" unique_id=1189508430]
 offset_bottom = 816.0
 
 [node name="PlatformOnBeams4" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="3" unique_id=1814014843 instance=ExtResource("2_gkha5")]
 position = Vector2(8408, 1776)
 
-[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams4" index="0" unique_id=1189508430]
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams4" index="0" unique_id=1189508430]
 offset_bottom = 816.0
 
 [node name="PlatformOnBeams5" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="4" unique_id=1003614780 instance=ExtResource("2_gkha5")]
 position = Vector2(9208, 1712)
 
-[node name="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams5" index="0" unique_id=1189508430]
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams5" index="0" unique_id=1189508430]
 offset_bottom = 816.0
 
+[node name="PlatformOnBeams6" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="5" unique_id=1838207057 instance=ExtResource("2_gkha5")]
+position = Vector2(21720.002, 2208)
+
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams6" index="0" unique_id=1189508430]
+offset_bottom = 272.0
+
+[node name="PlatformOnBeams7" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="6" unique_id=1254870341 instance=ExtResource("2_gkha5")]
+position = Vector2(21232, 1975.9999)
+rotation = 0.05235988
+
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams7" index="0" unique_id=1189508430]
+offset_bottom = 517.8174
+
+[node name="RailPlatform" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="0" unique_id=1992756843 instance=ExtResource("5_1ytqh")]
+position = Vector2(15248, 2467)
+pos_x_offset = 2216.0
+
+[node name="Sapphirium" parent="Objects/Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=1019438090 node_paths=PackedStringArray("artefacts_parent", "ui_layer") instance=ExtResource("7_rt4jy")]
+position = Vector2(23336, 1896)
+artefacts_parent = NodePath("..")
+ui_layer = NodePath("../../../UILayer")
+
 [node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
-position = Vector2(10136, 1512)
+position = Vector2(22968, 1880)
+input_pickable = false
 
 [node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=1016766608 instance=ExtResource("3_c3k3r")]
-position = Vector2(12368, 2376)
+position = Vector2(12416, 2280)
+input_pickable = false
+script = ExtResource("4_bowtb")
+
+[node name="RayCast2D" parent="Objects/Creatures/Enemy" index="2" unique_id=863819144]
+collision_mask = 14
 
 [node name="Water" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("3_7jbpv")]
 position = Vector2(6752, 1968)
@@ -73,6 +135,28 @@ offset_bottom = 584.0
 
 [node name="FinishPortal" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=737669738]
 z_index = -1
+position = Vector2(24536, 1896)
+
+[node name="ActivateArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="1" unique_id=1594849188 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("6_sa3fx")]
+position = Vector2(11392, 0)
+objects_to_activate = [NodePath("../../Labels/HintLabel")]
+
+[node name="DeathArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="2" unique_id=1252812870 instance=ExtResource("11_prvuc")]
+position = Vector2(2560, 2656)
+
+[node name="CollisionShape2D" parent="Areas/DeathArea" index="0" unique_id=1580967257]
+position = Vector2(7348, 0)
+shape = SubResource("RectangleShape2D_prvuc")
+
+[node name="HintLabel" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="0" unique_id=1476282060 instance=ExtResource("7_ai87r")]
+position = Vector2(11440, 1728)
+
+[node name="HintLabel" parent="Labels/HintLabel" index="0" unique_id=514289046]
+offset_left = -40.0
+offset_top = -32.0
+offset_right = 440.0
+offset_bottom = 224.0
+text = "Here comes the first enemy! Knock it with your fist!"
 
 [node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_wv7qj")
@@ -84,17 +168,28 @@ position = Vector2(3088, 2320)
 [node name="Path2D" parent="GroundAndBoundaries/Terrain2" index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_idcom")
 
+[node name="Terrain3" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="2" unique_id=1175371089 instance=ExtResource("2_idcom")]
+z_index = 2
+position = Vector2(17656, 2400)
+
+[node name="Path2D" parent="GroundAndBoundaries/Terrain3" index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_6k4lt")
+
 [node name="Camera" parent="." index="10" unique_id=1760591003]
 limit_left = -1000
 limit_bottom = 3150
 
 [editable path="UILayer"]
-[editable path="Objects/StaticSolids/PlatformOnBeams"]
 [editable path="Objects/StaticSolids/PlatformOnBeams2"]
 [editable path="Objects/StaticSolids/PlatformOnBeams3"]
 [editable path="Objects/StaticSolids/PlatformOnBeams4"]
 [editable path="Objects/StaticSolids/PlatformOnBeams5"]
+[editable path="Objects/StaticSolids/PlatformOnBeams6"]
+[editable path="Objects/StaticSolids/PlatformOnBeams7"]
 [editable path="Objects/Creatures/Enemy"]
 [editable path="Objects/Environment/Waters/Water"]
+[editable path="Areas/DeathArea"]
+[editable path="Labels/HintLabel"]
 [editable path="GroundAndBoundaries/Terrain"]
 [editable path="GroundAndBoundaries/Terrain2"]
+[editable path="GroundAndBoundaries/Terrain3"]

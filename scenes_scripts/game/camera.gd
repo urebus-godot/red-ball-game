@@ -13,6 +13,8 @@ var player_move_direction: Constants.Direction = Constants.Direction.CENTER
 var follow_player: bool = true
 var free_mode: bool = false
 
+var zoom_speed: float = 0.005
+
 
 func trans_offset(trans_direction: Constants.Direction) -> void:
 	var tween = create_tween().set_trans(TRANS_TYPE)
@@ -37,7 +39,7 @@ func check_for_trans() -> void:
 
 
 func _process(delta: float) -> void:
-	if not free_mode and follow_player:
+	if not free_mode and follow_player and player.is_alive():
 		position = player.position
 	elif free_mode:
 		var move_direction = Input.get_vector(
@@ -48,6 +50,11 @@ func _process(delta: float) -> void:
 		) if speed_up else (
 			move_direction * FREE_MODE_VELOCITY
 			)
+
+		if Input.is_action_pressed("zoom_in"):
+			zoom += Vector2.ONE * zoom_speed
+		elif Input.is_action_pressed("zoom_out"):
+			zoom -= Vector2.ONE * zoom_speed
 
 
 func _ready() -> void:

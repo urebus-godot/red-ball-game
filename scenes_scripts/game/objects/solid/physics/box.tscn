@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://d2den35kyqftn"]
 
 [ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/solid/physics/physics_object.tscn" id="1_kvcd3"]
-[ext_resource type="Texture2D" uid="uid://puqvck8qitpu" path="res://resources/textures/game/objects/solids/box.png" id="2_buklt"]
+[ext_resource type="Texture2D" uid="uid://puqvck8qitpu" path="res://resources/textures/game/objects/solids/moving/box.png" id="2_buklt"]
+[ext_resource type="Script" uid="uid://d0ifkl01j7fgr" path="res://scenes_scripts/game/objects/solid/physics/draggable_object.gd" id="2_f60fg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a8r7"]
 size = Vector2(103, 103)
 
 [node name="Box" unique_id=840999448 instance=ExtResource("1_kvcd3")]
 mass = 1.2
+script = ExtResource("2_f60fg")
 
 [node name="Sprite" parent="." index="0" unique_id=188382244]
 texture = ExtResource("2_buklt")

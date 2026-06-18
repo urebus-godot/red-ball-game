@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dyoyp5w635rhr"]
+
+[ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/solid/physics/physics_object.tscn" id="1_1a5gy"]
+[ext_resource type="Texture2D" uid="uid://doc2hivj5g06d" path="res://resources/textures/game/objects/solids/moving/boulder.png" id="2_ylfdf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hy7ub"]
+radius = 107.00467
+
+[node name="Boulder" unique_id=840999448 instance=ExtResource("1_1a5gy")]
+collision_layer = 4
+mass = 10.0
+
+[node name="Sprite" parent="." index="0" unique_id=188382244]
+texture = ExtResource("2_ylfdf")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1303941600]
+shape = SubResource("CircleShape2D_hy7ub")

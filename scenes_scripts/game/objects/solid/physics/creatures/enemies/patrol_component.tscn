@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b0nqlbik4blvl"]
+
+[ext_resource type="Script" uid="uid://b16bfgyrpanxb" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/patrol_component.gd" id="1_v0ofo"]
+
+[node name="PatrolComponent" type="Node" unique_id=1282453717 node_paths=PackedStringArray("move_component", "target")]
+script = ExtResource("1_v0ofo")
+move_component = NodePath("")
+target = NodePath("")

@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://b5c6vtq65bvn0"]
 
 [ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/solid/physics/physics_object.tscn" id="1_gtby6"]
-[ext_resource type="Texture2D" uid="uid://bxagg5avjekep" path="res://resources/textures/game/objects/solids/crate.png" id="2_kdbte"]
+[ext_resource type="Texture2D" uid="uid://bxagg5avjekep" path="res://resources/textures/game/objects/solids/moving/crate.png" id="2_kdbte"]
+[ext_resource type="Script" uid="uid://d0ifkl01j7fgr" path="res://scenes_scripts/game/objects/solid/physics/draggable_object.gd" id="2_woii6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03go1"]
 size = Vector2(148, 160)
 
 [node name="Crate" unique_id=840999448 instance=ExtResource("1_gtby6")]
-collision_layer = 4
 mass = 3.0
+script = ExtResource("2_woii6")
 
 [node name="Sprite" parent="." index="0" unique_id=188382244]
 texture = ExtResource("2_kdbte")

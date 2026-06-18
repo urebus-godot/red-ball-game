@@ -110,7 +110,7 @@ func _on_level_finished(score: int, time_s: float) -> void:
 
 
 func _on_player_died() -> void:
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2.5).timeout
 	tinting.show_tinting()
 	show_lost_menu()
 

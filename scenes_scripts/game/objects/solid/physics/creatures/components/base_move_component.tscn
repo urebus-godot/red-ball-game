@@ -1,6 +1,3 @@
 [gd_scene format=3 uid="uid://dg2yt8rpfoqxj"]
 
-[ext_resource type="Script" uid="uid://8qwynltvnopk" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/base_move_component.gd" id="1_t3l83"]
-
 [node name="BaseMoveComponent" type="Node" unique_id=1419162305]
-script = ExtResource("1_t3l83")

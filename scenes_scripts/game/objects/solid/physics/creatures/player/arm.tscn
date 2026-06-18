@@ -98,6 +98,7 @@ _data = {
 }
 
 [node name="Arm" type="Node2D" unique_id=1910167552]
+top_level = true
 script = ExtResource("1_v3gnt")
 
 [node name="ArmOffset" type="Node2D" parent="." unique_id=161040494]

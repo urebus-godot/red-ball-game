@@ -10,7 +10,8 @@ size = Vector2(280, 32)
 collision_layer = 32
 collision_mask = 13
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1189508430]
+[node name="Beams" type="TextureRect" parent="." unique_id=1189508430]
+z_index = -1
 offset_left = -128.0
 offset_right = 128.0
 offset_bottom = 256.0

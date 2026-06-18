@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doc2hivj5g06d"
-path="res://.godot/imported/boulder.png-5020043c808488db9e8e188f1d9ee8e7.ctex"
+uid="uid://dbhgxqoixgrjm"
+path="res://.godot/imported/rails.png-e209c0b18c72f61ceb7914f490ea9a06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/game/objects/solids/boulder.png"
-dest_files=["res://.godot/imported/boulder.png-5020043c808488db9e8e188f1d9ee8e7.ctex"]
+source_file="res://resources/textures/game/background/rails.png"
+dest_files=["res://.godot/imported/rails.png-e209c0b18c72f61ceb7914f490ea9a06.ctex"]
 
 [params]
 

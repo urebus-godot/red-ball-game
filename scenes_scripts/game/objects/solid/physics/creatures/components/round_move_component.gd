@@ -57,10 +57,11 @@ func move_left() -> void:
 		if is_in_air():
 			creature.apply_central_force(Vector2.LEFT * torque * FORCE_IN_AIR_MULTIPLIER * velocity_multiplier)
 
-func jump(delta: float) -> void:
+func jump(delta: float = 0.0) -> void:
 	if movement_enabled and jump_enabled:
 		if is_on_floor():
 			var impulse = Vector2.UP * jump_impulse * jump_impulse_multiplier
+			print("Jump with impulse = ", impulse)
 			creature.apply_central_impulse(impulse)
 		elif time_to_jump > 0.0:
 			time_to_jump -= delta
