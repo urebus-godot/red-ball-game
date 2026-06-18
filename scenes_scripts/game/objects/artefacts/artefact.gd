@@ -36,6 +36,8 @@ func unequip_artefact() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if not player.control_enabled: return
+
 	if event.is_action_pressed(action_name):
 		activate_artefact()
 

@@ -18,7 +18,7 @@ point_count = 113
 
 [node name="Level1" unique_id=165616865 instance=ExtResource("1_toi6c")]
 
-[node name="DebugPanel" parent="UILayer" parent_id_path=PackedInt32Array(51763774) index="7" unique_id=1567030277]
+[node name="DebugPanel" parent="UILayer/Root" parent_id_path=PackedInt32Array(51763774, 141072054) index="7" unique_id=1567030277]
 texts_titles = Array[String](["is in air"])
 
 [node name="Crate" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="0" unique_id=840999448 instance=ExtResource("2_22aib")]

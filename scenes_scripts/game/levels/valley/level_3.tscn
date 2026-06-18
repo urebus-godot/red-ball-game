@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dgs6oji45abv7"]
+
+[ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_vkdog"]
+
+[node name="BaseValleyLevel" unique_id=165616865 instance=ExtResource("1_vkdog")]
+
+[editable path="UILayer"]
+[editable path="GroundAndBoundaries/Terrain"]

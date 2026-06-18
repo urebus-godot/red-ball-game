@@ -2,14 +2,14 @@ extends GameUILayer
 
 const TWEEN_DURATION: float = 0.5
 
-@onready var tinting: ColorRect = $Tinting
-@onready var pause_menu: Control = $PauseMenu
-@onready var options_menu: OptionsMenu = $OptionsMenu
-@onready var finish_menu: Panel = $FinishMenu
-@onready var lost_menu: Panel = $LostMenu
-@onready var artefact_texture: TextureRect = $Bounds/LowerBound/Panel/ArtefactTexture
-@onready var topazes_label: Label = $Bounds/UpperBound/TopazesLabel
-@onready var artefact_label: Label = $Bounds/LowerBound/ArtefactLabel
+@onready var tinting: ColorRect = $Root/Tinting
+@onready var pause_menu: Control = $Root/PauseMenu
+@onready var options_menu: OptionsMenu = $Root/OptionsMenu
+@onready var finish_menu: Panel = $Root/FinishMenu
+@onready var lost_menu: Panel = $Root/LostMenu
+@onready var artefact_texture: TextureRect = $Root/Bounds/LowerBound/Panel/ArtefactTexture
+@onready var topazes_label: Label = $Root/Bounds/UpperBound/TopazesLabel
+@onready var artefact_label: Label = $Root/Bounds/LowerBound/ArtefactLabel
 
 var level: int = 1
 
@@ -55,7 +55,7 @@ func hide_pause_menu() -> void:
 
 
 func show_finish_menu(score: int, time_s: float) -> void:
-	var finish_info_label: Label = $FinishMenu/FinishInfoLabel
+	var finish_info_label: Label = $Root/FinishMenu/FinishInfoLabel
 	var time = General.format_time(time_s)
 	finish_info_label.text = "You completed level %s! \nScore: %s\nTime: %s" % [level, score, time]
 
@@ -91,17 +91,17 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	super(event)
 	if is_ui_free:
 		if event.is_action_pressed("restart"):
 			restart_level()
 		elif event.is_action_pressed("pause"):
 			check_for_pause()
-	
-	if event.is_action_pressed("hide_ui"):
-		visible = not visible
 
 
 func _on_level_finished(score: int, time_s: float) -> void:
+	show_ui()
+
 	is_ui_free = false
 	level_finished = true
 
@@ -114,6 +114,8 @@ func _on_level_finished(score: int, time_s: float) -> void:
 
 func _on_player_died() -> void:
 	await get_tree().create_timer(2.5).timeout
+
+	show_ui()
 	tinting.show_tinting()
 	show_lost_menu()
 

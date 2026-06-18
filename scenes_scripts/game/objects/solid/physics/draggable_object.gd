@@ -9,28 +9,6 @@ var is_dragging: bool = false
 var joint: PinJoint2D = null
 var mouse_body: StaticBody2D = null
 
-func _ready() -> void:
-	input_pickable = true
-
-
-func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if event.is_action_pressed("use_artefact") and not is_dragging:
-		var artefact = player.equipped_artefact
-		if artefact is Sapphirium and artefact.activated:
-			start_drag()
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if not event.pressed and is_dragging:
-			end_drag()
-
-func _physics_process(_delta: float) -> void:
-	if is_dragging and mouse_body:
-		mouse_body.global_position = get_global_mouse_position()
-		return
-		var artefact = player.equipped_artefact
-		if artefact and not artefact.activated:
-			end_drag()
 
 func start_drag() -> void:
 	print("Started drag!")
@@ -66,3 +44,25 @@ func end_drag() -> void:
 		joint.queue_free()
 	if mouse_body:
 		mouse_body.queue_free()
+
+
+func _ready() -> void:
+	input_pickable = true
+
+
+func _physics_process(_delta: float) -> void:
+	if is_dragging and mouse_body:
+		mouse_body.global_position = get_global_mouse_position()
+
+
+func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if event.is_action_pressed("use_artefact") and not is_dragging:
+		var artefact = player.equipped_artefact
+		if artefact is Sapphirium and artefact.activated:
+			start_drag()
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if not event.pressed and is_dragging:
+			end_drag()

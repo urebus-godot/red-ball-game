@@ -38,10 +38,7 @@ func die(death_jump: bool = true) -> void:
 		alive = false
 
 		if death_jump:
-			creature.collision_mask = 0
-			creature.collision_layer = 0
-			creature.z_index = 10
-
+			creature.set_properties_on_death_jump()
 			creature.apply_central_impulse(Vector2(0, -DIE_IMPULSE))
 			
 			var tween = creature.create_tween().set_trans(Tween.TRANS_QUAD)

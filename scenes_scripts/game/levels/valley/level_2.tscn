@@ -36,14 +36,22 @@ point_count = 66
 [sub_resource type="Curve2D" id="Curve2D_6k4lt"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 7048, 800, 0, 0, 0, 0, -112, 800, 0, 0, 0, 0, -56, 64, 0, 0, 0, 0, -24, -8, 0, 0, 0, 0, 48, -40, 0, 0, 0, 0, 440, -40, 0, 0, 0, 0, 680, -88, 0, 0, 0, 0, 1168, -248, 0, 0, 0, 0, 1688, -344, 0, 0, 0, 0, 2080, -368, 0, 0, 0, 0, 2264, -368, 0, 0, 0, 0, 2448, -352, 0, 0, 0, 0, 2736, -296, 0, 0, 0, 0, 3072, -96, 0, 0, 0, 0, 3424, 0, 0, 0, 0, 0, 4824, 0, 0, 0, 0, 0, 4864, -64, 0, 0, 0, 0, 4896, -200, 0, 0, 0, 0, 4872, -368, 0, 0, 0, 0, 4896, -408, 0, 0, 0, 0, 5000, -448, 0, 0, 0, 0, 5376, -448, 0, 0, 0, 0, 6968, -496, 0, 0, 0, 0, 7048, 800)
+"points": PackedVector2Array(0, 0, 0, 0, 9360, 800, 0, 0, 0, 0, -112, 800, 0, 0, 0, 0, -56, 64, 0, 0, 0, 0, -24, -8, 0, 0, 0, 0, 48, -40, 0, 0, 0, 0, 440, -40, 0, 0, 0, 0, 680, -88, 0, 0, 0, 0, 1168, -248, 0, 0, 0, 0, 1688, -344, 0, 0, 0, 0, 2080, -368, 0, 0, 0, 0, 2264, -368, 0, 0, 0, 0, 2448, -352, 0, 0, 0, 0, 2736, -296, 0, 0, 0, 0, 3072, -96, 0, 0, 0, 0, 3424, 0, 0, 0, 0, 0, 4824, 0, 0, 0, 0, 0, 4864, -64, 0, 0, 0, 0, 4904, -200, 0, 0, 0, 0, 4848, -416, 0, 0, 0, 0, 4912, -472, 0, 0, 0, 0, 5064, -496, 0, 0, 0, 0, 5640, -496, 0, 0, 0, 0, 5768, -464, 0, 0, 0, 0, 5824, -392, 0, 0, 0, 0, 5872, -272, 0, 0, 0, 0, 5944, -152, 0, 0, 0, 0, 6040, -120, 0, 0, 0, 0, 6768, -128, 0, 0, 0, 0, 6824, -152, 0, 0, 0, 0, 6864, -192, 0, 0, 0, 0, 6896, -368, 0, 0, 0, 0, 6976, -440, 0, 0, 0, 0, 7080, -464, 0, 0, 0, 0, 8056, -464, 0, 0, 0, 0, 8176, -544, 0, 0, 0, 0, 8384, -2664, 0, 0, 0, 0, 9248, -2664, 0, 0, 0, 0, 9360, 800)
 }
-point_count = 24
+point_count = 38
 
 [node name="Level2" unique_id=165616865 instance=ExtResource("1_wv7qj")]
 level = 2
 
-[node name="DebugPanel" parent="UILayer" parent_id_path=PackedInt32Array(51763774) index="7" unique_id=1567030277]
+[node name="HBoxContainer" parent="UILayer/Root/FinishMenu" parent_id_path=PackedInt32Array(51763774, 1917757095) index="2" unique_id=1192160599]
+offset_top = -280.0
+offset_bottom = -152.0
+
+[node name="HBoxContainer" parent="UILayer/Root/LostMenu" parent_id_path=PackedInt32Array(51763774, 502085) index="2" unique_id=588574697]
+offset_top = -280.0
+offset_bottom = -152.0
+
+[node name="DebugPanel" parent="UILayer/Root" parent_id_path=PackedInt32Array(51763774, 141072054) index="7" unique_id=1567030277]
 texts_titles = Array[String](["is in air"])
 
 [node name="Rails" type="TextureRect" parent="Background" parent_id_path=PackedInt32Array(40735884) index="0" unique_id=1773366110]
@@ -55,14 +63,24 @@ texture = ExtResource("2_6k4lt")
 stretch_mode = 1
 
 [node name="Crate" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="0" unique_id=840999448 node_paths=PackedStringArray("player") instance=ExtResource("3_ju5ee")]
-position = Vector2(21296.002, 1879.9999)
+position = Vector2(21023.998, 1871.9999)
 rotation = 0.05235988
 input_pickable = false
 player = NodePath("../../Creatures/Player")
 
 [node name="Box" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="1" unique_id=362267760 node_paths=PackedStringArray("player") instance=ExtResource("4_m3ka0")]
 top_level = true
-position = Vector2(22752, 1848)
+position = Vector2(22928, 1360)
+player = NodePath("../../Creatures/Player")
+
+[node name="Box2" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="2" unique_id=437680325 node_paths=PackedStringArray("player") instance=ExtResource("4_m3ka0")]
+top_level = true
+position = Vector2(23048, 1368)
+player = NodePath("../../Creatures/Player")
+
+[node name="Box3" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="3" unique_id=1771266990 node_paths=PackedStringArray("player") instance=ExtResource("4_m3ka0")]
+top_level = true
+position = Vector2(23000, 1240)
 player = NodePath("../../Creatures/Player")
 
 [node name="WoodenPlatform" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=764590784 instance=ExtResource("3_of0k6")]
@@ -93,16 +111,24 @@ position = Vector2(9208, 1712)
 offset_bottom = 816.0
 
 [node name="PlatformOnBeams6" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="5" unique_id=1838207057 instance=ExtResource("2_gkha5")]
-position = Vector2(21720.002, 2208)
+position = Vector2(21448.002, 2208)
 
 [node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams6" index="0" unique_id=1189508430]
 offset_bottom = 272.0
 
 [node name="PlatformOnBeams7" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="6" unique_id=1254870341 instance=ExtResource("2_gkha5")]
-position = Vector2(21232, 1975.9999)
+position = Vector2(20960, 1968)
 rotation = 0.05235988
 
 [node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams7" index="0" unique_id=1189508430]
+offset_bottom = 517.8174
+
+[node name="PlatformOnBeams8" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="7" unique_id=1809037001 instance=ExtResource("2_gkha5")]
+position = Vector2(23024, 1448)
+
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams8" index="0" unique_id=1189508430]
+offset_left = -160.0
+offset_right = 96.0
 offset_bottom = 517.8174
 
 [node name="RailPlatform" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="0" unique_id=1992756843 instance=ExtResource("5_1ytqh")]
@@ -110,12 +136,12 @@ position = Vector2(15248, 2467)
 pos_x_offset = 2216.0
 
 [node name="Sapphirium" parent="Objects/Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=1019438090 node_paths=PackedStringArray("artefacts_parent", "ui_layer") instance=ExtResource("7_rt4jy")]
-position = Vector2(23336, 1896)
+position = Vector2(23320, 1848)
 artefacts_parent = NodePath("..")
 ui_layer = NodePath("../../../UILayer")
 
 [node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
-position = Vector2(22968, 1880)
+position = Vector2(22960, 1840)
 input_pickable = false
 
 [node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=1016766608 instance=ExtResource("3_c3k3r")]
@@ -135,15 +161,28 @@ offset_top = -24.0
 offset_right = 3024.0
 offset_bottom = 584.0
 
+[node name="Water2" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="1" unique_id=1927984425 instance=ExtResource("3_7jbpv")]
+position = Vector2(23384, 1904)
+
+[node name="WaterTexture" parent="Objects/Environment/Waters/Water2" index="0" unique_id=1796776943]
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 1248.0
+offset_bottom = 504.0
+
 [node name="FinishPortal" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=737669738]
 z_index = -1
-position = Vector2(24536, 1896)
+position = Vector2(25176, 1936)
 
 [node name="ActivateArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="1" unique_id=1594849188 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("6_sa3fx")]
 position = Vector2(11392, 0)
 objects_to_activate = [NodePath("../../Labels/HintLabel")]
 
-[node name="DeathArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="2" unique_id=1252812870 instance=ExtResource("11_prvuc")]
+[node name="ActivateArea2" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="2" unique_id=1620627790 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("6_sa3fx")]
+position = Vector2(22656, 0)
+objects_to_activate = [NodePath("../../Labels/HintLabel2")]
+
+[node name="DeathArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="3" unique_id=1252812870 instance=ExtResource("11_prvuc")]
 position = Vector2(2560, 2656)
 
 [node name="CollisionShape2D" parent="Areas/DeathArea" index="0" unique_id=1580967257]
@@ -159,6 +198,16 @@ offset_top = -32.0
 offset_right = 440.0
 offset_bottom = 224.0
 text = "Here comes the first enemy! Knock it with your fist!"
+
+[node name="HintLabel2" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="1" unique_id=38579153 instance=ExtResource("7_ai87r")]
+position = Vector2(22216, 1520)
+
+[node name="HintLabel" parent="Labels/HintLabel2" index="0" unique_id=514289046]
+offset_left = -40.0
+offset_top = -32.0
+offset_right = 680.0
+offset_bottom = 272.0
+text = "This artefact is called \"sapphirium\". Hover over the a physical body to drag it with the sapphirium."
 
 [node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_wv7qj")
@@ -179,6 +228,7 @@ curve = SubResource("Curve2D_6k4lt")
 
 [node name="Camera" parent="." index="10" unique_id=1760591003]
 limit_left = -1000
+limit_right = 25680
 limit_bottom = 3150
 
 [editable path="UILayer"]
@@ -188,10 +238,13 @@ limit_bottom = 3150
 [editable path="Objects/StaticSolids/PlatformOnBeams5"]
 [editable path="Objects/StaticSolids/PlatformOnBeams6"]
 [editable path="Objects/StaticSolids/PlatformOnBeams7"]
+[editable path="Objects/StaticSolids/PlatformOnBeams8"]
 [editable path="Objects/Creatures/Enemy"]
 [editable path="Objects/Environment/Waters/Water"]
+[editable path="Objects/Environment/Waters/Water2"]
 [editable path="Areas/DeathArea"]
 [editable path="Labels/HintLabel"]
+[editable path="Labels/HintLabel2"]
 [editable path="GroundAndBoundaries/Terrain"]
 [editable path="GroundAndBoundaries/Terrain2"]
 [editable path="GroundAndBoundaries/Terrain3"]

@@ -10,4 +10,4 @@ artefact_name = "emeraldium"
 
 [node name="Sprite2D" parent="." index="0" unique_id=386352269]
 z_index = -1
-position = Vector2(53, 0)
+position = Vector2(54, 0)

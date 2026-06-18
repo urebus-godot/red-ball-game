@@ -72,6 +72,11 @@ func on_artefact_unequipped(artefact: Artefact) -> void:
 	enable_arm(true)
 
 
+func set_properties_on_death_jump() -> void:
+	super()
+	arm.z_index = 10
+
+
 func _ready() -> void:
 	freeze = true
 	await tween_scale()

@@ -6,3 +6,6 @@
 [node name="Sapphirium" unique_id=2019080803 instance=ExtResource("1_2xqy0")]
 script = ExtResource("2_p4lcm")
 artefact_name = "sapphirium"
+
+[node name="Sprite2D" parent="." index="0" unique_id=386352269]
+position = Vector2(54, 0)

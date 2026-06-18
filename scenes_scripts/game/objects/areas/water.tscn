@@ -14,6 +14,7 @@ shader_parameter/blur = 0.002
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joq74"]
 
 [node name="Water" type="Node2D" unique_id=1996029903]
+z_index = 1
 script = ExtResource("1_joq74")
 
 [node name="WaterTexture" type="TextureRect" parent="." unique_id=1796776943]
