@@ -2,7 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_vkdog"]
 
+[sub_resource type="Curve2D" id="Curve2D_vkdog"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 584, 2432, 0, 0, 0, 0, -984, 2432, 0, 0, 0, 0, -1024, 2368, 0, 0, 0, 0, -1144, 920, 0, 0, 0, 0, -1848, 928, 0, 0, 0, 0, -1792, 3648)
+}
+point_count = 6
+
 [node name="BaseValleyLevel" unique_id=165616865 instance=ExtResource("1_vkdog")]
+
+[node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_vkdog")
 
 [editable path="UILayer"]
 [editable path="GroundAndBoundaries/Terrain"]

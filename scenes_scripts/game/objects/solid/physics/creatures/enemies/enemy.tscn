@@ -26,8 +26,8 @@ target_position = Vector2(0, 65)
 shape = SubResource("CircleShape2D_kf05e")
 
 [node name="RoundMoveComponent" parent="." index="4" unique_id=1363103788 node_paths=PackedStringArray("creature", "floor_raycast") instance=ExtResource("4_yt0kc")]
-torque = 30000.0
-max_velocity = 550.0
+torque = 40000.0
+max_velocity = 600.0
 jump_impulse = 700.0
 jump_hold_force = 2600.0
 creature = NodePath("..")

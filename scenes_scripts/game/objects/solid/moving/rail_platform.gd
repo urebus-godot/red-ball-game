@@ -12,15 +12,13 @@ var Direction = Constants.Direction
 ## 150,8 - lemgth of wheel
 
 func move(direction: Constants.Direction) -> void:
-	var tween = create_tween().set_trans(Tween.TRANS_LINEAR)
+	var tween = create_tween().set_trans(Tween.TRANS_SINE)
 
 	match direction:
 		Direction.RIGHT:
-			print("Started moving RIGHT!")
 			tween.tween_property(self, "position:x", start_pos_x + pos_x_offset, time_to_go_to_bound)
 
 		Direction.LEFT:
-			print("Started moving LEFT!")
 			tween.tween_property(self, "position:x", start_pos_x, time_to_go_to_bound)
 
 	await tween.finished
@@ -31,7 +29,7 @@ func move(direction: Constants.Direction) -> void:
 
 func _ready() -> void:
 	start_pos_x = position.x
-	time_to_go_to_bound = pos_x_offset / 250
+	time_to_go_to_bound = pos_x_offset / 220
 	print(time_to_go_to_bound)
 	move(Direction.RIGHT)
 

@@ -1,7 +1,7 @@
 extends Node2D
 
 const MAX_HIT_CHARGE: float = 2.25
-const HIT_FORCE: float = 900
+const HIT_FORCE: float = 500
 
 @export var player: Player
 @export var life_component: LifeComponent
