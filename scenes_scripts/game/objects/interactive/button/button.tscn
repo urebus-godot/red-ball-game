@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://s7a7m66jw12x"]
+
+[ext_resource type="Script" uid="uid://da7ywwrqjuspa" path="res://scenes_scripts/game/objects/interactive/button/button.gd" id="1_1o3bm"]
+[ext_resource type="Texture2D" uid="uid://cvfd0vc3bctwd" path="res://resources/textures/game/objects/interactive/button.png" id="2_3wtns"]
+[ext_resource type="Texture2D" uid="uid://cphvmo8edg71s" path="res://resources/textures/game/objects/interactive/button_base.png" id="3_0myuq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q05x"]
+size = Vector2(86, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wtns"]
+size = Vector2(126, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0myuq"]
+size = Vector2(82, 26)
+
+[sub_resource type="Animation" id="Animation_3wtns"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1o3bm"]
+resource_name = "press"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 16.0]
+}
+
+[sub_resource type="Animation" id="Animation_p7qjn"]
+resource_name = "unpress"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3wtns"]
+_data = {
+&"RESET": SubResource("Animation_3wtns"),
+&"press": SubResource("Animation_1o3bm"),
+&"unpress": SubResource("Animation_p7qjn")
+}
+
+[node name="Button" type="StaticBody2D" unique_id=1165746887]
+script = ExtResource("1_1o3bm")
+
+[node name="ButtonBody" type="StaticBody2D" parent="." unique_id=754812864]
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonBody" unique_id=1067222008]
+texture = ExtResource("2_3wtns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonBody" unique_id=1209811776]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_6q05x")
+
+[node name="BaseSprite" type="Sprite2D" parent="." unique_id=1039527874]
+texture = ExtResource("3_0myuq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=229822832]
+position = Vector2(0, 20.5)
+shape = SubResource("RectangleShape2D_3wtns")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1533371194]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=396551189]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_0myuq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1974771633]
+root_node = NodePath("../ButtonBody")
+libraries/ = SubResource("AnimationLibrary_3wtns")
