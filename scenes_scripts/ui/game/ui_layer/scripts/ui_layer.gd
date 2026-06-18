@@ -96,6 +96,9 @@ func _input(event: InputEvent) -> void:
 			restart_level()
 		elif event.is_action_pressed("pause"):
 			check_for_pause()
+	
+	if event.is_action_pressed("hide_ui"):
+		visible = not visible
 
 
 func _on_level_finished(score: int, time_s: float) -> void:

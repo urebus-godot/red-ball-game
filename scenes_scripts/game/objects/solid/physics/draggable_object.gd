@@ -1,5 +1,8 @@
 extends PhysicsObject
 
+const MIN_BIAS: float = 0.003
+const MAX_BIAS: float = 0.06
+
 @export var player: Player
 
 var is_dragging: bool = false
@@ -9,28 +12,25 @@ var mouse_body: StaticBody2D = null
 func _ready() -> void:
 	input_pickable = true
 
+
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		print("Mouse event!")
-		if event.pressed and not is_dragging:
-			print("Input event registered!")
-			var artefact = player.equipped_artefact
-			print("player has artefact ", artefact.artefact_name)
-			if artefact is Sapphirium and artefact.activated:
-				start_drag()
+	if event.is_action_pressed("use_artefact") and not is_dragging:
+		var artefact = player.equipped_artefact
+		if artefact is Sapphirium and artefact.activated:
+			start_drag()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed and is_dragging:
-			print("Input registered!")
-			var artefact = player.equipped_artefact
-			if artefact is Sapphirium and artefact.activated:
-				end_drag()
+			end_drag()
 
 func _physics_process(_delta: float) -> void:
-	# Перемещаем не сам объект, а невидимую точку привязки
 	if is_dragging and mouse_body:
 		mouse_body.global_position = get_global_mouse_position()
+		return
+		var artefact = player.equipped_artefact
+		if artefact and not artefact.activated:
+			end_drag()
 
 func start_drag() -> void:
 	print("Started drag!")
@@ -46,8 +46,9 @@ func start_drag() -> void:
 	joint.global_position = get_global_mouse_position()
 	
 	# Настройки мягкости и упругости соединения
-	joint.softness = 0.5        # Чем выше, тем более «резиновое» натяжение
-	joint.bias = 0.9            # Скорость возврата к курсору (0.0 - 0.9)
+	joint.softness = 0.5      # Чем выше, тем более «резиновое» натяжение
+	joint.bias = clampf(0.03 / mass, MIN_BIAS, MAX_BIAS)  
+	print("joint.bias")
 	joint.disable_collision = true
 	
 	get_parent().add_child(joint)

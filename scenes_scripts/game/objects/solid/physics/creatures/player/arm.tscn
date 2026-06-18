@@ -46,7 +46,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_6m8ls"]
 resource_name = "charged"
-length = 0.3
+length = 0.2
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -55,7 +55,7 @@ tracks/0/path = NodePath("ArmOffset/ArmArea/ChargedPulse:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.28),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.6, 1.6)]
@@ -67,7 +67,7 @@ tracks/1/path = NodePath("ArmOffset/ArmArea/ChargedPulse:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(-0.01, 0.28),
+"times": PackedFloat32Array(-0.01, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1.8247963, 0.11428163, 0.11428163, 0.7490196), Color(1.353256, 0.4722617, 0.4722617, 0)]
