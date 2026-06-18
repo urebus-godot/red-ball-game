@@ -78,6 +78,7 @@ texture = ExtResource("2_3wtns")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonBody" unique_id=1209811776]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_6q05x")
+one_way_collision = true
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=1039527874]
 texture = ExtResource("3_0myuq")
@@ -85,8 +86,11 @@ texture = ExtResource("3_0myuq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=229822832]
 position = Vector2(0, 20.5)
 shape = SubResource("RectangleShape2D_3wtns")
+one_way_collision = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1533371194]
+collision_layer = 0
+collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=396551189]
 position = Vector2(0, -3)
@@ -95,3 +99,6 @@ shape = SubResource("RectangleShape2D_0myuq")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1974771633]
 root_node = NodePath("../ButtonBody")
 libraries/ = SubResource("AnimationLibrary_3wtns")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

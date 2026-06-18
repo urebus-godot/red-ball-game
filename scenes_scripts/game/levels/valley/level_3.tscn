@@ -2,18 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_vkdog"]
 [ext_resource type="PackedScene" uid="uid://s7a7m66jw12x" path="res://scenes_scripts/game/objects/interactive/button/button.tscn" id="2_08em5"]
+[ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="2_cqdbb"]
+[ext_resource type="PackedScene" uid="uid://c2o7nbjiovkd6" path="res://scenes_scripts/game/objects/solid/moving/vertical_door.tscn" id="3_up1vo"]
 
 [sub_resource type="Curve2D" id="Curve2D_vkdog"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 3424, 2280, 0, 0, 0, 0, 2880, 2280, 0, 0, 0, 0, 2736, 2256, 0, 0, 0, 0, 2600, 2208, 0, 0, 0, 0, 2456, 2104, 0, 0, 0, 0, 2296, 2040, 0, 0, 0, 0, 2144, 2016, 0, 0, 0, 0, 2032, 2016, 0, 0, 0, 0, 1712, 2072, 0, 0, 0, 0, 1448, 2152, 0, 0, 0, 0, 1120, 2328, 0, 0, 0, 0, 896, 2400, 0, 0, 0, 0, 624, 2432, 0, 0, 0, 0, -984, 2432, 0, 0, 0, 0, -1072, 2184, 0, 0, 0, 0, -1144, 920, 0, 0, 0, 0, -1848, 928, 0, 0, 0, 0, -1792, 3648)
+"points": PackedVector2Array(0, 0, 0, 0, 4024, 2264, 0, 0, 0, 0, 3904, 2280, 0, 0, 0, 0, 2880, 2280, 0, 0, 0, 0, 2736, 2256, 0, 0, 0, 0, 2600, 2208, 0, 0, 0, 0, 2456, 2104, 0, 0, 0, 0, 2296, 2040, 0, 0, 0, 0, 2144, 2016, 0, 0, 0, 0, 2032, 2016, 0, 0, 0, 0, 1712, 2072, 0, 0, 0, 0, 1448, 2152, 0, 0, 0, 0, 1120, 2328, 0, 0, 0, 0, 896, 2400, 0, 0, 0, 0, 624, 2432, 0, 0, 0, 0, -984, 2432, 0, 0, 0, 0, -1072, 2184, 0, 0, 0, 0, -1144, 920, 0, 0, 0, 0, -1848, 928, 0, 0, 0, 0, -1792, 3648)
 }
-point_count = 18
+point_count = 19
 
 [node name="BaseValleyLevel" unique_id=165616865 instance=ExtResource("1_vkdog")]
 
-[node name="Button" parent="Objects/Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=914127466 instance=ExtResource("2_08em5")]
-position = Vector2(32, 2352)
+[node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=1838207057 instance=ExtResource("2_cqdbb")]
+position = Vector2(3168, 2040)
+
+[node name="VerticalDoor" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="0" unique_id=500907697 instance=ExtResource("3_up1vo")]
+position = Vector2(3616, 2120)
+
+[node name="Button" parent="Objects/Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=914127466 node_paths=PackedStringArray("object_to_activate") instance=ExtResource("2_08em5")]
+position = Vector2(3168, 1992)
+object_to_activate = NodePath("../../Moving/VerticalDoor")
 
 [node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_vkdog")

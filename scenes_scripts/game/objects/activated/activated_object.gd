@@ -6,3 +6,6 @@ var is_activated: bool = false
 
 func activate() -> void:
 	await get_tree().create_timer(activation_delay).timeout
+
+func deactivate() -> void:
+	await get_tree().create_timer(activation_delay).timeout

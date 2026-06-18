@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c2o7nbjiovkd6"]
+
+[ext_resource type="Script" uid="uid://j60xmtum5a5b" path="res://scenes_scripts/game/objects/solid/moving/moving_activated_object.gd" id="1_877tp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(64, 320)
+
+[node name="VerticalDoor" type="StaticBody2D" unique_id=500907697]
+script = ExtResource("1_877tp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=638629380]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=921585055]
+shape = SubResource("RectangleShape2D_g4v7s")
