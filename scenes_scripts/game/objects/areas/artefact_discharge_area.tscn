@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://clfl7gnedu6u0"]
+
+[ext_resource type="Script" uid="uid://cows1hyaqtunn" path="res://scenes_scripts/game/objects/areas/artefact_discharge_area.gd" id="1_g83nd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
+[node name="ArtefactDischargeArea" type="Area2D" unique_id=465926688]
+collision_layer = 0
+script = ExtResource("1_g83nd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152420103]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

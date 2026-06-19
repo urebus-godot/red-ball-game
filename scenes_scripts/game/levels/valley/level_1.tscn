@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bg48lxeeip6cc" path="res://scenes_scripts/game/objects/areas/activate_area.tscn" id="3_150px"]
 [ext_resource type="PackedScene" uid="uid://bvcpab838u2eo" path="res://scenes_scripts/game/objects/ui_elements/hint_label.tscn" id="5_3rpgq"]
 [ext_resource type="PackedScene" uid="uid://5nokwb5ymxnk" path="res://scenes_scripts/game/objects/interactive/pickable/topaz/topaz.tscn" id="5_os8xl"]
+[ext_resource type="PackedScene" uid="uid://dmr6i5yy0ru7t" path="res://scenes_scripts/game/objects/areas/move_bound_area.tscn" id="8_5g6br"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5g6br"]
+normal = Vector2(-1, 0)
 
 [sub_resource type="Curve2D" id="Curve2D_toi6c"]
 bake_interval = 512.0
@@ -25,20 +29,20 @@ texts_titles = Array[String](["is in air"])
 position = Vector2(11640, 2080)
 
 [node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=1838207057 instance=ExtResource("2_1msal")]
-position = Vector2(16991.998, 1728)
+position = Vector2(16968, 1728)
 rotation = 0.05235988
 
 [node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams" index="0" unique_id=1189508430]
 offset_bottom = 413.86652
 
 [node name="PlatformOnBeams2" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="1" unique_id=336357570 instance=ExtResource("2_1msal")]
-position = Vector2(17544, 1568)
+position = Vector2(17520.002, 1568)
 
 [node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams2" index="0" unique_id=1189508430]
 offset_bottom = 704.0
 
 [node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="2" unique_id=651345889 instance=ExtResource("2_1msal")]
-position = Vector2(18336, 1520)
+position = Vector2(18312.002, 1520)
 
 [node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams3" index="0" unique_id=1189508430]
 offset_bottom = 704.0
@@ -83,37 +87,41 @@ position = Vector2(9240, 1856)
 position = Vector2(9400, 1920)
 
 [node name="Topaz10" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="10" unique_id=595832278 instance=ExtResource("5_os8xl")]
-position = Vector2(17104, 1552)
+position = Vector2(17080.002, 1552)
 
 [node name="Topaz11" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="11" unique_id=222339875 instance=ExtResource("5_os8xl")]
-position = Vector2(17216, 1392)
+position = Vector2(17192.002, 1392)
 
 [node name="Topaz12" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="12" unique_id=1102049555 instance=ExtResource("5_os8xl")]
-position = Vector2(17392, 1416)
+position = Vector2(17368.002, 1416)
 
 [node name="Topaz13" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="13" unique_id=1427015326 instance=ExtResource("5_os8xl")]
-position = Vector2(17768, 1424)
+position = Vector2(17744.002, 1424)
 
 [node name="Topaz14" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="14" unique_id=1150684980 instance=ExtResource("5_os8xl")]
-position = Vector2(17968, 1336)
+position = Vector2(17944.002, 1336)
 
 [node name="Topaz15" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="15" unique_id=549613418 instance=ExtResource("5_os8xl")]
-position = Vector2(18176, 1400)
+position = Vector2(18152.002, 1400)
 
 [node name="Topaz16" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="16" unique_id=859932934 instance=ExtResource("5_os8xl")]
-position = Vector2(18584, 1384)
+position = Vector2(18528, 1376)
 
 [node name="Topaz18" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="17" unique_id=1879712657 instance=ExtResource("5_os8xl")]
-position = Vector2(18760, 1288)
+position = Vector2(18672, 1272)
 
 [node name="Topaz19" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="18" unique_id=2108041544 instance=ExtResource("5_os8xl")]
-position = Vector2(18984, 1248)
+position = Vector2(18856, 1216)
 
 [node name="Topaz20" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="19" unique_id=1123676270 instance=ExtResource("5_os8xl")]
-position = Vector2(19176, 1320)
+position = Vector2(18984, 1288)
 
 [node name="Topaz21" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="20" unique_id=1350353557 instance=ExtResource("5_os8xl")]
-position = Vector2(19288, 1448)
+position = Vector2(19048, 1424)
+
+[node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
+position = Vector2(19456, 1928)
+script = null
 
 [node name="Water" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("3_3rpgq")]
 position = Vector2(8552, 1984)
@@ -149,6 +157,16 @@ objects_to_activate = [NodePath("../../Labels/HintLabel6"), NodePath("../../Labe
 [node name="FinishPortal" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="6" unique_id=737669738]
 z_index = -1
 position = Vector2(21656, 1304)
+
+[node name="MoveBoundArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="7" unique_id=1526628066 node_paths=PackedStringArray("left_world_bound", "camera") instance=ExtResource("8_5g6br")]
+position = Vector2(20064, 0)
+left_world_bound = NodePath("../../GroundAndBoundaries/WorldBounds/LeftBound")
+camera = NodePath("../../Camera")
+left_bound_offset = 19200.0
+
+[node name="CollisionShape2D" parent="Areas/MoveBoundArea" index="0" unique_id=1900862834]
+position = Vector2(32, 0)
+shape = SubResource("WorldBoundaryShape2D_5g6br")
 
 [node name="HintLabel" parent="Labels" parent_id_path=PackedInt32Array(608123660) index="0" unique_id=1476282060 instance=ExtResource("5_3rpgq")]
 position = Vector2(-640, 1952)
@@ -220,7 +238,12 @@ offset_bottom = 352.0
 text = "This one is called \"Emeraldium\". Pick it up with [b]E[/b]. Hold [b]Shift[/b] to get swifty"
 metadata/_edit_use_anchors_ = true
 
-[node name="Terrain" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="0" unique_id=912310611]
+[node name="WorldBounds" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="0" unique_id=1234016570]
+collision_layer = 0
+collision_mask = 0
+collision_priority = 1.0
+
+[node name="Terrain" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="1" unique_id=912310611]
 position = Vector2(0, 2368)
 
 [node name="Path2D" parent="GroundAndBoundaries/Terrain" index="3" unique_id=1234078617]
@@ -234,6 +257,7 @@ limit_right = 22500
 [editable path="Objects/StaticSolids/PlatformOnBeams2"]
 [editable path="Objects/StaticSolids/PlatformOnBeams3"]
 [editable path="Objects/Environment/Waters/Water"]
+[editable path="Areas/MoveBoundArea"]
 [editable path="Labels/HintLabel"]
 [editable path="Labels/HintLabel2"]
 [editable path="Labels/HintLabel3"]

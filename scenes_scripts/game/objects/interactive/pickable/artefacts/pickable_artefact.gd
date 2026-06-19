@@ -16,6 +16,7 @@ var artefacts_parent: Node = null
 var ui_layer: GameUILayer = null
 
 var collected: bool = false
+var charged: bool = true
 
 
 func spawn_equipped_artefact() -> Artefact:
@@ -26,6 +27,7 @@ func spawn_equipped_artefact() -> Artefact:
 		artefact.change_velocity = root_node.arguments["change_velocity"]
 		artefact.change_jump_impulse = root_node.arguments["change_jump_impulse"]
 
+	artefact.charged = charged
 	artefact.artefacts_parent = artefacts_parent
 	artefact.ui_layer = ui_layer
 	artefact.player = player
@@ -58,7 +60,7 @@ func _ready() -> void:
 	showed_name = artefact_name.capitalize()
 
 
-func _on_body_entered(body: Player) -> void:
+func _on_body_entered(body: Node) -> void:
 	if can_interact():
 		#player_entered.emit(self)
 		root_node.player_entered.emit(self)
@@ -66,7 +68,7 @@ func _on_body_entered(body: Player) -> void:
 	else:
 		return
 
-func _on_body_exited(body: Player) -> void:
+func _on_body_exited(body: Node) -> void:
 	if can_interact():
 		#player_exited.emit(self)
 		root_node.player_exited.emit(self)

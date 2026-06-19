@@ -50,7 +50,7 @@ _data = {
 [node name="Emeraldium" type="Node2D" unique_id=1019438090]
 script = ExtResource("1_b7dpg")
 arguments = Dictionary[String, Variant]({
-"change_jump_impulse": true,
+"change_jump_impulse": false,
 "change_velocity": true
 })
 

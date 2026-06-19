@@ -26,6 +26,7 @@ func spawn_pickable_artefact(
 
 	pickable_artefact.position = player.global_position
 	pickable_artefact.artefacts_parent = artefacts_parent
+	pickable_artefact.charged = player.equipped_artefact.charged
 
 	pickable_artefact.player_entered.connect(player._on_interactive_object_player_entered)
 	pickable_artefact.player_exited.connect(player._on_interactive_object_player_exited)

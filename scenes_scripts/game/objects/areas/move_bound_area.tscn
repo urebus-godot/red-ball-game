@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dmr6i5yy0ru7t"]
+
+[ext_resource type="Script" uid="uid://disyl6jh0l663" path="res://scenes_scripts/game/objects/areas/move_bound_area.gd" id="1_8wxj4"]
+
+[node name="MoveBoundArea" type="Area2D" unique_id=1526628066]
+collision_layer = 0
+script = ExtResource("1_8wxj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1900862834]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

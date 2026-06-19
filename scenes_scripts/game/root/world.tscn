@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dy1xcjroh2x57" path="res://scenes_scripts/ui/game/ui_layer/scenes/base_ui_layer.tscn" id="3_hcrup"]
 [ext_resource type="PackedScene" uid="uid://cdla8kspop6ck" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/player.tscn" id="3_pkcbc"]
 [ext_resource type="PackedScene" uid="uid://diy12vbxi3eab" path="res://scenes_scripts/game/objects/interactive/portal/location_portal.tscn" id="4_7og53"]
+[ext_resource type="Texture2D" uid="uid://cck6m5u55dj0j" path="res://resources/textures/game/world_environment/ground/pavement.png" id="6_74n1f"]
 [ext_resource type="PackedScene" uid="uid://cn48baku04cx" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/camera.tscn" id="8_74n1f"]
 
 [sub_resource type="Curve2D" id="Curve2D_efhvm"]
@@ -38,6 +39,10 @@ position = Vector2(0, 288)
 camera = NodePath("../Camera")
 
 [node name="Terrain" parent="." unique_id=912310611 instance=ExtResource("3_efhvm")]
+y_offset = 28.0
+
+[node name="Line2D" parent="Terrain" index="1" unique_id=583848422]
+texture = ExtResource("6_74n1f")
 
 [node name="Path2D" parent="Terrain" index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_efhvm")
@@ -99,6 +104,9 @@ offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera" parent="." unique_id=1760591003 node_paths=PackedStringArray("player") instance=ExtResource("8_74n1f")]
+limit_left = -3500
+limit_top = -300
+limit_right = 3500
 player = NodePath("../Player")
 
 [editable path="Terrain"]

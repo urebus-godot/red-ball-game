@@ -10,6 +10,7 @@ class_name Artefact extends Node2D
 	) var artefact_name: String
 
 var activated: bool = false
+var charged: bool = true
 
 var player: Player = null
 var artefacts_parent: Node = null
@@ -32,7 +33,7 @@ func unequip_artefact() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if not player.control_enabled: return
+	if not player.control_enabled or not charged: return
 
 	if event.is_action_pressed(action_name):
 		activate_artefact()

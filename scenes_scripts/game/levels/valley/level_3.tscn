@@ -6,37 +6,141 @@
 [ext_resource type="PackedScene" uid="uid://cmia2pxbw6h26" path="res://scenes_scripts/game/objects/solid/static/platform_on_separate_beams.tscn" id="3_rkon5"]
 [ext_resource type="PackedScene" uid="uid://cmj7l35tymp0l" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/enemy.tscn" id="4_2wmbt"]
 [ext_resource type="PackedScene" uid="uid://bwjboskfprx5a" path="res://scenes_scripts/game/objects/solid/moving/vertical_door_with_planks.tscn" id="4_up1vo"]
+[ext_resource type="PackedScene" uid="uid://b2ranlok5hbc6" path="res://scenes_scripts/game/objects/solid/physics/wooden_platform_3_physics.tscn" id="4_vdtnq"]
+[ext_resource type="PackedScene" uid="uid://3hroom7g8eq4" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/emeraldium/pickable_emeraldium.tscn" id="7_rfx77"]
+[ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="8_0jvoj"]
+[ext_resource type="PackedScene" uid="uid://clfl7gnedu6u0" path="res://scenes_scripts/game/objects/areas/artefact_discharge_area.tscn" id="9_od5lf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8qx61"]
+normal = Vector2(-1, 0)
 
 [sub_resource type="Curve2D" id="Curve2D_up1vo"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -992, 2432, 0, 0, 0, 0, 576, 2432, 0, 0, 0, 0, 880, 2392, 0, 0, 0, 0, 1336, 2296, 0, 0, 0, 0, 1776, 2136, 0, 0, 0, 0, 2056, 2072, 0, 0, 0, 0, 2344, 2056, 0, 0, 0, 0, 2512, 2056, 0, 0, 0, 0, 2640, 2088, 0, 0, 0, 0, 2808, 2192, 0, 0, 0, 0, 2944, 2240, 0, 0, 0, 0, 3184, 2264, 0, 0, 0, 0, 4328, 2264, 0, 0, 0, 0, 4496, 2296, 0, 0, 0, 0, 4584, 2344, 0, 0, 0, 0, 4704, 2464, 0, 0, 0, 0, 4864, 2544, 0, 0, 0, 0, 5072, 2568, 0, 0, 0, 0, 6656, 2568, 0, 0, 0, 0, 6336, 3328, 0, 0, 0, 0, -1856, 3328, 0, 0, 0, 0, -1776, 744, 0, 0, 0, 0, -1368, 760, 0, 0, 0, 0, -1120, 2296, 0, 0, 0, 0, -992, 2432)
+"points": PackedVector2Array(0, 0, 0, 0, -992, 2432, 0, 0, 0, 0, 576, 2432, 0, 0, 0, 0, 880, 2392, 0, 0, 0, 0, 1336, 2296, 0, 0, 0, 0, 1776, 2136, 0, 0, 0, 0, 2056, 2072, 0, 0, 0, 0, 2344, 2056, 0, 0, 0, 0, 2512, 2056, 0, 0, 0, 0, 2640, 2088, 0, 0, 0, 0, 2808, 2192, 0, 0, 0, 0, 2944, 2240, 0, 0, 0, 0, 3184, 2264, 0, 0, 0, 0, 4328, 2264, 0, 0, 0, 0, 4496, 2296, 0, 0, 0, 0, 4584, 2344, 0, 0, 0, 0, 4704, 2464, 0, 0, 0, 0, 4864, 2544, 0, 0, 0, 0, 5072, 2568, 0, 0, 0, 0, 7432, 2568, 0, 0, 0, 0, 7520, 2544, 0, 0, 0, 0, 7592, 2472, 0, 0, 0, 0, 7648, 1960, 0, 0, 0, 0, 7704, 1904, 0, 0, 0, 0, 7808, 1848, 0, 0, 0, 0, 8008, 1816, 0, 0, 0, 0, 8296, 1816, 0, 0, 0, 0, 8520, 1848, 0, 0, 0, 0, 8600, 1896, 0, 0, 0, 0, 8656, 1960, 0, 0, 0, 0, 8784, 3648, 0, 0, 0, 0, -1848, 3648, 0, 0, 0, 0, -1776, 744, 0, 0, 0, 0, -1368, 760, 0, 0, 0, 0, -1120, 2296, 0, 0, 0, 0, -992, 2432)
 }
-point_count = 25
+point_count = 35
+
+[sub_resource type="Curve2D" id="Curve2D_0jvoj"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -136, 1808, 0, 0, 0, 0, -40, 176, 0, 0, 0, 0, -8, 120, 0, 0, 0, 0, 72, 48, 0, 0, 0, 0, 171.11804, 18.122662, 0, 0, 0, 0, 368, -8, 0, 0, 0, 0, 669.262, -6.8600006, 0, 0, 0, 0, 805.92786, -21.33316, 0, 0, 0, 0, 960, -80, 0, 0, 0, 0, 1072, -168, 0, 0, 0, 0, 1232, -240, 0, 0, 0, 0, 1352, -264, 0, 0, 0, 0, 1416, -272, 0, 0, 0, 0, 1488, -264, 0, 0, 0, 0, 1544, -240, 0, 0, 0, 0, 1608, -200, 0, 0, 0, 0, 1992, 80, 0, 0, 0, 0, 2216, 176, 0, 0, 0, 0, 2648, 256, 0, 0, 0, 0, 2968, 264, 0, 0, 0, 0, 3240, 240, 0, 0, 0, 0, 3400, 176, 0, 0, 0, 0, 3512, 88, 0, 0, 0, 0, 3648, -64, 0, 0, 0, 0, 3688, -80, 0, 0, 0, 0, 3784, -64, 0, 0, 0, 0, 3688, 16, 0, 0, 0, 0, 3648, 192, 0, 0, 0, 0, 3664, 272, 0, 0, 0, 0, 3688, 440, 0, 0, 0, 0, 3720, 616, 0, 0, 0, 0, 3800, 736, 0, 0, 0, 0, 3840, 760, 0, 0, 0, 0, 3920, 760, 0, 0, 0, 0, 4056, 720, 0, 0, 0, 0, 4176, 736, 0, 0, 0, 0, 4312, 720, 0, 0, 0, 0, 4424, 776, 0, 0, 0, 0, 4592, 760, 0, 0, 0, 0, 4776, 792, 0, 0, 0, 0, 4904, 768, 0, 0, 0, 0, 5000, 752, 0, 0, 0, 0, 5080, 784, 0, 0, 0, 0, 5184, 792, 0, 0, 0, 0, 5272, 744, 0, 0, 0, 0, 5320, 752, 0, 0, 0, 0, 5392, 696, 0, 0, 0, 0, 5464, 632, 0, 0, 0, 0, 5472, 488, 0, 0, 0, 0, 5456, 312, 0, 0, 0, 0, 5512, 104, 0, 0, 0, 0, 5464, 0, 0, 0, 0, 0, 5480, -32, 0, 0, 0, 0, 5576, -72, 0, 0, 0, 0, 5688, -72, 0, 0, 0, 0, 5888, -72, 0, 0, 0, 0, 6016, -40, 0, 0, 0, 0, 6104, 24, 0, 0, 0, 0, 6200, 56, 0, 0, 0, 0, 6328, 56, 0, 0, 0, 0, 6408, 72, 0, 0, 0, 0, 6496, 136, 0, 0, 0, 0, 6584, 160, 0, 0, 0, 0, 6632, 184, 0, 0, 0, 0, 6696, 224, 0, 0, 0, 0, 6720, 264, 0, 0, 0, 0, 6776, 304, 0, 0, 0, 0, 6896, 304, 0, 0, 0, 0, 6840, 1808, 0, 0, 0, 0, -136, 1808)
+}
+point_count = 70
 
 [node name="BaseValleyLevel" unique_id=165616865 instance=ExtResource("1_vkdog")]
 level = 3
 
 [node name="PlatformOnBeams2" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=661617163 instance=ExtResource("2_cqdbb")]
-position = Vector2(5848, 2312)
+position = Vector2(6032, 2272)
+
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams2" index="0" unique_id=1189508430]
+offset_bottom = 360.0
+metadata/_edit_use_anchors_ = true
 
 [node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="1" unique_id=652485412 instance=ExtResource("2_cqdbb")]
-position = Vector2(6408, 2312)
+position = Vector2(6592, 2272)
+
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams3" index="0" unique_id=1189508430]
+offset_bottom = 392.0
+metadata/_edit_use_anchors_ = true
 
 [node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="2" unique_id=694627226 instance=ExtResource("3_rkon5")]
-position = Vector2(5288, 2312)
+position = Vector2(5520, 2328)
 
 [node name="CenterBeam" parent="Objects/StaticSolids/PlatformOnBeams" index="0" unique_id=351578191]
-offset_left = -120.0
-offset_right = 136.0
+offset_left = -139.46313
+offset_top = -4.1370163
+offset_right = 159.2981
+offset_bottom = 251.86298
 rotation = 0.20943952
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftBeam" parent="Objects/StaticSolids/PlatformOnBeams" index="1" unique_id=207140084]
+metadata/_edit_use_anchors_ = true
 
 [node name="RightBeam" parent="Objects/StaticSolids/PlatformOnBeams" index="2" unique_id=1853166970]
 offset_top = 40.0
 offset_bottom = 296.0
+metadata/_edit_use_anchors_ = true
 
 [node name="WoodenPlatform" parent="Objects/StaticSolids/PlatformOnBeams" index="3" unique_id=735051929]
+position = Vector2(0, 16.000008)
 rotation = 0.20943952
+
+[node name="PlatformOnBeams4" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="3" unique_id=990043907 instance=ExtResource("3_rkon5")]
+position = Vector2(7152, 2160)
+
+[node name="CenterBeam" parent="Objects/StaticSolids/PlatformOnBeams4" index="0" unique_id=351578191]
+offset_left = -162.92212
+offset_top = 23.213646
+offset_right = 145.5686
+offset_bottom = 279.21365
+rotation = -0.2617994
+
+[node name="LeftBeam" parent="Objects/StaticSolids/PlatformOnBeams4" index="1" unique_id=207140084]
+offset_bottom = 464.0
+
+[node name="RightBeam" parent="Objects/StaticSolids/PlatformOnBeams4" index="2" unique_id=1853166970]
+offset_top = -64.0
+offset_bottom = 464.0
+
+[node name="WoodenPlatform" parent="Objects/StaticSolids/PlatformOnBeams4" index="3" unique_id=735051929]
+position = Vector2(0, -31.999992)
+rotation = -0.2617994
+
+[node name="Bridge" type="Node2D" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="4" unique_id=934165472]
+
+[node name="WoodenPlatform" parent="Objects/StaticSolids/Bridge" index="0" unique_id=1204631892 instance=ExtResource("4_vdtnq")]
+position = Vector2(9024, 2048)
+
+[node name="WoodenPlatform5" parent="Objects/StaticSolids/Bridge" index="1" unique_id=812812851 instance=ExtResource("4_vdtnq")]
+position = Vector2(10304, 2048)
+
+[node name="WoodenPlatform2" parent="Objects/StaticSolids/Bridge" index="2" unique_id=933066906 instance=ExtResource("4_vdtnq")]
+position = Vector2(9344, 2064)
+
+[node name="WoodenPlatform3" parent="Objects/StaticSolids/Bridge" index="3" unique_id=1212425752 instance=ExtResource("4_vdtnq")]
+position = Vector2(9664, 2080)
+
+[node name="WoodenPlatform4" parent="Objects/StaticSolids/Bridge" index="4" unique_id=2003962669 instance=ExtResource("4_vdtnq")]
+position = Vector2(9984, 2072)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Objects/StaticSolids/Bridge" index="5" unique_id=1793016663]
+position = Vector2(8760, 1952)
+node_a = NodePath("../WoodenPlatform")
+node_b = NodePath("StaticBody2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects/StaticSolids/Bridge/PinJoint2D" index="0" unique_id=1952975619]
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Objects/StaticSolids/Bridge" index="6" unique_id=327988862]
+position = Vector2(9184, 2032)
+node_a = NodePath("../WoodenPlatform")
+node_b = NodePath("../WoodenPlatform2")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="Objects/StaticSolids/Bridge" index="7" unique_id=215016323]
+position = Vector2(9504, 2064)
+node_a = NodePath("../WoodenPlatform2")
+node_b = NodePath("../WoodenPlatform3")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="Objects/StaticSolids/Bridge" index="8" unique_id=884870117]
+position = Vector2(9824, 2056)
+node_a = NodePath("../WoodenPlatform3")
+node_b = NodePath("../WoodenPlatform4")
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="Objects/StaticSolids/Bridge" index="9" unique_id=417287747]
+position = Vector2(10496, 1976)
+node_a = NodePath("../WoodenPlatform4")
+node_b = NodePath("StaticBody2D2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Objects/StaticSolids/Bridge/PinJoint2D5" index="0" unique_id=1938352369]
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="Objects/StaticSolids/Bridge" index="10" unique_id=1008296461]
+position = Vector2(10144, 2040)
+node_a = NodePath("../WoodenPlatform4")
+node_b = NodePath("../WoodenPlatform5")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Objects/StaticSolids/Bridge/PinJoint2D6" index="0" unique_id=233094089]
 
 [node name="Button" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="0" unique_id=914127466 node_paths=PackedStringArray("object_to_activate") instance=ExtResource("2_08em5")]
 position = Vector2(3520, 2264)
@@ -46,23 +150,49 @@ object_to_activate = NodePath("../VerticalDoor/VerticalDoor")
 position = Vector2(3896, 2136)
 
 [node name="VerticalDoor" parent="Objects/Moving/VerticalDoor" index="3" unique_id=500907697]
-activation_delay = 0.75
+activation_delay = 0.3
+deactivation_delay = 0.8
+
+[node name="Emeraldium" parent="Objects/Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=1019438090 node_paths=PackedStringArray("artefacts_parent", "ui_layer") instance=ExtResource("7_rfx77")]
+position = Vector2(12056, 1400)
+artefacts_parent = NodePath("..")
+ui_layer = NodePath("../../../UILayer")
 
 [node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
-position = Vector2(2408, 1984)
+position = Vector2(10832, 1728)
 
 [node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=144469295 instance=ExtResource("4_2wmbt")]
-position = Vector2(5632, 2496)
+position = Vector2(5392, 2496)
+collision_mask = 15
 
 [node name="PatrolComponent" parent="Objects/Creatures/Enemy" index="7" unique_id=1282453717]
-left_x_bound = 5332.0
-right_x_bound = 5932.0
+left_x_bound = 5392.0
+right_x_bound = 7144.0
+jump_time = 3.0
+
+[node name="ArtefactDischargeArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="1" unique_id=465926688 instance=ExtResource("9_od5lf")]
+position = Vector2(16192, 0)
+
+[node name="CollisionShape2D" parent="Areas/ArtefactDischargeArea" index="0" unique_id=152420103]
+shape = SubResource("WorldBoundaryShape2D_8qx61")
 
 [node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_up1vo")
 
+[node name="Terrain2" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="2" unique_id=912310611 instance=ExtResource("8_0jvoj")]
+z_index = 2
+position = Vector2(10560, 1840)
+
+[node name="Path2D" parent="GroundAndBoundaries/Terrain2" index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_0jvoj")
+
 [editable path="UILayer"]
+[editable path="Objects/StaticSolids/PlatformOnBeams2"]
+[editable path="Objects/StaticSolids/PlatformOnBeams3"]
 [editable path="Objects/StaticSolids/PlatformOnBeams"]
+[editable path="Objects/StaticSolids/PlatformOnBeams4"]
 [editable path="Objects/Moving/VerticalDoor"]
 [editable path="Objects/Creatures/Enemy"]
+[editable path="Areas/ArtefactDischargeArea"]
 [editable path="GroundAndBoundaries/Terrain"]
+[editable path="GroundAndBoundaries/Terrain2"]

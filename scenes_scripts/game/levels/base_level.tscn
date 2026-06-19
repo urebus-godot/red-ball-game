@@ -8,6 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://daoi38gxr1or8" path="res://scenes_scripts/game/objects/areas/finish_area.tscn" id="7_y6yin"]
 [ext_resource type="PackedScene" uid="uid://cn48baku04cx" path="res://scenes_scripts/game/objects/solid/physics/creatures/player/camera.tscn" id="9_lcgxn"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5g6br"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y6yin"]
+normal = Vector2(-1, 0)
+
 [sub_resource type="Curve2D" id="Curve2D_62qgw"]
 bake_interval = 512.0
 
@@ -64,6 +70,18 @@ z_index = -2
 z_index = 3
 
 [node name="GroundAndBoundaries" type="Node2D" parent="." unique_id=422641340]
+
+[node name="WorldBounds" type="StaticBody2D" parent="GroundAndBoundaries" unique_id=1234016570]
+collision_layer = 64
+collision_priority = 100.0
+
+[node name="LeftBound" type="CollisionShape2D" parent="GroundAndBoundaries/WorldBounds" unique_id=934559950]
+position = Vector2(-1600, 0)
+shape = SubResource("WorldBoundaryShape2D_5g6br")
+
+[node name="RightBound" type="CollisionShape2D" parent="GroundAndBoundaries/WorldBounds" unique_id=1477871747]
+position = Vector2(100000, 0)
+shape = SubResource("WorldBoundaryShape2D_y6yin")
 
 [node name="Terrain" parent="GroundAndBoundaries" unique_id=912310611 instance=ExtResource("4_jt1by")]
 z_index = 2

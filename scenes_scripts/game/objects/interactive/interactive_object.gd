@@ -22,14 +22,14 @@ func _ready() -> void:
 	showed_name = "the " + showed_name
 
 
-func _on_body_entered(body: Player) -> void:
+func _on_body_entered(body: Node2D) -> void:
 	if can_interact():
 		player_entered.emit(self)
 		player = body
 	else:
 		return
 
-func _on_body_exited(body: Player) -> void:
+func _on_body_exited(body: Node2D) -> void:
 	if can_interact():
 		player_exited.emit(self)
 		player = null

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b2ranlok5hbc6"]
+
+[ext_resource type="Texture2D" uid="uid://lglyn0dhvr2w" path="res://resources/textures/game/objects/solids/static/wooden_platform_2.png" id="1_nsar7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyog7"]
+size = Vector2(194, 4)
+
+[node name="WoodenPlatform" type="RigidBody2D" unique_id=1204631892]
+collision_layer = 32
+collision_mask = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=482270404]
+texture = ExtResource("1_nsar7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=260223105]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_fyog7")
+one_way_collision = true

@@ -65,7 +65,7 @@ _data = {
 
 [node name="Player" unique_id=840999448 node_paths=PackedStringArray("control_component", "move_component") instance=ExtResource("1_rv035")]
 collision_layer = 1
-collision_mask = 62
+collision_mask = 126
 physics_material_override = SubResource("PhysicsMaterial_30j7b")
 script = ExtResource("2_22jnx")
 control_component = NodePath("ControlComponent")

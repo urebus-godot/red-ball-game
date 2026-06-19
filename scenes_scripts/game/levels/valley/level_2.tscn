@@ -20,12 +20,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prvuc"]
 size = Vector2(15496, 112)
 
-[sub_resource type="Curve2D" id="Curve2D_wv7qj"]
-bake_interval = 512.0
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1096, 2432, 0, 0, 0, 0, 704, 2432, 0, 0, 0, 0, 968, 2408, 0, 0, 0, 0, 1200, 2344, 0, 0, 0, 0, 1496, 2296, 0, 0, 0, 0, 1800, 2288, 0, 0, 0, 0, 2048, 2288, 0, 0, 0, 0, 2128, 2312, 0, 0, 0, 0, 2176, 2360, 0, 0, 0, 0, 2304, 3200, 0, 0, 0, 0, -1664, 3200, 0, 0, 0, 0, -1640, 688, 0, 0, 0, 0, -1344, 704, 0, 0, 0, 0, -1160, 2320, 0, 0, 0, 0, -1096, 2432)
-}
-point_count = 15
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b30ic"]
+normal = Vector2(1, 0)
 
 [sub_resource type="Curve2D" id="Curve2D_idcom"]
 bake_interval = 512.0
@@ -40,6 +36,13 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 9360, 800, 0, 0, 0, 0, -112, 800, 0, 0, 0, 0, -56, 64, 0, 0, 0, 0, -24, -8, 0, 0, 0, 0, 48, -40, 0, 0, 0, 0, 440, -40, 0, 0, 0, 0, 680, -88, 0, 0, 0, 0, 1168, -248, 0, 0, 0, 0, 1688, -344, 0, 0, 0, 0, 2080, -368, 0, 0, 0, 0, 2264, -368, 0, 0, 0, 0, 2448, -352, 0, 0, 0, 0, 2736, -296, 0, 0, 0, 0, 3072, -96, 0, 0, 0, 0, 3424, 0, 0, 0, 0, 0, 4824, 0, 0, 0, 0, 0, 4864, -64, 0, 0, 0, 0, 4904, -200, 0, 0, 0, 0, 4848, -416, 0, 0, 0, 0, 4912, -472, 0, 0, 0, 0, 5064, -496, 0, 0, 0, 0, 5696, -496, 0, 0, 0, 0, 5768, -464, 0, 0, 0, 0, 5824, -392, 0, 0, 0, 0, 5872, -272, 0, 0, 0, 0, 5944, -152, 0, 0, 0, 0, 6040, -120, 0, 0, 0, 0, 6728, -128, 0, 0, 0, 0, 6760, -144, 0, 0, 0, 0, 6816, -208, 0, 0, 0, 0, 6840, -816, 0, 0, 0, 0, 6872, -864, 0, 0, 0, 0, 6936, -888, 0, 0, 0, 0, 7008, -904, 0, 0, 0, 0, 8168, -904, 0, 0, 0, 0, 8256, -1000, 0, 0, 0, 0, 8696, -2752, 0, 0, 0, 0, 9432, -2664, 0, 0, 0, 0, 9360, 800)
 }
 point_count = 39
+
+[sub_resource type="Curve2D" id="Curve2D_wv7qj"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1096, 2432, 0, 0, 0, 0, 704, 2432, 0, 0, 0, 0, 968, 2408, 0, 0, 0, 0, 1200, 2344, 0, 0, 0, 0, 1496, 2296, 0, 0, 0, 0, 1800, 2288, 0, 0, 0, 0, 2048, 2288, 0, 0, 0, 0, 2128, 2312, 0, 0, 0, 0, 2176, 2360, 0, 0, 0, 0, 2304, 3200, 0, 0, 0, 0, -1664, 3200, 0, 0, 0, 0, -1640, 688, 0, 0, 0, 0, -1344, 704, 0, 0, 0, 0, -1160, 2320, 0, 0, 0, 0, -1096, 2432)
+}
+point_count = 15
 
 [node name="Level2" unique_id=165616865 instance=ExtResource("1_wv7qj")]
 level = 2
@@ -266,8 +269,11 @@ offset_bottom = 272.0
 text = "This artefact is \"Sapphirium\". Hover over the a physical body to drag it with the sapphirium."
 metadata/_edit_use_anchors_ = true
 
-[node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
-curve = SubResource("Curve2D_wv7qj")
+[node name="WorldBounds" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="0" unique_id=1234016570]
+collision_priority = 1.0
+
+[node name="LeftBound" parent="GroundAndBoundaries/WorldBounds" index="0" unique_id=934559950]
+shape = SubResource("WorldBoundaryShape2D_b30ic")
 
 [node name="Terrain2" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="1" unique_id=912310611 instance=ExtResource("2_idcom")]
 z_index = 2
@@ -282,6 +288,9 @@ position = Vector2(17456, 2400)
 
 [node name="Path2D" parent="GroundAndBoundaries/Terrain3" index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_6k4lt")
+
+[node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_wv7qj")
 
 [node name="Camera" parent="." index="10" unique_id=1760591003]
 limit_left = -1000
@@ -303,6 +312,6 @@ limit_bottom = 3150
 [editable path="Areas/DeathArea"]
 [editable path="Labels/HintLabel"]
 [editable path="Labels/HintLabel2"]
-[editable path="GroundAndBoundaries/Terrain"]
 [editable path="GroundAndBoundaries/Terrain2"]
 [editable path="GroundAndBoundaries/Terrain3"]
+[editable path="GroundAndBoundaries/Terrain"]
