@@ -18,6 +18,10 @@ func interact() -> void: ## This function is being called when user presses inte
 		await get_tree().create_timer(interaction_delay).timeout
 
 
+func _ready() -> void:
+	showed_name = "the " + showed_name
+
+
 func _on_body_entered(body: Player) -> void:
 	if can_interact():
 		player_entered.emit(self)

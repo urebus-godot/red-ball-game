@@ -202,7 +202,6 @@ position = Vector2(19752, 1664)
 position = Vector2(19784, 1552)
 
 [node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
-position = Vector2(22840, 1744)
 input_pickable = false
 
 [node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=1016766608 instance=ExtResource("3_c3k3r")]

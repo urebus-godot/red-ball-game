@@ -115,9 +115,6 @@ position = Vector2(19176, 1320)
 [node name="Topaz21" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="20" unique_id=1350353557 instance=ExtResource("5_os8xl")]
 position = Vector2(19288, 1448)
 
-[node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
-position = Vector2(7904, 1896)
-
 [node name="Water" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("3_3rpgq")]
 position = Vector2(8552, 1984)
 

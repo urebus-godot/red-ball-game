@@ -3,30 +3,66 @@
 [ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_vkdog"]
 [ext_resource type="PackedScene" uid="uid://s7a7m66jw12x" path="res://scenes_scripts/game/objects/interactive/button/button.tscn" id="2_08em5"]
 [ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="2_cqdbb"]
+[ext_resource type="PackedScene" uid="uid://cmia2pxbw6h26" path="res://scenes_scripts/game/objects/solid/static/platform_on_separate_beams.tscn" id="3_rkon5"]
+[ext_resource type="PackedScene" uid="uid://cmj7l35tymp0l" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/enemy.tscn" id="4_2wmbt"]
 [ext_resource type="PackedScene" uid="uid://bwjboskfprx5a" path="res://scenes_scripts/game/objects/solid/moving/vertical_door_with_planks.tscn" id="4_up1vo"]
 
 [sub_resource type="Curve2D" id="Curve2D_up1vo"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -992, 2432, 0, 0, 0, 0, 576, 2432, 0, 0, 0, 0, 880, 2392, 0, 0, 0, 0, 1336, 2296, 0, 0, 0, 0, 1776, 2136, 0, 0, 0, 0, 2056, 2072, 0, 0, 0, 0, 2344, 2056, 0, 0, 0, 0, 2512, 2056, 0, 0, 0, 0, 2640, 2088, 0, 0, 0, 0, 2808, 2192, 0, 0, 0, 0, 2944, 2240, 0, 0, 0, 0, 3184, 2264, 0, 0, 0, 0, 4328, 2264, 0, 0, 0, 0, 3712, 3328, 0, 0, 0, 0, -1856, 3328, 0, 0, 0, 0, -1776, 744, 0, 0, 0, 0, -1368, 760, 0, 0, 0, 0, -1120, 2296, 0, 0, 0, 0, -992, 2432)
+"points": PackedVector2Array(0, 0, 0, 0, -992, 2432, 0, 0, 0, 0, 576, 2432, 0, 0, 0, 0, 880, 2392, 0, 0, 0, 0, 1336, 2296, 0, 0, 0, 0, 1776, 2136, 0, 0, 0, 0, 2056, 2072, 0, 0, 0, 0, 2344, 2056, 0, 0, 0, 0, 2512, 2056, 0, 0, 0, 0, 2640, 2088, 0, 0, 0, 0, 2808, 2192, 0, 0, 0, 0, 2944, 2240, 0, 0, 0, 0, 3184, 2264, 0, 0, 0, 0, 4328, 2264, 0, 0, 0, 0, 4496, 2296, 0, 0, 0, 0, 4584, 2344, 0, 0, 0, 0, 4704, 2464, 0, 0, 0, 0, 4864, 2544, 0, 0, 0, 0, 5072, 2568, 0, 0, 0, 0, 6656, 2568, 0, 0, 0, 0, 6336, 3328, 0, 0, 0, 0, -1856, 3328, 0, 0, 0, 0, -1776, 744, 0, 0, 0, 0, -1368, 760, 0, 0, 0, 0, -1120, 2296, 0, 0, 0, 0, -992, 2432)
 }
-point_count = 19
+point_count = 25
 
 [node name="BaseValleyLevel" unique_id=165616865 instance=ExtResource("1_vkdog")]
+level = 3
 
-[node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=1838207057 instance=ExtResource("2_cqdbb")]
-position = Vector2(3464, 2040)
+[node name="PlatformOnBeams2" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=661617163 instance=ExtResource("2_cqdbb")]
+position = Vector2(5848, 2312)
+
+[node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="1" unique_id=652485412 instance=ExtResource("2_cqdbb")]
+position = Vector2(6408, 2312)
+
+[node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="2" unique_id=694627226 instance=ExtResource("3_rkon5")]
+position = Vector2(5288, 2312)
+
+[node name="CenterBeam" parent="Objects/StaticSolids/PlatformOnBeams" index="0" unique_id=351578191]
+offset_left = -120.0
+offset_right = 136.0
+rotation = 0.20943952
+
+[node name="RightBeam" parent="Objects/StaticSolids/PlatformOnBeams" index="2" unique_id=1853166970]
+offset_top = 40.0
+offset_bottom = 296.0
+
+[node name="WoodenPlatform" parent="Objects/StaticSolids/PlatformOnBeams" index="3" unique_id=735051929]
+rotation = 0.20943952
 
 [node name="Button" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="0" unique_id=914127466 node_paths=PackedStringArray("object_to_activate") instance=ExtResource("2_08em5")]
-position = Vector2(3464, 2024)
+position = Vector2(3520, 2264)
 object_to_activate = NodePath("../VerticalDoor/VerticalDoor")
 
 [node name="VerticalDoor" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="1" unique_id=490192065 instance=ExtResource("4_up1vo")]
 position = Vector2(3896, 2136)
 
+[node name="VerticalDoor" parent="Objects/Moving/VerticalDoor" index="3" unique_id=500907697]
+activation_delay = 0.75
+
+[node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
+position = Vector2(2408, 1984)
+
+[node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=144469295 instance=ExtResource("4_2wmbt")]
+position = Vector2(5632, 2496)
+
+[node name="PatrolComponent" parent="Objects/Creatures/Enemy" index="7" unique_id=1282453717]
+left_x_bound = 5332.0
+right_x_bound = 5932.0
+
 [node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_up1vo")
 
 [editable path="UILayer"]
+[editable path="Objects/StaticSolids/PlatformOnBeams"]
 [editable path="Objects/Moving/VerticalDoor"]
+[editable path="Objects/Creatures/Enemy"]
 [editable path="GroundAndBoundaries/Terrain"]

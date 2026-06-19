@@ -7,7 +7,9 @@ var game_data: GameData = null
 
 
 func save_data() -> void:
-	ResourceSaver.save(game_data, GAME_DATA_PATH)
+	var err = ResourceSaver.save(game_data, GAME_DATA_PATH)
+	if err != OK:
+		printerr("Error occurred during saving data: \n", err)
 
 
 func load_data() -> void:

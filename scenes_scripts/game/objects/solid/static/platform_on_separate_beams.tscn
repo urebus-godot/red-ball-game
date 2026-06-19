@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cmia2pxbw6h26"]
+
+[ext_resource type="Texture2D" uid="uid://waoivt26e6em" path="res://resources/textures/game/background/left_beam.png" id="1_jadyc"]
+[ext_resource type="Texture2D" uid="uid://bnojwkme4e7l0" path="res://resources/textures/game/background/center_beam.png" id="2_uvj6m"]
+[ext_resource type="Texture2D" uid="uid://ceqqoap3eomgk" path="res://resources/textures/game/background/right_beam.png" id="3_7qb53"]
+[ext_resource type="PackedScene" uid="uid://xfepbh1454wu" path="res://scenes_scripts/game/objects/solid/static/wooden_platform.tscn" id="4_i6acc"]
+
+[node name="PlatformOnBeams" type="Node2D" unique_id=694627226]
+
+[node name="CenterBeam" type="TextureRect" parent="." unique_id=351578191]
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 256.0
+texture = ExtResource("2_uvj6m")
+
+[node name="LeftBeam" type="TextureRect" parent="." unique_id=207140084]
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 256.0
+texture = ExtResource("1_jadyc")
+
+[node name="RightBeam" type="TextureRect" parent="." unique_id=1853166970]
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 256.0
+texture = ExtResource("3_7qb53")
+
+[node name="WoodenPlatform" parent="." unique_id=735051929 instance=ExtResource("4_i6acc")]
+scale = Vector2(1.1, 1)

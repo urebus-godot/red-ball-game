@@ -29,6 +29,7 @@ func finish_level() -> void:
 	if game_data.levels_completed < level:
 		game_data.levels_completed += 1
 	print(game_data.levels_completed)
+	DataManager.save_data()
 	level_finished.emit(score, time_passed_s)
 
 

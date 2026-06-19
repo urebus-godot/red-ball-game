@@ -11,7 +11,7 @@
 [sub_resource type="Curve2D" id="Curve2D_efhvm"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -2800, 400, 0, 0, 0, 0, 4000, 400, 0, 0, 0, 0, 4000, 3000, 0, 0, 0, 0, -2800, 3000, 0, 0, 0, 0, -2800, 400)
+"points": PackedVector2Array(0, 0, 0, 0, -4000, 400, 0, 0, 0, 0, 4000, 400, 0, 0, 0, 0, 4000, 3000, 0, 0, 0, 0, -4000, 3000, 0, 0, 0, 0, -4000, 400)
 }
 point_count = 5
 
@@ -54,6 +54,15 @@ showed_name = "Portal to the Main Menu"
 [node name="Label" parent="Portals/MainMenuPortal" index="2" unique_id=778072012]
 text = "Main Menu"
 
+[node name="MainMenuPortal2" parent="Portals" unique_id=116509826 instance=ExtResource("4_7og53")]
+position = Vector2(-704, 400)
+scene_path = "res://scenes_scripts/ui/root/main_menu.tscn"
+interaction_delay = 0.4
+showed_name = "Portal to the Main Menu"
+
+[node name="Label" parent="Portals/MainMenuPortal2" index="2" unique_id=778072012]
+text = "Main Menu"
+
 [node name="LevelPortal" parent="Portals" unique_id=865033601 instance=ExtResource("4_7og53")]
 position = Vector2(768, 400)
 level = 1
@@ -87,12 +96,14 @@ text = "Level 3"
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1120800972]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera" parent="." unique_id=1760591003 node_paths=PackedStringArray("player") instance=ExtResource("8_74n1f")]
 player = NodePath("../Player")
 
 [editable path="Terrain"]
 [editable path="Portals/MainMenuPortal"]
+[editable path="Portals/MainMenuPortal2"]
 [editable path="Portals/LevelPortal"]
 [editable path="Portals/LevelPortal2"]
 [editable path="Portals/LevelPortal3"]

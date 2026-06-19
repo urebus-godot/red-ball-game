@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://cuj44b2p5d6up"]
 
 [ext_resource type="Texture2D" uid="uid://cnxqfwimyhmvb" path="res://resources/textures/game/background/beams.png" id="1_qkcx4"]
-[ext_resource type="Texture2D" uid="uid://cqxyjokjj15qh" path="res://resources/textures/game/objects/solids/static/wooden_platform.png" id="2_qwhmd"]
+[ext_resource type="PackedScene" uid="uid://xfepbh1454wu" path="res://scenes_scripts/game/objects/solid/static/wooden_platform.tscn" id="3_qwhmd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkcx4"]
-size = Vector2(280, 32)
-
-[node name="PlatformOnBeams" type="StaticBody2D" unique_id=1838207057]
-collision_layer = 32
-collision_mask = 13
+[node name="PlatformOnBeams" type="Node2D" unique_id=694627226]
 
 [node name="Beams" type="TextureRect" parent="." unique_id=1189508430]
 z_index = -1
@@ -18,10 +13,5 @@ offset_bottom = 256.0
 texture = ExtResource("1_qkcx4")
 stretch_mode = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=872582417]
+[node name="WoodenPlatform" parent="." unique_id=735051929 instance=ExtResource("3_qwhmd")]
 scale = Vector2(1.1, 1)
-texture = ExtResource("2_qwhmd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=961101926]
-shape = SubResource("RectangleShape2D_qkcx4")
-one_way_collision = true

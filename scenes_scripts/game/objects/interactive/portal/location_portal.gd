@@ -31,7 +31,7 @@ func interact() -> void:
 func _ready() -> void:
 	if level > 0:
 		showed_name = "Portal to Level %s" % level
-	showed_name = "The " + showed_name
+	super()
 
 
 func _process(delta: float) -> void:

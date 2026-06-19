@@ -34,3 +34,4 @@ texture = ExtResource("2_eelki")
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="VerticalDoor" parent="." unique_id=500907697 instance=ExtResource("3_awa6a")]
+position = Vector2(4, 0)
