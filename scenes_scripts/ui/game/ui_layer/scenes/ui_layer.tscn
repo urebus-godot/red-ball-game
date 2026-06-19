@@ -168,7 +168,6 @@ text = "No artefact is equipped"
 horizontal_alignment = 2
 
 [node name="InteractLabel" parent="Root" unique_id=1502365372 instance=ExtResource("17_ugwj5")]
-visible = false
 layout_mode = 1
 offset_top = -193.0
 

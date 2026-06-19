@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bwjboskfprx5a"]
+
+[ext_resource type="Texture2D" uid="uid://byrjgmwx0p8hu" path="res://resources/textures/game/objects/solids/moving/vertical_long_plank.png" id="1_osblg"]
+[ext_resource type="Texture2D" uid="uid://crh6nrddmwv5l" path="res://resources/textures/game/objects/solids/moving/vertical_spiked_plank.png" id="2_eelki"]
+[ext_resource type="PackedScene" uid="uid://c2o7nbjiovkd6" path="res://scenes_scripts/game/objects/solid/moving/vertical_door.tscn" id="3_awa6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(44, 363)
+
+[node name="VerticalDoor" type="Node2D" unique_id=1783807455]
+
+[node name="VerticalLongPlank" type="Sprite2D" parent="." unique_id=1647565064]
+position = Vector2(45, -44)
+rotation = -0.43633235
+scale = Vector2(0.99999994, 1.0999999)
+texture = ExtResource("1_osblg")
+
+[node name="VerticalLongPlank2" type="Sprite2D" parent="." unique_id=1693864056]
+position = Vector2(-115, -44)
+rotation = 0.43633235
+scale = Vector2(0.99999994, 1.0999999)
+texture = ExtResource("1_osblg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=88766161]
+position = Vector2(-28, -192)
+collision_layer = 2
+collision_mask = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=980076930]
+show_behind_parent = true
+texture = ExtResource("2_eelki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1385952502]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="VerticalDoor" parent="." unique_id=500907697 instance=ExtResource("3_awa6a")]

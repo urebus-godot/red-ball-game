@@ -1,20 +1,21 @@
 class_name Emeraldium extends Artefact
 
 const VELOCITY_MULTIPLIER: float = 1.8
-const JUMP_FORCE_MULTIPLIER: float = 1
+const JUMP_IMPULSE_MULTIPLIER: float = 2
 
 var change_velocity: bool = true
-var change_jump_force: bool = true
+var change_jump_impulse: bool = true
 
 
-func activate_artifact() -> void:
+func activate_artefact() -> void:
+	print(change_velocity, change_jump_impulse)
 	if change_velocity:
 		player.set_velocity_mult(VELOCITY_MULTIPLIER)
 
-	if change_jump_force:
-		player.set_jump_impulse_mult(JUMP_FORCE_MULTIPLIER)
+	if change_jump_impulse:
+		player.set_jump_impulse_mult(JUMP_IMPULSE_MULTIPLIER)
 
 
-func deactivate_artifact() -> void:
+func deactivate_artefact() -> void:
 	player.set_velocity_mult(1)
 	player.set_jump_impulse_mult(1)

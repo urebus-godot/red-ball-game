@@ -16,10 +16,6 @@ var artefacts_parent: Node = null
 var ui_layer: GameUILayer = null
 
 
-func use_artefact() -> void:
-	pass
-
-
 func activate_artefact() -> void:
 	activated = true
 	prints("Activated artefact!", activated)

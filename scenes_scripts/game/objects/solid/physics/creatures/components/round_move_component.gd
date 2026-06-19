@@ -3,7 +3,7 @@ class_name RoundMoveComponent extends MoveComponent
 #signal enter_floor
 
 const HOLD_JUMP_TIME: float = 0.16
-const FORCE_IN_AIR_MULTIPLIER: float = 0.003
+const FORCE_IN_AIR_MULTIPLIER: float = 0.005
 
 @export var torque: float = 45000.0
 @export var max_velocity: float = 800.0

@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://c2o7nbjiovkd6"]
 
 [ext_resource type="Script" uid="uid://j60xmtum5a5b" path="res://scenes_scripts/game/objects/solid/moving/moving_activated_object.gd" id="1_877tp"]
+[ext_resource type="Texture2D" uid="uid://dwd40jloo6vlk" path="res://resources/textures/game/objects/solids/moving/vertical_wooden_door.png" id="2_xu05b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(64, 320)
+size = Vector2(42, 253)
 
 [node name="VerticalDoor" type="StaticBody2D" unique_id=500907697]
+collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_877tp")
+goal_offset = Vector2(0, -240)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=638629380]
+texture = ExtResource("2_xu05b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=921585055]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_g4v7s")

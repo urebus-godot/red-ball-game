@@ -49,6 +49,10 @@ _data = {
 
 [node name="Emeraldium" type="Node2D" unique_id=1019438090]
 script = ExtResource("1_b7dpg")
+arguments = Dictionary[String, Variant]({
+"change_jump_impulse": true,
+"change_velocity": true
+})
 
 [node name="Area" type="Area2D" parent="." unique_id=1458351955 node_paths=PackedStringArray("root_node", "pickable_component")]
 collision_layer = 0

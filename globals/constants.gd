@@ -10,7 +10,7 @@ const VALLEY_LEVEL_PATH: String = "res://scenes_scripts/game/levels/valley/level
 
 ## ----- Object scenes path ------
 const ARTEFACT_PATH: String = "res://scenes_scripts/game/objects/artefacts/%s/%s.tscn"
-const PICKABLE_ARTEFACT_PATH: String = "res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_%s.tscn"
+const PICKABLE_ARTEFACT_PATH: String = "res://scenes_scripts/game/objects/interactive/pickable/artefacts/%s/pickable_%s.tscn"
 
 
 ## ----- UI tween config ------

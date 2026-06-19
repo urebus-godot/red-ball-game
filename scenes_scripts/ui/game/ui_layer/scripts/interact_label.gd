@@ -1,8 +1,9 @@
 extends Label
 
 const TWEEN_DURATION: float = 0.25
-const START_POSITION: Vector2 = Vector2(960, 955)
-const GOAL_POSITION: Vector2 = Vector2(552, 887)
+
+var START_POSITION: Vector2 = Vector2(960, 955)
+var GOAL_POSITION: Vector2
 
 var interact_key = SettingsDataManager.key_binding_settings["interact"]
 var interact_text: String = "Press %s key to interact with %s"
@@ -34,3 +35,7 @@ func hide_label() -> void:
 
 	var scale_tween = create_tween()
 	scale_tween.tween_property(self, "scale", Vector2.ZERO, TWEEN_DURATION)
+
+
+func _ready() -> void:
+	GOAL_POSITION = position

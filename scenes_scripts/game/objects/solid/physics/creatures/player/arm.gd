@@ -1,12 +1,13 @@
 extends Node2D
 
-const MAX_HIT_CHARGE: float = 2.25
-const HIT_FORCE: float = 500
+const MAX_HIT_CHARGE: float = 2
+const HIT_FORCE: float = 700
 
 @export var player: Player
 @export var life_component: LifeComponent
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var arm_animation_player: AnimationPlayer = $ArmAnimationPlayer
+@onready var pulse_animation_player: AnimationPlayer = $PulseAnimationPlayer
 
 var hits_enabled: bool = true
 var is_holding_hit: bool = false
@@ -20,12 +21,11 @@ var hit_charge: float = 0.0
 func hit() -> void:
 	rotating = false
 	is_holding_hit = false
-	animation_player.play("hit")
+	arm_animation_player.play("hit")
 	is_hitting = true
 
-	await animation_player.animation_finished
+	await arm_animation_player.animation_finished
 
-	animation_player.play("RESET")
 	is_hitting = false
 	can_charge_hit = true
 	hit_charge = 0.0
@@ -53,7 +53,7 @@ func accumulate_hit_charge(delta: float) -> void:
 	if is_holding_hit and can_charge_hit:
 		hit_charge += delta * 1.5
 		if hit_charge > MAX_HIT_CHARGE:
-			animation_player.play("charged")
+			pulse_animation_player.play("charged")
 			can_charge_hit = false
 
 

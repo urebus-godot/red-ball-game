@@ -85,6 +85,7 @@ func set_topaz_label_value(value: int) -> void:
 
 
 func _ready() -> void:
+	interact_label.hide_label()
 	pause_menu.visible = false
 	finish_menu.visible = false
 	lost_menu.visible = false
@@ -113,6 +114,8 @@ func _on_level_finished(score: int, time_s: float) -> void:
 
 
 func _on_player_died() -> void:
+	is_ui_free = false
+
 	await get_tree().create_timer(2.5).timeout
 
 	show_ui()
@@ -130,8 +133,7 @@ func _on_options_button_pressed() -> void:
 		is_ui_free = false
 
 func _on_restart_button_pressed() -> void:
-	if is_ui_free:
-		restart_level()
+	restart_level()
 
 func _on_quit_button_pressed() -> void:
 	if is_ui_free:

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_toi6c"]
 [ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="2_1msal"]
 [ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/solid/physics/crate.tscn" id="2_22aib"]
-[ext_resource type="PackedScene" uid="uid://3hroom7g8eq4" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/pickable_emeraldium.tscn" id="2_ymq5g"]
+[ext_resource type="PackedScene" uid="uid://3hroom7g8eq4" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/emeraldium/pickable_emeraldium.tscn" id="2_ymq5g"]
 [ext_resource type="PackedScene" uid="uid://hf4hp71cg2ya" path="res://scenes_scripts/game/objects/areas/water.tscn" id="3_3rpgq"]
 [ext_resource type="PackedScene" uid="uid://bg48lxeeip6cc" path="res://scenes_scripts/game/objects/areas/activate_area.tscn" id="3_150px"]
 [ext_resource type="PackedScene" uid="uid://bvcpab838u2eo" path="res://scenes_scripts/game/objects/ui_elements/hint_label.tscn" id="5_3rpgq"]
@@ -12,9 +12,9 @@
 [sub_resource type="Curve2D" id="Curve2D_toi6c"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 832, 64, 0, 0, 0, 0, 1328, 40, 0, 0, 0, 0, 1552, 0, 0, 0, 0, 0, 1792, -56, 0, 0, 0, 0, 1952, -120, 0, 0, 0, 0, 2104, -192, 0, 0, 0, 0, 2312, -272, 0, 0, 0, 0, 2424, -296, 0, 0, 0, 0, 2704, -336, 0, 0, 0, 0, 2912, -344, 0, 0, 0, 0, 3136, -296, 0, 0, 0, 0, 3216, -248, 0, 0, 0, 0, 3296, -208, 0, 0, 0, 0, 3440, -160, 0, 0, 0, 0, 3536, -152, 0, 0, 0, 0, 3704, -184, 0, 0, 0, 0, 3944, -264, 0, 0, 0, 0, 4056, -312, 0, 0, 0, 0, 4200, -336, 0, 0, 0, 0, 4472, -336, 0, 0, 0, 0, 4584, -320, 0, 0, 0, 0, 4760, -248, 0, 0, 0, 0, 4848, -184, 0, 0, 0, 0, 4976, -112, 0, 0, 0, 0, 5144, -56, 0, 0, 0, 0, 5240, -32, 0, 0, 0, 0, 5344, -8, 0, 0, 0, 0, 5504, 0, 0, 0, 0, 0, 5752, -16, 0, 0, 0, 0, 6072, -48, 0, 0, 0, 0, 6392, -72, 0, 0, 0, 0, 6720, -72, 0, 0, 0, 0, 6832, -96, 0, 0, 0, 0, 6856, -144, 0, 0, 0, 0, 6872, -216, 0, 0, 0, 0, 6896, -264, 0, 0, 0, 0, 6944, -288, 0, 0, 0, 0, 7016, -296, 0, 0, 0, 0, 7200, -312, 0, 0, 0, 0, 7376, -312, 0, 0, 0, 0, 7560, -304, 0, 0, 0, 0, 7720, -320, 0, 0, 0, 0, 7896, -336, 0, 0, 0, 0, 8040, -320, 0, 0, 0, 0, 8384, -328, 0, 0, 0, 0, 8704, -312, 0, 0, 0, 0, 8752, -288, 0, 0, 0, 0, 8776, -120, 0, 0, 0, 0, 8864, -40, 0, 0, 0, 0, 9032, -16, 0, 0, 0, 0, 9184, -16, 0, 0, 0, 0, 9312, -64, 0, 0, 0, 0, 9344, -144, 0, 0, 0, 0, 9360, -216, 0, 0, 0, 0, 9392, -288, 0, 0, 0, 0, 9448, -304, 0, 0, 0, 0, 9560, -304, 0, 0, 0, 0, 9680, -296, 0, 0, 0, 0, 9840, -312, 0, 0, 0, 0, 9952, -296, 0, 0, 0, 0, 10264, -304, 0, 0, 0, 0, 10512, -288, 0, 0, 0, 0, 10896, -280, 0, 0, 0, 0, 11104, -224, 0, 0, 0, 0, 11576, -192, 0, 0, 0, 0, 12288, -184, 0, 0, 0, 0, 12568, -192, 0, 0, 0, 0, 12600, -224, 0, 0, 0, 0, 12632, -336, 0, 0, 0, 0, 12624, -424, 0, 0, 0, 0, 12656, -544, 0, 0, 0, 0, 12816, -584, 0, 0, 0, 0, 13088, -592, 0, 0, 0, 0, 13496, -568, 0, 0, 0, 0, 14112, -432, 0, 0, 0, 0, 14744, -352, 0, 0, 0, 0, 15496, -296, 0, 0, 0, 0, 16152, -344, 0, 0, 0, 0, 16496, -408, 0, 0, 0, 0, 16640, -392, 0, 0, 0, 0, 16792, -280, 0, 0, 0, 0, 17120, -232, 0, 0, 0, 0, 17392, -184, 0, 0, 0, 0, 17568, -176, 0, 0, 0, 0, 17968, -200, 0, 0, 0, 0, 18448, -184, 0, 0, 0, 0, 18752, -192, 0, 0, 0, 0, 18904, -224, 0, 0, 0, 0, 19296, -272, 0, 0, 0, 0, 19768, -232, 0, 0, 0, 0, 20448, -232, 0, 0, 0, 0, 20696, -272, 0, 0, 0, 0, 20840, -320, 0, 0, 0, 0, 20912, -424, 0, 0, 0, 0, 20960, -544, 0, 0, 0, 0, 20984, -720, 0, 0, 0, 0, 20952, -936, 0, 0, 0, 0, 21040, -1016, 0, 0, 0, 0, 21232, -1064, 0, 0, 0, 0, 22080, -1064, 0, 0, 0, 0, 22464, -1104, 0, 0, 0, 0, 22864, -1280, 0, 0, 0, 0, 23096, -3640, 0, 0, 0, 0, 24000, -3648, 0, 0, 0, 0, 24128, -1160, 0, 0, 0, 0, 23392, 1088, 0, 0, 0, 0, -2488, 1128, 0, 0, 0, 0, -1768, -1960, 0, 0, 0, 0, -1464, -1928, 0, 0, 0, 0, -1296, -408, 0, 0, 0, 0, -1216, -32, 0, 0, 0, 0, -1136, 64, 0, 0, 0, 0, 832, 64)
+"points": PackedVector2Array(0, 0, 0, 0, 832, 64, 0, 0, 0, 0, 1328, 40, 0, 0, 0, 0, 1552, 0, 0, 0, 0, 0, 1792, -56, 0, 0, 0, 0, 1952, -120, 0, 0, 0, 0, 2104, -192, 0, 0, 0, 0, 2312, -272, 0, 0, 0, 0, 2424, -296, 0, 0, 0, 0, 2704, -336, 0, 0, 0, 0, 2912, -344, 0, 0, 0, 0, 3136, -296, 0, 0, 0, 0, 3216, -248, 0, 0, 0, 0, 3296, -208, 0, 0, 0, 0, 3440, -160, 0, 0, 0, 0, 3536, -152, 0, 0, 0, 0, 3704, -184, 0, 0, 0, 0, 3944, -264, 0, 0, 0, 0, 4056, -312, 0, 0, 0, 0, 4200, -336, 0, 0, 0, 0, 4472, -336, 0, 0, 0, 0, 4584, -320, 0, 0, 0, 0, 4760, -248, 0, 0, 0, 0, 4848, -184, 0, 0, 0, 0, 4976, -112, 0, 0, 0, 0, 5144, -56, 0, 0, 0, 0, 5240, -32, 0, 0, 0, 0, 5344, -8, 0, 0, 0, 0, 5504, 0, 0, 0, 0, 0, 5752, -16, 0, 0, 0, 0, 6072, -48, 0, 0, 0, 0, 6392, -72, 0, 0, 0, 0, 6720, -72, 0, 0, 0, 0, 6832, -96, 0, 0, 0, 0, 6856, -144, 0, 0, 0, 0, 6872, -216, 0, 0, 0, 0, 6896, -264, 0, 0, 0, 0, 6944, -288, 0, 0, 0, 0, 7016, -296, 0, 0, 0, 0, 7200, -312, 0, 0, 0, 0, 7376, -312, 0, 0, 0, 0, 7560, -304, 0, 0, 0, 0, 7720, -320, 0, 0, 0, 0, 7896, -336, 0, 0, 0, 0, 8040, -320, 0, 0, 0, 0, 8384, -328, 0, 0, 0, 0, 8704, -312, 0, 0, 0, 0, 8752, -288, 0, 0, 0, 0, 8776, -120, 0, 0, 0, 0, 8864, -40, 0, 0, 0, 0, 9032, -16, 0, 0, 0, 0, 9184, -16, 0, 0, 0, 0, 9312, -64, 0, 0, 0, 0, 9344, -144, 0, 0, 0, 0, 9360, -216, 0, 0, 0, 0, 9392, -288, 0, 0, 0, 0, 9448, -304, 0, 0, 0, 0, 9560, -304, 0, 0, 0, 0, 9680, -296, 0, 0, 0, 0, 9840, -312, 0, 0, 0, 0, 9952, -296, 0, 0, 0, 0, 10264, -304, 0, 0, 0, 0, 10512, -288, 0, 0, 0, 0, 10896, -280, 0, 0, 0, 0, 11104, -224, 0, 0, 0, 0, 11576, -192, 0, 0, 0, 0, 12288, -184, 0, 0, 0, 0, 12568, -192, 0, 0, 0, 0, 12600, -224, 0, 0, 0, 0, 12632, -336, 0, 0, 0, 0, 12624, -424, 0, 0, 0, 0, 12656, -544, 0, 0, 0, 0, 12816, -584, 0, 0, 0, 0, 13088, -592, 0, 0, 0, 0, 13496, -568, 0, 0, 0, 0, 14112, -432, 0, 0, 0, 0, 14744, -352, 0, 0, 0, 0, 15496, -296, 0, 0, 0, 0, 16152, -344, 0, 0, 0, 0, 16496, -408, 0, 0, 0, 0, 16640, -392, 0, 0, 0, 0, 16792, -280, 0, 0, 0, 0, 17120, -232, 0, 0, 0, 0, 17392, -184, 0, 0, 0, 0, 17568, -176, 0, 0, 0, 0, 17968, -200, 0, 0, 0, 0, 18448, -184, 0, 0, 0, 0, 18752, -192, 0, 0, 0, 0, 18904, -224, 0, 0, 0, 0, 19296, -272, 0, 0, 0, 0, 19768, -232, 0, 0, 0, 0, 20448, -232, 0, 0, 0, 0, 20696, -272, 0, 0, 0, 0, 20840, -320, 0, 0, 0, 0, 20912, -424, 0, 0, 0, 0, 20960, -544, 0, 0, 0, 0, 20984, -720, 0, 0, 0, 0, 20952, -936, 0, 0, 0, 0, 21040, -1016, 0, 0, 0, 0, 21232, -1064, 0, 0, 0, 0, 22080, -1064, 0, 0, 0, 0, 22464, -1104, 0, 0, 0, 0, 22864, -1280, 0, 0, 0, 0, 23096, -3640, 0, 0, 0, 0, 24000, -3648, 0, 0, 0, 0, 24000, 1088, 0, 0, 0, 0, -2488, 1128, 0, 0, 0, 0, -1768, -1960, 0, 0, 0, 0, -1464, -1928, 0, 0, 0, 0, -1296, -408, 0, 0, 0, 0, -1216, -32, 0, 0, 0, 0, -1136, 64, 0, 0, 0, 0, 832, 64)
 }
-point_count = 113
+point_count = 112
 
 [node name="Level1" unique_id=165616865 instance=ExtResource("1_toi6c")]
 
@@ -47,6 +47,10 @@ offset_bottom = 704.0
 position = Vector2(20128, 2064)
 artefacts_parent = NodePath("..")
 ui_layer = NodePath("../../../UILayer")
+arguments = Dictionary[String, Variant]({
+"change_jump_impulse": false,
+"change_velocity": true
+})
 
 [node name="Topaz" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="0" unique_id=67941054 instance=ExtResource("5_os8xl")]
 position = Vector2(2888, 1752)
@@ -111,13 +115,15 @@ position = Vector2(19176, 1320)
 [node name="Topaz21" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="20" unique_id=1350353557 instance=ExtResource("5_os8xl")]
 position = Vector2(19288, 1448)
 
+[node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
+position = Vector2(7904, 1896)
+
 [node name="Water" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("3_3rpgq")]
 position = Vector2(8552, 1984)
 
 [node name="WaterTexture" parent="Objects/Environment/Waters/Water" index="0" unique_id=1796776943]
-offset_top = -8.0
 offset_right = 1056.0
-offset_bottom = 408.0
+offset_bottom = 416.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ActivateArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=1594849188 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("3_150px")]
@@ -136,7 +142,7 @@ position = Vector2(2360, 0)
 objects_to_activate = [NodePath("../../Labels/HintLabel4")]
 
 [node name="ActivateArea5" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="4" unique_id=943177085 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("3_150px")]
-position = Vector2(11640, 0)
+position = Vector2(11520, 0)
 objects_to_activate = [NodePath("../../Labels/HintLabel5")]
 
 [node name="ActivateArea6" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="5" unique_id=1710759904 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("3_150px")]
@@ -214,7 +220,7 @@ activation_delay = 0.5
 [node name="HintLabel" parent="Labels/HintLabel7" index="0" unique_id=514289046]
 offset_right = 800.0
 offset_bottom = 352.0
-text = "This one is called \"Emeraldium\". Pick it up with [b]E[/b]. Hold [b]Shift[/b] to use it"
+text = "This one is called \"Emeraldium\". Pick it up with [b]E[/b]. Hold [b]Shift[/b] to get swifty"
 metadata/_edit_use_anchors_ = true
 
 [node name="Terrain" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="0" unique_id=912310611]

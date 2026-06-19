@@ -1,6 +1,6 @@
 extends Node2D
 
-const COLLISION_OFFSET: Vector2 = Vector2(0, 145)
+const COLLISION_OFFSET: Vector2 = Vector2(0, 160)
 
 @onready var water_area: Area2D = $WaterArea
 @onready var collision_shape: CollisionShape2D = $WaterArea/CollisionShape

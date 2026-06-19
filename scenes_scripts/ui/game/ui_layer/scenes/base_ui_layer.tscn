@@ -7,7 +7,21 @@
 [node name="BaseUiLayer" type="CanvasLayer" unique_id=761276224]
 script = ExtResource("1_8j2oi")
 
-[node name="InteractLabel" parent="." unique_id=1502365372 instance=ExtResource("2_rwkwa")]
+[node name="Root" type="Control" parent="." unique_id=16638864]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="DebugPanel" parent="." unique_id=1567030277 instance=ExtResource("3_ql2rl")]
+[node name="InteractLabel" parent="Root" unique_id=1502365372 instance=ExtResource("2_rwkwa")]
+layout_mode = 1
+
+[node name="DebugPanel" parent="Root" unique_id=1567030277 instance=ExtResource("3_ql2rl")]
 visible = false
+layout_mode = 1
+offset_left = -500.0
+offset_top = -400.0
+offset_right = 500.0
+offset_bottom = 400.0

@@ -1,6 +1,6 @@
 class_name PickableArtefact extends InteractiveObject
 
-@export var root_node: Node2D = get_parent()
+@export var root_node: PickableArtefactRoot = get_parent()
 @export var pickable_component: PickableComponent
 
 @export var artifact_texture: Texture2D
@@ -21,10 +21,10 @@ var collected: bool = false
 func spawn_equipped_artefact() -> Artefact:
 	var artefact_scene = load(Constants.ARTEFACT_PATH % [artefact_name, artefact_name])
 	var artefact: Artefact = artefact_scene.instantiate()
-
+#
 	if artefact_name == Constants.EMERALDIUM:
-		artefact.change_velocity = root_node.change_velocity
-		artefact.change_jump_force = root_node.change_jump_force
+		artefact.change_velocity = root_node.arguments["change_velocity"]
+		artefact.change_jump_impulse = root_node.arguments["change_jump_impulse"]
 
 	artefact.artefacts_parent = artefacts_parent
 	artefact.ui_layer = ui_layer
@@ -35,7 +35,7 @@ func spawn_equipped_artefact() -> Artefact:
 
 func equip_artefact() -> void:
 	if player.equipped_artefact:
-		General.spawn_pickable_artefact(player, artefacts_parent, ui_layer)
+		General.spawn_pickable_artefact(player, artefacts_parent, ui_layer, root_node.arguments)
 
 	var artefact = spawn_equipped_artefact()
 	player.equipped_artefact = artefact

@@ -50,10 +50,12 @@ func enable_arm(state: bool, full_disable: bool = false) -> void:
 
 func set_velocity_mult(multiplier: float) -> void:
 	move_component.velocity_multiplier = multiplier
+	print("move_component.velocity_multiplier=", multiplier)
 
 
 func set_jump_impulse_mult(multiplier: float) -> void:
 	move_component.jump_impulse_multiplier = multiplier
+	print("move_component.velocity_multiplier=", multiplier)
 
 
 func match_action_for_interactive_object_class() -> void:
@@ -120,5 +122,4 @@ func _on_level_finished(score: int, time_s: float) -> void:
 
 func _on_creature_died() -> void:
 	super._on_creature_died()
-	move_component.movement_enabled = false
-	enable_arm(false)
+	control_enabled = false
