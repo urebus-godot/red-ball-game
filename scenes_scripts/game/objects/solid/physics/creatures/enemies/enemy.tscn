@@ -5,12 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://b8nqr465lb6tm" path="res://resources/textures/game/objects/creatures/enemies/enemy_ball_face.png" id="3_kf05e"]
 [ext_resource type="PackedScene" uid="uid://div3il4uqi" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/round_move_component.tscn" id="4_yt0kc"]
 [ext_resource type="PackedScene" uid="uid://b0nqlbik4blvl" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/patrol_component.tscn" id="5_yt0kc"]
-[ext_resource type="Script" uid="uid://i2xnsu4phyal" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/contact_hit_component.gd" id="6_fouky"]
+[ext_resource type="PackedScene" uid="uid://cwof328t1wdrx" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/contact_hit_component.tscn" id="6_ajqo1"]
+[ext_resource type="PackedScene" uid="uid://cuvweqers0sq8" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/pressure_component.tscn" id="7_i7k8a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kf05e"]
 radius = 54.0
 
 [node name="Enemy" unique_id=840999448 instance=ExtResource("1_8g7r8")]
+max_contacts_reported = 3
 
 [node name="Sprite" parent="." index="0" unique_id=188382244]
 rotation = 0.00451909
@@ -38,6 +40,9 @@ move_component = NodePath("../RoundMoveComponent")
 creature = NodePath("..")
 jumping = true
 
-[node name="ContactHitComponent" type="Node" parent="." index="8" unique_id=1690736663 node_paths=PackedStringArray("enemy")]
-script = ExtResource("6_fouky")
+[node name="ContactHitComponent" parent="." index="8" unique_id=1021795918 node_paths=PackedStringArray("enemy") instance=ExtResource("6_ajqo1")]
 enemy = NodePath("..")
+
+[node name="PressureComponent" parent="." index="9" unique_id=1710028415 node_paths=PackedStringArray("life_component", "target") instance=ExtResource("7_i7k8a")]
+life_component = NodePath("../LifeComponent")
+target = NodePath("..")

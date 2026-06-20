@@ -51,10 +51,6 @@ offset_bottom = 704.0
 position = Vector2(20128, 2064)
 artefacts_parent = NodePath("..")
 ui_layer = NodePath("../../../UILayer")
-arguments = Dictionary[String, Variant]({
-"change_jump_impulse": false,
-"change_velocity": true
-})
 
 [node name="Topaz" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="0" unique_id=67941054 instance=ExtResource("5_os8xl")]
 position = Vector2(2888, 1752)
@@ -235,7 +231,7 @@ activation_delay = 0.5
 [node name="HintLabel" parent="Labels/HintLabel7" index="0" unique_id=514289046]
 offset_right = 800.0
 offset_bottom = 352.0
-text = "This one is called \"Emeraldium\". Pick it up with [b]E[/b]. Hold [b]Shift[/b] to get swifty"
+text = "This one is called \"Emeraldium\". Pick it up and hold [b]Shift[/b] to get swifty"
 metadata/_edit_use_anchors_ = true
 
 [node name="WorldBounds" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="0" unique_id=1234016570]

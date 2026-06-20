@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cwof328t1wdrx"]
+
+[ext_resource type="Script" uid="uid://i2xnsu4phyal" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/contact_hit_component.gd" id="1_6b07d"]
+
+[node name="ContactHitComponent" type="Node" unique_id=1021795918 node_paths=PackedStringArray("enemy")]
+script = ExtResource("1_6b07d")
+enemy = NodePath("")

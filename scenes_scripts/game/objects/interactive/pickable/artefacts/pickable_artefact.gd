@@ -3,7 +3,7 @@ class_name PickableArtefact extends InteractiveObject
 @export var root_node: PickableArtefactRoot = get_parent()
 @export var pickable_component: PickableComponent
 
-@export var artifact_texture: Texture2D
+@export var artefact_texture: Texture2D
 
 @export_enum(
 	Constants.SAPPHIRIUM, 
@@ -16,7 +16,6 @@ var artefacts_parent: Node = null
 var ui_layer: GameUILayer = null
 
 var collected: bool = false
-var charged: bool = true
 
 
 func spawn_equipped_artefact() -> Artefact:
@@ -27,7 +26,7 @@ func spawn_equipped_artefact() -> Artefact:
 		artefact.change_velocity = root_node.arguments["change_velocity"]
 		artefact.change_jump_impulse = root_node.arguments["change_jump_impulse"]
 
-	artefact.charged = charged
+	artefact.charged = root_node.charged
 	artefact.artefacts_parent = artefacts_parent
 	artefact.ui_layer = ui_layer
 	artefact.player = player

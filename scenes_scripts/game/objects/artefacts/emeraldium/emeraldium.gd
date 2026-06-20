@@ -8,7 +8,8 @@ var change_jump_impulse: bool = true
 
 
 func activate_artefact() -> void:
-	print(change_velocity, change_jump_impulse)
+	if not charged: return
+
 	if change_velocity:
 		player.set_velocity_mult(VELOCITY_MULTIPLIER)
 

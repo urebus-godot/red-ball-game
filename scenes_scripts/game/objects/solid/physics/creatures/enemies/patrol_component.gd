@@ -44,5 +44,5 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if creature.is_alive():
-		move()
 		pick_direction()
+		move()

@@ -60,7 +60,6 @@ func jump(delta: float = 0.0) -> void:
 	if movement_enabled and jump_enabled:
 		if is_on_floor():
 			var impulse = Vector2.UP * jump_impulse * jump_impulse_multiplier
-			print("Jump with impulse = ", impulse)
 			creature.apply_central_impulse(impulse)
 		elif time_to_jump > 0.0:
 			time_to_jump -= delta

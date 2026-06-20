@@ -59,7 +59,6 @@ collision_layer = 0
 script = ExtResource("2_teboj")
 root_node = NodePath("..")
 pickable_component = NodePath("../PickableComponent")
-artifact_texture = ExtResource("2_jtw0a")
 artefact_name = "emeraldium"
 showed_name = "Emeraldium"
 

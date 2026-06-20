@@ -157,8 +157,16 @@ func _on_options_menu_closed() -> void:
 
 func _on_artefact_equipped(object: PickableArtefact) -> void:
 	artefact_label.text = "Artefact equipped: " + object.showed_name
-	artefact_texture.texture = object.artifact_texture
+	artefact_texture.texture = object.artefact_texture
 
 func _on_artefact_unequipped(object: Artefact) -> void:
+	var tween = artefact_label.create_tween()
+	tween.tween_property(artefact_label, "modulate", Color("e39b00"), 0.3)
 	artefact_label.text = "No artefact is equipped"
 	artefact_texture.texture = null
+
+
+func _on_artefact_discharged(_body: Node2D) -> void:
+	var tween = artefact_label.create_tween()
+	tween.tween_property(artefact_label, "modulate", Color(0.76, 0.225, 0.02, 1.0), 0.3)
+	artefact_label.text = "Artefact is discharged. Throw it away!"

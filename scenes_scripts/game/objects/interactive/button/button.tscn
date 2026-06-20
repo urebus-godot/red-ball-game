@@ -27,7 +27,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_1o3bm"]
 resource_name = "press"
-length = 0.12000000000000001
+length = 0.12
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,8 +95,7 @@ collision_mask = 13
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_0myuq")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=288639147]
-position = Vector2(0, 35)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=288639147]
 polygon = PackedVector2Array(-61, 0, 60, 0, 43, -47, -43, -47)
 one_way_collision = true
 
