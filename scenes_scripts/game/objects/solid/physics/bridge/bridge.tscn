@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://ccvvmn8jckr20"]
+
+[ext_resource type="Script" uid="uid://df5sp0efvseng" path="res://scenes_scripts/game/objects/solid/physics/bridge/bridge.gd" id="1_ikfn4"]
+[ext_resource type="PackedScene" uid="uid://b2ranlok5hbc6" path="res://scenes_scripts/game/objects/solid/physics/wooden_platform_3_physics.tscn" id="2_xmkuy"]
+[ext_resource type="Script" uid="uid://bvw2ek400gv1w" path="res://scenes_scripts/game/objects/solid/physics/bridge/bridge_rope.gd" id="3_36nvl"]
+[ext_resource type="Texture2D" uid="uid://fn3xvaprwk0r" path="res://resources/textures/game/background/rope.png" id="3_xmkuy"]
+
+[node name="Bridge" type="Node2D" unique_id=703418078]
+script = ExtResource("1_ikfn4")
+
+[node name="AnchorLeft" type="RigidBody2D" parent="." unique_id=414838149]
+position = Vector2(88, -16)
+freeze = true
+
+[node name="PinJoint2D" type="PinJoint2D" parent="AnchorLeft" unique_id=784274445]
+node_a = NodePath("..")
+node_b = NodePath("../../Platforms/WoodenPlatform")
+bias = 0.15
+softness = 0.6
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1001787936]
+
+[node name="WoodenPlatform" parent="Platforms" unique_id=1204631892 instance=ExtResource("2_xmkuy")]
+position = Vector2(184, 8)
+mass = 0.2
+
+[node name="LeftPoint" type="Marker2D" parent="Platforms/WoodenPlatform" unique_id=1212317614]
+position = Vector2(-88, 0)
+
+[node name="RightPoint" type="Marker2D" parent="Platforms/WoodenPlatform" unique_id=873138673]
+position = Vector2(88, 0)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Platforms/WoodenPlatform" unique_id=634387869]
+position = Vector2(-128, -24)
+node_a = NodePath("..")
+node_b = NodePath("../../WoodenPlatform2")
+bias = 0.15
+softness = 0.6
+
+[node name="RopeLine" type="Line2D" parent="Platforms/WoodenPlatform" unique_id=640862940 node_paths=PackedStringArray("left_point", "right_point")]
+texture_repeat = 2
+position = Vector2(-184, -8)
+width = 64.0
+texture = ExtResource("3_xmkuy")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("3_36nvl")
+left_point = NodePath("../../../AnchorLeft")
+right_point = NodePath("../LeftPoint")
+
+[node name="WoodenPlatform2" parent="Platforms" unique_id=596041208 instance=ExtResource("2_xmkuy")]
+position = Vector2(480, 8)
+mass = 0.2
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Platforms/WoodenPlatform2" unique_id=1337033984]
+position = Vector2(-144, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../WoodenPlatform")
+bias = 0.15
+softness = 0.6
+
+[node name="LeftPoint" type="Marker2D" parent="Platforms/WoodenPlatform2" unique_id=505052775]
+position = Vector2(-88, 0)
+
+[node name="RightPoint" type="Marker2D" parent="Platforms/WoodenPlatform2" unique_id=262066577]
+position = Vector2(88, 0)
+
+[node name="RopeLine" type="Line2D" parent="Platforms/WoodenPlatform2" unique_id=1507342312 node_paths=PackedStringArray("left_point", "right_point")]
+texture_repeat = 2
+position = Vector2(-184, -8)
+width = 64.0
+texture = ExtResource("3_xmkuy")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("3_36nvl")
+left_point = NodePath("../../WoodenPlatform/RightPoint")
+right_point = NodePath("../LeftPoint")
+
+[node name="WoodenPlatform3" parent="Platforms" unique_id=1629613618 instance=ExtResource("2_xmkuy")]
+position = Vector2(792, 8)
+mass = 0.2
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Platforms/WoodenPlatform3" unique_id=1918839756]
+position = Vector2(-160, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../WoodenPlatform2")
+bias = 0.15
+softness = 0.6
+
+[node name="LeftPoint" type="Marker2D" parent="Platforms/WoodenPlatform3" unique_id=1373803346]
+position = Vector2(-88, 0)
+
+[node name="RightPoint" type="Marker2D" parent="Platforms/WoodenPlatform3" unique_id=534226936]
+position = Vector2(88, 0)
+
+[node name="RopeLine" type="Line2D" parent="Platforms/WoodenPlatform3" unique_id=1402101765 node_paths=PackedStringArray("left_point", "right_point")]
+texture_repeat = 2
+position = Vector2(-184, -8)
+width = 64.0
+texture = ExtResource("3_xmkuy")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("3_36nvl")
+left_point = NodePath("../../WoodenPlatform2/LeftPoint")
+right_point = NodePath("../LeftPoint")
+
+[node name="WoodenPlatform4" parent="Platforms" unique_id=224833108 instance=ExtResource("2_xmkuy")]
+position = Vector2(1096, 8)
+mass = 0.2
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Platforms/WoodenPlatform4" unique_id=1248962467]
+position = Vector2(-144, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../WoodenPlatform3")
+bias = 0.15
+softness = 0.6
+
+[node name="LeftPoint" type="Marker2D" parent="Platforms/WoodenPlatform4" unique_id=416355871]
+position = Vector2(-88, 0)
+
+[node name="RightPoint" type="Marker2D" parent="Platforms/WoodenPlatform4" unique_id=1325831063]
+position = Vector2(88, 0)
+
+[node name="RopeLine" type="Line2D" parent="Platforms/WoodenPlatform4" unique_id=1012307951 node_paths=PackedStringArray("left_point", "right_point")]
+texture_repeat = 2
+position = Vector2(-184, -8)
+width = 64.0
+texture = ExtResource("3_xmkuy")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("3_36nvl")
+left_point = NodePath("../../WoodenPlatform3/RightPoint")
+right_point = NodePath("../LeftPoint")
+
+[node name="WoodenPlatform5" parent="Platforms" unique_id=2132923594 instance=ExtResource("2_xmkuy")]
+position = Vector2(1408, 8)
+mass = 0.2
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Platforms/WoodenPlatform5" unique_id=894585653]
+position = Vector2(-152, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../WoodenPlatform4")
+bias = 0.15
+softness = 0.6
+
+[node name="LeftPoint" type="Marker2D" parent="Platforms/WoodenPlatform5" unique_id=757980246]
+position = Vector2(-88, 0)
+
+[node name="RightPoint" type="Marker2D" parent="Platforms/WoodenPlatform5" unique_id=1993622431]
+position = Vector2(88, 0)
+
+[node name="RopeLine" type="Line2D" parent="Platforms/WoodenPlatform5" unique_id=1154595043 node_paths=PackedStringArray("left_point", "right_point")]
+texture_repeat = 2
+position = Vector2(-184, -8)
+width = 64.0
+texture = ExtResource("3_xmkuy")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("3_36nvl")
+left_point = NodePath("../../WoodenPlatform4/RightPoint")
+right_point = NodePath("../LeftPoint")
+
+[node name="WoodenPlatform6" parent="Platforms" unique_id=1948898006 instance=ExtResource("2_xmkuy")]
+position = Vector2(1728, 8)
+mass = 0.2
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Platforms/WoodenPlatform6" unique_id=60983293]
+position = Vector2(-144, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../WoodenPlatform5")
+bias = 0.15
+softness = 0.6
+
+[node name="LeftPoint" type="Marker2D" parent="Platforms/WoodenPlatform6" unique_id=1017289489]
+position = Vector2(-88, 0)
+
+[node name="RightPoint" type="Marker2D" parent="Platforms/WoodenPlatform6" unique_id=2133163223]
+position = Vector2(88, 0)
+
+[node name="RopeLine" type="Line2D" parent="Platforms/WoodenPlatform6" unique_id=1315552608 node_paths=PackedStringArray("left_point", "right_point")]
+texture_repeat = 2
+position = Vector2(-184, -8)
+width = 64.0
+texture = ExtResource("3_xmkuy")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("3_36nvl")
+left_point = NodePath("../../WoodenPlatform5/RightPoint")
+right_point = NodePath("../LeftPoint")
+
+[node name="RopeLine" type="Line2D" parent="." unique_id=2137662637 node_paths=PackedStringArray("left_point", "right_point")]
+texture_repeat = 2
+position = Vector2(-184, -8)
+width = 64.0
+texture = ExtResource("3_xmkuy")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("3_36nvl")
+left_point = NodePath("../Platforms/WoodenPlatform6/RightPoint")
+right_point = NodePath("../AnchorRight")
+
+[node name="AnchorRight" type="RigidBody2D" parent="." unique_id=1045671885]
+position = Vector2(1856, -40)
+freeze = true
+
+[node name="PinJoint2D" type="PinJoint2D" parent="AnchorRight" unique_id=1386730428]
+node_a = NodePath("..")
+node_b = NodePath("../../Platforms/WoodenPlatform6")
+bias = 0.15
+softness = 0.6
+
+[node name="RopeLine2" type="Line2D" parent="." unique_id=1288851067]
+texture_repeat = 2
+position = Vector2(-184, -8)
+points = PackedVector2Array(792, -408, 696, -272, 1048, -128, 1232, -336, 992, -400)
+width = 64.0
+texture = ExtResource("3_xmkuy")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("3_36nvl")

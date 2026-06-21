@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_aofwt"]
 [ext_resource type="Texture2D" uid="uid://cnxqfwimyhmvb" path="res://resources/textures/game/background/beams.png" id="2_4yaav"]
 [ext_resource type="PackedScene" uid="uid://csivnkyhwr57k" path="res://scenes_scripts/game/objects/solid/physics/wooden_cart.tscn" id="2_7fywp"]
+[ext_resource type="Texture2D" uid="uid://dbhgxqoixgrjm" path="res://resources/textures/game/background/rails.png" id="2_hpjnu"]
 [ext_resource type="PackedScene" uid="uid://hf4hp71cg2ya" path="res://scenes_scripts/game/objects/areas/water.tscn" id="2_xmngp"]
+[ext_resource type="PackedScene" uid="uid://b5c6vtq65bvn0" path="res://scenes_scripts/game/objects/solid/physics/crate.tscn" id="3_5krn7"]
 [ext_resource type="PackedScene" uid="uid://dihika6hurnqc" path="res://scenes_scripts/game/objects/solid/static/wooden_platform_long.tscn" id="4_p4wat"]
 [ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="4_vlc5f"]
 [ext_resource type="PackedScene" uid="uid://cmj7l35tymp0l" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/enemy.tscn" id="5_db77o"]
@@ -11,19 +13,37 @@
 [ext_resource type="Texture2D" uid="uid://bnojwkme4e7l0" path="res://resources/textures/game/background/center_beam.png" id="6_vdqx1"]
 [ext_resource type="PackedScene" uid="uid://bwjboskfprx5a" path="res://scenes_scripts/game/objects/solid/moving/vertical_door_with_planks.tscn" id="7_ml64e"]
 [ext_resource type="PackedScene" uid="uid://s7a7m66jw12x" path="res://scenes_scripts/game/objects/interactive/button/button.tscn" id="8_kl6po"]
+[ext_resource type="PackedScene" uid="uid://d1ho4x2t2v73w" path="res://scenes_scripts/game/objects/solid/static/wooden_platform_2.tscn" id="10_yhmou"]
+[ext_resource type="PackedScene" uid="uid://dphtyw3r13q85" path="res://scenes_scripts/game/objects/solid/moving/rail_platform.tscn" id="11_4bgxc"]
+[ext_resource type="PackedScene" uid="uid://chl7n8hxfhdcy" path="res://scenes_scripts/game/objects/solid/physics/wooden_platform_long_physics.tscn" id="11_w2pju"]
+[ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="13_xk8dc"]
 
 [sub_resource type="Curve2D" id="Curve2D_kl6po"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1800, 264, 0, 0, 0, 0, -1416, 264, 0, 0, 0, 0, -1160, 2280, 0, 0, 0, 0, -1016, 2432, 0, 0, 0, 0, 1064, 2432, 0, 0, 0, 0, 1208, 2424, 0, 0, 0, 0, 1400, 2376, 0, 0, 0, 0, 1536, 2296, 0, 0, 0, 0, 1808, 2216, 0, 0, 0, 0, 2168, 2192, 0, 0, 0, 0, 2456, 2216, 0, 0, 0, 0, 2640, 2280, 0, 0, 0, 0, 2848, 2392, 0, 0, 0, 0, 3064, 2464, 0, 0, 0, 0, 3416, 2488, 0, 0, 0, 0, 3616, 2488, 0, 0, 0, 0, 3800, 2512, 0, 0, 0, 0, 4000, 2512, 0, 0, 0, 0, 4136, 2520, 0, 0, 0, 0, 4192, 2552, 0, 0, 0, 0, 4240, 2624, 0, 0, 0, 0, 4272, 2816, 0, 0, 0, 0, 4304, 2872, 0, 0, 0, 0, 4368, 2936, 0, 0, 0, 0, 4440, 2968, 0, 0, 0, 0, 4648, 2968, 0, 0, 0, 0, 4816, 2952, 0, 0, 0, 0, 5016, 2968, 0, 0, 0, 0, 5296, 2960, 0, 0, 0, 0, 5456, 2984, 0, 0, 0, 0, 5592, 2984, 0, 0, 0, 0, 5792, 2968, 0, 0, 0, 0, 5992, 2984, 0, 0, 0, 0, 6128, 2984, 0, 0, 0, 0, 6248, 2976, 0, 0, 0, 0, 6312, 2952, 0, 0, 0, 0, 6344, 2960, 0, 0, 0, 0, 6376, 2904, 0, 0, 0, 0, 6376, 2800, 0, 0, 0, 0, 6424, 2648, 0, 0, 0, 0, 6424, 2560, 0, 0, 0, 0, 6448, 2432, 0, 0, 0, 0, 6440, 2352, 0, 0, 0, 0, 6464, 2272, 0, 0, 0, 0, 6456, 2176, 0, 0, 0, 0, 6480, 2136, 0, 0, 0, 0, 6568, 2072, 0, 0, 0, 0, 6640, 2048, 0, 0, 0, 0, 7104, 2048, 0, 0, 0, 0, 7304, 2072, 0, 0, 0, 0, 7464, 2136, 0, 0, 0, 0, 7768, 2304, 0, 0, 0, 0, 8024, 2384, 0, 0, 0, 0, 8368, 2416, 0, 0, 0, 0, 8808, 2416, 0, 0, 0, 0, 8952, 2432, 0, 0, 0, 0, 9112, 2472, 0, 0, 0, 0, 9280, 2560, 0, 0, 0, 0, 9472, 2624, 0, 0, 0, 0, 9648, 2648, 0, 0, 0, 0, 10232, 2648, 0, 0, 0, 0, 10408, 2624, 0, 0, 0, 0, 10608, 2552, 0, 0, 0, 0, 10872, 2496, 0, 0, 0, 0, 11104, 2480, 0, 0, 0, 0, 11616, 2480, 0, 0, 0, 0, 13632, 2496, 0, 0, 0, 0, 13440, 3520, 0, 0, 0, 0, -1800, 3520, 0, 0, 0, 0, -1800, 264)
+"points": PackedVector2Array(0, 0, 0, 0, -1800, 264, 0, 0, 0, 0, -1416, 264, 0, 0, 0, 0, -1160, 2280, 0, 0, 0, 0, -1016, 2432, 0, 0, 0, 0, 1064, 2432, 0, 0, 0, 0, 1208, 2424, 0, 0, 0, 0, 1400, 2376, 0, 0, 0, 0, 1536, 2296, 0, 0, 0, 0, 1808, 2216, 0, 0, 0, 0, 2168, 2192, 0, 0, 0, 0, 2456, 2216, 0, 0, 0, 0, 2640, 2280, 0, 0, 0, 0, 2848, 2392, 0, 0, 0, 0, 3064, 2464, 0, 0, 0, 0, 3416, 2488, 0, 0, 0, 0, 3616, 2488, 0, 0, 0, 0, 3800, 2512, 0, 0, 0, 0, 4000, 2512, 0, 0, 0, 0, 4136, 2520, 0, 0, 0, 0, 4192, 2552, 0, 0, 0, 0, 4240, 2624, 0, 0, 0, 0, 4272, 2816, 0, 0, 0, 0, 4304, 2872, 0, 0, 0, 0, 4368, 2936, 0, 0, 0, 0, 4440, 2968, 0, 0, 0, 0, 4648, 2968, 0, 0, 0, 0, 4816, 2952, 0, 0, 0, 0, 5016, 2968, 0, 0, 0, 0, 5296, 2960, 0, 0, 0, 0, 5456, 2984, 0, 0, 0, 0, 5592, 2984, 0, 0, 0, 0, 5792, 2968, 0, 0, 0, 0, 5992, 2984, 0, 0, 0, 0, 6128, 2984, 0, 0, 0, 0, 6248, 2976, 0, 0, 0, 0, 6312, 2952, 0, 0, 0, 0, 6344, 2960, 0, 0, 0, 0, 6376, 2904, 0, 0, 0, 0, 6376, 2800, 0, 0, 0, 0, 6424, 2648, 0, 0, 0, 0, 6424, 2560, 0, 0, 0, 0, 6448, 2432, 0, 0, 0, 0, 6440, 2352, 0, 0, 0, 0, 6464, 2272, 0, 0, 0, 0, 6456, 2176, 0, 0, 0, 0, 6480, 2136, 0, 0, 0, 0, 6568, 2072, 0, 0, 0, 0, 6640, 2048, 0, 0, 0, 0, 7104, 2048, 0, 0, 0, 0, 7304, 2072, 0, 0, 0, 0, 7464, 2136, 0, 0, 0, 0, 7768, 2304, 0, 0, 0, 0, 8024, 2384, 0, 0, 0, 0, 8368, 2416, 0, 0, 0, 0, 8808, 2416, 0, 0, 0, 0, 8952, 2432, 0, 0, 0, 0, 9112, 2472, 0, 0, 0, 0, 9280, 2560, 0, 0, 0, 0, 9456, 2616, 0, 0, 0, 0, 9616, 2632, 0, 0, 0, 0, 10312, 2632, 0, 0, 0, 0, 10488, 2616, 0, 0, 0, 0, 10688, 2552, 0, 0, 0, 0, 10960, 2496, 0, 0, 0, 0, 11128, 2480, 0, 0, 0, 0, 11552, 2480, 0, 0, 0, 0, 11640, 2464, 0, 0, 0, 0, 11680, 2440, 0, 0, 0, 0, 11696, 2400, 0, 0, 0, 0, 11696, 2032, 0, 0, 0, 0, 11720, 1976, 0, 0, 0, 0, 11776, 1944, 0, 0, 0, 0, 11888, 1928, 0, 0, 0, 0, 11992, 1928, 0, 0, 0, 0, 12112, 1936, 0, 0, 0, 0, 12256, 1976, 0, 0, 0, 0, 12424, 2064, 0, 0, 0, 0, 12512, 2088, 0, 0, 0, 0, 12920, 2088, 0, 0, 0, 0, 12968, 2080, 0, 0, 0, 0, 12984, 2056, 0, 0, 0, 0, 12984, 1888, 0, 0, 0, 0, 13008, 1872, 0, 0, 0, 0, 13288, 1872, 0, 0, 0, 0, 13312, 1888, 0, 0, 0, 0, 13312, 2040, 0, 0, 0, 0, 13328, 2072, 0, 0, 0, 0, 13368, 2088, 0, 0, 0, 0, 13616, 2088, 0, 0, 0, 0, 13648, 2080, 0, 0, 0, 0, 13672, 2056, 0, 0, 0, 0, 13672, 1760, 0, 0, 0, 0, 13712, 1728, 0, 0, 0, 0, 13952, 1728, 0, 0, 0, 0, 13984, 1760, 0, 0, 0, 0, 13984, 2048, 0, 0, 0, 0, 14008, 2072, 0, 0, 0, 0, 14048, 2088, 0, 0, 0, 0, 14272, 2088, 0, 0, 0, 0, 14312, 2080, 0, 0, 0, 0, 14336, 2048, 0, 0, 0, 0, 14336, 1608, 0, 0, 0, 0, 14368, 1584, 0, 0, 0, 0, 14640, 1584, 0, 0, 0, 0, 14672, 1608, 0, 0, 0, 0, 14672, 2032, 0, 0, 0, 0, 14688, 2064, 0, 0, 0, 0, 14744, 2088, 0, 0, 0, 0, 14776, 2120, 0, 0, 0, 0, 14784, 2368, 0, 0, 0, 0, 14808, 2424, 0, 0, 0, 0, 14856, 2480, 0, 0, 0, 0, 14944, 2512, 0, 0, 0, 0, 15560, 2512, 0, 0, 0, 0, 15600, 2496, 0, 0, 0, 0, 15632, 2440, 0, 0, 0, 0, 15632, 2264, 0, 0, 0, 0, 15656, 2168, 0, 0, 0, 0, 15728, 2104, 0, 0, 0, 0, 15856, 2064, 0, 0, 0, 0, 16032, 2064, 0, 0, 0, 0, 16176, 2040, 0, 0, 0, 0, 16304, 2000, 0, 0, 0, 0, 16480, 1920, 0, 0, 0, 0, 16616, 1880, 0, 0, 0, 0, 16808, 1864, 0, 0, 0, 0, 17040, 1864, 0, 0, 0, 0, 17248, 1880, 0, 0, 0, 0, 17312, 1904, 0, 0, 0, 0, 17368, 1960, 0, 0, 0, 0, 17376, 2024, 0, 0, 0, 0, 17392, 2160, 0, 0, 0, 0, 17376, 2240, 0, 0, 0, 0, 17392, 2328, 0, 0, 0, 0, 17416, 2432, 0, 0, 0, 0, 17416, 2504, 0, 0, 0, 0, 17392, 2584, 0, 0, 0, 0, 17392, 2632, 0, 0, 0, 0, 17440, 2768, 0, 0, 0, 0, 17440, 2840, 0, 0, 0, 0, 17408, 2904, 0, 0, 0, 0, 17416, 2936, 0, 0, 0, 0, 17472, 3000, 0, 0, 0, 0, 17464, 3072, 0, 0, 0, 0, 17504, 3184, 0, 0, 0, 0, 17480, 3256, 0, 0, 0, 0, 17520, 3288, 0, 0, 0, 0, 17544, 3328, 0, 0, 0, 0, 17552, 3376, 0, 0, 0, 0, 17512, 3456, 0, 0, 0, 0, 17520, 3520, 0, 0, 0, 0, -1800, 3520, 0, 0, 0, 0, -1800, 264)
 }
-point_count = 70
+point_count = 153
+
+[sub_resource type="Curve2D" id="Curve2D_xk8dc"]
+bake_interval = 512.0
 
 [node name="Level4" unique_id=165616865 instance=ExtResource("1_aofwt")]
 level = 4
 
+[node name="Rails" type="TextureRect" parent="Background" parent_id_path=PackedInt32Array(40735884) index="0" unique_id=423890601]
+offset_left = 17376.0
+offset_top = 2104.0
+offset_right = 18688.0
+offset_bottom = 2168.0
+texture = ExtResource("2_hpjnu")
+stretch_mode = 1
+
 [node name="WoodenCart" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="0" unique_id=829485499 instance=ExtResource("2_7fywp")]
-position = Vector2(11224, 2416)
+position = Vector2(11240, 2416)
+
+[node name="Crate" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="1" unique_id=840999448 instance=ExtResource("3_5krn7")]
+position = Vector2(9712, 2336)
 
 [node name="WoodenPlatform3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=735051929 instance=ExtResource("4_p4wat")]
 position = Vector2(5472, 2040)
@@ -147,10 +167,29 @@ position = Vector2(0, 16.000002)
 rotation = 0.20943952
 
 [node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="6" unique_id=598983119 instance=ExtResource("4_vlc5f")]
-position = Vector2(9904, 2432)
+position = Vector2(9704, 2432)
+
+[node name="WoodenPlatform5" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="7" unique_id=764590784 instance=ExtResource("10_yhmou")]
+position = Vector2(17384, 2312)
+scale = Vector2(-1, 1)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="8" unique_id=356410658]
+position = Vector2(18232, 2352)
+node_a = NodePath("WoodenPlatformLong")
+node_b = NodePath("JointPoint")
+bias = 0.5
+softness = 4.0
+
+[node name="JointPoint" type="StaticBody2D" parent="Objects/StaticSolids/PinJoint2D" index="0" unique_id=1223278163]
+
+[node name="WoodenPlatformLong" parent="Objects/StaticSolids/PinJoint2D" index="1" unique_id=1809067213 instance=ExtResource("11_w2pju")]
 
 [node name="VerticalDoor" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="0" unique_id=1783807455 instance=ExtResource("7_ml64e")]
 position = Vector2(6864, 1920)
+
+[node name="RailPlatform" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="1" unique_id=1992756843 instance=ExtResource("11_4bgxc")]
+position = Vector2(17540, 2058)
+pos_offset = Vector2(1068, 0)
 
 [node name="Button" parent="Objects/Buttons" parent_id_path=PackedInt32Array(969791430) index="0" unique_id=1165746887 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("8_kl6po")]
 position = Vector2(3984.0002, 2048.0002)
@@ -159,7 +198,7 @@ objects_to_activate = [NodePath("../../Moving/VerticalDoor/VerticalDoor")]
 deactivate_on_body_exit = false
 
 [node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
-position = Vector2(9696, 2528)
+position = Vector2(17048, 1736)
 
 [node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=1272539842 instance=ExtResource("5_db77o")]
 position = Vector2(5184, 2376)
@@ -185,6 +224,40 @@ left_x_bound = 4916.0
 right_x_bound = 5292.0
 jumping = false
 
+[node name="Enemy3" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="3" unique_id=594495464 instance=ExtResource("5_db77o")]
+position = Vector2(15080, 2432)
+collision_mask = 39
+
+[node name="PatrolComponent" parent="Objects/Creatures/Enemy3" index="7" unique_id=1282453717]
+left_x_bound = 15040.0
+right_x_bound = 15200.0
+
+[node name="Enemy4" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="4" unique_id=630295079 instance=ExtResource("5_db77o")]
+position = Vector2(15344, 2432)
+collision_mask = 39
+
+[node name="PatrolComponent" parent="Objects/Creatures/Enemy4" index="7" unique_id=1282453717]
+left_x_bound = 15040.0
+right_x_bound = 15200.0
+
+[node name="Enemy5" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="5" unique_id=1486784012 instance=ExtResource("5_db77o")]
+position = Vector2(15216, 2336)
+collision_mask = 39
+
+[node name="PatrolComponent" parent="Objects/Creatures/Enemy5" index="7" unique_id=1282453717]
+left_x_bound = 15040.0
+right_x_bound = 15200.0
+direction = -1
+
+[node name="Enemy6" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="6" unique_id=1842042092 instance=ExtResource("5_db77o")]
+position = Vector2(15472, 2336)
+collision_mask = 39
+
+[node name="PatrolComponent" parent="Objects/Creatures/Enemy6" index="7" unique_id=1282453717]
+left_x_bound = 15040.0
+right_x_bound = 15200.0
+direction = -1
+
 [node name="Water" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("2_xmngp")]
 position = Vector2(4160, 2432)
 
@@ -195,11 +268,23 @@ offset_bottom = 568.0
 [node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_kl6po")
 
+[node name="Terrain2" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="2" unique_id=912310611 instance=ExtResource("13_xk8dc")]
+z_index = 2
+position = Vector2(19064, 1936)
+
+[node name="Path2D" parent="GroundAndBoundaries/Terrain2" index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_xk8dc")
+
 [editable path="UILayer"]
 [editable path="Objects/StaticSolids/PlatformOnBeams"]
 [editable path="Objects/StaticSolids/PlatformOnBeams2"]
 [editable path="Objects/Moving/VerticalDoor"]
 [editable path="Objects/Creatures/Enemy"]
 [editable path="Objects/Creatures/Enemy2"]
+[editable path="Objects/Creatures/Enemy3"]
+[editable path="Objects/Creatures/Enemy4"]
+[editable path="Objects/Creatures/Enemy5"]
+[editable path="Objects/Creatures/Enemy6"]
 [editable path="Objects/Environment/Waters/Water"]
 [editable path="GroundAndBoundaries/Terrain"]
+[editable path="GroundAndBoundaries/Terrain2"]

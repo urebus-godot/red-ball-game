@@ -8,6 +8,7 @@ size = Vector2(194, 4)
 [node name="WoodenPlatform" type="RigidBody2D" unique_id=1204631892]
 collision_layer = 32
 collision_mask = 13
+mass = 0.75
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=482270404]
 texture = ExtResource("1_nsar7")

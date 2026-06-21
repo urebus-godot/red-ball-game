@@ -8,7 +8,7 @@ class_name PatrolComponent extends Node
 @export var jump_time: float = 2.2
 @export var jumping: bool = false
 
-var direction: Constants.Direction = Constants.Direction.RIGHT
+@export var direction: Constants.Direction = Constants.Direction.RIGHT
 
 
 func move() -> void:
@@ -44,5 +44,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if creature.is_alive():
-		pick_direction()
+		
 		move()
+		pick_direction()

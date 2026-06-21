@@ -336,6 +336,9 @@ position = Vector2(6648, 2496)
 [node name="Topaz3" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="26" unique_id=736787857 instance=ExtResource("13_uk6y0")]
 position = Vector2(6952, 2496)
 
+[node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
+position = Vector2(8256, 1696)
+
 [node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=144469295 instance=ExtResource("4_2wmbt")]
 position = Vector2(5392, 2496)
 collision_mask = 15
