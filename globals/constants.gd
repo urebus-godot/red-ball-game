@@ -32,5 +32,9 @@ const PLATFORMS_COLL_MASK_NUMBER: int = 6
 
 
 enum Direction {
-	LEFT = -1, CENTER = 0, RIGHT = 1
+	LEFT = -1, 
+	CENTER = 0, 
+	RIGHT = 1,
+	UP = 2,
+	DOWN = -2
 }

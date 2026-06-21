@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://csivnkyhwr57k"]
+
+[ext_resource type="PackedScene" uid="uid://fq8o1p1ihkkm" path="res://scenes_scripts/game/objects/solid/physics/physics_object.tscn" id="1_754xn"]
+[ext_resource type="Texture2D" uid="uid://bfyt7ptf0q1xr" path="res://resources/textures/game/objects/solids/static/wooden_platform_without_edges.png" id="1_fejb0"]
+[ext_resource type="Texture2D" uid="uid://cqxyjokjj15qh" path="res://resources/textures/game/objects/solids/static/wooden_platform.png" id="1_ja5gy"]
+[ext_resource type="Texture2D" uid="uid://b1enivr4yxs3n" path="res://resources/textures/game/objects/solids/static/wooden_platform_edge.png" id="2_ja5gy"]
+[ext_resource type="Script" uid="uid://c354k7cag5i1w" path="res://scenes_scripts/game/objects/solid/physics/wooden_cart.gd" id="2_yf7ov"]
+[ext_resource type="Texture2D" uid="uid://crara63q0v01p" path="res://resources/textures/game/objects/solids/moving/wooden_wheel.png" id="3_754xn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_754xn"]
+size = Vector2(128.00002, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf7ov"]
+size = Vector2(256, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rvc4"]
+size = Vector2(6, 54)
+
+[node name="WoodenCart" unique_id=840999448 instance=ExtResource("1_754xn")]
+mass = 3.0
+script = ExtResource("2_yf7ov")
+
+[node name="Sprite" parent="." index="0" unique_id=188382244]
+texture = ExtResource("1_ja5gy")
+
+[node name="WoodenPlatform" type="Sprite2D" parent="." index="1" unique_id=2113327612]
+modulate = Color(0.92, 0.92, 0.92, 1)
+position = Vector2(0, -40)
+scale = Vector2(0.9, 1)
+texture = ExtResource("1_ja5gy")
+
+[node name="WoodenPlatform2" type="Sprite2D" parent="." index="2" unique_id=1160121709]
+modulate = Color(0.92, 0.92, 0.92, 1)
+position = Vector2(0, -80)
+scale = Vector2(0.9, 1)
+texture = ExtResource("1_ja5gy")
+
+[node name="Platform2" type="Node2D" parent="." index="3" unique_id=162783325]
+position = Vector2(-112, -56)
+rotation = 1.5707964
+
+[node name="WoodenPlatformWithoutEdge" type="Sprite2D" parent="Platform2" index="0" unique_id=1743713607]
+scale = Vector2(0.84402895, 1)
+texture = ExtResource("1_fejb0")
+
+[node name="WoodenPlatformEdge" type="Sprite2D" parent="Platform2" index="1" unique_id=1275084357]
+position = Vector2(-56, -2.797529e-06)
+texture = ExtResource("2_ja5gy")
+
+[node name="WoodenPlatformEdge2" type="Sprite2D" parent="Platform2" index="2" unique_id=458223453]
+position = Vector2(56, 2.797529e-06)
+texture = ExtResource("2_ja5gy")
+flip_h = true
+
+[node name="Platform3" type="Node2D" parent="." index="4" unique_id=1997394843]
+position = Vector2(112, -56)
+rotation = 1.5707964
+
+[node name="WoodenPlatformWithoutEdge" type="Sprite2D" parent="Platform3" index="0" unique_id=1781381197]
+scale = Vector2(0.84402895, 1)
+texture = ExtResource("1_fejb0")
+
+[node name="WoodenPlatformEdge" type="Sprite2D" parent="Platform3" index="1" unique_id=390950696]
+position = Vector2(-56, -2.797529e-06)
+texture = ExtResource("2_ja5gy")
+
+[node name="WoodenPlatformEdge2" type="Sprite2D" parent="Platform3" index="2" unique_id=1212979136]
+position = Vector2(56, 2.797529e-06)
+texture = ExtResource("2_ja5gy")
+flip_h = true
+
+[node name="Platform" type="Node2D" parent="." index="5" unique_id=818475198]
+
+[node name="WoodenPlatformWithoutEdge" type="Sprite2D" parent="Platform" index="0" unique_id=479203220]
+scale = Vector2(2.15625, 1)
+texture = ExtResource("1_fejb0")
+
+[node name="WoodenPlatformEdge" type="Sprite2D" parent="Platform" index="1" unique_id=1423437954]
+position = Vector2(-120, 0)
+texture = ExtResource("2_ja5gy")
+
+[node name="WoodenPlatformEdge2" type="Sprite2D" parent="Platform" index="2" unique_id=376430472]
+position = Vector2(120, 0)
+texture = ExtResource("2_ja5gy")
+flip_h = true
+
+[node name="PinJointLeft" type="PinJoint2D" parent="." index="6" unique_id=828722657]
+position = Vector2(-80, 24)
+node_a = NodePath("..")
+node_b = NodePath("WoodenWheelLeft")
+softness = 0.3
+
+[node name="WoodenWheelLeft" type="RigidBody2D" parent="PinJointLeft" index="0" unique_id=1827562390]
+collision_layer = 4
+collision_mask = 47
+mass = 0.6
+
+[node name="Sprite2D" type="Sprite2D" parent="PinJointLeft/WoodenWheelLeft" index="0" unique_id=2035475604]
+texture = ExtResource("3_754xn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinJointLeft/WoodenWheelLeft" index="1" unique_id=929998155]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="PinJointRight" type="PinJoint2D" parent="." index="7" unique_id=296440351]
+position = Vector2(80, 24)
+node_a = NodePath("..")
+node_b = NodePath("WoodenWheelRight")
+softness = 0.3
+
+[node name="WoodenWheelRight" type="RigidBody2D" parent="PinJointRight" index="0" unique_id=445689998]
+collision_layer = 4
+collision_mask = 47
+mass = 0.6
+
+[node name="Sprite2D" type="Sprite2D" parent="PinJointRight/WoodenWheelRight" index="0" unique_id=1057081909]
+texture = ExtResource("3_754xn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinJointRight/WoodenWheelRight" index="1" unique_id=1874879225]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="8" unique_id=54104728]
+position = Vector2(-112, -56)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_754xn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="9" unique_id=56164105]
+position = Vector2(112, -56)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_754xn")
+
+[node name="CollisionShape2D" parent="." index="10" unique_id=1303941600]
+shape = SubResource("RectangleShape2D_yf7ov")
+
+[node name="LeftPushArea" type="Area2D" parent="." index="11" unique_id=1062996172]
+position = Vector2(-96, -64)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPushArea" index="0" unique_id=361714602]
+shape = SubResource("RectangleShape2D_3rvc4")
+
+[node name="RightPushArea" type="Area2D" parent="." index="12" unique_id=1792137465]
+position = Vector2(96, -64)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightPushArea" index="0" unique_id=1601486220]
+shape = SubResource("RectangleShape2D_3rvc4")
+
+[connection signal="body_entered" from="LeftPushArea" to="." method="_on_left_push_area_body_entered"]
+[connection signal="body_exited" from="LeftPushArea" to="." method="_on_left_push_area_body_exited"]
+[connection signal="body_entered" from="RightPushArea" to="." method="_on_right_push_area_body_entered"]
+[connection signal="body_exited" from="RightPushArea" to="." method="_on_right_push_area_body_exited"]

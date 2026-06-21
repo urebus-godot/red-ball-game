@@ -2,7 +2,5 @@
 
 [ext_resource type="Script" uid="uid://8cmvy72yqus3" path="res://scenes_scripts/game/objects/solid/physics/creatures/components/pressure_component.gd" id="1_r01ts"]
 
-[node name="PressureComponent" type="Node" unique_id=1710028415 node_paths=PackedStringArray("life_component", "target")]
+[node name="PressureComponent" type="Node" unique_id=1710028415]
 script = ExtResource("1_r01ts")
-life_component = NodePath("")
-target = NodePath("")

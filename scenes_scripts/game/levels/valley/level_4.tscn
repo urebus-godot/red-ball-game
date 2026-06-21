@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://1hjjd1sl7y50"]
+
+[ext_resource type="PackedScene" uid="uid://erwsx63yumj0" path="res://scenes_scripts/game/levels/valley/base_valley_level.tscn" id="1_aofwt"]
+[ext_resource type="Texture2D" uid="uid://cnxqfwimyhmvb" path="res://resources/textures/game/background/beams.png" id="2_4yaav"]
+[ext_resource type="PackedScene" uid="uid://csivnkyhwr57k" path="res://scenes_scripts/game/objects/solid/physics/wooden_cart.tscn" id="2_7fywp"]
+[ext_resource type="PackedScene" uid="uid://hf4hp71cg2ya" path="res://scenes_scripts/game/objects/areas/water.tscn" id="2_xmngp"]
+[ext_resource type="PackedScene" uid="uid://dihika6hurnqc" path="res://scenes_scripts/game/objects/solid/static/wooden_platform_long.tscn" id="4_p4wat"]
+[ext_resource type="PackedScene" uid="uid://cuj44b2p5d6up" path="res://scenes_scripts/game/objects/solid/static/platform_on_beams.tscn" id="4_vlc5f"]
+[ext_resource type="PackedScene" uid="uid://cmj7l35tymp0l" path="res://scenes_scripts/game/objects/solid/physics/creatures/enemies/enemy.tscn" id="5_db77o"]
+[ext_resource type="PackedScene" uid="uid://cmia2pxbw6h26" path="res://scenes_scripts/game/objects/solid/static/platform_on_separate_beams.tscn" id="5_jgmot"]
+[ext_resource type="Texture2D" uid="uid://bnojwkme4e7l0" path="res://resources/textures/game/background/center_beam.png" id="6_vdqx1"]
+[ext_resource type="PackedScene" uid="uid://bwjboskfprx5a" path="res://scenes_scripts/game/objects/solid/moving/vertical_door_with_planks.tscn" id="7_ml64e"]
+[ext_resource type="PackedScene" uid="uid://s7a7m66jw12x" path="res://scenes_scripts/game/objects/interactive/button/button.tscn" id="8_kl6po"]
+
+[sub_resource type="Curve2D" id="Curve2D_kl6po"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1800, 264, 0, 0, 0, 0, -1416, 264, 0, 0, 0, 0, -1160, 2280, 0, 0, 0, 0, -1016, 2432, 0, 0, 0, 0, 1064, 2432, 0, 0, 0, 0, 1208, 2424, 0, 0, 0, 0, 1400, 2376, 0, 0, 0, 0, 1536, 2296, 0, 0, 0, 0, 1808, 2216, 0, 0, 0, 0, 2168, 2192, 0, 0, 0, 0, 2456, 2216, 0, 0, 0, 0, 2640, 2280, 0, 0, 0, 0, 2848, 2392, 0, 0, 0, 0, 3064, 2464, 0, 0, 0, 0, 3416, 2488, 0, 0, 0, 0, 3616, 2488, 0, 0, 0, 0, 3800, 2512, 0, 0, 0, 0, 4000, 2512, 0, 0, 0, 0, 4136, 2520, 0, 0, 0, 0, 4192, 2552, 0, 0, 0, 0, 4240, 2624, 0, 0, 0, 0, 4272, 2816, 0, 0, 0, 0, 4304, 2872, 0, 0, 0, 0, 4368, 2936, 0, 0, 0, 0, 4440, 2968, 0, 0, 0, 0, 4648, 2968, 0, 0, 0, 0, 4816, 2952, 0, 0, 0, 0, 5016, 2968, 0, 0, 0, 0, 5296, 2960, 0, 0, 0, 0, 5456, 2984, 0, 0, 0, 0, 5592, 2984, 0, 0, 0, 0, 5792, 2968, 0, 0, 0, 0, 5992, 2984, 0, 0, 0, 0, 6128, 2984, 0, 0, 0, 0, 6248, 2976, 0, 0, 0, 0, 6312, 2952, 0, 0, 0, 0, 6344, 2960, 0, 0, 0, 0, 6376, 2904, 0, 0, 0, 0, 6376, 2800, 0, 0, 0, 0, 6424, 2648, 0, 0, 0, 0, 6424, 2560, 0, 0, 0, 0, 6448, 2432, 0, 0, 0, 0, 6440, 2352, 0, 0, 0, 0, 6464, 2272, 0, 0, 0, 0, 6456, 2176, 0, 0, 0, 0, 6480, 2136, 0, 0, 0, 0, 6568, 2072, 0, 0, 0, 0, 6640, 2048, 0, 0, 0, 0, 7104, 2048, 0, 0, 0, 0, 7304, 2072, 0, 0, 0, 0, 7464, 2136, 0, 0, 0, 0, 7768, 2304, 0, 0, 0, 0, 8024, 2384, 0, 0, 0, 0, 8368, 2416, 0, 0, 0, 0, 8808, 2416, 0, 0, 0, 0, 8952, 2432, 0, 0, 0, 0, 9112, 2472, 0, 0, 0, 0, 9280, 2560, 0, 0, 0, 0, 9472, 2624, 0, 0, 0, 0, 9648, 2648, 0, 0, 0, 0, 10232, 2648, 0, 0, 0, 0, 10408, 2624, 0, 0, 0, 0, 10608, 2552, 0, 0, 0, 0, 10872, 2496, 0, 0, 0, 0, 11104, 2480, 0, 0, 0, 0, 11616, 2480, 0, 0, 0, 0, 13632, 2496, 0, 0, 0, 0, 13440, 3520, 0, 0, 0, 0, -1800, 3520, 0, 0, 0, 0, -1800, 264)
+}
+point_count = 70
+
+[node name="Level4" unique_id=165616865 instance=ExtResource("1_aofwt")]
+level = 4
+
+[node name="WoodenCart" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="0" unique_id=829485499 instance=ExtResource("2_7fywp")]
+position = Vector2(11224, 2416)
+
+[node name="WoodenPlatform3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=735051929 instance=ExtResource("4_p4wat")]
+position = Vector2(5472, 2040)
+
+[node name="Beams" type="TextureRect" parent="Objects/StaticSolids/WoodenPlatform3" index="2" unique_id=841421205]
+show_behind_parent = true
+offset_left = -336.0
+offset_right = -80.0
+offset_bottom = 520.0
+texture = ExtResource("2_4yaav")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Beams2" type="TextureRect" parent="Objects/StaticSolids/WoodenPlatform3" index="3" unique_id=1991181609]
+show_behind_parent = true
+offset_left = 80.0
+offset_right = 336.0
+offset_bottom = 520.0
+texture = ExtResource("2_4yaav")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WoodenPlatform4" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="1" unique_id=1952035569 instance=ExtResource("4_p4wat")]
+position = Vector2(4736, 2040)
+
+[node name="Beams" type="TextureRect" parent="Objects/StaticSolids/WoodenPlatform4" index="2" unique_id=1535833811]
+show_behind_parent = true
+offset_left = -336.0
+offset_right = -80.0
+offset_bottom = 520.0
+texture = ExtResource("2_4yaav")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Beams2" type="TextureRect" parent="Objects/StaticSolids/WoodenPlatform4" index="3" unique_id=133216317]
+show_behind_parent = true
+offset_left = 80.0
+offset_right = 336.0
+offset_bottom = 520.0
+texture = ExtResource("2_4yaav")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WoodenPlatform" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="2" unique_id=1269986652 instance=ExtResource("4_p4wat")]
+position = Vector2(4736, 2456)
+
+[node name="Beams" type="TextureRect" parent="Objects/StaticSolids/WoodenPlatform" index="2" unique_id=1105636915]
+show_behind_parent = true
+offset_left = -336.0
+offset_right = -80.0
+offset_bottom = 520.0
+texture = ExtResource("2_4yaav")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Beams2" type="TextureRect" parent="Objects/StaticSolids/WoodenPlatform" index="3" unique_id=1573740056]
+show_behind_parent = true
+offset_left = 80.0
+offset_right = 336.0
+offset_bottom = 520.0
+texture = ExtResource("2_4yaav")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WoodenPlatform2" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="3" unique_id=2013263830 instance=ExtResource("4_p4wat")]
+position = Vector2(5472, 2456)
+
+[node name="Beams" type="TextureRect" parent="Objects/StaticSolids/WoodenPlatform2" index="2" unique_id=1303238967]
+show_behind_parent = true
+offset_left = -336.0
+offset_right = -80.0
+offset_bottom = 520.0
+texture = ExtResource("2_4yaav")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Beams2" type="TextureRect" parent="Objects/StaticSolids/WoodenPlatform2" index="3" unique_id=1180920594]
+show_behind_parent = true
+offset_left = 80.0
+offset_right = 336.0
+offset_bottom = 520.0
+texture = ExtResource("2_4yaav")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="4" unique_id=694627226 instance=ExtResource("4_vlc5f")]
+position = Vector2(6064, 2248)
+
+[node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams" index="0" unique_id=1189508430]
+offset_bottom = 696.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PlatformOnBeams2" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="5" unique_id=918693721 instance=ExtResource("5_jgmot")]
+position = Vector2(3984, 2048)
+
+[node name="CenterBeam" parent="Objects/StaticSolids/PlatformOnBeams2" index="0" unique_id=351578191]
+offset_right = 148.88184
+rotation = 0.20943952
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterBeam2" type="TextureRect" parent="Objects/StaticSolids/PlatformOnBeams2" index="1" unique_id=957276868]
+offset_left = -128.0
+offset_top = 272.0
+offset_right = 148.88184
+offset_bottom = 528.0
+texture = ExtResource("6_vdqx1")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftBeam" parent="Objects/StaticSolids/PlatformOnBeams2" index="2" unique_id=207140084]
+offset_bottom = 568.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RightBeam" parent="Objects/StaticSolids/PlatformOnBeams2" index="3" unique_id=1853166970]
+offset_top = 40.0
+offset_bottom = 568.0
+metadata/_edit_use_anchors_ = true
+
+[node name="WoodenPlatform" parent="Objects/StaticSolids/PlatformOnBeams2" index="4" unique_id=735051929]
+position = Vector2(0, 16.000002)
+rotation = 0.20943952
+
+[node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="6" unique_id=598983119 instance=ExtResource("4_vlc5f")]
+position = Vector2(9904, 2432)
+
+[node name="VerticalDoor" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="0" unique_id=1783807455 instance=ExtResource("7_ml64e")]
+position = Vector2(6864, 1920)
+
+[node name="Button" parent="Objects/Buttons" parent_id_path=PackedInt32Array(969791430) index="0" unique_id=1165746887 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("8_kl6po")]
+position = Vector2(3984.0002, 2048.0002)
+rotation = 0.20943952
+objects_to_activate = [NodePath("../../Moving/VerticalDoor/VerticalDoor")]
+deactivate_on_body_exit = false
+
+[node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
+position = Vector2(9696, 2528)
+
+[node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=1272539842 instance=ExtResource("5_db77o")]
+position = Vector2(5184, 2376)
+
+[node name="RoundMoveComponent" parent="Objects/Creatures/Enemy" index="4" unique_id=1363103788]
+torque = 35000.0
+max_velocity = 500.0
+
+[node name="PatrolComponent" parent="Objects/Creatures/Enemy" index="7" unique_id=1282453717]
+left_x_bound = 4916.0
+right_x_bound = 5292.0
+jumping = false
+
+[node name="Enemy2" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="2" unique_id=168198707 instance=ExtResource("5_db77o")]
+position = Vector2(5032, 1960)
+
+[node name="RoundMoveComponent" parent="Objects/Creatures/Enemy2" index="4" unique_id=1363103788]
+torque = 35000.0
+max_velocity = 500.0
+
+[node name="PatrolComponent" parent="Objects/Creatures/Enemy2" index="7" unique_id=1282453717]
+left_x_bound = 4916.0
+right_x_bound = 5292.0
+jumping = false
+
+[node name="Water" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("2_xmngp")]
+position = Vector2(4160, 2432)
+
+[node name="WaterTexture" parent="Objects/Environment/Waters/Water" index="0" unique_id=1796776943]
+offset_right = 2328.0
+offset_bottom = 568.0
+
+[node name="Path2D" parent="GroundAndBoundaries/Terrain" parent_id_path=PackedInt32Array(912310611) index="3" unique_id=1234078617]
+curve = SubResource("Curve2D_kl6po")
+
+[editable path="UILayer"]
+[editable path="Objects/StaticSolids/PlatformOnBeams"]
+[editable path="Objects/StaticSolids/PlatformOnBeams2"]
+[editable path="Objects/Moving/VerticalDoor"]
+[editable path="Objects/Creatures/Enemy"]
+[editable path="Objects/Creatures/Enemy2"]
+[editable path="Objects/Environment/Waters/Water"]
+[editable path="GroundAndBoundaries/Terrain"]

@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://h8y6y31glftn" path="res://resources/textures/game/objects/solids/moving/rail_platform_bottom.png" id="2_ljaee"]
 [ext_resource type="PackedScene" uid="uid://dii5rtal5suat" path="res://scenes_scripts/game/objects/background/rail_wheel.tscn" id="3_jt76u"]
 
-[node name="RailPlatform" type="Node2D" unique_id=1992756843]
+[node name="RailPlatform" type="Node2D" unique_id=1992756843 node_paths=PackedStringArray("wheels")]
 script = ExtResource("1_hnhe8")
+wheels = [NodePath("RailWheelLeft/WheelSprite"), NodePath("RailWheelRight/WheelSprite")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1490373352]
 position = Vector2(0, 29)
@@ -14,8 +15,11 @@ texture = ExtResource("2_ljaee")
 
 [node name="WoodenPlatform" parent="." unique_id=735051929 instance=ExtResource("1_2ktyh")]
 
-[node name="RailWheel" parent="." unique_id=739607962 instance=ExtResource("3_jt76u")]
+[node name="RailWheelLeft" parent="." unique_id=739607962 instance=ExtResource("3_jt76u")]
 position = Vector2(70, 50)
 
-[node name="RailWheel2" parent="." unique_id=1306519630 instance=ExtResource("3_jt76u")]
+[node name="RailWheelRight" parent="." unique_id=1306519630 instance=ExtResource("3_jt76u")]
 position = Vector2(-70, 50)
+
+[editable path="RailWheelLeft"]
+[editable path="RailWheelRight"]

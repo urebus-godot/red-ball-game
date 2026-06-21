@@ -4,11 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cvfd0vc3bctwd" path="res://resources/textures/game/objects/interactive/button.png" id="2_3wtns"]
 [ext_resource type="Texture2D" uid="uid://cphvmo8edg71s" path="res://resources/textures/game/objects/interactive/button_base.png" id="3_0myuq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q05x"]
-size = Vector2(86, 19)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0myuq"]
-size = Vector2(78, 23)
+size = Vector2(78, 20)
 
 [sub_resource type="Animation" id="Animation_3wtns"]
 length = 0.001
@@ -69,18 +66,9 @@ collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_1o3bm")
 
-[node name="ButtonBody" type="StaticBody2D" parent="." unique_id=754812864]
+[node name="ButtonBody" type="Sprite2D" parent="." unique_id=577389165]
 position = Vector2(0, -35)
-collision_layer = 2
-collision_mask = 13
-
-[node name="Sprite2D" type="Sprite2D" parent="ButtonBody" unique_id=1067222008]
 texture = ExtResource("2_3wtns")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonBody" unique_id=1209811776]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_6q05x")
-one_way_collision = true
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=1039527874]
 position = Vector2(0, -33.5)
@@ -92,11 +80,10 @@ collision_layer = 0
 collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=396551189]
-position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_0myuq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=288639147]
-polygon = PackedVector2Array(-61, 0, 60, 0, 43, -47, -43, -47)
+polygon = PackedVector2Array(-61, 0, 60, 0, 42, -22, -46, -22)
 one_way_collision = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1974771633]

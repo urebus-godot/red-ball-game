@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cttcxr4p0lp1k"]
+
+[ext_resource type="Script" uid="uid://btqmvowkgnwep" path="res://scenes_scripts/game/objects/solid/moving/rail_platform.gd" id="1_3vtbd"]
+[ext_resource type="PackedScene" uid="uid://xfepbh1454wu" path="res://scenes_scripts/game/objects/solid/static/wooden_platform.tscn" id="1_vlbe4"]
+[ext_resource type="PackedScene" uid="uid://dii5rtal5suat" path="res://scenes_scripts/game/objects/background/rail_wheel.tscn" id="2_3vtbd"]
+
+[node name="VerticalRailPlatform" type="Node2D" unique_id=350558209 node_paths=PackedStringArray("wheels")]
+script = ExtResource("1_3vtbd")
+wheels = [NodePath("RailWheel/WheelSprite")]
+
+[node name="WoodenPlatform" parent="." unique_id=735051929 instance=ExtResource("1_vlbe4")]
+
+[node name="RailWheel" parent="." unique_id=739607962 instance=ExtResource("2_3vtbd")]
+position = Vector2(128, 0)
+
+[editable path="RailWheel"]

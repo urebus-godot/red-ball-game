@@ -1,9 +1,9 @@
 shader_type canvas_item;
 
-uniform float frequency = 20.0;
-uniform float speed = 1.0;
-uniform float amplitude = 0.025;
-uniform float blur = 0.015;
+instance uniform float frequency = 4.0;
+instance uniform float speed = 0.5;
+instance uniform float amplitude = 0.025;
+instance uniform float blur = 0.001;
 
 void fragment() {
 	float wave_x = sin(UV.x * frequency + TIME * speed) * amplitude - amplitude;

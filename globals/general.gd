@@ -2,7 +2,9 @@ extends Node
 
 func format_time(seconds: float) -> String:
 	var minutes = floori(seconds / 60)
-	seconds = int(seconds) % 2
+	print("minutes = ",minutes)
+	seconds = int(seconds) % 60
+	print("seconds = ",seconds)
 	return "%02d:%02d" % [minutes, snappedf(seconds, 0.01)]
 
 

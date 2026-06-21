@@ -139,8 +139,9 @@ offset_bottom = 517.8174
 metadata/_edit_use_anchors_ = true
 
 [node name="RailPlatform" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="0" unique_id=1992756843 instance=ExtResource("5_1ytqh")]
-position = Vector2(15248, 2467)
-pos_x_offset = 2000.0
+position = Vector2(15248, 2466)
+pos_offset = Vector2(2000, 0)
+is_activated = true
 
 [node name="Sapphirium" parent="Objects/Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=1019438090 node_paths=PackedStringArray("artefacts_parent", "ui_layer") instance=ExtResource("7_rt4jy")]
 position = Vector2(23120, 1848)
@@ -205,6 +206,7 @@ position = Vector2(19752, 1664)
 position = Vector2(19784, 1552)
 
 [node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
+position = Vector2(14352, 2256)
 input_pickable = false
 
 [node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=1016766608 instance=ExtResource("3_c3k3r")]
@@ -269,10 +271,7 @@ offset_bottom = 272.0
 text = "This artefact is \"Sapphirium\". Hover over the a physical body to drag it with the sapphirium."
 metadata/_edit_use_anchors_ = true
 
-[node name="WorldBounds" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="0" unique_id=1234016570]
-collision_priority = 1.0
-
-[node name="LeftBound" parent="GroundAndBoundaries/WorldBounds" index="0" unique_id=934559950]
+[node name="LeftBound" parent="GroundAndBoundaries/WorldBounds" parent_id_path=PackedInt32Array(1234016570) index="0" unique_id=934559950]
 shape = SubResource("WorldBoundaryShape2D_b30ic")
 
 [node name="Terrain2" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="1" unique_id=912310611 instance=ExtResource("2_idcom")]
@@ -293,7 +292,6 @@ curve = SubResource("Curve2D_6k4lt")
 curve = SubResource("Curve2D_wv7qj")
 
 [node name="Camera" parent="." index="10" unique_id=1760591003]
-limit_left = -1000
 limit_right = 25592
 limit_bottom = 3150
 

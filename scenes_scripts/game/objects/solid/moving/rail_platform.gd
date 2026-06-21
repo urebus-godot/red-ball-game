@@ -1,46 +1,56 @@
-extends Node2D
+extends ActivatedObject
 
-@onready var rail_wheel: Node2D = $RailWheel
-@onready var rail_wheel_2: Node2D = $RailWheel2
+@export var wheels: Array[Sprite2D]
+@export var pos_offset: Vector2
+#@export var start_offset: float = 0.0
 
-@export var pos_x_offset: float
-@export var start_offset: float = 0.0
-
-var start_pos_x: float
-var prev_pos_x: float
+var start_pos: Vector2
+var prev_pos: Vector2
 var time_to_go_to_bound: float = 0.0
 var Direction = Constants.Direction
-## 150,8 - lemgth of wheel
+## 147,56 - lemgth of wheel
 
 func move(direction: Constants.Direction, offset: float = 0.0) -> void:
-	var tween = create_tween().set_trans(Tween.TRANS_SINE)
+	print("Enter move func")
+	if is_activated:
+		print("Start tween")
+		var tween = create_tween().set_trans(Tween.TRANS_SINE)
 
-	match direction:
-		Direction.RIGHT:
-			tween.tween_property(
-				self, "position:x", start_pos_x + pos_x_offset, time_to_go_to_bound
-				).from(start_pos_x + offset)
+		match direction:
+			Direction.RIGHT:
+				tween.tween_property(
+					self, "position", start_pos + pos_offset, time_to_go_to_bound
+					)
 
-		Direction.LEFT:
-			tween.tween_property(
-				self, "position:x", start_pos_x, time_to_go_to_bound
-				).from(start_pos_x + offset)
+			Direction.LEFT:
+				tween.tween_property(
+					self, "position", start_pos, time_to_go_to_bound
+					)
 
-	await tween.finished
+		await tween.finished
 
-	var new_direction = Direction.LEFT if direction == Direction.RIGHT else Direction.RIGHT
-	move(new_direction)
+		if direction == Direction.RIGHT:
+			move(Direction.LEFT)
+		else:
+			move(Direction.RIGHT)
+
+
+func activate() -> void:
+	await super()
+	move(Direction.RIGHT)
 
 
 func _ready() -> void:
-	start_pos_x = position.x
-	time_to_go_to_bound = pos_x_offset / 220
-	print(time_to_go_to_bound)
-	move(Direction.RIGHT, start_offset)
+	start_pos = position
+	prev_pos = start_pos
+	time_to_go_to_bound = pos_offset.length() / 220
+
+	if is_activated:
+		move(Direction.RIGHT)#, start_offset)
 
 
 func _process(delta: float) -> void:
-	var platform_velocity = position.x - prev_pos_x
-	rail_wheel.rotation += platform_velocity * 0.03016#15.08
-	rail_wheel_2.rotation = rail_wheel.rotation
-	prev_pos_x = position.x
+	var platform_velocity = (position - prev_pos).length()
+	for w in wheels:
+		w.rotation += platform_velocity * 0.03016#15.08
+	prev_pos = position

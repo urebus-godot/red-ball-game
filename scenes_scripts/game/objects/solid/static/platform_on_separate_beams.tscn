@@ -12,18 +12,21 @@ offset_left = -128.0
 offset_right = 128.0
 offset_bottom = 256.0
 texture = ExtResource("2_uvj6m")
+expand_mode = 1
 
 [node name="LeftBeam" type="TextureRect" parent="." unique_id=207140084]
 offset_left = -128.0
 offset_right = 128.0
 offset_bottom = 256.0
 texture = ExtResource("1_jadyc")
+expand_mode = 1
 
 [node name="RightBeam" type="TextureRect" parent="." unique_id=1853166970]
 offset_left = -128.0
 offset_right = 128.0
 offset_bottom = 256.0
 texture = ExtResource("3_7qb53")
+expand_mode = 1
 
 [node name="WoodenPlatform" parent="." unique_id=735051929 instance=ExtResource("4_i6acc")]
 scale = Vector2(1.1, 1)

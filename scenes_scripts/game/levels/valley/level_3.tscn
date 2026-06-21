@@ -11,7 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://b2ranlok5hbc6" path="res://scenes_scripts/game/objects/solid/physics/wooden_platform_3_physics.tscn" id="4_vdtnq"]
 [ext_resource type="PackedScene" uid="uid://3hroom7g8eq4" path="res://scenes_scripts/game/objects/interactive/pickable/artefacts/emeraldium/pickable_emeraldium.tscn" id="7_rfx77"]
 [ext_resource type="PackedScene" uid="uid://cyvuaxuyyofnb" path="res://scenes_scripts/game/terrain.tscn" id="8_0jvoj"]
+[ext_resource type="PackedScene" uid="uid://d1ho4x2t2v73w" path="res://scenes_scripts/game/objects/solid/static/wooden_platform_2.tscn" id="8_3o3f8"]
 [ext_resource type="PackedScene" uid="uid://clfl7gnedu6u0" path="res://scenes_scripts/game/objects/areas/artefact_discharge_area.tscn" id="9_od5lf"]
+[ext_resource type="PackedScene" uid="uid://cttcxr4p0lp1k" path="res://scenes_scripts/game/objects/solid/moving/vertical_rail_platform.tscn" id="9_rlqh5"]
+[ext_resource type="PackedScene" uid="uid://5nokwb5ymxnk" path="res://scenes_scripts/game/objects/interactive/pickable/topaz/topaz.tscn" id="13_uk6y0"]
+[ext_resource type="Texture2D" uid="uid://c08fx6m4rfnjo" path="res://resources/textures/game/background/rails_with_ends.png" id="13_yg27y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlqh5"]
+atlas = ExtResource("13_yg27y")
+region = Rect2(72, 0, 440, 64)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8qx61"]
 normal = Vector2(-1, 0)
@@ -26,18 +34,38 @@ point_count = 35
 [sub_resource type="Curve2D" id="Curve2D_0jvoj"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -136, 1808, 0, 0, 0, 0, -40, 176, 0, 0, 0, 0, -8, 120, 0, 0, 0, 0, 72, 48, 0, 0, 0, 0, 171.11804, 18.122662, 0, 0, 0, 0, 368, -8, 0, 0, 0, 0, 669.262, -6.8600006, 0, 0, 0, 0, 805.92786, -21.33316, 0, 0, 0, 0, 960, -80, 0, 0, 0, 0, 1072, -168, 0, 0, 0, 0, 1232, -240, 0, 0, 0, 0, 1352, -264, 0, 0, 0, 0, 1416, -272, 0, 0, 0, 0, 1488, -264, 0, 0, 0, 0, 1544, -240, 0, 0, 0, 0, 1608, -200, 0, 0, 0, 0, 1992, 80, 0, 0, 0, 0, 2216, 176, 0, 0, 0, 0, 2648, 256, 0, 0, 0, 0, 2968, 264, 0, 0, 0, 0, 3248, 248, 0, 0, 0, 0, 3464, 200, 0, 0, 0, 0, 3600, 144, 0, 0, 0, 0, 3704, 64, 0, 0, 0, 0, 3776, -16, 0, 0, 0, 0, 3832, -56, 0, 0, 0, 0, 3880, -72, 0, 0, 0, 0, 3936, -64, 0, 0, 0, 0, 3968, -24, 0, 0, 0, 0, 3808, 112, 0, 0, 0, 0, 3736, 280, 0, 0, 0, 0, 3688, 440, 0, 0, 0, 0, 3720, 616, 0, 0, 0, 0, 3800, 736, 0, 0, 0, 0, 3840, 760, 0, 0, 0, 0, 3920, 760, 0, 0, 0, 0, 4056, 720, 0, 0, 0, 0, 4176, 736, 0, 0, 0, 0, 4312, 720, 0, 0, 0, 0, 4424, 776, 0, 0, 0, 0, 4592, 760, 0, 0, 0, 0, 4776, 792, 0, 0, 0, 0, 4904, 768, 0, 0, 0, 0, 5000, 752, 0, 0, 0, 0, 5080, 784, 0, 0, 0, 0, 5184, 792, 0, 0, 0, 0, 5272, 744, 0, 0, 0, 0, 5320, 752, 0, 0, 0, 0, 5392, 696, 0, 0, 0, 0, 5464, 632, 0, 0, 0, 0, 5472, 488, 0, 0, 0, 0, 5456, 312, 0, 0, 0, 0, 5512, 104, 0, 0, 0, 0, 5496, -32, 0, 0, 0, 0, 5424, -200, 0, 0, 0, 0, 5336, -280, 0, 0, 0, 0, 5376, -320, 0, 0, 0, 0, 5424, -328, 0, 0, 0, 0, 5512, -272, 0, 0, 0, 0, 5576, -160, 0, 0, 0, 0, 5656, -104, 0, 0, 0, 0, 5792, -64, 0, 0, 0, 0, 5984, -40, 0, 0, 0, 0, 6104, 24, 0, 0, 0, 0, 6200, 56, 0, 0, 0, 0, 6328, 56, 0, 0, 0, 0, 6408, 72, 0, 0, 0, 0, 6496, 136, 0, 0, 0, 0, 6584, 160, 0, 0, 0, 0, 6632, 184, 0, 0, 0, 0, 6696, 224, 0, 0, 0, 0, 6720, 264, 0, 0, 0, 0, 6768, 304, 0, 0, 0, 0, 6872, 328, 0, 0, 0, 0, 6992, 328, 0, 0, 0, 0, 7056, 344, 0, 0, 0, 0, 7128, 408, 0, 0, 0, 0, 7192, 432, 0, 0, 0, 0, 7240, 432, 0, 0, 0, 0, 7304, 448, 0, 0, 0, 0, 7360, 496, 0, 0, 0, 0, 7440, 520, 0, 0, 0, 0, 7512, 568, 0, 0, 0, 0, 7568, 624, 0, 0, 0, 0, 7672, 664, 0, 0, 0, 0, 7768, 664, 0, 0, 0, 0, 7888, 648, 0, 0, 0, 0, 8016, 592, 0, 0, 0, 0, 8136, 512, 0, 0, 0, 0, 8224, 472, 0, 0, 0, 0, 8336, 448, 0, 0, 0, 0, 8456, 440, 0, 0, 0, 0, 8496, 440, 0, 0, 0, 0, 8648, 456, 0, 0, 0, 0, 8784, 512, 0, 0, 0, 0, 9120, 768, 0, 0, 0, 0, 9288, 832, 0, 0, 0, 0, 9560, 864, 0, 0, 0, 0, 9768, 864, 0, 0, 0, 0, 9872, 848, 0, 0, 0, 0, 9928, 856, 0, 0, 0, 0, 9952, 872, 0, 0, 0, 0, 9976, 904, 0, 0, 0, 0, 10000, 1008, 0, 0, 0, 0, 10040, 1128, 0, 0, 0, 0, 10064, 1160, 0, 0, 0, 0, 10120, 1192, 0, 0, 0, 0, 10184, 1216, 0, 0, 0, 0, 11392, 1216, 0, 0, 0, 0, 11496, 1200, 0, 0, 0, 0, 11576, 1160, 0, 0, 0, 0, 11664, 1016, 0, 0, 0, 0, 11760, 928, 0, 0, 0, 0, 11880, 896, 0, 0, 0, 0, 11976, 896, 0, 0, 0, 0, 12096, 920, 0, 0, 0, 0, 12184, 968, 0, 0, 0, 0, 12256, 1040, 0, 0, 0, 0, 12392, 1104, 0, 0, 0, 0, 12608, 1136, 0, 0, 0, 0, 12832, 1136, 0, 0, 0, 0, 12936, 1112, 0, 0, 0, 0, 13040, 1064, 0, 0, 0, 0, 13232, 816, 0, 0, 0, 0, 13328, 752, 0, 0, 0, 0, 13448, 712, 0, 0, 0, 0, 14744, 712, 0, 0, 0, 0, 14808, 696, 0, 0, 0, 0, 14840, 648, 0, 0, 0, 0, 14840, 232, 0, 0, 0, 0, 17240, 1808, 0, 0, 0, 0, -136, 1808)
+"points": PackedVector2Array(0, 0, 0, 0, -136, 1808, 0, 0, 0, 0, -40, 176, 0, 0, 0, 0, -8, 120, 0, 0, 0, 0, 72, 48, 0, 0, 0, 0, 171.11804, 18.122662, 0, 0, 0, 0, 368, -8, 0, 0, 0, 0, 669.262, -6.8600006, 0, 0, 0, 0, 805.92786, -21.33316, 0, 0, 0, 0, 960, -80, 0, 0, 0, 0, 1072, -168, 0, 0, 0, 0, 1232, -240, 0, 0, 0, 0, 1352, -264, 0, 0, 0, 0, 1416, -272, 0, 0, 0, 0, 1488, -264, 0, 0, 0, 0, 1544, -240, 0, 0, 0, 0, 1608, -200, 0, 0, 0, 0, 1992, 80, 0, 0, 0, 0, 2216, 176, 0, 0, 0, 0, 2648, 256, 0, 0, 0, 0, 2968, 264, 0, 0, 0, 0, 3248, 248, 0, 0, 0, 0, 3464, 200, 0, 0, 0, 0, 3600, 144, 0, 0, 0, 0, 3704, 64, 0, 0, 0, 0, 3776, -16, 0, 0, 0, 0, 3832, -56, 0, 0, 0, 0, 3880, -72, 0, 0, 0, 0, 3936, -64, 0, 0, 0, 0, 3968, -24, 0, 0, 0, 0, 3808, 112, 0, 0, 0, 0, 3736, 280, 0, 0, 0, 0, 3688, 440, 0, 0, 0, 0, 3720, 616, 0, 0, 0, 0, 3800, 736, 0, 0, 0, 0, 3840, 760, 0, 0, 0, 0, 3920, 760, 0, 0, 0, 0, 4056, 720, 0, 0, 0, 0, 4176, 736, 0, 0, 0, 0, 4312, 720, 0, 0, 0, 0, 4424, 776, 0, 0, 0, 0, 4592, 760, 0, 0, 0, 0, 4776, 792, 0, 0, 0, 0, 4904, 768, 0, 0, 0, 0, 5000, 752, 0, 0, 0, 0, 5080, 784, 0, 0, 0, 0, 5184, 792, 0, 0, 0, 0, 5272, 744, 0, 0, 0, 0, 5320, 752, 0, 0, 0, 0, 5392, 696, 0, 0, 0, 0, 5464, 632, 0, 0, 0, 0, 5472, 488, 0, 0, 0, 0, 5456, 312, 0, 0, 0, 0, 5512, 104, 0, 0, 0, 0, 5496, -32, 0, 0, 0, 0, 5424, -200, 0, 0, 0, 0, 5336, -280, 0, 0, 0, 0, 5376, -320, 0, 0, 0, 0, 5424, -328, 0, 0, 0, 0, 5512, -272, 0, 0, 0, 0, 5576, -160, 0, 0, 0, 0, 5656, -104, 0, 0, 0, 0, 5792, -64, 0, 0, 0, 0, 5984, -40, 0, 0, 0, 0, 6104, 24, 0, 0, 0, 0, 6200, 56, 0, 0, 0, 0, 6328, 56, 0, 0, 0, 0, 6408, 72, 0, 0, 0, 0, 6496, 136, 0, 0, 0, 0, 6584, 160, 0, 0, 0, 0, 6632, 184, 0, 0, 0, 0, 6696, 224, 0, 0, 0, 0, 6720, 264, 0, 0, 0, 0, 6768, 304, 0, 0, 0, 0, 6872, 328, 0, 0, 0, 0, 6992, 328, 0, 0, 0, 0, 7056, 344, 0, 0, 0, 0, 7128, 408, 0, 0, 0, 0, 7192, 432, 0, 0, 0, 0, 7240, 432, 0, 0, 0, 0, 7304, 448, 0, 0, 0, 0, 7360, 496, 0, 0, 0, 0, 7440, 520, 0, 0, 0, 0, 7512, 568, 0, 0, 0, 0, 7568, 624, 0, 0, 0, 0, 7672, 664, 0, 0, 0, 0, 7768, 664, 0, 0, 0, 0, 7904, 632, 0, 0, 0, 0, 8016, 576, 0, 0, 0, 0, 8120, 488, 0, 0, 0, 0, 8168, 424, 0, 0, 0, 0, 8240, 368, 0, 0, 0, 0, 8328, 328, 0, 0, 0, 0, 8432, 304, 0, 0, 0, 0, 8480, 304, 0, 0, 0, 0, 8512, 312, 0, 0, 0, 0, 8632, 376, 0, 0, 0, 0, 9120, 768, 0, 0, 0, 0, 9288, 832, 0, 0, 0, 0, 9560, 864, 0, 0, 0, 0, 9768, 864, 0, 0, 0, 0, 9872, 848, 0, 0, 0, 0, 9928, 856, 0, 0, 0, 0, 9952, 872, 0, 0, 0, 0, 9976, 904, 0, 0, 0, 0, 10000, 1008, 0, 0, 0, 0, 10040, 1128, 0, 0, 0, 0, 10064, 1160, 0, 0, 0, 0, 10120, 1192, 0, 0, 0, 0, 10184, 1216, 0, 0, 0, 0, 11392, 1216, 0, 0, 0, 0, 11496, 1200, 0, 0, 0, 0, 11576, 1160, 0, 0, 0, 0, 11664, 1016, 0, 0, 0, 0, 11760, 928, 0, 0, 0, 0, 11880, 896, 0, 0, 0, 0, 11976, 896, 0, 0, 0, 0, 12096, 920, 0, 0, 0, 0, 12184, 968, 0, 0, 0, 0, 12256, 1040, 0, 0, 0, 0, 12392, 1104, 0, 0, 0, 0, 12608, 1136, 0, 0, 0, 0, 12832, 1136, 0, 0, 0, 0, 12936, 1112, 0, 0, 0, 0, 13040, 1064, 0, 0, 0, 0, 13232, 816, 0, 0, 0, 0, 13328, 752, 0, 0, 0, 0, 13448, 712, 0, 0, 0, 0, 14744, 712, 0, 0, 0, 0, 14808, 696, 0, 0, 0, 0, 14840, 648, 0, 0, 0, 0, 14840, -112, 0, 0, 0, 0, 14856, -152, 0, 0, 0, 0, 14920, -192, 0, 0, 0, 0, 15040, -208, 0, 0, 0, 0, 15256, -208, 0, 0, 0, 0, 15328, -184, 0, 0, 0, 0, 15400, -112, 0, 0, 0, 0, 15528, -40, 0, 0, 0, 0, 15672, -8, 0, 0, 0, 0, 15960, -8, 0, 0, 0, 0, 16056, 8, 0, 0, 0, 0, 16144, 56, 0, 0, 0, 0, 16296, 208, 0, 0, 0, 0, 16424, 288, 0, 0, 0, 0, 16576, 336, 0, 0, 0, 0, 16752, 360, 0, 0, 0, 0, 16984, 360, 0, 0, 0, 0, 17120, 336, 0, 0, 0, 0, 17248, 288, 0, 0, 0, 0, 17320, 208, 0, 0, 0, 0, 17368, 88, 0, 0, 0, 0, 17376, -392, 0, 0, 0, 0, 17392, -464, 0, 0, 0, 0, 17432, -512, 0, 0, 0, 0, 17488, -544, 0, 0, 0, 0, 17584, -560, 0, 0, 0, 0, 18936, -560, 0, 0, 0, 0, 19024, -704, 0, 0, 0, 0, 19144, -1888, 0, 0, 0, 0, 19576, -1888, 0, 0, 0, 0, 19784, 1808, 0, 0, 0, 0, -136, 1808)
 }
-point_count = 132
+point_count = 162
 
 [node name="BaseValleyLevel" unique_id=165616865 instance=ExtResource("1_vkdog")]
 level = 3
 
+[node name="Rail" type="TextureRect" parent="Background" parent_id_path=PackedInt32Array(40735884) index="0" unique_id=856984542]
+offset_left = 25352.0
+offset_top = 2636.0
+offset_right = 25835.998
+offset_bottom = 2700.0
+rotation = -1.5707964
+texture = ExtResource("13_yg27y")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Rail2" type="TextureRect" parent="Background" parent_id_path=PackedInt32Array(40735884) index="1" unique_id=1472948715]
+offset_left = 25352.0
+offset_top = 2152.0
+offset_right = 25788.117
+offset_bottom = 2216.0
+rotation = -1.5707964
+texture = SubResource("AtlasTexture_rlqh5")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="Boulder" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="0" unique_id=840999448 instance=ExtResource("2_54ik3")]
-position = Vector2(19040, 2168)
+position = Vector2(19016, 2032)
 
 [node name="Crate" parent="Objects/Physics" parent_id_path=PackedInt32Array(952607968) index="1" unique_id=463807499 instance=ExtResource("3_8qx61")]
-position = Vector2(24680, 2280)
+position = Vector2(24680, 2184)
 
 [node name="PlatformOnBeams" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="0" unique_id=897411987 instance=ExtResource("3_rkon5")]
 position = Vector2(5520, 2328)
@@ -98,14 +126,14 @@ position = Vector2(0, -31.999992)
 rotation = -0.2617994
 
 [node name="PlatformOnBeams5" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="4" unique_id=694627226 instance=ExtResource("2_cqdbb")]
-position = Vector2(24720, 2384)
+position = Vector2(24720, 2288)
 
 [node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams5" index="0" unique_id=1189508430]
 offset_bottom = 392.0
 metadata/_edit_use_anchors_ = true
 
 [node name="PlatformOnBeams6" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="5" unique_id=1196817467 instance=ExtResource("2_cqdbb")]
-position = Vector2(24328, 2288)
+position = Vector2(24328, 2336)
 
 [node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams6" index="0" unique_id=1189508430]
 offset_bottom = 392.0
@@ -199,6 +227,10 @@ node_b = NodePath("../../WoodenPlatform6")
 bias = 0.15
 softness = 0.6
 
+[node name="WoodenPlatform" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="7" unique_id=764590784 instance=ExtResource("8_3o3f8")]
+position = Vector2(27960, 1688.0002)
+rotation = 0.10471976
+
 [node name="VerticalDoor" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="0" unique_id=490192065 instance=ExtResource("4_up1vo")]
 position = Vector2(3896, 2136)
 
@@ -206,26 +238,105 @@ position = Vector2(3896, 2136)
 activation_delay = 0.3
 deactivation_delay = 0.8
 
-[node name="Button" parent="Objects/Buttons" parent_id_path=PackedInt32Array(969791430) index="0" unique_id=914127466 node_paths=PackedStringArray("object_to_activate") instance=ExtResource("2_08em5")]
-position = Vector2(3520, 2264)
-object_to_activate = NodePath("../../Moving/VerticalDoor/VerticalDoor")
+[node name="VerticalRailPlatform" parent="Objects/Moving" parent_id_path=PackedInt32Array(1049580301) index="1" unique_id=350558209 instance=ExtResource("9_rlqh5")]
+position = Vector2(25227, 2508)
+pos_offset = Vector2(0, -753)
 
-[node name="Button2" parent="Objects/Buttons" parent_id_path=PackedInt32Array(969791430) index="1" unique_id=1165746887 node_paths=PackedStringArray("object_to_activate") instance=ExtResource("2_08em5")]
-position = Vector2(24328, 2272)
-object_to_activate = NodePath("../../Moving/VerticalDoor/VerticalDoor")
+[node name="Button" parent="Objects/Buttons" parent_id_path=PackedInt32Array(969791430) index="0" unique_id=914127466 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("2_08em5")]
+position = Vector2(3520, 2264)
+objects_to_activate = [NodePath("../../Moving/VerticalDoor/VerticalDoor")]
+
+[node name="Button2" parent="Objects/Buttons" parent_id_path=PackedInt32Array(969791430) index="1" unique_id=1165746887 node_paths=PackedStringArray("objects_to_activate") instance=ExtResource("2_08em5")]
+position = Vector2(24328, 2320)
+objects_to_activate = [NodePath("../../Moving/VerticalRailPlatform")]
 
 [node name="Emeraldium" parent="Objects/Interactive" parent_id_path=PackedInt32Array(744542152) index="0" unique_id=1019438090 node_paths=PackedStringArray("artefacts_parent", "ui_layer") instance=ExtResource("7_rfx77")]
 position = Vector2(12056, 1400)
 artefacts_parent = NodePath("..")
 ui_layer = NodePath("../../../UILayer")
 
-[node name="Creatures" parent="Objects" parent_id_path=PackedInt32Array(29319817) index="6" unique_id=1133915585]
-position = Vector2(0, 0)
+[node name="Topaz" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="0" unique_id=100359712 instance=ExtResource("13_uk6y0")]
+position = Vector2(6336, 2496)
 
-[node name="Player" parent="Objects/Creatures" index="0" unique_id=840999448]
-position = Vector2(16280, 1672)
+[node name="Topaz4" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="1" unique_id=1545767638 instance=ExtResource("13_uk6y0")]
+position = Vector2(6024, 2496)
 
-[node name="Enemy" parent="Objects/Creatures" index="1" unique_id=144469295 instance=ExtResource("4_2wmbt")]
+[node name="Topaz5" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="2" unique_id=1105119697 instance=ExtResource("13_uk6y0")]
+position = Vector2(5712, 2496)
+
+[node name="Topaz6" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="3" unique_id=388535854 instance=ExtResource("13_uk6y0")]
+position = Vector2(6144, 2064)
+
+[node name="Topaz7" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="4" unique_id=1351046114 instance=ExtResource("13_uk6y0")]
+position = Vector2(6304, 1976)
+
+[node name="Topaz8" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="5" unique_id=810186209 instance=ExtResource("13_uk6y0")]
+position = Vector2(6456, 2064)
+
+[node name="Topaz9" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="6" unique_id=2036482777 instance=ExtResource("13_uk6y0")]
+position = Vector2(9152, 1600)
+
+[node name="Topaz10" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="7" unique_id=2011741432 instance=ExtResource("13_uk6y0")]
+position = Vector2(9728, 1624)
+
+[node name="Topaz11" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="8" unique_id=1681558159 instance=ExtResource("13_uk6y0")]
+position = Vector2(10120, 1576)
+
+[node name="Topaz12" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="9" unique_id=1660875939 instance=ExtResource("13_uk6y0")]
+position = Vector2(14368, 1576)
+
+[node name="Topaz13" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="10" unique_id=332812596 instance=ExtResource("13_uk6y0")]
+position = Vector2(14608, 1440)
+
+[node name="Topaz14" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="11" unique_id=1329270902 instance=ExtResource("13_uk6y0")]
+position = Vector2(14864, 1368)
+
+[node name="Topaz15" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="12" unique_id=1511936506 instance=ExtResource("13_uk6y0")]
+position = Vector2(15160, 1304)
+
+[node name="Topaz16" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="13" unique_id=508266992 instance=ExtResource("13_uk6y0")]
+position = Vector2(15440, 1280)
+
+[node name="Topaz17" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="14" unique_id=500113558 instance=ExtResource("13_uk6y0")]
+position = Vector2(15752, 1296)
+
+[node name="Topaz18" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="15" unique_id=105527109 instance=ExtResource("13_uk6y0")]
+position = Vector2(16040, 1368)
+
+[node name="Topaz19" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="16" unique_id=2075783219 instance=ExtResource("13_uk6y0")]
+position = Vector2(25288, 2328)
+
+[node name="Topaz20" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="17" unique_id=1757930093 instance=ExtResource("13_uk6y0")]
+position = Vector2(25184, 2056)
+
+[node name="Topaz21" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="18" unique_id=426621592 instance=ExtResource("13_uk6y0")]
+position = Vector2(25288, 1808)
+
+[node name="Topaz22" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="19" unique_id=1306044419 instance=ExtResource("13_uk6y0")]
+position = Vector2(25208, 1464)
+
+[node name="Topaz23" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="20" unique_id=1564476965 instance=ExtResource("13_uk6y0")]
+position = Vector2(27416, 2136)
+
+[node name="Topaz25" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="21" unique_id=1012107734 instance=ExtResource("13_uk6y0")]
+position = Vector2(27848, 1952)
+
+[node name="Topaz26" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="22" unique_id=210622339 instance=ExtResource("13_uk6y0")]
+position = Vector2(27600, 1400)
+
+[node name="Topaz27" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="23" unique_id=567106751 instance=ExtResource("13_uk6y0")]
+position = Vector2(27448, 1312)
+
+[node name="Topaz28" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="24" unique_id=496583631 instance=ExtResource("13_uk6y0")]
+position = Vector2(27248, 1352)
+
+[node name="Topaz2" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="25" unique_id=515025239 instance=ExtResource("13_uk6y0")]
+position = Vector2(6648, 2496)
+
+[node name="Topaz3" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="26" unique_id=736787857 instance=ExtResource("13_uk6y0")]
+position = Vector2(6952, 2496)
+
+[node name="Enemy" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="1" unique_id=144469295 instance=ExtResource("4_2wmbt")]
 position = Vector2(5392, 2496)
 collision_mask = 15
 
@@ -234,7 +345,7 @@ left_x_bound = 5392.0
 right_x_bound = 7144.0
 jump_time = 3.0
 
-[node name="Enemy2" parent="Objects/Creatures" index="2" unique_id=1000895859 instance=ExtResource("4_2wmbt")]
+[node name="Enemy2" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="2" unique_id=1000895859 instance=ExtResource("4_2wmbt")]
 position = Vector2(21744, 2984)
 collision_mask = 15
 
@@ -243,7 +354,7 @@ left_x_bound = 20864.0
 right_x_bound = 21728.0
 jump_time = 6.0
 
-[node name="Enemy3" parent="Objects/Creatures" index="3" unique_id=1366453191 instance=ExtResource("4_2wmbt")]
+[node name="Enemy3" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="3" unique_id=1366453191 instance=ExtResource("4_2wmbt")]
 position = Vector2(20936, 2992)
 collision_mask = 15
 
@@ -252,7 +363,7 @@ left_x_bound = 20872.0
 right_x_bound = 21728.0
 jump_time = 5.0
 
-[node name="Enemy4" parent="Objects/Creatures" index="4" unique_id=560856945 instance=ExtResource("4_2wmbt")]
+[node name="Enemy4" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="4" unique_id=560856945 instance=ExtResource("4_2wmbt")]
 position = Vector2(21336, 2992)
 collision_mask = 15
 
@@ -260,6 +371,9 @@ collision_mask = 15
 left_x_bound = 20864.0
 right_x_bound = 21728.0
 jump_time = 5.0
+
+[node name="FinishPortal" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="0" unique_id=737669738]
+position = Vector2(29024, 1280)
 
 [node name="ArtefactDischargeArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="1" unique_id=465926688 node_paths=PackedStringArray("ui_layer") instance=ExtResource("9_od5lf")]
 position = Vector2(15800, 0)
@@ -278,11 +392,8 @@ position = Vector2(10560, 1840)
 [node name="Path2D" parent="GroundAndBoundaries/Terrain2" index="3" unique_id=1234078617]
 curve = SubResource("Curve2D_0jvoj")
 
-[connection signal="level_finished" from="." to="Objects/Creatures/Player" method="_on_level_finished"]
-[connection signal="artefact_equipped" from="Objects/Creatures/Player" to="UILayer" method="_on_artefact_equipped"]
-[connection signal="artefact_unequipped" from="Objects/Creatures/Player" to="UILayer" method="_on_artefact_unequipped"]
-[connection signal="creature_died" from="Objects/Creatures/Player" to="." method="_on_player_died"]
-[connection signal="creature_died" from="Objects/Creatures/Player" to="UILayer" method="_on_player_died"]
+[node name="Camera" parent="." index="10" unique_id=1760591003]
+limit_right = 29480
 
 [editable path="UILayer"]
 [editable path="Objects/StaticSolids/PlatformOnBeams"]

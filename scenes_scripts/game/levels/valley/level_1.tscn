@@ -42,7 +42,7 @@ position = Vector2(17520.002, 1568)
 offset_bottom = 704.0
 
 [node name="PlatformOnBeams3" parent="Objects/StaticSolids" parent_id_path=PackedInt32Array(649195086) index="2" unique_id=651345889 instance=ExtResource("2_1msal")]
-position = Vector2(18312.002, 1520)
+position = Vector2(18160, 1520)
 
 [node name="Beams" parent="Objects/StaticSolids/PlatformOnBeams3" index="0" unique_id=1189508430]
 offset_bottom = 704.0
@@ -92,32 +92,31 @@ position = Vector2(17192.002, 1392)
 position = Vector2(17368.002, 1416)
 
 [node name="Topaz13" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="13" unique_id=1427015326 instance=ExtResource("5_os8xl")]
-position = Vector2(17744.002, 1424)
+position = Vector2(17688, 1440)
 
 [node name="Topaz14" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="14" unique_id=1150684980 instance=ExtResource("5_os8xl")]
-position = Vector2(17944.002, 1336)
+position = Vector2(17840, 1288)
 
 [node name="Topaz15" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="15" unique_id=549613418 instance=ExtResource("5_os8xl")]
-position = Vector2(18152.002, 1400)
+position = Vector2(18008, 1376)
 
 [node name="Topaz16" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="16" unique_id=859932934 instance=ExtResource("5_os8xl")]
-position = Vector2(18528, 1376)
+position = Vector2(18352, 1408)
 
 [node name="Topaz18" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="17" unique_id=1879712657 instance=ExtResource("5_os8xl")]
-position = Vector2(18672, 1272)
+position = Vector2(18480, 1304)
 
 [node name="Topaz19" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="18" unique_id=2108041544 instance=ExtResource("5_os8xl")]
-position = Vector2(18856, 1216)
+position = Vector2(18632, 1232)
 
 [node name="Topaz20" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="19" unique_id=1123676270 instance=ExtResource("5_os8xl")]
-position = Vector2(18984, 1288)
+position = Vector2(18784, 1280)
 
 [node name="Topaz21" parent="Objects/Pickables/Topazes" parent_id_path=PackedInt32Array(1005448833) index="20" unique_id=1350353557 instance=ExtResource("5_os8xl")]
-position = Vector2(19048, 1424)
+position = Vector2(18864, 1392)
 
 [node name="Player" parent="Objects/Creatures" parent_id_path=PackedInt32Array(1133915585) index="0" unique_id=840999448]
-position = Vector2(19456, 1928)
-script = null
+free_camera_mode_enabled = false
 
 [node name="Water" parent="Objects/Environment/Waters" parent_id_path=PackedInt32Array(2130201175) index="0" unique_id=1996029903 instance=ExtResource("3_3rpgq")]
 position = Vector2(8552, 1984)
@@ -155,10 +154,10 @@ z_index = -1
 position = Vector2(21656, 1304)
 
 [node name="MoveBoundArea" parent="Areas" parent_id_path=PackedInt32Array(1723939335) index="7" unique_id=1526628066 node_paths=PackedStringArray("left_world_bound", "camera") instance=ExtResource("8_5g6br")]
-position = Vector2(20064, 0)
+position = Vector2(20032, 0)
 left_world_bound = NodePath("../../GroundAndBoundaries/WorldBounds/LeftBound")
 camera = NodePath("../../Camera")
-left_bound_offset = 19200.0
+left_bound_offset = 20200.0
 
 [node name="CollisionShape2D" parent="Areas/MoveBoundArea" index="0" unique_id=1900862834]
 position = Vector2(32, 0)
@@ -235,8 +234,6 @@ text = "This one is called \"Emeraldium\". Pick it up and hold [b]Shift[/b] to g
 metadata/_edit_use_anchors_ = true
 
 [node name="WorldBounds" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="0" unique_id=1234016570]
-collision_layer = 0
-collision_mask = 0
 collision_priority = 1.0
 
 [node name="Terrain" parent="GroundAndBoundaries" parent_id_path=PackedInt32Array(422641340) index="1" unique_id=912310611]

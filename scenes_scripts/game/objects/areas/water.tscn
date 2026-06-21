@@ -6,10 +6,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mc8sp"]
 shader = ExtResource("1_lcjg8")
-shader_parameter/frequency = 7.0
-shader_parameter/speed = 0.3
-shader_parameter/amplitude = 0.004
-shader_parameter/blur = 0.002
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joq74"]
 

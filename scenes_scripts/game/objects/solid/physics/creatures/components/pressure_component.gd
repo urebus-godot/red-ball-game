@@ -12,13 +12,10 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body is PhysicsObject:
-		print("Detected collision with object ", body.name)
-		if body.position.y > target.position.y and body.mass >= MASS_TO_DIE:
-			print("And it's heavy!")
-			var time = (MASS_TO_DIE / body.mass) * 0.25
+		if body.position.y < target.position.y and body.mass >= MASS_TO_DIE:
+			var time = (MASS_TO_DIE / body.mass) * 0.4
 
 			await get_tree().create_timer(time).timeout
 			print(time)
 			if body in target.get_colliding_bodies():
-				print("Time to die!")
 				life_component.die(true)

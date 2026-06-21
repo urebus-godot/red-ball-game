@@ -5,7 +5,7 @@ signal level_finished(score: int, time_s: float)
 @onready var game_data: GameData = DataManager.game_data
 
 @onready var background_layer: CanvasLayer = $BackgroundLayer
-@onready var player: Player = $Objects/Creatures/Player 
+@onready var player: Player= $Objects/Creatures/Player 
 
 @onready var ui_layer: GameUILayer = $UILayer
 
